@@ -1,0 +1,537 @@
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.clearfix {
+    display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+    display: block;
+}
+ 
+* html .clearfix {
+    height: 1%;
+}
+
+/* LOGIN */
+
+:focus {
+	outline: 0;
+}
+
+body{
+	background-color: #f3f3f3;
+	font-family: Arial,sans-serif;
+	color: #5d5d5d;
+	line-height: 24px;
+	font-size: 14px;
+}
+
+#login-container{
+	width: 25%;
+	margin: 0 auto;
+	margin-top: 10%;
+}
+
+#login-header{
+	background-color: #f04c25;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	padding: 15px 0;
+}
+
+#login-logo{
+	width: 40%;
+	display: block;
+	margin: 0 auto;
+}
+
+#login-content{
+	padding: 35px 25px 35px 25px;
+	background-color: white;
+}
+
+#login-content form{
+	width: 70%;
+	margin: 0 auto;
+}
+
+.login-input{
+	border-radius: 3px;
+	border: 1px solid #d8d8d8;
+	padding: 10px 0px 10px 35px;
+	display: block;
+	margin-bottom: 15px;
+}
+
+form .unummer{
+	background-image:url(../img/profile-icon.png);
+	background-repeat:no-repeat;
+	background-position:10px;
+}
+
+form .wachtwoord{
+	background-image:url(../img/lock-icon.png);
+	background-repeat:no-repeat;
+	background-position:10px;
+}
+
+.login-button{
+	margin-top: 15px;
+	display: block;
+	width: 100%;
+	background-color: #f04c25;
+	border: none;
+	border-radius: 3px;
+	color: white;
+	padding: 8px 0;
+	text-align: center;
+	text-decoration: none;
+}
+
+#login-footer{
+	background-color: #e9e8e8;
+	text-align: center;
+	padding: 3px 0 5px 0;
+	-webkit-border-bottom-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;	
+}
+
+#login-footer a{
+	color: #656464;
+	font-size: 11px;
+}
+
+.login-check{
+	margin-right: 10px;
+}
+
+#login-copyright a, 
+#login-copyright{
+	color: #656464;
+	font-size: 10px;
+}
+
+/* -------------------------------------- */
+
+
+
+
+
+#container, #preview-footer{
+	margin: 0 auto;
+	width: 60%;
+	margin-top: 2%;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+header{
+	background-color: #f04c25;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	padding-bottom: 35px;
+}
+
+#content{
+	background-color: white;
+	padding: 70px 25px 20px 25px;
+	-webkit-border-bottom-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+#logo img{
+	width:12%;
+	display: block;
+	margin: 0 auto;
+}
+
+#logo{
+	display: block;
+	clear: both;
+}
+
+#afmelden{
+	float: right;
+	color: white;
+	background-color: #da470f;
+	padding: 0px 10px;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius-topright: 8px;
+	border-top-right-radius: 8px;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+nav{
+	margin-top: -14px;
+	
+}
+
+nav ul{
+	padding:0;
+	margin:0;
+}
+
+nav li{
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+	float: left;
+	border-bottom: 1px solid #f9f9f9;
+	padding: 15px 0px 15px 0px;
+	background-color: white;
+}
+
+nav a{
+	text-decoration: none;
+	color: #dddbdb;
+}
+
+
+.active{
+	background-color: #f9f9f9;
+}
+
+.active a{
+	color: #5d5d5d;
+}
+
+.cijfer{
+	border: 1px solid #f9f9f9;
+	border-radius: 100px;
+	padding: 3px 7px;
+	margin-right: 8px;
+}
+.active .cijfer{
+	border: 1px solid #5d5d5d;
+}
+
+#stap1-col1, 
+#stap1-col2{
+	display: inline-block;
+}
+
+#stap1-col1{
+	width: 60%;
+	margin-right: 5%;
+	float: left;
+}
+
+#stap1-col2{
+	width: 35%;
+}
+
+h1{
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.stap1-preview{
+	display: block;
+	width: 100%;
+	background-color: #f9f9f9;
+	color: transparent;
+	height: 300px;
+}
+
+.stap1-cards{
+	display: inline-block;
+	width: 45%;
+	height: 100px;
+	margin: 0px 5px 10px 0px;
+	color: transparent;
+	background-color: #f9f9f9;
+}
+
+#vorige-volgende{
+	clear: both;
+	display: block;
+	list-style: none;
+	padding: 0;
+	margin-top: 50px;
+}
+
+.button-vorigevolgende, 
+.button-email{
+	background-color: #f04c25;
+	border-radius: 3px;
+	color: white;
+	padding: 8px 10px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#vorige-volgende li{
+	display: inline-block;
+}
+
+#vorige-volgende li:first-child{
+	float: left;
+}
+
+#vorige-volgende li:last-child{
+	float: right;
+}
+
+.stap2-persoonlijkbericht{
+	width: 99%;
+	max-width: 99%;
+	min-height: 200px;
+	border: 1px solid #eeecec;
+}
+
+.stap2-characters{
+	margin-top: -5px;
+}
+
+#emailtoevoegen, 
+#emailaanpassen{
+	list-style: none;
+	padding: 0;
+	display: inline-block;
+}
+
+#emailtoevoegen{
+	float: left;
+}
+
+#emailaanpassen{
+	float: right;
+}
+
+#emailtoevoegen li, 
+#emailaanpassen li{
+	display: inline-block;
+}
+
+#emailaanpassen .button-email{
+	background-color: #f9f9f9;
+	color: #d5d4d4;
+}
+
+#stap3-table{
+	clear: both;
+	width: 100%;
+	display: block;
+	margin-top: 70px;
+}
+
+#stap3-table th{
+	background-color: #f9f9f9;
+	font-weight: normal;
+	text-align: left;
+	color: black;
+	padding: 3px 3px 3px 10px;
+}
+
+#stap3-table .col1, 
+#stap3-table .col2 {
+	width: 25%;
+}
+#stap3-table .col3 {
+	width: 50%;
+}
+
+#stap3-table td{
+	padding: 3px 3px 3px 10px;
+}
+
+#content-preview{
+	padding-top:55px;
+	width: 100%;
+}
+
+#preview-vorige-volgende ul, .stap4-card{
+	display:block;
+	padding:0;
+}
+
+#preview-vorige-volgende li{
+	display: inline-block;
+	list-style: none;
+}
+.stap4-card{
+	list-style: none;
+}
+.stap4-card li{
+	display: inline-block;
+	width: 49%;
+}
+
+#container-preview{
+	clear: both;
+	width: 80%;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+#preview-card li{
+	display: inline-block;
+	list-style: none;
+	width: 49%;
+	float: left;
+}
+
+#preview-card{
+	padding: 0;
+}
+
+.stap4-card{
+	background-color: #f9f9f9;
+	color: transparent;
+	min-height: 300px;
+}
+
+.stap4-message{
+	background-color: white;
+	min-height: 300px;
+	padding-left: 20px;
+}
+
+#bewerken-verzenden{
+	display: block;
+	clear: both;
+	width: 60%;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+
+#bewerken-verzenden ul{
+	margin: 0 auto;
+	width: 270px;
+	padding: 0;
+
+}
+
+#bewerken-verzenden li{
+	display: inline-block;
+	list-style: none;
+}
+
+#preview-footer{
+	text-align: center;
+}
+
+#preview-header{
+	background-color: transparent;
+	padding-bottom: 0;
+	padding-top: 2%;
+}
+
+#logo2 img{
+	width:20%;
+	display: block;
+	margin: 0 auto;
+}
+
+.preview-verzonden, .button-nieuwekaart{
+	text-align: center;
+	margin: 0 auto;
+}
+.preview-verzonden{
+	margin-bottom: 20px;
+}
+
+a.button-nieuwekaart{
+	display: block;
+	margin: 0 auto;
+	background-color: #f04c25;
+	border-radius: 3px;
+	color: white;
+	width: 180px;
+	text-align: center;
+	text-decoration: none;
+	padding: 8px 0px 8px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
