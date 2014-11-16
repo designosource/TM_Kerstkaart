@@ -200,11 +200,17 @@ nav li{
 	border-bottom: 1px solid #f9f9f9;
 	padding: 15px 0px 15px 0px;
 	background-color: white;
+	color: #dddbdb;
 }
 
-nav a{
+nav a, a .cijfer{
+	color: #5d5d5d;
+}
+
+a .cijfer, .visited .cijfer{
+	color: #5d5d5d;
+	border: 1px solid #5d5d5d;
 	text-decoration: none;
-	color: #dddbdb;
 }
 
 
@@ -221,9 +227,11 @@ nav a{
 	border-radius: 100px;
 	padding: 3px 7px;
 	margin-right: 8px;
+	color: #dddbdb;
 }
 .active .cijfer{
 	border: 1px solid #5d5d5d;
+	color: #5d5d5d;
 }
 
 #stap1-col1, 
