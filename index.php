@@ -8,7 +8,7 @@
 
 		<div id="login-container">
 			<section id="login-header">
-				<a href="http://www.thomasmore.be/" id="login-logo">Logo Thomas More Hogeschool</a>
+				<a href="http://www.thomasmore.be/" id="login-logo">Thomas More Hogeschool</a>
 			</section>
 
 			<section id="login-content">
