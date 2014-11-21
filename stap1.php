@@ -5,35 +5,33 @@
 	</head>
 
 	<body id="stap1">
-		<div id="container">
+		<div id="preCon">
+			<div id="container">
 
-			<?php include("includes/header.inc.php") ?>
+				<?php include("includes/header.inc.php") ?>
 
-			<div id="content">
-				<div id="stap1-col1">
-					<h1>Kies je kerstkaart</h1>
-					<div class="stap1-preview">Placeholder</div>	<!--CSS VERWIJDEREN CLASS -->
+				<div id="content">
+					<div id="stap1-col1">
+						<h1>Titel van kaart</h1>
+						<div class="stap1-choosen"></div>	<!--CSS VERWIJDEREN CLASS -->
+					</div>
+
+					<div id="stap1-col2">
+						<h1>Andere ontwerpen</h1>
+						<p>Andere ontwerpen zijn nog niet beschikbaar.</p>
+					</div>
+
+
+
+					<ul id="vorige-volgende" class="clearfix">
+						<li><a id="right" class="button-vorigevolgende" href="stap2.html">Volgende stap</a></li>
+					</ul>
 				</div>
 
-				<div id="stap1-col2">
-					<h1>Andere ontwerpen</h1>
-					<div class="stap1-cards">Placeholder</div>	<!--CSS VERWIJDEREN CLASS -->
-					<div class="stap1-cards">Placeholder</div>	<!--CSS VERWIJDEREN CLASS -->
-					<div class="stap1-cards">Placeholder</div>	<!--CSS VERWIJDEREN CLASS -->
-				</div>
-
-
-
-				<ul id="vorige-volgende" class="clearfix">
-					<li><!--<a class="button-vorigevolgende" href="#">< Vorige stap</a>--></li>
-					<li><a class="button-vorigevolgende" href="stap2.html">Volgende stap ></a></li>
-				</ul>
 			</div>
 
-			<footer>
-				<p id="login-copyright">&copy; Thomas More | <a href="#">Gebruiksvoorwaarden &amp; Privacy</a></p>
-			</footer>
-
+			<?php include("includes/footer.inc.php"); ?>
+			
 		</div>
 	
 		<?php include("includes/scripts.inc.php"); ?>
