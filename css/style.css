@@ -34,20 +34,40 @@ body{
 }
 
 #login-container{
-	width: 25%;
+	width: 350px;
 	margin: 0 auto;
 	margin-top: 10%;
+	border-radius: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-ms-border-radius: 10px;
 }
 
 #login-header{
-	background-color: #f04c25;
-	-webkit-border-top-left-radius: 8px;
-	-webkit-border-top-right-radius: 8px;
-	-moz-border-radius-topleft: 8px;
-	-moz-border-radius-topright: 8px;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
-	padding: 15px 0;
+	background-color: #F24F11;
+	padding: 30px 0;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-ms-border-top-left-radius: 10px;
+	-ms-border-top-right-radius: 10px;
+}
+
+#login-header a
+{
+	width:155px;
+	height:61px;
+	display:block;
+	text-indent: -9999pc;
+	background-image: url("../img/TM_logo.png");
+	background-image: url('../img/TM_logo.svg'), none;
 }
 
 #login-logo{
@@ -57,12 +77,12 @@ body{
 }
 
 #login-content{
-	padding: 35px 25px 35px 25px;
+	padding: 40px 30px;
 	background-color: white;
 }
 
 #login-content form{
-	width: 70%;
+	width: 270px;
 	margin: 0 auto;
 }
 
@@ -71,26 +91,45 @@ body{
 	border: 1px solid #d8d8d8;
 	padding: 10px 0px 10px 35px;
 	display: block;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
+	width:235px;
+	color: #656565;
 }
 
 form .unummer{
-	background-image:url(../img/profile-icon.png);
+	background-image:url("../img/profile-icon.png");
+	background-image: url('../img/profile-icon.svg'), none;
 	background-repeat:no-repeat;
 	background-position:10px;
+	background-size: 17.5px;
 }
 
 form .wachtwoord{
-	background-image:url(../img/lock-icon.png);
+	background-image:url("../img/lock-icon.png");
+	background-image: url('../img/lock-icon.svg'), none;
 	background-repeat:no-repeat;
 	background-position:10px;
+	background-size: 17.5px;
 }
 
-.login-button{
+#checkCon
+{
+	margin-bottom:20px;
+}
+
+form label
+{
+	color: #656565;
+	font-size: 16px;
+}
+
+.login-button
+{
+	height:40px;
 	margin-top: 15px;
 	display: block;
 	width: 100%;
-	background-color: #f04c25;
+	background-color: #F24F11;
 	border: none;
 	border-radius: 3px;
 	color: white;

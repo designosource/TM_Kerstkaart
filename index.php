@@ -10,17 +10,20 @@
 
 	<div id="login-container">
 		<section id="login-header">
-			<img id="login-logo" src="img/TM_logo.png" alt="Logo Thomas More Hogeschool"/>
+			<a href="http://www.thomasmore.be/" id="login-logo">Logo Thomas More Hogeschool</a>
 		</section>
 
 		<section id="login-content">
-			<form>
+			<form action="#" method="POST">
 				<input class="login-input unummer" type="text" name="unummer" placeholder="U-nummer" required>
 				<input class="login-input wachtwoord" type="text" name="wachtwoord" placeholder="Wachtwoord" required>
-				<input class="login-check" type="checkbox" name="onthouden" value="onthouden"> Onthoud mij
 
-				<!--<input class="login-button" type="submit" value="Aanmelden">-->
-				<a class="login-button" href="stap1.html">Aanmelden</a>
+				<div id="checkCon">
+					<input class="login-check" id="rememberMe" type="checkbox" name="onthouden" value="onthouden">
+					<label for="rememberMe">Onthoud mij</label>
+				</div>
+
+				<input class="login-button" type="submit" value="Aanmelden">
 			</form>
 		</section>
 
