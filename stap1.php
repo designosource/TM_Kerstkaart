@@ -4,7 +4,7 @@
 		<?php include("includes/head.inc.php") ?>
 	</head>
 
-	<body id="stap1">
+	<body class="stap1">
 		<div id="preCon">
 			<div id="container">
 

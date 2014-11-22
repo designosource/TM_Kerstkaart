@@ -6,7 +6,7 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 	<title>Thomas More | Kerstkaart</title>
 </head>
-<body id="stap4">
+<body class="stap4">
 
 	<div id="container">
 		<header id="preview-header">

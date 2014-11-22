@@ -4,7 +4,7 @@
 		<?php include("includes/head.inc.php") ?>
 	</head>
 
-	<body id="stap2">
+	<body class="stap2">
 		<div id="preCon">
 			<div id="container">
 
@@ -23,7 +23,7 @@ Aliquam id neque eu nunc ornare imperdiet id vel justo. Fusce maximus, ante ac u
 
 					<ul id="vorige-volgende" class="clearfix">
 						<li id="left"><a class="button-vorigevolgende" href="stap1.php">Vorige stap</a></li>
-						<li id="right"><a class="button-vorigevolgende" href="stap2.php">Volgende stap</a></li>
+						<li id="right"><a class="button-vorigevolgende" href="stap3.php">Volgende stap</a></li>
 					</ul>
 				</div>
 

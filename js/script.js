@@ -15,8 +15,11 @@ $("input.login-input").on("keyup", function()
 
 $(window).load(function()
 {
-	var textContent = $(".stap2-persoonlijkbericht").val();
-	countChars(textContent);
+	if($("body").hasClass("stap2"))
+	{
+		var textContent = $(".stap2-persoonlijkbericht").val();
+		countChars(textContent);	
+	}
 });
 
 $(".stap2-persoonlijkbericht").on("keyup", function()
@@ -42,3 +45,27 @@ function countChars(textContent)
 	}
 }
 
+$("#selectAll").on("click", function()
+{
+	if($(this).prop("checked"))
+	{
+		$('.checkItem input').prop('checked', true);
+	}
+	else
+	{
+		$('.checkItem input').prop('checked', false);
+	}
+});
+
+$(".checkItem input").on("click", function()
+{
+	if($('td.checkItem input:checked').length > 0)
+	{
+		$("#stap3-buttons ul#emailaanpassen li, #stap3-buttons ul#emailaanpassen li a").addClass("active");
+	}
+	else
+	{
+		$("#stap3-buttons ul#emailaanpassen li, #stap3-buttons ul#emailaanpassen li a").removeClass("active");
+		$('#selectAll').prop('checked', false);
+	}
+});
