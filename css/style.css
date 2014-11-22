@@ -405,6 +405,11 @@ header nav ul li a span
 	border: 1px solid #656565;
 }
 
+footer
+{
+	margin-top:7.5px;
+}
+
 /*STEP 1*/
 #container #content
 {
@@ -431,7 +436,8 @@ header nav ul li a span
 }
 
 #stap1-col1 h1,
-#stap1-col2 h1
+#stap1-col2 h1,
+#stap2 #content h1
 {
 	font-size: 16px;
 	color:#303030;
@@ -476,7 +482,7 @@ ul#vorige-volgende
 
 ul#vorige-volgende li
 {
-	float:right;
+	float:left;
 	height:30px;
 	width:165px;
 	border-radius: 3px;
@@ -484,7 +490,16 @@ ul#vorige-volgende li
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px; 
 	background-color: #F24F11;
+}
 
+ul#vorige-volgende li#right
+{
+	margin-left:410px;
+}
+
+body#stap1 ul#vorige-volgende li
+{
+	float:right;
 }
 
 ul#vorige-volgende li a
@@ -508,62 +523,56 @@ ul#vorige-volgende li a:after
 	width:8px;
 }
 
-ul#vorige-volgende li a#right:after
+ul#vorige-volgende li#right a:after
 {
 	right: 10px;
 	background-image: url("../img/arrowRight.png");
 	background-image: url('../img/arrowRight.svg'), none;
 }
 
-ul#vorige-volgende li a#left:after
+ul#vorige-volgende li#left a:after
 {
 	left: 10px;
 	background-image: url("../img/arrowLeft.png");
 	background-image: url('../img/arrowLeft.svg'), none;
 }
 
-footer
-{
-	margin-top:7.5px;
-}
-/*
-#vorige-volgende{
-	clear: both;
-	display: block;
-	list-style: none;
-	padding: 0;
-	margin-top: 50px;
-}
-
-.button-vorigevolgende, 
-.button-email{
-	background-color: #f04c25;
-	border-radius: 3px;
-	color: white;
-	padding: 8px 10px;
-	text-align: center;
-	text-decoration: none;
-}
-
-#vorige-volgende li{
-	display: inline-block;
-}
-
-#vorige-volgende li:first-child{
-	float: left;
-}
-
-#vorige-volgende li:last-child{
-	float: right;
-}
-
+/*STEP 2*/
 .stap2-persoonlijkbericht{
-	width: 99%;
-	max-width: 99%;
-	min-height: 200px;
-	border: 1px solid #eeecec;
+	width: 718px;
+	height: 178px;
+	border: 1px solid #D9D9D9;
+	resize: vertical;
+	padding:10px;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#656565;
+	font-size: 16px;
+	line-height:24px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
 }
 
+.stap2-persoonlijkbericht:focus
+{
+	border: 1px solid #F24F11;
+}
+
+p.stap2-characters{
+	margin:0;
+	margin-top:10px;
+	color: #656565;
+	font-size:14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+p.stap2-characters span{
+	font-weight: bold;
+}
+
+
+/*
 .stap2-characters{
 	margin-top: -5px;
 }

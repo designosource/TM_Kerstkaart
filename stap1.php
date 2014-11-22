@@ -24,7 +24,7 @@
 
 
 					<ul id="vorige-volgende" class="clearfix">
-						<li><a id="right" class="button-vorigevolgende" href="stap2.html">Volgende stap</a></li>
+						<li id="right"><a class="button-vorigevolgende" href="stap2.php">Volgende stap</a></li>
 					</ul>
 				</div>
 
