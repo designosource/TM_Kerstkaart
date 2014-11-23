@@ -1,10 +1,33 @@
-<!doctype html>
+<?php 
+	if (isset($_POST['fileToUpload']) && !empty($_POST['fileToUpload'])) 
+	{
+		if(isset($_FILES['emails']) && !empty($_FILES['emails'])) 
+		{
+			//if file has something in it
+			if(strlen($_FILES['emails']['name']) > 0)
+			{
+				$csv = array_map('str_getcsv', file($_FILES["emails"]["tmp_name"]));
+			}
+			else
+			{
+				//fallback when no file has been uploaded but clicked "upload"
+			}
+		}
+	}
+	else
+	{
+		//fallback
+		//empty file or file not done uploading
+	}
+
+ ?><!doctype html>
 <html lang="en">
 	<head>
 		<?php include("includes/head.inc.php") ?>
 	</head>
 
 	<body class="stap3">
+
 		<div id="preCon">
 			<div id="container">
 
@@ -35,12 +58,35 @@
 								<th class="stap3-th col3">E-mailadres</th>
 							</tr>
 
-						  	<tr id="emptyList">
-						  		<td class="checkItem"></td>
-						  		<td>Nog geen ontvangers</td>
-						  		<td></td>
-						  		<td></td>
-						  	</tr>
+						<?php 
+
+							if(!empty($csv))
+							{
+								foreach ($csv as $person) 
+								{
+									$firstname = $person[0];
+									$lastname = $person[1];
+									$email = $person[2];
+
+									echo "<tr>" .
+										  	"<td class='checkItem'><input type='checkbox' value='check'></td>" .
+										    "<td>". $firstname ."</td>" .
+										    "<td>". $lastname ."</td>" .
+										    "<td>". $email ."</td>" .
+										  "</tr>";
+								}
+							}
+							else
+							{
+								echo "<tr id='emptyList'>" .
+								  		"<td class='checkItem'></td>" .
+								  		"<td>Nog geen ontvangers</td>" .
+								  		"<td></td>" .
+								  		"<td></td>" .
+								  	"</tr>";
+							}
+
+						 ?>
 						 
 						  <!-- <tr>
 						  	<td class="checkItem"><input type="checkbox" value="check-1"></td>

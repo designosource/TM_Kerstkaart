@@ -182,7 +182,8 @@ form label
 }
 
 .login-button,
-#indAdd input[type=submit]
+#indAdd input[type=submit],
+#bulkAdd input[type=submit]
 {
 	height:40px;
 	margin-top: 15px;
@@ -204,7 +205,8 @@ form label
 }
 
 .login-button.active,
-#indAdd input#iAAdd.active
+#indAdd input#iAAdd.active,
+#bulkAdd input[type=submit].active
 {
 	background-color:#F24F11;
 	color:#fff;
@@ -675,7 +677,6 @@ ul#emailaanpassen
 	background-color: #FAFAFA;
 	font-weight: normal;
 	text-align: left;
-	color: #303030;
 	font-family: Arial, Helvetica, sans-serif;
 	height:35px;
 	line-height:35px;
@@ -692,6 +693,11 @@ ul#emailaanpassen
 	font-family: Arial, Helvetica, sans-serif;
 	text-align: left;
 	padding-left:10px;
+}
+
+#stap3-table th
+{
+	color: #303030;
 }
 
 #stap3-table th.checkItem,
@@ -761,7 +767,10 @@ th.checkItem input
 	position:absolute;
 	top:0;
 	left:0;
-	opacity:0.5;
+	opacity: 0.5;
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    -ms-opacity: 0.5;
 	background-color:#303030;
 	z-index:11;
 	display:none;
@@ -769,7 +778,8 @@ th.checkItem input
 }
 
 /*overlay add individual email*/
-#indAdd
+#indAdd,
+#bulkAdd
 {
 	position:absolute;
 	z-index:12;
@@ -784,29 +794,40 @@ th.checkItem input
 	-moz-border-radius: 10px;
 	-ms-border-radius: 10px;
 	overflow:hidden;
-	opacity:0;
+	opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    -ms-opacity: 0;
 }
 
-#indAdd form
+#indAdd form,
+#bulkAdd form
 {
 	width:250px;
 	margin: 40px auto;
 }
 
-#indAdd input
+#indAdd input,
+#bulkAdd input
 {
 	padding: 0 20px;
 	width:210px;
 	margin-bottom:25px;
 }
 
-#indAdd input[type=submit]
+#bulkAdd input[type=file]
+{
+	margin-bottom: 0px;
+}
+
+#indAdd input[type=submit],
+#bulkAdd input[type=submit]
 {
 	margin-bottom:0;
 }
 
-#indAdd a,
-#bulkAdd a
+#indAdd a#closeOverlay,
+#bulkAdd a#closeOverlay
 {
 	position:absolute;
 	top:0;
@@ -829,6 +850,135 @@ th.checkItem input
 	background-position: 7.5px 7.5px;
 	text-indent: -9999px
 }
+
+#bulkAdd
+{
+	display: block;
+	opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    -ms-opacity: 0;
+    margin-top:-67.5px;
+    margin-left:-155px;
+}
+
+#bulkAdd #fileCon
+{
+	height:24px;
+	margin-top: 15px;
+	display: block;
+	width: 100%;
+	background-color:#F24F11;
+	color:#fff;
+	border: none;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	padding: 8px 0;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	line-height:20px;
+	font-family: 'texgyreadventorregular';
+}
+
+#bulkAdd input[type=submit]
+{
+	margin-top:25px;
+}
+
+#fileCon
+{
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.fileInput
+{
+    height: 30px;
+    position:absolute;
+    top: 0;
+    right: 0;
+    font-size:16px;
+    margin:0;
+    height: 100%;
+	width: 100%;
+	padding: 0;
+	cursor: pointer;
+}
+
+.hidden
+{
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    -ms-opacity: 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    cursor: pointer;
+}
+
+#bulkAdd h2
+{
+	color: #656565;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight: normal;
+	margin:0;
+	float:left;
+}
+
+#UpProgress
+{
+	margin-top:25px;
+}
+
+#UpProgress #bar
+{
+	margin-top:2.5px;
+	width:100%;
+	background-color:#FAFAFA;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	height:20px;
+}
+
+#UpProgress #bar #progress
+{
+	width:0%;
+	background-color:#F24F11;
+	height:20px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+}
+
+#fileName
+{
+	width:100%;
+	display:inline-block;
+}
+
+
+a#deleteFile
+{
+	float:right;
+	background-image:url("../img/close.png");
+	background-image: url('../img/close.svg'), none;
+	background-repeat: no-repeat;
+	margin-top:4px;
+	display:block;
+	width:10px;
+	height:10px;
+	text-indent: -9999px
+}
+
+
+
 
 
 /*

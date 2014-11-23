@@ -1,3 +1,4 @@
+/*activate "login" button when both fields have content*/
 $("input.login-input").on("keyup", function()
 {
 	var loginNumber = $("input.unummer").val();
@@ -13,6 +14,7 @@ $("input.login-input").on("keyup", function()
 	}
 });
 
+/*activate "add email" button when all fields have content*/
 $(document).on("keyup", "#indAdd input[type=text]", function()
 {
 	var voornaam = $("input#iAFirstname").val();
@@ -29,6 +31,7 @@ $(document).on("keyup", "#indAdd input[type=text]", function()
 	}
 });
 
+/*get value of input field only in stap2.php file*/
 $(window).load(function()
 {
 	if($("body").hasClass("stap2"))
@@ -38,12 +41,14 @@ $(window).load(function()
 	}
 });
 
+/*count amount of characters in input field*/
 $(".stap2-persoonlijkbericht").on("keyup", function()
 {
 	var textContent = $(this).val();
 	countChars(textContent);
 });
 
+/*count characters function*/
 function countChars(textContent)
 {
 	var textContentLength = textContent.length;
@@ -61,6 +66,7 @@ function countChars(textContent)
 	}
 }
 
+/*check every box when "selectAll" is checked*/
 $(document).on("click", "#selectAll", function()
 {
 	if($(this).prop("checked"))
@@ -73,6 +79,7 @@ $(document).on("click", "#selectAll", function()
 	}
 });
 
+/*activate "delete" and "edit" buttons when something's checked*/
 $(document).on("click", ".checkItem input", function()
 {
 	if($('td.checkItem input:checked').length > 0)
@@ -88,6 +95,7 @@ $(document).on("click", ".checkItem input", function()
 
 var overlay = "<div id='overlay'></div>";
 
+/*display individual email adding screen*/
 $("a#indEmail").on("click", function(e)
 {
 	var individualAdd = "<div id='indAdd'>" +
@@ -100,15 +108,20 @@ $("a#indEmail").on("click", function(e)
 								"<input id='iAAdd' type='submit' value='Toevoegen'>" +
 							"</form>" +
 						"</div>";
+
 	$("body").prepend(overlay);
+	$("body, html").css({"overflow":"hidden", "height":"100%"});
 	$("#overlay").fadeIn(250);
 
 	$("#overlay").after(individualAdd);
 	$("#indAdd").animate({"opacity":"1", "margin-top":"-160.5px"}, "swing");
 
+	$("input#iAFirstname").focus();
+
 	e.preventDefault();
 });
 
+/*close overlay and individual email adding screen */
 $(document).on("click", "#indAdd a, #overlay", function(e)
 {
 	closeOverlay();
@@ -117,14 +130,17 @@ $(document).on("click", "#indAdd a, #overlay", function(e)
 	e.preventDefault();
 });
 
+/*close overlay function*/
 function closeOverlay()
 {
+	$("body, html").css({"overflow":"visible", "height":"auto"});
 	$("#overlay").fadeOut(250, function()
 	{
 		$(this).remove();
 	});
 }
 
+/*close individual email adding function*/
 function closeIndividualAdd()
 {
 	$("#indAdd").animate({"opacity":"0", "margin-top":"-135.5px"}, "swing", function()
@@ -133,6 +149,26 @@ function closeIndividualAdd()
 	});
 }
 
+
+/*close overlay and bulk email adding screen */
+$(document).on("click", "#bulkAdd a#closeOverlay, #overlay", function(e)
+{
+	closeOverlay();
+	closeBulkAdd();
+
+	e.preventDefault();
+});
+
+/*close bulk email adding function*/
+function closeBulkAdd()
+{
+	$("#bulkAdd").animate({"opacity":"0", "margin-top":"-67.5px"}, "swing", function()
+	{
+		$(this).remove();
+	});
+}
+
+/*add content of individual email adding screen to table*/
 $(document).on("click", "input#iAAdd", function(e)
 {
 	var voornaam = $("input#iAFirstname").val();
@@ -144,7 +180,7 @@ $(document).on("click", "input#iAAdd", function(e)
 							"<td>"+voornaam+"</td>" +
 							"<td>"+achternaam+"</td>" +
 							"<td>"+emailadres+"</td>" +
-						"</tr>"
+						"</tr>";
 	closeOverlay();
 	closeIndividualAdd();
 
@@ -152,4 +188,114 @@ $(document).on("click", "input#iAAdd", function(e)
 	$("#stap3-table tr:first").after(individualAdd);
 
 	e.preventDefault();
-})
+});
+
+/*display bulk email adding screen*/
+$("a#bulkEmail").on("click", function(e)
+{
+	var bulkAdd = "<div id='bulkAdd'>" +
+						"<form action='#' id='fileToUpload' method='POST' enctype='multipart/form-data'>" +
+							"<a id='closeOverlay' href='#'>Sluiten</a>" +
+
+							"<div id='fileCon'>" +
+								"Importeer CSV bestand" +
+								"<input class='fileInput hidden' type='file' name='emails'/>" +
+							"</div>" +
+
+							"<input id='bAAdd' type='submit' value='Toevoegen'>" +
+
+						"</form>" +
+					"</div>";
+	
+	$("body").prepend(overlay);
+	$("body, html").css({"overflow":"hidden", "height":"100%"});
+	$("#overlay").fadeIn(250);
+
+	$("#overlay").after(bulkAdd);
+	$("#bulkAdd").animate({"opacity":"1", "margin-top":"-92.5px"}, "swing");
+
+	e.preventDefault();
+});
+
+/*upload file polyfill*/
+$(function() {
+    $("#fileCon").mousedown(function() {
+        var button = $(this);
+        button.addClass('clicked');
+        setTimeout(function(){
+            button.removeClass('clicked');
+        },50);
+    });
+});
+
+/*print out name of chosen file */
+$(document).on("change", "input[type=file]", function()
+{
+	$("#UpProgress #bar #progress").css({"width":"0%"});
+	$("input#bAAdd").removeClass("active");
+	$("#UpProgress").remove();
+
+	var filename = $('input[type=file]').val().split('\\').pop();
+
+	if(filename.length > 0)
+	{
+		var progress = "<div id='UpProgress'>" +
+							"<div id='fileName'>" +
+								"<h2>dribbble.png</h2>" +
+								"<a id='deleteFile' href='#'>bestand weigeren</a>" +
+							"</div>" +
+
+							"<div id='bar'><div id='progress'></div></div>" +
+						"</div>";
+					
+		$("#fileCon").after(progress);
+
+		$("#UpProgress h2").text(filename);
+		
+		var randomSpeed = Math.floor(Math.random() * (2000 - 750 + 1)) + 750;
+		$("#UpProgress #bar #progress").animate({"width":"100%"}, randomSpeed, function()
+		{
+			$("input#bAAdd").addClass("active");
+			$("input#bAAdd").attr("name", "fileToUpload" );
+		});
+	}
+});
+
+/*file rejected, delete elements*/
+$(document).on("click", "a#deleteFile", function(e)
+{
+	$("#UpProgress h2").text("");
+	$("input#bAAdd").removeClass("active");
+
+	var input = $("#fileToUpload");
+	input.replaceWith(input.val('').clone(true));
+
+	$("#UpProgress").remove();
+
+	e.preventDefault();
+});
+
+/*Add bulk emails to table*/
+/*$(document).on("click", "input#bAAdd", function(e)
+{
+	if($(this).hasClass("active"))
+	{
+
+		var bulkEmail = $.ajax({
+									url: "ajax/bulkEmail.php",
+									type: "POST"
+								});
+
+		bulkEmail.fail(function(data)
+		{
+			console.log("failed: " + data);
+		});
+
+		bulkEmail.done(function(data)
+		{
+			console.log(data);
+		});
+	}
+
+	e.preventDefault();
+});*/
