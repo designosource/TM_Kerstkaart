@@ -13,8 +13,8 @@
 				<div id="content">						
 					<div id="stap3-buttons">
 						<ul id="emailtoevoegen">
-							<li class="addEmail firstItem"><a class="button-email" href="#">CSV bestand importeren</a></li>
-							<li class="addEmail"><a class="button-email" href="#">E-mailadres toevoegen</a></li>
+							<li class="addEmail firstItem"><a id="bulkEmail" class="button-email" href="#">CSV bestand importeren</a></li>
+							<li class="addEmail"><a id="indEmail" class="button-email" href="#">E-mailadres toevoegen</a></li>
 						</ul>
 					
 
@@ -27,30 +27,40 @@
 
 
 					<table id="stap3-table">
-					  <tr>
-					  	<th class="checkItem"><input id="selectAll" type="checkbox" value="check-all"></th>
-					    <th class="stap3-th col1">Voornaam</th>
-					    <th class="stap3-th col2">Achternaam</th> 
-					    <th class="stap3-th col3">E-mailadres</th>
-					  </tr>
-					  <tr>
-					  	<td class="checkItem"><input type="checkbox" value="check-1"></td>
-					    <td>John</td>
-					    <td>Doe</td> 
-					    <td>john.doe@desingosource.be</td>
-					  </tr>
-					  <tr>
-					  	<td class="checkItem"><input type="checkbox" value="check-2"></td>
-					    <td>Eve</td>
-					    <td>Jackson</td> 
-					    <td>eve.jackson@desingosource.be</td>
-					  </tr>
-					  <tr>
-					  	<td class="checkItem"><input type="checkbox" value="check-3"></td>
-					    <td>Jessica</td>
-					    <td>Doe</td> 
-					    <td>jessica.doe@desingosource.be</td>
-					  </tr>
+						<tbody>
+							<tr>
+								<th class="checkItem"><input id="selectAll" type="checkbox" value="check-all"></th>
+								<th class="stap3-th col1">Voornaam</th>
+								<th class="stap3-th col2">Achternaam</th> 
+								<th class="stap3-th col3">E-mailadres</th>
+							</tr>
+
+						  	<tr id="emptyList">
+						  		<td class="checkItem"></td>
+						  		<td>Nog geen ontvangers</td>
+						  		<td></td>
+						  		<td></td>
+						  	</tr>
+						 
+						  <!-- <tr>
+						  	<td class="checkItem"><input type="checkbox" value="check-1"></td>
+						    <td>John</td>
+						    <td>Doe</td> 
+						    <td>john.doe@desingosource.be</td>
+						  </tr>
+						  <tr>
+						  	<td class="checkItem"><input type="checkbox" value="check-2"></td>
+						    <td>Eve</td>
+						    <td>Jackson</td> 
+						    <td>eve.jackson@desingosource.be</td>
+						  </tr>
+						  <tr>
+						  	<td class="checkItem"><input type="checkbox" value="check-3"></td>
+						    <td>Jessica</td>
+						    <td>Doe</td> 
+						    <td>jessica.doe@desingosource.be</td>
+						  </tr> -->
+						</tbody>
 					</table>
 
 
