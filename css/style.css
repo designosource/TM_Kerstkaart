@@ -206,7 +206,8 @@ form label
 
 .login-button.active,
 #indAdd input#iAAdd.active,
-#bulkAdd input[type=submit].active
+#bulkAdd input[type=submit].active,
+#indAdd #iAEdit
 {
 	background-color:#F24F11;
 	color:#fff;

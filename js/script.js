@@ -84,7 +84,15 @@ $(document).on("click", ".checkItem input", function()
 {
 	if($('td.checkItem input:checked').length > 0)
 	{
-		$("#stap3-buttons ul#emailaanpassen li, #stap3-buttons ul#emailaanpassen li a").addClass("active");
+		if($('td.checkItem input:checked').length == 1)
+		{
+			$("#stap3-buttons ul#emailaanpassen li#editList, #stap3-buttons ul#emailaanpassen li#editList a").addClass("active");
+		}
+		else
+		{
+			$("#stap3-buttons ul#emailaanpassen li#editList, #stap3-buttons ul#emailaanpassen li#editList a").removeClass("active");
+		}
+		$("#stap3-buttons ul#emailaanpassen li#deleteList, #stap3-buttons ul#emailaanpassen li#deleteList a").addClass("active");
 	}
 	else
 	{
@@ -122,7 +130,7 @@ $("a#indEmail").on("click", function(e)
 });
 
 /*close overlay and individual email adding screen */
-$(document).on("click", "#indAdd a, #overlay", function(e)
+$(document).on("click", "#indAdd a, #overlay, input#iAEdit", function(e)
 {
 	closeOverlay();
 	closeIndividualAdd();
@@ -177,9 +185,9 @@ $(document).on("click", "input#iAAdd", function(e)
 
 	var individualAdd = "<tr>" +
 							"<td class='checkItem'><input type='checkbox' value='check'></td>" +
-							"<td>"+voornaam+"</td>" +
-							"<td>"+achternaam+"</td>" +
-							"<td>"+emailadres+"</td>" +
+							"<td class='firstname'>"+voornaam+"</td>" +
+							"<td class='lastname'>"+achternaam+"</td>" +
+							"<td class='email'>"+emailadres+"</td>" +
 						"</tr>";
 	closeOverlay();
 	closeIndividualAdd();
@@ -301,5 +309,68 @@ $("ul#emailaanpassen li a#deleteEmail").on("click", function(e)
 
 		$("#stap3-buttons ul#emailaanpassen li, #stap3-buttons ul#emailaanpassen li a").removeClass("active");
 	}
+	e.preventDefault();
+});
+
+/*edit an email*/
+$("ul#emailaanpassen li a#editEmail").on("click", function(e)
+{
+	if($(this).parent().hasClass("active"))
+	{
+		var amountChecked = $("tr td.checkItem input:checked").length;
+
+		if(amountChecked == 1)
+		{
+			var firstNameOld = $("tr td.checkItem input:checked").parent().siblings("td.firstname").text();
+			var lastNameOld = $("tr td.checkItem input:checked").parent().siblings("td.lastname").text();
+			var emailOld = $("tr td.checkItem input:checked").parent().siblings("td.email").text();
+
+			var individualAdd = "<div id='indAdd'>" +
+									"<form action='#' method='POST'>" +
+										"<a id='closeOverlay' href='#'>Sluiten</a>" +
+
+										"<input id='iAFirstname' type='text' value='"+firstNameOld+"' placeholder='Voornaam'>" +
+										"<input id='iALastname' type='text' value='"+lastNameOld+"' placeholder='Achternaam'>" +
+										"<input id='iAEmail' type='text' value='"+emailOld+"' placeholder='E-mailadres'>" +
+										"<input id='iAEdit' type='submit' value='Wijzigen'>" +
+									"</form>" +
+								"</div>";
+
+			$("body").prepend(overlay);
+			$("body, html").css({"overflow":"hidden", "height":"100%"});
+			$("#overlay").fadeIn(250);
+
+			$("#overlay").after(individualAdd);
+			$("#indAdd").animate({"opacity":"1", "margin-top":"-160.5px"}, "swing");
+
+			$("input#iAFirstname").focus();
+
+
+
+			$(document).on("click", "input#iAEdit", function(e)
+			{
+				var voornaamNew = $("input#iAFirstname").val();
+				var achternaamNew = $("input#iALastname").val();
+				var emailadresNew = $("input#iAEmail").val();
+
+				$("tr td.checkItem input:checked").parent().siblings("td.firstname").text(voornaamNew);
+				$("tr td.checkItem input:checked").parent().siblings("td.lastname").text(achternaamNew);
+				$("tr td.checkItem input:checked").parent().siblings("td.email").text(emailadresNew);
+
+				$("tr td.checkItem input:checked").prop("checked", false);
+				e.preventDefault();
+			});
+		}
+	}
+
+	/*
+	echo "<tr>" .
+	  	"<td class='checkItem'><input type='checkbox' value='check'></td>" .
+	    "<td>". $firstname ."</td>" .
+	    "<td>". $lastname ."</td>" .
+	    "<td>". $email ."</td>" .
+	  "</tr>";
+	*/
+
 	e.preventDefault();
 });

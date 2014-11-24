@@ -43,8 +43,8 @@
 
 					
 						<ul id="emailaanpassen">
-							<li class="firstItem"><a class="button-email" href="#">Wijzig</a></li>
-							<li><a id="deleteEmail" class="button-email" href="#">Verwijder</a></li>
+							<li class="firstItem" id="editList"><a id="editEmail" class="button-email" href="#">Wijzig</a></li>
+							<li id="deleteList"><a id="deleteEmail" class="button-email" href="#">Verwijder</a></li>
 						</ul>
 					</div>
 
@@ -70,9 +70,9 @@
 
 									echo "<tr>" .
 										  	"<td class='checkItem'><input type='checkbox' value='check'></td>" .
-										    "<td>". $firstname ."</td>" .
-										    "<td>". $lastname ."</td>" .
-										    "<td>". $email ."</td>" .
+										    "<td class='firstname'>". $firstname ."</td>" .
+										    "<td class='lastname'>". $lastname ."</td>" .
+										    "<td class='email'>". $email ."</td>" .
 										  "</tr>";
 								}
 							}
