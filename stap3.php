@@ -44,7 +44,7 @@
 					
 						<ul id="emailaanpassen">
 							<li class="firstItem"><a class="button-email" href="#">Wijzig</a></li>
-							<li><a class="button-email" href="#">Verwijder</a></li>
+							<li><a id="deleteEmail" class="button-email" href="#">Verwijder</a></li>
 						</ul>
 					</div>
 
@@ -87,25 +87,6 @@
 							}
 
 						 ?>
-						 
-						  <!-- <tr>
-						  	<td class="checkItem"><input type="checkbox" value="check-1"></td>
-						    <td>John</td>
-						    <td>Doe</td> 
-						    <td>john.doe@desingosource.be</td>
-						  </tr>
-						  <tr>
-						  	<td class="checkItem"><input type="checkbox" value="check-2"></td>
-						    <td>Eve</td>
-						    <td>Jackson</td> 
-						    <td>eve.jackson@desingosource.be</td>
-						  </tr>
-						  <tr>
-						  	<td class="checkItem"><input type="checkbox" value="check-3"></td>
-						    <td>Jessica</td>
-						    <td>Doe</td> 
-						    <td>jessica.doe@desingosource.be</td>
-						  </tr> -->
 						</tbody>
 					</table>
 

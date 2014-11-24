@@ -275,27 +275,31 @@ $(document).on("click", "a#deleteFile", function(e)
 	e.preventDefault();
 });
 
-/*Add bulk emails to table*/
-/*$(document).on("click", "input#bAAdd", function(e)
+/*delete an email*/
+$("ul#emailaanpassen li a#deleteEmail").on("click", function(e)
 {
-	if($(this).hasClass("active"))
+	if($(this).parent().hasClass("active"))
 	{
+		var checkedItem = $("tr td.checkItem input:checked").parent().parent().remove();
 
-		var bulkEmail = $.ajax({
-									url: "ajax/bulkEmail.php",
-									type: "POST"
-								});
-
-		bulkEmail.fail(function(data)
+		if($("tr td").length == 0)
 		{
-			console.log("failed: " + data);
-		});
+			var emptyTable = "<tr id='emptyList'>" +
+								"<td class='checkItem'></td>" +
+								"<td>Nog geen ontvangers</td>" +
+								"<td></td>" +
+								"<td></td>" +
+							"</tr>";
 
-		bulkEmail.done(function(data)
+			$("#stap3-table tr:first").after(emptyTable);
+		}
+
+		if($("#selectAll").prop("checked"))
 		{
-			console.log(data);
-		});
+			$("#selectAll").prop("checked", false);
+		}
+
+		$("#stap3-buttons ul#emailaanpassen li, #stap3-buttons ul#emailaanpassen li a").removeClass("active");
 	}
-
 	e.preventDefault();
-});*/
+});
