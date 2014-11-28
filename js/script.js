@@ -362,15 +362,32 @@ $("ul#emailaanpassen li a#editEmail").on("click", function(e)
 			});
 		}
 	}
-
-	/*
-	echo "<tr>" .
-	  	"<td class='checkItem'><input type='checkbox' value='check'></td>" .
-	    "<td>". $firstname ."</td>" .
-	    "<td>". $lastname ."</td>" .
-	    "<td>". $email ."</td>" .
-	  "</tr>";
-	*/
-
 	e.preventDefault();
 });
+
+$(window).load(function()
+{
+	$("#cardCon").flip(
+	{
+		trigger: 'manual'
+	});
+});
+
+var swipeOptions = {dragLockToAxis: true, dragBlockHorizontal: true};
+$("#cardCon").hammer(swipeOptions).bind("swipe", myPanHandler);
+
+function myPanHandler(ev)
+{
+	var direction = ev.gesture.direction;
+    var swipeLeft = "left";
+    var swipeRight = "right";
+
+    if(direction == swipeLeft)
+    {
+		$("#cardCon").flip(false);
+    }
+    if(direction == swipeRight)
+    {
+		$("#cardCon").flip(true);
+    }
+}

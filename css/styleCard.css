@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'texgyreadventorregular';
+    src: url('../fonts/texgyreadventor-regular-webfont.eot');
+    src: url('../fonts/texgyreadventor-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/texgyreadventor-regular-webfont.woff2') format('woff2'),
+         url('../fonts/texgyreadventor-regular-webfont.woff') format('woff'),
+         url('../fonts/texgyreadventor-regular-webfont.ttf') format('truetype'),
+         url('../fonts/texgyreadventor-regular-webfont.svg#texgyreadventorregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:focus
+{
+	outline: 0;
+}
+
+html, body {min-height:100%; padding:0; margin:0; background-color:#F3F3F3;}
+
+#container {padding-bottom:50px; position:absolute; top:0; bottom:0; left:0; right:0;}
+#cardCon 
+{
+	height:100%; 
+	cursor:-webkit-grab;
+}
+#cardCon:active
+{
+	cursor:-webkit-grabbing;
+}
+
+nav {margin-bottom:-50px; height:50px; background-color:red;}
+
+nav ul
+{
+	margin:0;
+	padding:0;
+	list-style-type: none;
+}
+
+#cardCon img
+{
+	width:100%;
+	height:auto;
+}
+
+.front, .back
+{
+	background-color: #FDFDFD;
+}
+
+h1
+{
+	margin:0;
+	padding:0;
+}
+
