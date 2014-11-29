@@ -9,39 +9,29 @@
 
 	<body class="stap4">
 
-		<!-- <div id="container">
+		<div id="container">
+			<div class="flipbox-container box100">
+		    <div id="cardCon">
+		    	<img src="http://giavasan.diludovico.it/archivi/public_html/giavasan/archivi/images5/HolyShitmas.jpg">
+		    </div>
+		   	</div>
 
-			<div id="cardCon">
-				<div id="cardSec">
-					wolo
+		    <div id="front" style="display:none;">
+				<h1>Front</h1>
+			</div>
+
+			<div id="back" style="display:none;">
+				<div id="backCon">
+					<img src="http://giavasan.diludovico.it/archivi/public_html/giavasan/archivi/images5/HolyShitmas.jpg">
 				</div>
 			</div>
 
-			<nav>
-				<ul id="vorige-volgende" class="clearfix">
-					<li id="left"><a class="button-vorigevolgende" href="stap2.php">Kaart wijzigen</a></li>
-					<li id="right"><a class="button-vorigevolgende" href="stap4.php">Kaartversturen</a></li>
-				</ul>
-			</nav>
-		</div> -->
-
-		<div id="container">
-		    <div id="cardCon">
-		    	<div class="front">
-					<h1>Front</h1>
-				</div>
-
-				<div class="back">
-					<h1>Back</h1>
-				</div>
-		    </div>
-
-		    <nav>
+		    <div id="nav">
 		    	<ul id="vorige-volgende" class="clearfix">
 					<li id="left"><a class="button-vorigevolgende" href="stap2.php">Kaart wijzigen</a></li>
 					<li id="right"><a class="button-vorigevolgende" href="stap4.php">Kaartversturen</a></li>
 				</ul>
-			</nav>
+			<div id="nav">
 		</div>
 
 	<?php include("includes/scripts.inc.php"); ?>

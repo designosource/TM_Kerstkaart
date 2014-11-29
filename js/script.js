@@ -365,29 +365,42 @@ $("ul#emailaanpassen li a#editEmail").on("click", function(e)
 	e.preventDefault();
 });
 
-$(window).load(function()
-{
-	$("#cardCon").flip(
-	{
-		trigger: 'manual'
-	});
-});
 
 var swipeOptions = {dragLockToAxis: true, dragBlockHorizontal: true};
-$("#cardCon").hammer(swipeOptions).bind("swipe", myPanHandler);
+$(".flipbox-container").hammer(swipeOptions).bind("swipe", swiped);
 
-function myPanHandler(ev)
+function swiped(event)
 {
-	var direction = ev.gesture.direction;
-    var swipeLeft = "left";
-    var swipeRight = "right";
+	$(".flipbox-container").addClass("swiped");
 
-    if(direction == swipeLeft)
-    {
-		$("#cardCon").flip(false);
-    }
-    if(direction == swipeRight)
-    {
-		$("#cardCon").flip(true);
-    }
+	var direction = event.gesture.direction;
+    var swipeState;
+
+	switch(direction)
+	{
+		case "left":
+		swipeState = "LEFT";
+		break;
+
+		case "right":
+		swipeState = "RIGHT";
+		break;
+
+		case "down":
+		swipeState = "BOTTOM";
+		break;
+
+		case "up":
+		swipeState = "TOP";
+		break;
+	}
+
+    $(".flipbox-container").flippy(
+	{
+		color_target: "#FDFDFD",
+		direction: swipeState,
+		duration: "550",
+		light: "15",
+		verso: $("#back").html()
+	});
 }

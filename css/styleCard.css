@@ -15,37 +15,68 @@
 	outline: 0;
 }
 
-html, body {min-height:100%; padding:0; margin:0; background-color:#F3F3F3;}
+html, body 
+{
+	min-height:100%; 
+	padding:0; margin:0; 
+	background-color:#F3F3F3; 
+	overflow:hidden;
+	-webkit-touch-callout: none; 
+	-webkit-user-select: none; 
+	-moz-user-select: none; 
+	-ms-user-select: none;
+    -o-user-select: none;
+}
 
 #container {padding-bottom:50px; position:absolute; top:0; bottom:0; left:0; right:0;}
+
 #cardCon 
 {
 	height:100%; 
 	cursor:-webkit-grab;
 }
+
 #cardCon:active
 {
 	cursor:-webkit-grabbing;
 }
 
-nav {margin-bottom:-50px; height:50px; background-color:red;}
+#nav 
+{
+	margin-bottom:-50px; 
+	height:50px; 
+	background-color:red;
+	position:fixed\9;
+	bottom:50px\9;
+	left:0px\9;
+	width:100%;
+}
 
-nav ul
+#nav ul
 {
 	margin:0;
 	padding:0;
 	list-style-type: none;
 }
 
-#cardCon img
+#cardCon img, #backCon img
 {
-	width:100%;
-	height:auto;
+	width:auto;
+	height:100%;
 }
 
-.front, .back
+#cardCon, .flipbox-container
 {
 	background-color: #FDFDFD;
+	height: 100%;
+	width:100%;
+	position: static;
+}
+
+.cardSec, #backCon
+{
+	height:100%;
+	width:100%;
 }
 
 h1
