@@ -74,6 +74,50 @@ html, body
 	cursor:-webkit-grabbing;
 }
 
+#backSec
+{
+	padding:50px;
+}
+
+#backCon h1, #backCon p,  #backCon span
+{
+	margin:0;
+	padding:0;
+	color: #656565;
+	font-size: 22.5px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#backCon h1
+{
+	margin-bottom:50px;
+}
+
+#backCon p
+{
+	line-height:35px;
+}
+
+#backCon span#copy
+{
+	font-size:14px;
+	text-decoration: none;
+	color:#999999;
+	position:absolute;
+	bottom:20px;
+}
+
+#backCon span#copy a
+{
+	text-decoration: none;
+	color:#999999;
+}
+
+#backCon span#copy a:hover
+{
+	text-decoration: underline;
+}
+
 #nav 
 {
 	position:fixed;
