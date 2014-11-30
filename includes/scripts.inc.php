@@ -6,6 +6,10 @@
 <!--[if lt IE 9]>
 	<script src="js/excanvas.min.js" type="text/javascript"></script>
 <![endif]-->
+<!--[if (gte IE 6)&(lte IE 8)]>
+ 	<script type="text/javascript" src="js/selectivizr-min.js"></script>
+<![endif]-->
+
 <script type="text/javascript" src="js/jquery.flippy.min.js"></script>
 
 <script src="js/hammer.min.js" type="text/javascript"></script>

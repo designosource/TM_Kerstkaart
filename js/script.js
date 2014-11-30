@@ -31,6 +31,18 @@ $(document).on("keyup", "#indAdd input[type=text]", function()
 	}
 });
 
+$("ul#otherCards li").on("click", function()
+{
+	$("ul#otherCards li").removeClass("chose");
+	$(this).addClass("chose");
+
+	var image = $("img", this).attr('src');
+	var title = $("img", this).attr('alt');
+
+	$(".stap1-choosen img").attr("src", image);
+	$("h1#titleCard").text(title);
+});
+
 /*get value of input field only in stap2.php file*/
 $(window).load(function()
 {
@@ -66,6 +78,7 @@ function countChars(textContent)
 	}
 }
 
+/*ERROR PREVENTIONS*/
 $("a#gtStap3").on("click", function(e)
 {
 	var textInput = $(".stap2-persoonlijkbericht").val().length;
@@ -74,7 +87,7 @@ $("a#gtStap3").on("click", function(e)
 	var dest = t.attr('href');
 	var	error = "<p class='error'>Vergeet geen persoonlijk bericht te schrijven!</p>";
 	$("p.error").remove();
-	
+
 	if(textInput !== 0)
 	{
 		if (typeof(dest) !== "undefined" && dest !== "")
@@ -85,6 +98,30 @@ $("a#gtStap3").on("click", function(e)
 	else
 	{
 		$("#content h1").after(error);
+	}
+
+	e.preventDefault();
+});
+
+$("a#gtStap4").on("click", function(e)
+{
+	var amountRows = $('table#stap3-table tr:not(#legend, #emptyList)').length;
+
+	var t = $(this);
+	var dest = t.attr('href');
+	var	error = "<p class='error'>Vergeet geen ontvanger(s) toe te voegen!</p>";
+	$("p.error").remove();
+	
+	if(amountRows !== 0)
+	{
+		if (typeof(dest) !== "undefined" && dest !== "")
+		{
+			window.location.href = dest;
+		}
+	}
+	else
+	{
+		$("#stap3-buttons").after(error);
 	}
 
 	e.preventDefault();

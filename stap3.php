@@ -51,7 +51,7 @@
 
 					<table id="stap3-table">
 						<tbody>
-							<tr>
+							<tr id="legend">
 								<th class="checkItem"><input id="selectAll" type="checkbox" value="check-all"></th>
 								<th class="stap3-th col1">Voornaam</th>
 								<th class="stap3-th col2">Achternaam</th> 
@@ -94,7 +94,7 @@
 
 					<ul id="vorige-volgende" class="clearfix">
 						<li id="left"><a class="button-vorigevolgende" href="stap2.php">Vorige stap</a></li>
-						<li id="right"><a class="button-vorigevolgende" href="stap4.php">Volgende stap</a></li>
+						<li id="right"><a id="gtStap4" class="button-vorigevolgende" href="stap4.php">Volgende stap</a></li>
 					</ul>
 				</div>
 

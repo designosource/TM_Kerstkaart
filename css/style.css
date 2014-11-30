@@ -473,6 +473,56 @@ footer
 	margin-top:0px;
 }
 
+ul#otherCards
+{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+
+ul#otherCards li.card
+{
+	cursor:pointer;
+	float:left;
+	width:115px;
+	margin-bottom:20px;
+	height:61.333px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+}
+
+ul#otherCards li.card.chose
+{
+	border: 3.5px solid #F24F11;
+	width:109px;
+	height:55.333px;
+	overflow:hidden;
+	border-radius: 7.5px;
+	-webkit-border-radius: 7.5px;
+	-moz-border-radius: 7.5px;
+	-ms-border-radius: 7.5px;
+	/*width:110px;
+	height:56.333px;*/
+}
+
+ul#otherCards li.card:nth-child(even)
+{
+	margin-left:20px;
+}
+
+ul#otherCards li.card img
+{
+	width:100%;
+	height:auto;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+}
+
 #stap1-col1 .stap1-choosen
 {
 	width:100%;
@@ -483,6 +533,16 @@ footer
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
 	display:block;
+}
+
+#stap1-col1 .stap1-choosen img
+{
+	width:100%;
+	height:auto;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
 }
 
 ul#vorige-volgende

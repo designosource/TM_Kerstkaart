@@ -11,13 +11,13 @@
 
 		<div id="container">
 			<div class="flipbox-container box100">
-			    <div id="cardCon" style="background-image: url('http://vaipui.files.wordpress.com/2011/12/christmas-atmosphere.jpg')">
+			    <div id="cardCon" style="background-image: url('img/placeholderImg.png')">
 			    	<!-- Add poem here -->
 			    </div>
 		   	</div>
 
 			<div id="front" style="display:none;">
-				<div id="cardCon" style="background-image: url('http://vaipui.files.wordpress.com/2011/12/christmas-atmosphere.jpg')">
+				<div id="cardCon" style="background-image: url('img/placeholderImg.png')">
 			    	<!-- Add poem here -->
 			    </div>
 			</div>
