@@ -369,7 +369,7 @@ header nav ul:first-child
 	border-left:none;
 }
 
-header nav ul li a
+header nav ul li h1
 {
 	text-decoration: none;
 	color:#D9D9D9;
@@ -378,9 +378,10 @@ header nav ul li a
 	font-family: Arial, Helvetica, sans-serif;
 	margin-top:17.5px;
 	margin-left:30px;
+	font-weight: normal;
 }
 
-header nav ul li a span
+header nav ul li h1 span
 {
 	border: 1px solid #D9D9D9;
 	border-radius: 50%;
@@ -404,18 +405,18 @@ header nav ul li a span
 	background-color:#FAFAFA;
 }
 
-.stap1 header nav ul li#liStap1 a,
-.stap2 header nav ul li#liStap2 a,
-.stap3 header nav ul li#liStap3 a,
-.stap4 header nav ul li#liStap4 a
+.stap1 header nav ul li#liStap1 h1,
+.stap2 header nav ul li#liStap2 h1,
+.stap3 header nav ul li#liStap3 h1,
+.stap4 header nav ul li#liStap4 h1
 {
 	color: #656565;
 }
 
-.stap1 header nav ul li#liStap1 a span,
-.stap2 header nav ul li#liStap2 a span,
-.stap3 header nav ul li#liStap3 a span,
-.stap4 header nav ul li#liStap4 a span
+.stap1 header nav ul li#liStap1 h1 span,
+.stap2 header nav ul li#liStap2 h1 span,
+.stap3 header nav ul li#liStap3 h1 span,
+.stap4 header nav ul li#liStap4 h1 span
 {
 	border: 1px solid #656565;
 }
@@ -756,6 +757,7 @@ ul#emailaanpassen
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
+	min-height:200px;
 }
 
 #stap3-table th{

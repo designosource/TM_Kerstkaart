@@ -7,10 +7,10 @@
 
 	<nav>
 		<ul>
-			<li id="liStap1"><a href="stap1.php"><span class="cijfer">1</span> Kies een kaart</a></li>
-			<li id="liStap2"><a href="stap2.php"><span class="cijfer">2</span> Voeg tekst toe</a></li>
-			<li id="liStap3"><a href="stap3.php"><span class="cijfer">3</span> Ontvangers</a></li>
-			<li id="liStap4"><a href="stap4.php"><span class="cijfer">4</span> Preview</a></li>
+			<li id="liStap1"><h1><span class="cijfer">1</span> Kies een kaart</h1></li>
+			<li id="liStap2"><h1><span class="cijfer">2</span> Voeg tekst toe</h1></li>
+			<li id="liStap3"><h1><span class="cijfer">3</span> Ontvangers</h1></li>
+			<li id="liStap4"><h1><span class="cijfer">4</span> Preview</h1></li>
 		</ul>
 	</nav>
 </header>

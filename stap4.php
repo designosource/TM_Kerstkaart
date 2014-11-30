@@ -11,13 +11,13 @@
 
 		<div id="container">
 			<div class="flipbox-container box100">
-			    <div id="cardCon" style="background-image: url('img/placeholderImg.png')">
+			    <div id="cardCon" style="background-image: url('img/placeholderImg_1.png')">
 			    	<!-- Add poem here -->
 			    </div>
 		   	</div>
 
 			<div id="front" style="display:none;">
-				<div id="cardCon" style="background-image: url('img/placeholderImg.png')">
+				<div id="cardCon" style="background-image: url('img/placeholderImg_1.png')">
 			    	<!-- Add poem here -->
 			    </div>
 			</div>
