@@ -40,6 +40,7 @@ $("ul#otherCards li").on("click", function()
 	var title = $("img", this).attr('alt');
 
 	$(".stap1-choosen img").attr("src", image);
+	$(".stap1-choosen img").attr("alt", title);
 	$("h1#titleCard").text(title);
 });
 
@@ -88,12 +89,26 @@ $("a#gtStap3").on("click", function(e)
 	var	error = "<p class='error'>Vergeet geen persoonlijk bericht te schrijven!</p>";
 	$("p.error").remove();
 
+	var personalMessage = $(".stap2-persoonlijkbericht").val();
+
 	if(textInput !== 0)
 	{
-		if (typeof(dest) !== "undefined" && dest !== "")
+		var sendData = $.ajax(
+						{
+							type: "POST",
+							url: "ajax/getMessage.php",
+							data: {
+									personalMessage: personalMessage
+									}
+						});
+
+		sendData.done(function(data)
 		{
-			window.location.href = dest;
-		}
+			if (typeof(dest) !== "undefined" && dest !== "")
+			{
+				window.location.href = dest;
+			}
+		});
 	}
 	else
 	{
@@ -264,6 +279,22 @@ $(document).on("click", "input#iAAdd", function(e)
 								"</tr>";
 			closeOverlay();
 			closeIndividualAdd();
+
+			var sendData = $.ajax(
+							{
+								type: "POST",
+								url: "ajax/addPerson.php",
+								data: {
+										voornaam: voornaam,
+										achternaam: achternaam,
+										emailadres: emailadres
+										}
+							});
+
+			sendData.done(function(data)
+			{
+				console.log(data);
+			});
 
 			$("tr#emptyList").remove();
 			$("#stap3-table tr:first").after(individualAdd);
@@ -479,6 +510,35 @@ $("ul#emailaanpassen li a#editEmail").on("click", function(e)
 			});
 		}
 	}
+	e.preventDefault();
+});
+
+$("a#gtStap2").on("click", function(e)
+{
+	var chosenCardURL = $(".stap1-choosen img").attr('src');
+	var chosenCardALT = $(".stap1-choosen img").attr('alt');
+
+	var t = $(this);
+	var dest = t.attr('href');
+
+	var sendData = $.ajax(
+					{
+						type: "POST",
+						url: "ajax/getCard.php",
+						data: { 
+								chosenCardURL: chosenCardURL,
+								chosenCardALT: chosenCardALT
+								}
+					});
+
+	sendData.done(function(data)
+	{
+		if (typeof(dest) !== "undefined" && dest !== "")
+		{
+			window.location.href = dest;
+		}
+	});
+
 	e.preventDefault();
 });
 

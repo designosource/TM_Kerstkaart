@@ -1,4 +1,7 @@
-<!doctype html>
+<?php 
+session_start();
+
+ ?><!doctype html>
 <html lang="en">
 	<head>
 		<?php include("includes/head.inc.php") ?>
@@ -12,8 +15,8 @@
 
 				<div id="content">
 					<div id="stap1-col1">
-						<h1 id="titleCard">Placeholder 1</h1>
-						<div class="stap1-choosen"><img src="img/placeholderImg_1.png"></div>
+						<h1 id="titleCard"> <?php if(isset($_SESSION['cardALT'])){ echo $_SESSION['cardALT']; } else {echo "Placeholder 1";}?></h1>
+						<div class="stap1-choosen"><img alt=" <?php if(isset($_SESSION['cardALT'])){echo $_SESSION['cardALT']; }else{echo 'Placeholder 1';}?> " src=" <?php if(isset($_SESSION['cardURL'])){ echo $_SESSION['cardURL']; } else {echo "img/placeholderImg_1.png";}?> "></div>
 					</div>
 
 					<div id="stap1-col2">
@@ -28,7 +31,7 @@
 
 
 					<ul id="vorige-volgende" class="clearfix">
-						<li id="right"><a class="button-vorigevolgende" href="stap2.php">Volgende stap</a></li>
+						<li id="right"><a id="gtStap2" class="button-vorigevolgende" href="stap2.php">Volgende stap</a></li>
 					</ul>
 				</div>
 

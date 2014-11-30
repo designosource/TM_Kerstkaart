@@ -1,4 +1,7 @@
-<?php 
+<?php
+	session_start();
+	//session_unset($_SESSION['person']);
+
 	if (isset($_POST['fileToUpload']) && !empty($_POST['fileToUpload'])) 
 	{
 		if(isset($_FILES['emails']) && !empty($_FILES['emails'])) 
@@ -28,6 +31,11 @@
 		//fallback
 		//empty file or file not done uploading
 	}
+
+	/*if(isset($_SESSION['person']))
+	{
+		var_dump($_SESSION['person']);
+	}*/
 
  ?><!doctype html>
 <html lang="en">
@@ -77,8 +85,21 @@
 							</tr>
 
 						<?php 
+							if(isset($_SESSION['person']))
+							{
+								foreach
+							}
+							else
+							{
+								echo "<tr id='emptyList'>" .
+								  		"<td class='checkItem'></td>" .
+								  		"<td>Nog geen ontvangers</td>" .
+								  		"<td></td>" .
+								  		"<td></td>" .
+								  	"</tr>";
+							}
 
-							if(!empty($csv))
+							/*if(!empty($csv))
 							{
 								foreach ($csv as $person) 
 								{
@@ -102,7 +123,7 @@
 								  		"<td></td>" .
 								  		"<td></td>" .
 								  	"</tr>";
-							}
+							}*/
 
 						 ?>
 						</tbody>

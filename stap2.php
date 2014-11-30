@@ -1,4 +1,6 @@
-<!doctype html>
+<?php 
+	session_start();
+ ?><!doctype html>
 <html lang="en">
 	<head>
 		<?php include("includes/head.inc.php") ?>
@@ -14,9 +16,9 @@
 					<h1>Persoonlijk bericht</h1>
 
 					<form action="#" method="POST">
-						<textarea class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut mollis ipsum. Proin pharetra nibh sed lacus vestibulum, id consequat tortor euismod. Praesent mattis eleifend leo, ut auctor ligula aliquet eu. Aenean eu lacinia neque, nec aliquam purus. 
+						<textarea class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()"><?php if(isset($_SESSION['persMess'])){ echo $_SESSION['persMess'];}else{ echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut mollis ipsum. Proin pharetra nibh sed lacus vestibulum, id consequat tortor euismod. Praesent mattis eleifend leo, ut auctor ligula aliquet eu. Aenean eu lacinia neque, nec aliquam purus. 
 
-Aliquam id neque eu nunc ornare imperdiet id vel justo. Fusce maximus, ante ac ultricies luctus, urna ligula ullamcorper nisl, in molestie justo metus ac lacus. Fusce tincidunt sagittis turpis, nec placerat lorem interdum quis.</textarea>
+Aliquam id neque eu nunc ornare imperdiet id vel justo. Fusce maximus, ante ac ultricies luctus, urna ligula ullamcorper nisl, in molestie justo metus ac lacus. Fusce tincidunt sagittis turpis, nec placerat lorem interdum quis.";} ?></textarea>
 					</form>
 					
 					<p class="stap2-characters"><span>500</span> karakters over</p>
