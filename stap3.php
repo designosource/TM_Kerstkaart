@@ -14,6 +14,15 @@
 				if('text/csv' == $fileType ||  'application/vnd.ms-excel' == $fileType)
 				{
 					$csv = array_map('str_getcsv', file($_FILES["emails"]["tmp_name"]));
+
+					foreach($csv as $person)
+					{
+						$firstname = $person[0];
+						$lastname = $person[1];
+						$email = $person[2];
+
+						$_SESSION['person'][] = array($firstname, $lastname, $email);
+					}
 				}
 				else
 				{
@@ -87,7 +96,21 @@
 						<?php 
 							if(isset($_SESSION['person']))
 							{
-								foreach
+								$reverted = new ArrayIterator(array_reverse($_SESSION['person']));
+
+								foreach($reverted as $person)
+								{
+									$firstname = $person[0];
+									$lastname = $person[1];
+									$email = $person[2];
+
+									echo "<tr>" .
+										  	"<td class='checkItem'><input type='checkbox' value='check'></td>" .
+										    "<td class='firstname'>" . $firstname . "</td>" .
+										    "<td class='lastname'>" . $lastname . "</td>" .
+										    "<td class='email'>" . $email . "</td>" .
+										  "</tr>";
+								}
 							}
 							else
 							{
