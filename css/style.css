@@ -500,14 +500,17 @@ ul#vorige-volgende li
 	background-color: #F24F11;
 }
 
-ul#vorige-volgende li#right
+body.stap2 ul#vorige-volgende li#right,
+body.stap3 ul#vorige-volgende li#right
 {
 	margin-left:410px;
+	float:left;
 }
 
-body#stap1 ul#vorige-volgende li
+body.stap1 ul#vorige-volgende li#right
 {
 	float:right;
+	margin-left:0px;
 }
 
 ul#vorige-volgende li a

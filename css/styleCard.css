@@ -28,60 +28,349 @@ html, body
     -o-user-select: none;
 }
 
-#container {padding-bottom:50px; position:absolute; top:0; bottom:0; left:0; right:0;}
+#container {position:absolute; top:0; bottom:0; left:0; right:0;}
 
-#cardCon 
+.flipbox-container 
 {
-	height:100%; 
+	position:absolute;
 	cursor:-webkit-grab;
+	cursor:-moz-grab;
+	cursor:-ms-grab;
+	cursor:-o-grab;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	width:90%;
+	left: 5%;
+	height:80%;
+	margin: -25px auto 0 auto;
+	top:10%;
 }
 
-#cardCon:active
+#cardCon, #backCon
+{
+	background-color: #FDFDFD;
+	height: 100%;
+	width:100%;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	overflow:hidden;
+}
+
+#cardCon
+{
+	background: no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#cardCon:active, .flipbox-container:active
 {
 	cursor:-webkit-grabbing;
 }
 
 #nav 
 {
-	margin-bottom:-50px; 
-	height:50px; 
-	background-color:red;
-	position:fixed\9;
-	bottom:50px\9;
-	left:0px\9;
+	position:fixed;
+	bottom:0;
+	left:0;
+	height:50px;
 	width:100%;
+	background-color:#FAFAFA;
 }
 
 #nav ul
 {
 	margin:0;
 	padding:0;
+	width:100%;
 	list-style-type: none;
 }
 
-#cardCon img, #backCon img
+#nav ul li
 {
-	width:auto;
-	height:100%;
+	position:absolute;
+	top:0px;
+	font-family: 'texgyreadventorregular';
 }
 
-#cardCon, .flipbox-container
+#nav ul li#left
+{left:0;}
+#nav ul li#right
+{right:0;}
+#nav ul li#center
+{position:static;text-align: center}
+
+#nav ul li#right,
+#nav ul li#left
 {
-	background-color: #FDFDFD;
-	height: 100%;
-	width:100%;
-	position: static;
+	height:50px;
+	background-color: #F24F11;
+	width:210px;
 }
 
-.cardSec, #backCon
+#nav ul li a
 {
-	height:100%;
-	width:100%;
+	display:block;
+	text-decoration: none;
+	color:#fff;
+	height:50px;
+	line-height: 50px;
+	font-size: 16px;
+	text-align: center;
+	position:relative;
 }
 
-h1
+ul#vorige-volgende li a:after
+{
+	content:"";
+	position: absolute;
+	top: 18.5px;
+	height:13px;
+	width:8px;
+}
+
+ul#vorige-volgende li#right a:after
+{
+	right: 25px;
+	background-image: url("../img/arrowRight.png");
+	background-image: url('../img/arrowRight.svg'), none;
+}
+
+ul#vorige-volgende li#left a:after
+{
+	left: 25px;
+	background-image: url("../img/arrowLeft.png");
+	background-image: url('../img/arrowLeft.svg'), none;
+}
+
+#nav ul li h1
 {
 	margin:0;
 	padding:0;
+	font-size: 20px;
+	color: #656565;
+	line-height: 50px;
 }
 
+
+#overlay
+{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	opacity: 0.5;
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    -ms-opacity: 0.5;
+	background-color:#303030;
+	z-index:11;
+	display:block;
+	cursor:pointer;
+}
+
+#sendConfirmation
+{
+	position:absolute;
+	z-index:12;
+	width:310px;
+	top:50%;
+	left:50%;
+	margin-left:-155px;
+	margin-top:-110.5px;
+	background-color: #fff;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	overflow:hidden;
+	opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    -ms-opacity: 0;
+}
+
+#sendConfirmation a#closeOverlay
+{
+	position:absolute;
+	top:0;
+	right:0;
+	height:25px;
+	width:25px;
+	background-color:#F3F3F3;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-moz-border-bottom-left-radius: 3px;
+	-ms-border-top-right-radius: 10px;
+	-ms-border-bottom-left-radius: 3px;
+	background-image:url("../img/close.png");
+	background-image: url('../img/close.svg'), none;
+	background-repeat:no-repeat;
+	background-size: 10px 10px;
+	background-position: 7.5px 7.5px;
+	text-indent: -9999px
+}
+
+#sendConfirmation #confirmationCon
+{
+	margin:0 auto;
+	margin-top: 45px;
+	width:270px;
+}
+
+#sendConfirmation #confirmationCon h1, #sendingProgress h1, #cardProgressCompleted h1 
+{
+	text-align: center;
+	color: #303030;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	margin:0;
+}
+
+#sendConfirmation #confirmationCon p, #cardProgressCompleted p
+{
+	margin-top:15px;
+	font-size: 14px;
+	color:#656565;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height:20px;
+}
+
+#sendConfirmation #confirmationCon ul
+{
+	margin:0;
+	padding:0;
+	margin-top:25px;
+	list-style-type: none;
+	margin-bottom:30px;
+	overflow: hidden;
+}
+
+#sendConfirmation #confirmationCon ul li
+{
+	float:left;
+	width:117.5px;
+	height:30px;
+}
+
+#sendConfirmation #confirmationCon ul li#cancel
+{
+	margin-left:25px;
+}
+
+#sendConfirmation #confirmationCon ul li#send
+{
+	background-color:#F24F11;
+	text-align: center;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+}
+
+#sendConfirmation #confirmationCon ul li a
+{
+	line-height:28px;
+	text-decoration: none;
+	font-family: 'texgyreadventorregular';
+}
+
+#sendConfirmation #confirmationCon ul li#send a
+{
+	color: #fff;
+}
+
+#sendConfirmation #confirmationCon ul li#cancel a
+{
+	color: #656565;
+}
+
+#sendingProgress, #cardProgressCompleted
+{
+	position:absolute;
+	z-index:12;
+	width:310px;
+	top:50%;
+	left:50%;
+	margin-left:-155px;
+	margin-top:-110.5px;
+	background-color: #fff;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	overflow:hidden;
+	opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -ms-opacity: 1;
+    height:135px;
+}
+
+ #sendingProgress h1, #cardProgressCompleted h1
+ {
+ 	margin-top:45px;
+ }
+
+#progressBarSendCon
+ {
+ 	margin:0 auto;
+ 	margin-top:15px;
+	width:270px;
+	background-color:#FAFAFA;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	height:20px;
+ }
+
+#progressBarSendCon #progressBarSendSec
+{
+	width:0%;
+	background-color:#F24F11;
+	height:20px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+}
+#cardProgressCompleted
+{
+	height:auto;
+}
+
+#cardProgressCompleted p
+{
+	text-align: center;
+	line-height: 0px
+}
+
+#cardProgressCompleted a
+{
+	background-color:#F24F11;
+	text-align: center;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	color:#fff;
+	height:30px;
+	width:240px;
+	margin:25px auto 0 auto;
+	line-height:28px;
+	display:block;
+	margin-bottom:30px;
+	text-decoration: none;
+	font-family: 'texgyreadventorregular';
+}

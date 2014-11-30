@@ -141,11 +141,14 @@ $(document).on("click", "#indAdd a, #overlay, input#iAEdit", function(e)
 /*close overlay function*/
 function closeOverlay()
 {
-	$("body, html").css({"overflow":"visible", "height":"auto"});
-	$("#overlay").fadeOut(250, function()
+	if(!$("#overlay").hasClass("inactive"))
 	{
-		$(this).remove();
-	});
+		$("body, html").css({"overflow":"visible", "height":"auto"});
+		$("#overlay").fadeOut(250, function()
+		{
+			$(this).remove();
+		});
+	}
 }
 
 /*close individual email adding function*/
@@ -170,10 +173,13 @@ $(document).on("click", "#bulkAdd a#closeOverlay, #overlay", function(e)
 /*close bulk email adding function*/
 function closeBulkAdd()
 {
-	$("#bulkAdd").animate({"opacity":"0", "margin-top":"-67.5px"}, "swing", function()
+	if(!$("#overlay").hasClass("inactive"))
 	{
-		$(this).remove();
-	});
+		$("#bulkAdd").animate({"opacity":"0", "margin-top":"-67.5px"}, "swing", function()
+		{
+			$(this).remove();
+		});
+	}
 }
 
 /*add content of individual email adding screen to table*/
@@ -239,6 +245,8 @@ $(function() {
 /*print out name of chosen file */
 $(document).on("change", "input[type=file]", function()
 {
+	$("#overlay").addClass("inactive");
+
 	$("#UpProgress #bar #progress").css({"width":"0%"});
 	$("input#bAAdd").removeClass("active");
 	$("#UpProgress").remove();
@@ -249,7 +257,7 @@ $(document).on("change", "input[type=file]", function()
 	{
 		var progress = "<div id='UpProgress'>" +
 							"<div id='fileName'>" +
-								"<h2>dribbble.png</h2>" +
+								"<h2></h2>" +
 								"<a id='deleteFile' href='#'>bestand weigeren</a>" +
 							"</div>" +
 
@@ -265,6 +273,7 @@ $(document).on("change", "input[type=file]", function()
 		{
 			$("input#bAAdd").addClass("active");
 			$("input#bAAdd").attr("name", "fileToUpload" );
+			$("#overlay").removeClass("inactive");
 		});
 	}
 });
@@ -366,13 +375,14 @@ $("ul#emailaanpassen li a#editEmail").on("click", function(e)
 });
 
 
+
+
+
 var swipeOptions = {dragLockToAxis: true, dragBlockHorizontal: true};
 $(".flipbox-container").hammer(swipeOptions).bind("swipe", swiped);
 
 function swiped(event)
 {
-	$(".flipbox-container").addClass("swiped");
-
 	var direction = event.gesture.direction;
     var swipeState;
 
@@ -395,12 +405,114 @@ function swiped(event)
 		break;
 	}
 
-    $(".flipbox-container").flippy(
+	var controller = $(".flipbox-container");
+
+	if(controller.hasClass("swiped"))
 	{
-		color_target: "#FDFDFD",
-		direction: swipeState,
-		duration: "550",
-		light: "15",
-		verso: $("#back").html()
+		$(".flipbox-container").flippy(
+		{
+			color_target: "#F3F3F3",
+			direction: swipeState,
+			duration: "550",
+			light: "10",
+			depth: "0.1",
+			verso: $("#front").html(),
+
+			onFinish: function ()
+			{
+				$(".flipbox-container").removeClass("swiped");
+			}
+		});
+	}
+	else
+	{
+		$(".flipbox-container").flippy(
+		{
+			color_target: "#F3F3F3",
+			direction: swipeState,
+			duration: "550",
+			light: "10",
+			depth: "0.1",
+			verso: $("#back").html(),
+
+			onFinish: function ()
+			{
+				$(".flipbox-container").addClass("swiped");
+			}
+		});
+	}
+}
+
+
+$("a#sendCard").on("click", function(e)
+{
+	var confirmation = "<div id='sendConfirmation'>" +
+							"<a id='closeOverlay' href='#'>Sluiten</a>" +
+								"<div id='confirmationCon'>" +
+									"<h1>Weet je zeker dat je klaar bent?</h1>" +
+									"<p>Je staat op het punt om deze kaart naar <span>5</span> personen te versturen.</p>" +
+
+									"<ul>" +
+										"<li id='send'><a href='#'>Versturen</a></li>" +
+										"<li id='cancel'><a href='#'>Annuleren</a></li>" +
+									"</ul>" +
+								"</div>" +
+							"</div>";
+
+	$("body").prepend(overlay);
+	$("body, html").css({"overflow":"hidden", "height":"100%"});
+	$("#overlay").fadeIn(250);
+
+	$("#overlay").after(confirmation);
+	$("#sendConfirmation").animate({"opacity":"1", "margin-top":"-140.5px"}, "swing");
+
+	e.preventDefault();
+});
+
+$(document).on("click", "#sendConfirmation a#closeOverlay,  #overlay, #sendConfirmation li#cancel a", function(e)
+{
+	closeOverlay();
+	closeConfirmation();
+
+	e.preventDefault();
+});
+
+function closeConfirmation()
+{
+	$("#sendConfirmation, #cardProgressCompleted").animate({"opacity":"0", "margin-top":"-110.5px"}, "swing", function()
+	{
+		$(this).remove();
 	});
 }
+
+$(document).on("click", "#sendConfirmation li#send a", function(e)
+{
+	$("#overlay").addClass("inactive");
+
+	var progressSending = "<div id='sendingProgress'>" +
+							"<h1>Aan het versturen...</h1>" +
+
+							"<div id='progressBarSendCon'>" +
+								"<div id='progressBarSendSec'></div>" +
+							"</div>" +
+						"</div>";
+
+	var progressComplete = "<div id='cardProgressCompleted'>" +
+								"<h1>Verstuurd</h1>" +
+								"<p>Alle kaarten zijn met succes verstuurd.</p>" +
+								"<a href='stap1.php'>Nog een kaart versturen</a>" +
+							"</div>";
+
+	$("#sendConfirmation").remove();
+	$("#overlay").after(progressSending);
+
+	var randomSpeed = Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000;
+	$("#progressBarSendCon #progressBarSendSec").animate({"width":"100%"}, randomSpeed, function()
+	{
+		$("#sendingProgress").remove();
+		$("#overlay").after(progressComplete);
+		$("#overlay").removeClass("inactive");
+	});
+
+	e.preventDefault();
+});
