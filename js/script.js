@@ -111,7 +111,7 @@ $("a#gtStap4").on("click", function(e)
 	var dest = t.attr('href');
 	var	error = "<p class='error'>Vergeet geen ontvanger(s) toe te voegen!</p>";
 	$("p.error").remove();
-	
+
 	if(amountRows !== 0)
 	{
 		if (typeof(dest) !== "undefined" && dest !== "")
@@ -246,24 +246,71 @@ function closeBulkAdd()
 /*add content of individual email adding screen to table*/
 $(document).on("click", "input#iAAdd", function(e)
 {
-	var voornaam = $("input#iAFirstname").val();
-	var achternaam = $("input#iALastname").val();
-	var emailadres = $("input#iAEmail").val();
+	if($(this).hasClass("active"))
+	{		
+		$("p.error").remove();
 
-	var individualAdd = "<tr>" +
-							"<td class='checkItem'><input type='checkbox' value='check'></td>" +
-							"<td class='firstname'>"+voornaam+"</td>" +
-							"<td class='lastname'>"+achternaam+"</td>" +
-							"<td class='email'>"+emailadres+"</td>" +
-						"</tr>";
-	closeOverlay();
-	closeIndividualAdd();
+		var voornaam = $("input#iAFirstname").val();
+		var achternaam = $("input#iALastname").val();
+		var emailadres = $("input#iAEmail").val();
 
-	$("tr#emptyList").remove();
-	$("#stap3-table tr:first").after(individualAdd);
+		if(validateIndividual(voornaam, achternaam, emailadres) === false)
+		{
+			var individualAdd = "<tr>" +
+									"<td class='checkItem'><input type='checkbox' value='check'></td>" +
+									"<td class='firstname'>"+voornaam+"</td>" +
+									"<td class='lastname'>"+achternaam+"</td>" +
+									"<td class='email'>"+emailadres+"</td>" +
+								"</tr>";
+			closeOverlay();
+			closeIndividualAdd();
+
+			$("tr#emptyList").remove();
+			$("#stap3-table tr:first").after(individualAdd);
+		}
+	}
 
 	e.preventDefault();
 });
+
+function validateIndividual(voornaam, achternaam, emailadres)
+{
+	var errors = false;
+	var voornaamError = "<p id='voornaamError' class='error'>Vergeet de voornaam niet</p>";
+	var achternaamError = "<p id='achternaamError' class='error'>Vergeet de achternaam niet</p>";
+
+	var emailErrorMissing = "<p id='emailError' class='error'>Vergeet het emailadres niet</p>";
+	var emailErrorInvalid = "<p id='emailError' class='error'>Dit is geen geldig emailadres</p>";
+
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var validEmail = (re.test(emailadres));
+
+	if(voornaam.length === 0)
+	{
+		errors = true;
+		$("input#iAFirstname").before(voornaamError);
+	}
+	if(achternaam.length === 0)
+	{
+		errors = true;
+		$("input#iALastname").before(achternaamError);
+	}
+	if(emailadres.length === 0)
+	{
+		errors = true;
+		$("input#iAEmail").before(emailErrorMissing);
+	}
+	else
+	{
+		if(validEmail === false)
+		{
+			errors = true;
+			$("input#iAEmail").before(emailErrorInvalid);
+		}
+	}
+
+	return errors;
+}
 
 /*display bulk email adding screen*/
 $("a#bulkEmail").on("click", function(e)

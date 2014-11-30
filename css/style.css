@@ -504,8 +504,6 @@ ul#otherCards li.card.chose
 	-webkit-border-radius: 7.5px;
 	-moz-border-radius: 7.5px;
 	-ms-border-radius: 7.5px;
-	/*width:110px;
-	height:56.333px;*/
 }
 
 ul#otherCards li.card:nth-child(even)
@@ -653,6 +651,21 @@ p.stap2-characters span{
 /*STEP 3*/
 #stap3-buttons{
 	overflow:hidden;
+}
+
+a#downloadcsv
+{
+	position:absolute;
+	top:150px;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #656565;
+}
+
+a#downloadcsv:hover
+{
+	text-decoration: underline;
 }
 
 #stap3-buttons ul

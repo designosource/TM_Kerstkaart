@@ -6,7 +6,16 @@
 			//if file has something in it
 			if(strlen($_FILES['emails']['name']) > 0)
 			{
-				$csv = array_map('str_getcsv', file($_FILES["emails"]["tmp_name"]));
+				$fileType = $_FILES["emails"]['type'];
+
+				if('text/csv' == $fileType ||  'application/vnd.ms-excel' == $fileType)
+				{
+					$csv = array_map('str_getcsv', file($_FILES["emails"]["tmp_name"]));
+				}
+				else
+				{
+					$error = "<p class='error'>Verkeerde type file</p>";
+				}
 			}
 			else
 			{
@@ -33,7 +42,10 @@
 
 				<?php include("includes/header.inc.php") ?>
 
-				<div id="content">						
+				<div id="content">
+
+					 <a id="downloadcsv" href="testEmails.csv" target="_blank">Template downloaden</a>
+
 					<div id="stap3-buttons">
 						<ul id="emailtoevoegen">
 							<li class="addEmail firstItem"><a id="bulkEmail" class="button-email" href="#">CSV bestand importeren</a></li>
@@ -48,6 +60,12 @@
 						</ul>
 					</div>
 
+					<?php 
+					if(!empty($error))
+					{
+						echo $error;
+					}
+					 ?>
 
 					<table id="stap3-table">
 						<tbody>
