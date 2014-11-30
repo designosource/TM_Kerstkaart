@@ -23,7 +23,7 @@ Aliquam id neque eu nunc ornare imperdiet id vel justo. Fusce maximus, ante ac u
 
 					<ul id="vorige-volgende" class="clearfix">
 						<li id="left"><a class="button-vorigevolgende" href="stap1.php">Vorige stap</a></li>
-						<li id="right"><a class="button-vorigevolgende" href="stap3.php">Volgende stap</a></li>
+						<li id="right"><a id="gtStap3" class="button-vorigevolgende" href="stap3.php">Volgende stap</a></li>
 					</ul>
 				</div>
 

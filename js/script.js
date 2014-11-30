@@ -37,7 +37,7 @@ $(window).load(function()
 	if($("body").hasClass("stap2"))
 	{
 		var textContent = $(".stap2-persoonlijkbericht").val();
-		countChars(textContent);	
+		countChars(textContent);
 	}
 });
 
@@ -65,6 +65,30 @@ function countChars(textContent)
 		$("p.stap2-characters span").css({"color":"#656565"});
 	}
 }
+
+$("a#gtStap3").on("click", function(e)
+{
+	var textInput = $(".stap2-persoonlijkbericht").val().length;
+
+	var t = $(this);
+	var dest = t.attr('href');
+	var	error = "<p class='error'>Vergeet geen persoonlijk bericht te schrijven!</p>";
+	$("p.error").remove();
+	
+	if(textInput !== 0)
+	{
+		if (typeof(dest) !== "undefined" && dest !== "")
+		{
+			window.location.href = dest;
+		}
+	}
+	else
+	{
+		$("#content h1").after(error);
+	}
+
+	e.preventDefault();
+});
 
 /*check every box when "selectAll" is checked*/
 $(document).on("click", "#selectAll", function()
