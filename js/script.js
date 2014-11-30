@@ -421,6 +421,7 @@ function swiped(event)
 			onFinish: function ()
 			{
 				$(".flipbox-container").removeClass("swiped");
+				$("#nav li#center span").text("achterkant");
 			}
 		});
 	}
@@ -438,6 +439,7 @@ function swiped(event)
 			onFinish: function ()
 			{
 				$(".flipbox-container").addClass("swiped");
+				$("#nav li#center span").text("voorkant");
 			}
 		});
 	}
