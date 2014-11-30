@@ -28,7 +28,11 @@
 					<!-- add personal text here -->
 						<h1>Dag <span>John</span></h1>
 						<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When,.</p>
-						<span id="copy">© 2014 <a title="Website van Designosource" href="http://designosource.be/">designosource</a> - <a title="Website van IMD" href="http://weareimd.be/">Interactieve Multimedia Design</a></span>
+						
+					</div>
+
+					<div id="copyCon">
+					<span id="copy">© 2014 <a title="Website van Designosource" href="http://designosource.be/">designosource</a> - <a title="Website van IMD" href="http://weareimd.be/">Interactieve Multimedia Design</a></span>
 					</div>
 				</div>
 			</div>
