@@ -431,13 +431,46 @@ $(document).on("click", "a#deleteFile", function(e)
 	e.preventDefault();
 });
 
+$(document).on("click", "tr td.checkItem input", function()
+{
+    if($('tr td.checkItem input:checked').length == $('tr td.checkItem input').length)
+    {
+      $("#selectAll").prop("checked", true);
+    }
+    else
+    {
+       $("#selectAll").prop("checked", false);
+    }
+});
+
 /*delete an email*/
 $("ul#emailaanpassen li a#deleteEmail").on("click", function(e)
 {
 	if($(this).parent().hasClass("active"))
 	{
 		var checkedItem = $("tr td.checkItem input:checked").parent().parent().remove();
+		
+		var persons = [];
 
+		$("tr td.checkItem input:checkbox:not(:checked)").map(function()
+		{
+			var checkedFirstname = $(this).parent().siblings("td.firstname").text();
+			var checkedLastname = $(this).parent().siblings("td.lastname").text();
+			var checkedEmail = $(this).parent().siblings("td.email").text();
+			var person = {'voornaam': checkedFirstname, 'achternaam': checkedLastname, 'emailadres':checkedEmail};
+			persons.push(person);
+		});
+		
+		var deleteData = $.ajax(
+							{
+								type: "POST",
+								url: "ajax/deleteEmail.php",
+								data: {
+										persons: persons
+										}
+							});
+
+		
 		if($("tr td").length == 0)
 		{
 			var emptyTable = "<tr id='emptyList'>" +
@@ -504,6 +537,25 @@ $("ul#emailaanpassen li a#editEmail").on("click", function(e)
 				$("tr td.checkItem input:checked").parent().siblings("td.firstname").text(voornaamNew);
 				$("tr td.checkItem input:checked").parent().siblings("td.lastname").text(achternaamNew);
 				$("tr td.checkItem input:checked").parent().siblings("td.email").text(emailadresNew);
+
+				var persons = [];
+				$("tr td.checkItem input").map(function()
+				{
+					var checkedFirstname = $(this).parent().siblings("td.firstname").text();
+					var checkedLastname = $(this).parent().siblings("td.lastname").text();
+					var checkedEmail = $(this).parent().siblings("td.email").text();
+					var person = {'voornaam': checkedFirstname, 'achternaam': checkedLastname, 'emailadres':checkedEmail};
+					persons.push(person);
+				});
+
+				var editData = $.ajax(
+										{
+											type: "POST",
+											url: "ajax/editPerson.php",
+											data: { 
+														persons: persons
+													}
+										});
 
 				$("tr td.checkItem input:checked").prop("checked", false);
 				e.preventDefault();

@@ -21,7 +21,11 @@
 						$lastname = $person[1];
 						$email = $person[2];
 
-						$_SESSION['person'][] = array($firstname, $lastname, $email);
+						$_SESSION['person'][] = array(
+												    "voornaam" => $firstname,
+												    "achternaam" => $lastname,
+												    "emailadres" => $email
+												);
 					}
 				}
 				else
@@ -100,9 +104,9 @@
 
 								foreach($reverted as $person)
 								{
-									$firstname = $person[0];
-									$lastname = $person[1];
-									$email = $person[2];
+									$firstname = $person['voornaam'];
+									$lastname = $person['achternaam'];
+									$email = $person['emailadres'];
 
 									echo "<tr>" .
 										  	"<td class='checkItem'><input type='checkbox' value='check'></td>" .
@@ -121,32 +125,6 @@
 								  		"<td></td>" .
 								  	"</tr>";
 							}
-
-							/*if(!empty($csv))
-							{
-								foreach ($csv as $person) 
-								{
-									$firstname = $person[0];
-									$lastname = $person[1];
-									$email = $person[2];
-
-									echo "<tr>" .
-										  	"<td class='checkItem'><input type='checkbox' value='check'></td>" .
-										    "<td class='firstname'>". $firstname ."</td>" .
-										    "<td class='lastname'>". $lastname ."</td>" .
-										    "<td class='email'>". $email ."</td>" .
-										  "</tr>";
-								}
-							}
-							else
-							{
-								echo "<tr id='emptyList'>" .
-								  		"<td class='checkItem'></td>" .
-								  		"<td>Nog geen ontvangers</td>" .
-								  		"<td></td>" .
-								  		"<td></td>" .
-								  	"</tr>";
-							}*/
 
 						 ?>
 						</tbody>

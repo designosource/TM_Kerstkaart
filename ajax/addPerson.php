@@ -7,6 +7,10 @@
 		$achternaam = $_POST['achternaam'];
 		$emailadres = $_POST['emailadres'];
 
-		$_SESSION['person'][] = array($voornaam, $achternaam, $emailadres);
+		$_SESSION['person'][] = array(
+								    "voornaam" => $voornaam,
+								    "achternaam" => $achternaam,
+								    "emailadres" => $emailadres
+								);
 	}
 ?>
