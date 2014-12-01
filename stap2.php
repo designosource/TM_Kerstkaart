@@ -29,7 +29,7 @@ Aliquam id neque eu nunc ornare imperdiet id vel justo. Fusce maximus, ante ac u
 					<p class="stap2-characters"><span>500</span> karakters over</p>
 
 					<ul id="vorige-volgende" class="clearfix">
-						<li id="left"><a class="button-vorigevolgende" href="stap1.php">Vorige stap</a></li>
+						<li id="left"><a id="gbStap1" class="button-vorigevolgende" href="stap1.php">Vorige stap</a></li>
 						<li id="right"><a id="gtStap3" class="button-vorigevolgende" href="stap3.php">Volgende stap</a></li>
 					</ul>
 				</div>

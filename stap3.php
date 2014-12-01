@@ -26,8 +26,8 @@
 				{
 					$csv = array_map('str_getcsv', file($_FILES["emails"]["tmp_name"]));
 
-					foreach($csv as $person)
-					{
+					foreach(array_slice($csv, 1) as $person)
+					{						
 						$firstname = $person[0];
 						$lastname = $person[1];
 						$email = $person[2];
@@ -76,7 +76,7 @@
 
 				<div id="content">
 
-					 <a id="downloadcsv" href="testEmails.csv" target="_blank">Template downloaden</a>
+					 <a id="downloadcsv" href="kerstkaart_emails.csv" target="_blank">Template downloaden</a>
 
 					<div id="stap3-buttons">
 						<ul id="emailtoevoegen">
@@ -144,7 +144,7 @@
 
 
 					<ul id="vorige-volgende" class="clearfix">
-						<li id="left"><a class="button-vorigevolgende" href="stap2.php">Vorige stap</a></li>
+						<li id="left"><a id="gbStap2" class="button-vorigevolgende" href="stap2.php">Vorige stap</a></li>
 						<li id="right"><a id="gtStap4" class="button-vorigevolgende" href="stap4.php">Volgende stap</a></li>
 					</ul>
 				</div>

@@ -80,7 +80,7 @@ function countChars(textContent)
 }
 
 /*ERROR PREVENTIONS*/
-$("a#gtStap3").on("click", function(e)
+$("a#gtStap3, a#gbStap1").on("click", function(e)
 {
 	var textInput = $(".stap2-persoonlijkbericht").val().length;
 
@@ -126,7 +126,7 @@ $("a#gtStap3").on("click", function(e)
 	e.preventDefault();
 });
 
-$("a#gtStap4").on("click", function(e)
+$("a#gtStap4, a#gbStap2").on("click", function(e)
 {
 	var amountRows = $('table#stap3-table tr:not(#legend, #emptyList)').length;
 
