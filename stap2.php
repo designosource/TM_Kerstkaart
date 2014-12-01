@@ -1,5 +1,10 @@
 <?php 
 	session_start();
+
+	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']))
+	{
+		header("location: stap1.php");
+	}
  ?><!doctype html>
 <html lang="en">
 	<head>

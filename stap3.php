@@ -1,7 +1,18 @@
 <?php
 	session_start();
 	//session_unset($_SESSION['person']);
-
+	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']))
+	{
+		header("location: stap1.php");
+	}
+	else
+	{
+		if(empty($_SESSION['persMess']))
+		{
+			header("location: stap2.php");
+		}
+	}
+	
 	if (isset($_POST['fileToUpload']) && !empty($_POST['fileToUpload'])) 
 	{
 		if(isset($_FILES['emails']) && !empty($_FILES['emails'])) 

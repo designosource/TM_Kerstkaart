@@ -1,4 +1,25 @@
-<!DOCTYPE HTML>
+<?php 
+	session_start();
+	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']))
+	{
+		header("location: stap1.php");
+	}
+	else
+	{
+		if(empty($_SESSION['persMess']))
+		{
+			header("location: stap2.php");
+		}
+		else
+		{
+			if(empty($_SESSION['person']))
+			{
+				header("location: stap3.php");
+			}
+		}
+	}
+
+ ?><!DOCTYPE HTML>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
