@@ -97,12 +97,17 @@ html, body
 
 #backCon h1
 {
-	margin-bottom:50px;
+	margin-bottom:40px;
 }
 
 #backCon p
 {
 	line-height:35px;
+}
+
+p#senderSig
+{
+ margin-top:50px;
 }
 
 #backCon #copyCon

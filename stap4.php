@@ -68,9 +68,9 @@
 				<div id="backCon">
 					<div id="backSec">
 					<!-- add personal text here -->
-						<h1>Dag <span>John</span></h1>
+						<h1>Beste <span>[Voornaam ontvanger]</span></h1>
 						<p><?php if(!empty($_SESSION['persMess'])){ echo $_SESSION['persMess'];} ?></p>
-						
+						<p id="senderSig">[Voornaam verzender]</p>
 					</div>
 
 					<div id="copyCon">

@@ -12,16 +12,15 @@
  		$senderLastname = $_SESSION['senderLastname'];
  		$senderEmail = $_SESSION['senderEmail'];
 
+
  		$card = new Card();
  		$card->message = $perMess;
- 		//$personalMessageID = $card->SavePersonalMessage();
+ 		$personalMessageID = $card->SavePersonalMessage();
 
  		$card->senderFirstname = $senderFirstname;
 		$card->senderLastname = $senderLastname;
 		$card->senderEmailadress = $senderEmail;
 		$senderID = $card->SaveSenders();
-		echo $senderID;
-
 
  		$receivers = $_SESSION['person'];
  		foreach($receivers as $receiver)
@@ -33,7 +32,7 @@
  			$card->receiverFirstname = $personReceiverFirstname;
 			$card->receiverLastname = $personReceiverLastname;
 			$card->receiverEmailadress = $personReceiverEmail;
-			//$receiverID = $card->SaveReceivers();
+			$receiverID = $card->SaveReceivers();
  		}
  	}
  ?>
