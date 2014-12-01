@@ -92,41 +92,90 @@ $("a#gtStap3, a#gbStap1").on("click", function(e)
 	var	errorLength = "<p class='error'>Te veel karakters gebruikt</p>";
 	$("p.error").remove();
 
+	var senderFirstname = $("input#sendFirstname").val();
+	var senderLastname = $("input#sendLastname").val();
+	var senderEmail = $("input#sendEmail").val();
+
 	var personalMessage = $(".stap2-persoonlijkbericht").val();
 
-	if(textInput !== 0)
+	if(validateSender(senderFirstname, senderLastname, senderEmail) === false)
 	{
-		if(textInput <= 500)
+		if(textInput !== 0)
 		{
-			var sendData = $.ajax(
-						{
-							type: "POST",
-							url: "ajax/getMessage.php",
-							data: {
-									personalMessage: personalMessage
-									}
-						});
-
-			sendData.done(function(data)
+			if(textInput <= 500)
 			{
-				if (typeof(dest) !== "undefined" && dest !== "")
+				var sendData = $.ajax(
+							{
+								type: "POST",
+								url: "ajax/getMessage.php",
+								data: {
+										personalMessage: personalMessage,
+										senderFirstname: senderFirstname,
+										senderLastname: senderLastname,
+										senderEmail: senderEmail
+										}
+							});
+
+				sendData.done(function(data)
 				{
-					window.location.href = dest;
-				}
-			});
+					if (typeof(dest) !== "undefined" && dest !== "")
+					{
+						window.location.href = dest;
+					}
+				});
+			}
+			else
+			{
+				$("#content h1#perMessage").after(errorLength);
+			}
 		}
 		else
 		{
-			$("#content h1").after(errorLength);
+			$("#content h1#perMessage").after(error);
 		}
-	}
-	else
-	{
-		$("#content h1").after(error);
 	}
 
 	e.preventDefault();
 });
+
+function validateSender(voornaam, achternaam, emailadres)
+{
+	var errors = false;
+	var voornaamError = "<p id='voornaamError' class='error'>Vergeet uw voornaam niet</p>";
+	var achternaamError = "<p id='achternaamError' class='error'>Vergeet uw achternaam niet</p>";
+
+	var emailErrorMissing = "<p id='emailError' class='error'>Vergeet uw emailadres niet</p>";
+	var emailErrorInvalid = "<p id='emailError' class='error'>Dit is geen geldig emailadres</p>";
+
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var validEmail = (re.test(emailadres));
+
+	if(voornaam.length === 0)
+	{
+		errors = true;
+		$("#content h1#senderInfo").after(voornaamError);
+	}
+	if(achternaam.length === 0)
+	{
+		errors = true;
+		$("#content h1#senderInfo").after(achternaamError);
+	}
+	if(emailadres.length === 0)
+	{
+		errors = true;
+		$("#content h1#senderInfo").after(emailErrorMissing);
+	}
+	else
+	{
+		if(validEmail === false)
+		{
+			errors = true;
+			$("#content h1#senderInfo").after(emailErrorInvalid);
+		}
+	}
+
+	return errors;
+}
 
 $("a#gtStap4, a#gbStap2").on("click", function(e)
 {

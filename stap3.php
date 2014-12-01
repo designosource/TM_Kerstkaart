@@ -7,7 +7,7 @@
 	}
 	else
 	{
-		if(empty($_SESSION['persMess']))
+		if(empty($_SESSION['persMess']) && isset($_SESSION['senderFirstname']) && isset($_SESSION['senderLastname']) && isset($_SESSION['senderEmail']))
 		{
 			header("location: stap2.php");
 		}

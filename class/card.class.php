@@ -164,5 +164,34 @@
 				}
 			}
 		}
+
+		public function SaveSenders()
+		{
+			$db = new Db();
+			
+			$sql = "INSERT INTO sender (sender_firstname, sender_lastname, sender_email)
+				   values (
+				   			'". $db->conn->real_escape_string($this->m_ssenderFirstname)."',
+				   			'". $db->conn->real_escape_string($this->m_ssenderLastName)."',
+				   			'". $db->conn->real_escape_string($this->m_ssenderEmailadress)."'
+				   		  )";
+
+			$result = $db->conn->query($sql);
+
+			if($result)
+			{
+				$sql2 = "SELECT LAST_INSERT_ID() FROM sender order by sender_id desc limit 1";
+				$result2 = $db->conn->query($sql2);
+
+				if($result2)
+				{
+					$results = mysqli_fetch_array($result2, MYSQL_ASSOC);
+
+					$lastEntryID = $results['LAST_INSERT_ID()'];
+
+					return $lastEntryID;
+				}
+			}
+		}
 	}
  ?>

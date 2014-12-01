@@ -18,12 +18,23 @@
 				<?php include("includes/header.inc.php") ?>
 
 				<div id="content">
-					<h1>Persoonlijk bericht</h1>
 
 					<form action="#" method="POST">
-						<textarea class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()"><?php if(isset($_SESSION['persMess'])){ echo $_SESSION['persMess'];}else{ echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut mollis ipsum. Proin pharetra nibh sed lacus vestibulum, id consequat tortor euismod. Praesent mattis eleifend leo, ut auctor ligula aliquet eu. Aenean eu lacinia neque, nec aliquam purus. 
 
-Aliquam id neque eu nunc ornare imperdiet id vel justo. Fusce maximus, ante ac ultricies luctus, urna ligula ullamcorper nisl, in molestie justo metus ac lacus. Fusce tincidunt sagittis turpis, nec placerat lorem interdum quis.";} ?></textarea>
+						<div id="senderCon">
+							<h1 id="senderInfo">De verzender</h1>
+
+							<input id="sendFirstname" type="text" placeholder="Uw voornaam" value="<?php if(isset($_SESSION['senderFirstname'])){echo $_SESSION['senderFirstname'];}?>"></input>
+							<input id="sendLastname" type="text" placeholder="Uw achternaam" value="<?php if(isset($_SESSION['senderLastname'])){echo $_SESSION['senderLastname'];}?>"></input>
+							<input id="sendEmail" type="text" placeholder="Uw emailadres" value="<?php if(isset($_SESSION['senderEmail'])){echo $_SESSION['senderEmail'];}?>"></input>
+						</div>
+
+						<h1 id="perMessage">Persoonlijk bericht</h1>
+
+							<textarea class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()"><?php if(isset($_SESSION['persMess'])){ echo $_SESSION['persMess'];}else{ echo "Alles wat je kunt wensen.
+En een klein beetje meer.
+Zalig kerstfeest en
+een gelukkig Nieuwjaar!";} ?></textarea>
 					</form>
 					
 					<p class="stap2-characters"><span>500</span> karakters over</p>
