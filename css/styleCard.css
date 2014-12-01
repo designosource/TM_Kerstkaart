@@ -262,6 +262,7 @@ ul#vorige-volgende li#left a:after
     -webkit-opacity: 0;
     -moz-opacity: 0;
     -ms-opacity: 0;
+    display:none;
 }
 
 #sendConfirmation a#closeOverlay
@@ -311,6 +312,11 @@ ul#vorige-volgende li#left a:after
 	color:#656565;
 	font-family: Arial, Helvetica, sans-serif;
 	line-height:20px;
+}
+
+#sendConfirmation #confirmationCon p span
+{
+	font-weight: bold;
 }
 
 #sendConfirmation #confirmationCon ul

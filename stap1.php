@@ -1,5 +1,9 @@
 <?php 
 session_start();
+	
+	include_once('class/card.class.php');
+	$card = new Card();
+	$cards = $card->GetCards();
 
  ?><!doctype html>
 <html lang="en">
@@ -16,15 +20,19 @@ session_start();
 				<div id="content">
 					<div id="stap1-col1">
 						<h1 id="titleCard"> <?php if(isset($_SESSION['cardALT'])){ echo $_SESSION['cardALT']; } else {echo "Placeholder 1";}?></h1>
-						<div class="stap1-choosen"><img alt=" <?php if(isset($_SESSION['cardALT'])){echo $_SESSION['cardALT']; }else{echo 'Placeholder 1';}?> " src=" <?php if(isset($_SESSION['cardURL'])){ echo $_SESSION['cardURL']; } else {echo "img/placeholderImg_1.png";}?> "></div>
+						<div class="stap1-choosen"><img alt=" <?php if(isset($_SESSION['cardALT'])){echo $_SESSION['cardALT']; }else{echo 'Placeholder 1';}?> " data-id=" <?php if(isset($_SESSION['cardID'])){ echo $_SESSION['cardID'];}else{echo '1';} ?> " src=" <?php if(isset($_SESSION['cardURL'])){ echo $_SESSION['cardURL']; } else {echo "img/placeholderImg_1.png";}?> "></div>
 					</div>
 
 					<div id="stap1-col2">
 						<h1>Andere ontwerpen</h1>
 						
 						<ul id="otherCards">
-							<li class="card chose"><img alt='Placeholder 1' src="img/placeholderImg_1.png"></li>
-							<li class="card"><img alt='Placeholder 2' src="img/placeholderImg_2.png"></li>
+							<?php 
+								foreach($cards as $card)
+								{
+									echo '<li class="card"><img alt="'. $card['card_title'] .'" data-id="'.$card['card_id'].'" src="img/' . $card['card_url'] . '"></li>';
+								}
+							 ?>
 						</ul>
 					</div>
 

@@ -16,6 +16,12 @@
 			{
 				header("location: stap3.php");
 			}
+			else
+			{
+				$amountPersons = count($_SESSION['person']);
+
+				var_dump($_SESSION);
+			}
 		}
 	}
 
@@ -29,6 +35,21 @@
 	</head>
 
 	<body class="stap4">
+
+
+		<div id='sendConfirmation'>
+			<a id='closeOverlay' href='#'>Sluiten</a>
+			<div id='confirmationCon'>
+				<h1>Weet je zeker dat je klaar bent?</h1>
+				<p>Je staat op het punt om deze kaart naar <span><?php if(!empty($amountPersons)){echo $amountPersons;} ?></span> personen te versturen.</p>
+
+				<ul>
+					<li id='send'><a href='#'>Versturen</a></li>
+					<li id='cancel'><a href='#'>Annuleren</a></li>
+				</ul>
+			</div>
+		</div>
+
 
 		<div id="container">
 			<div class="flipbox-container box100">

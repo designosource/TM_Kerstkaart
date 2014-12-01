@@ -38,9 +38,11 @@ $("ul#otherCards li").on("click", function()
 
 	var image = $("img", this).attr('src');
 	var title = $("img", this).attr('alt');
+	var id = $("img", this).attr('data-id');
 
 	$(".stap1-choosen img").attr("src", image);
 	$(".stap1-choosen img").attr("alt", title);
+	$(".stap1-choosen img").attr("data-id", id);
 	$("h1#titleCard").text(title);
 });
 
@@ -577,6 +579,7 @@ $("a#gtStap2").on("click", function(e)
 {
 	var chosenCardURL = $(".stap1-choosen img").attr('src');
 	var chosenCardALT = $(".stap1-choosen img").attr('alt');
+	var chosenCardID = $(".stap1-choosen img").attr('data-id');
 
 	var t = $(this);
 	var dest = t.attr('href');
@@ -585,9 +588,10 @@ $("a#gtStap2").on("click", function(e)
 					{
 						type: "POST",
 						url: "ajax/getCard.php",
-						data: { 
+						data: {
 								chosenCardURL: chosenCardURL,
-								chosenCardALT: chosenCardALT
+								chosenCardALT: chosenCardALT,
+								chosenCardID: chosenCardID
 								}
 					});
 
@@ -673,28 +677,13 @@ function swiped(event)
 	}
 }
 
-
 $("a#sendCard").on("click", function(e)
 {
-	var confirmation = "<div id='sendConfirmation'>" +
-							"<a id='closeOverlay' href='#'>Sluiten</a>" +
-								"<div id='confirmationCon'>" +
-									"<h1>Weet je zeker dat je klaar bent?</h1>" +
-									"<p>Je staat op het punt om deze kaart naar <span>5</span> personen te versturen.</p>" +
-
-									"<ul>" +
-										"<li id='send'><a href='#'>Versturen</a></li>" +
-										"<li id='cancel'><a href='#'>Annuleren</a></li>" +
-									"</ul>" +
-								"</div>" +
-							"</div>";
-
 	$("body").prepend(overlay);
 	$("body, html").css({"overflow":"hidden", "height":"100%"});
 	$("#overlay").fadeIn(250);
 
-	$("#overlay").after(confirmation);
-	$("#sendConfirmation").animate({"opacity":"1", "margin-top":"-140.5px"}, "swing");
+	$("#sendConfirmation").css({"display":"block"}).animate({"opacity":"1", "margin-top":"-140.5px"}, "swing");
 
 	e.preventDefault();
 });
@@ -709,10 +698,17 @@ $(document).on("click", "#sendConfirmation a#closeOverlay,  #overlay, #sendConfi
 
 function closeConfirmation()
 {
-	$("#sendConfirmation, #cardProgressCompleted").animate({"opacity":"0", "margin-top":"-110.5px"}, "swing", function()
+	$("#cardProgressCompleted").animate({"opacity":"0", "margin-top":"-110.5px"}, "swing", function()
 	{
 		$(this).remove();
 	});
+
+	$("#sendConfirmation").animate({"opacity":"0", "margin-top":"-110.5px"}, "swing", function()
+	{
+		$(this).css({"display":"none"});
+	});
+
+
 }
 
 $(document).on("click", "#sendConfirmation li#send a", function(e)
