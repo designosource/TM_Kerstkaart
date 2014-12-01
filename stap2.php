@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 
-	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']))
+	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
 	{
 		header("location: stap1.php");
 	}

@@ -46,6 +46,7 @@ html, body
 	height:80%;
 	margin: -25px auto 0 auto;
 	top:10%;
+	z-index:10;
 }
 
 #cardCon, #backCon

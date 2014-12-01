@@ -715,6 +715,17 @@ $(document).on("click", "#sendConfirmation li#send a", function(e)
 {
 	$("#overlay").addClass("inactive");
 
+	var saveData = $.ajax(
+					{
+						type: "POST",
+						url: "ajax/saveData.php"
+					});
+
+	saveData.done(function(data)
+	{
+		console.log(data);
+	});
+
 	var progressSending = "<div id='sendingProgress'>" +
 							"<h1>Aan het versturen...</h1>" +
 
@@ -729,7 +740,8 @@ $(document).on("click", "#sendConfirmation li#send a", function(e)
 								"<a href='stap1.php'>Nog een kaart versturen</a>" +
 							"</div>";
 
-	$("#sendConfirmation").remove();
+	$("#sendConfirmation").css({"display":"none", "opacity":"0", "margin-top":"-110.5px"});
+
 	$("#overlay").after(progressSending);
 
 	var randomSpeed = Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000;
