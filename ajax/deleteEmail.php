@@ -5,7 +5,7 @@ if(isset($_POST['persons']))
 {
 	$persons = $_POST['persons'];
 
-	session_unset($_SESSION['person']);
+	unset($_SESSION['person']);
 
 	foreach($persons as $person)
 	{
@@ -26,6 +26,6 @@ if(isset($_POST['persons']))
 }
 else
 {
-	session_unset($_SESSION['person']);
+	unset($_SESSION['person']);
 }
  ?>

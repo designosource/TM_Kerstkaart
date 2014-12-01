@@ -86,14 +86,17 @@ $("a#gtStap3").on("click", function(e)
 
 	var t = $(this);
 	var dest = t.attr('href');
-	var	error = "<p class='error'>Vergeet geen persoonlijk bericht te schrijven!</p>";
+	var	error = "<p class='error'>Vergeet geen persoonlijk bericht te schrijven</p>";
+	var	errorLength = "<p class='error'>Te veel karakters gebruikt</p>";
 	$("p.error").remove();
 
 	var personalMessage = $(".stap2-persoonlijkbericht").val();
 
 	if(textInput !== 0)
 	{
-		var sendData = $.ajax(
+		if(textInput <= 500)
+		{
+			var sendData = $.ajax(
 						{
 							type: "POST",
 							url: "ajax/getMessage.php",
@@ -102,13 +105,18 @@ $("a#gtStap3").on("click", function(e)
 									}
 						});
 
-		sendData.done(function(data)
-		{
-			if (typeof(dest) !== "undefined" && dest !== "")
+			sendData.done(function(data)
 			{
-				window.location.href = dest;
-			}
-		});
+				if (typeof(dest) !== "undefined" && dest !== "")
+				{
+					window.location.href = dest;
+				}
+			});
+		}
+		else
+		{
+			$("#content h1").after(errorLength);
+		}
 	}
 	else
 	{
