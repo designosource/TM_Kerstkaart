@@ -174,7 +174,69 @@
 		{
 			echo "localhost/card.php?cid=".$cardID."&sid=".$senderID."&ric=".$receiverID;
 			//localhost/card.php?cid=2&sid=7&ric=36
+			//http://localhost/TM_Kerstkaarten/TM_Kerstkaart/card.php?cid=2&sid=7&ric=36
 			
 		}
+
+		public function GetCardSent($id)
+		{
+			$db = new Db();
+
+			$sql = "SELECT * FROM card WHERE card_id=$id";
+
+			$result = $db->conn->query($sql);
+
+			if($result)
+			{
+				$rows = array();
+				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+				{
+				    $rows[] = $row;
+				}
+				return $rows;
+				
+			}
+		}
+
+		public function GetSenderSent($id)
+		{
+			$db = new Db();
+
+			$sql = "SELECT * FROM sender WHERE sender_id=$id";
+
+			$result = $db->conn->query($sql);
+
+			if($result)
+			{
+				$rows = array();
+				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+				{
+				    $rows[] = $row;
+				}
+				return $rows;
+				
+			}
+		}
+
+		public function GetReceiverSent($id)
+		{
+			$db = new Db();
+
+			$sql = "SELECT * FROM receiver WHERE receiver_id=$id";
+
+			$result = $db->conn->query($sql);
+
+			if($result)
+			{
+				$rows = array();
+				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+				{
+				    $rows[] = $row;
+				}
+				return $rows;
+				
+			}
+		}
+
 	}
  ?>

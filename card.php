@@ -1,7 +1,21 @@
 <?php 
 	session_start();
 	
+	if(!empty($_GET)) 
+	{
+		$cardID = $_GET['cid'];
+		$senderID = $_GET['sid'];
+		$receiverID = $_GET['ric'];
 
+		include_once('class/card.class.php');
+		$card = new Card();
+		$cardInfo = $card->GetCardSent($cardID);
+		$senderInfo = $card->GetSenderSent($senderID);
+		$receiverInfo = $card->GetReceiverSent($receiverID);
+
+		var_dump($receiverInfo);
+	}
+	
  ?><!DOCTYPE HTML>
 <html lang="en">
 	<head>
