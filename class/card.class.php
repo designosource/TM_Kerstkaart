@@ -111,31 +111,6 @@
 			}
 		}
 
-		public function SavePersonalMessage()
-		{
-			$db = new Db();
-			
-			$sql = "INSERT INTO personaltext (personaltext_message)
-				   values ('". $db->conn->real_escape_string($this->m_sMessage)."')";
-
-			$result = $db->conn->query($sql);
-
-			if($result)
-			{
-				$sql2 = "SELECT LAST_INSERT_ID() FROM personaltext order by personaltext_id desc limit 1";
-				$result2 = $db->conn->query($sql2);
-
-				if($result2)
-				{
-					$results = mysqli_fetch_array($result2, MYSQL_ASSOC);
-
-					$lastEntryID = $results['LAST_INSERT_ID()'];
-
-					return $lastEntryID;
-				}
-			}
-		}
-
 		public function SaveReceivers()
 		{
 			$db = new Db();
@@ -169,11 +144,12 @@
 		{
 			$db = new Db();
 			
-			$sql = "INSERT INTO sender (sender_firstname, sender_lastname, sender_email)
+			$sql = "INSERT INTO sender (sender_firstname, sender_lastname, sender_email, sender_message)
 				   values (
 				   			'". $db->conn->real_escape_string($this->m_ssenderFirstname)."',
 				   			'". $db->conn->real_escape_string($this->m_ssenderLastName)."',
-				   			'". $db->conn->real_escape_string($this->m_ssenderEmailadress)."'
+				   			'". $db->conn->real_escape_string($this->m_ssenderEmailadress)."',
+				   			'". $db->conn->real_escape_string($this->m_sMessage)."'
 				   		  )";
 
 			$result = $db->conn->query($sql);
@@ -192,6 +168,13 @@
 					return $lastEntryID;
 				}
 			}
+		}
+
+		public function SendCard($cardID, $senderID, $receiverID)
+		{
+			echo "localhost/card.php?cid=".$cardID."&sid=".$senderID."&ric=".$receiverID;
+			//localhost/card.php?cid=2&sid=7&ric=36
+			
 		}
 	}
  ?>

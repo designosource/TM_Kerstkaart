@@ -5,21 +5,20 @@
  		include_once('../class/card.class.php');
 
  		$cardID = $_SESSION['cardID'];
- 		$perMess = $_SESSION['persMess'];
 
- 
  		$senderFirstname = $_SESSION['senderFirstname'];
  		$senderLastname = $_SESSION['senderLastname'];
  		$senderEmail = $_SESSION['senderEmail'];
+ 		$perMess = $_SESSION['persMess'];
 
-
+ 
  		$card = new Card();
- 		$card->message = $perMess;
- 		$personalMessageID = $card->SavePersonalMessage();
+ 		/*$personalMessageID = $card->SavePersonalMessage();*/
 
  		$card->senderFirstname = $senderFirstname;
 		$card->senderLastname = $senderLastname;
 		$card->senderEmailadress = $senderEmail;
+ 		$card->message = $perMess;
 		$senderID = $card->SaveSenders();
 
  		$receivers = $_SESSION['person'];
@@ -33,6 +32,8 @@
 			$card->receiverLastname = $personReceiverLastname;
 			$card->receiverEmailadress = $personReceiverEmail;
 			$receiverID = $card->SaveReceivers();
+
+			$card->SendCard($cardID, $senderID, $receiverID);
  		}
  	}
  ?>

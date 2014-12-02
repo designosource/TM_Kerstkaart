@@ -3,7 +3,7 @@
 
 	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
 	{
-		header("location: stap1.php");
+		header("location: index.php");
 	}
  ?><!doctype html>
 <html lang="en">
@@ -40,7 +40,7 @@ een gelukkig Nieuwjaar!";} ?></textarea>
 					<p class="stap2-characters"><span>500</span> karakters over</p>
 
 					<ul id="vorige-volgende" class="clearfix">
-						<li id="left"><a id="gbStap1" class="button-vorigevolgende" href="stap1.php">Vorige stap</a></li>
+						<li id="left"><a id="gbStap1" class="button-vorigevolgende" href="index.php">Vorige stap</a></li>
 						<li id="right"><a id="gtStap3" class="button-vorigevolgende" href="stap3.php">Volgende stap</a></li>
 					</ul>
 				</div>

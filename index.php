@@ -1,37 +1,54 @@
-<!doctype html>
+<?php 
+session_start();
+	
+	include_once('class/card.class.php');
+	$card = new Card();
+	$cards = $card->GetCards();
+
+ ?><!doctype html>
 <html lang="en">
 	<head>
 		<?php include("includes/head.inc.php") ?>
 	</head>
 
-	<body>
+	<body class="stap1">
+		<div id="preCon">
+			<div id="container">
 
-		<div id="login-container">
-			<section id="login-header">
-				<a href="http://www.thomasmore.be/" id="login-logo">Thomas More Hogeschool</a>
-			</section>
+				<?php include("includes/header.inc.php") ?>
 
-			<section id="login-content">
-				<form action="#" method="POST">
-					<input class="login-input unummer" type="text" name="unummer" placeholder="U-nummer">
-					<input class="login-input wachtwoord" type="password" name="wachtwoord" placeholder="Wachtwoord">
-
-					<div id="checkCon">
-						<input class="login-check" id="rememberMe" type="checkbox" name="onthouden" value="onthouden">
-						<label for="rememberMe">Onthoud mij</label>
+				<div id="content">
+					<div id="stap1-col1">
+						<h1 id="titleCard"> <?php if(isset($_SESSION['cardALT'])){ echo $_SESSION['cardALT']; } else {echo "Placeholder 1";}?></h1>
+						<div class="stap1-choosen"><img alt=" <?php if(isset($_SESSION['cardALT'])){echo $_SESSION['cardALT']; }else{echo 'Placeholder 1';}?> " data-id=" <?php if(isset($_SESSION['cardID'])){ echo $_SESSION['cardID'];}else{echo '1';} ?> " src=" <?php if(isset($_SESSION['cardURL'])){ echo $_SESSION['cardURL']; } else {echo "img/placeholderImg_1.png";}?> "></div>
 					</div>
 
-					<input class="login-button" type="submit" value="Aanmelden">
-				</form>
-			</section>
+					<div id="stap1-col2">
+						<h1>Andere ontwerpen</h1>
+						
+						<ul id="otherCards">
+							<?php 
+								foreach($cards as $card)
+								{
+									echo '<li class="card"><img alt="'. $card['card_title'] .'" data-id="'.$card['card_id'].'" src="img/' . $card['card_url'] . '"></li>';
+								}
+							 ?>
+						</ul>
+					</div>
 
-			<section id="login-footer">
-				<a href="#">Login probleem?</a>
-			</section>
 
-			<p id="login-copyright">&copy; Thomas More | <a href="#">Gebruiksvoorwaarden &amp; Privacy</a></p>
+
+					<ul id="vorige-volgende" class="clearfix">
+						<li id="right"><a id="gtStap2" class="button-vorigevolgende" href="stap2.php">Volgende stap</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<?php include("includes/footer.inc.php"); ?>
+			
 		</div>
-
+	
 		<?php include("includes/scripts.inc.php"); ?>
 	</body>
 </html>

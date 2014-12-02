@@ -3,7 +3,7 @@
 	//session_unset($_SESSION['person']);
 	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
 	{
-		header("location: stap1.php");
+		header("location: index.php");
 	}
 	else
 	{

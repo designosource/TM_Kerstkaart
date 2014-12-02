@@ -2,7 +2,7 @@
 	session_start();
 	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
 	{
-		header("location: stap1.php");
+		header("location: index.php");
 	}
 	else
 	{
@@ -20,7 +20,7 @@
 			{
 				$amountPersons = count($_SESSION['person']);
 
-				var_dump($_SESSION);
+				//var_dump($_SESSION);
 			}
 		}
 	}
@@ -70,11 +70,11 @@
 					<!-- add personal text here -->
 						<h1>Beste <span>[Voornaam ontvanger]</span></h1>
 						<p><?php if(!empty($_SESSION['persMess'])){ echo $_SESSION['persMess'];} ?></p>
-						<p id="senderSig">[Voornaam verzender]</p>
+						<p id="senderSig"><?php if(!empty($_SESSION['senderFirstname'])){echo $_SESSION['senderFirstname'];}else{echo "[Voornaam verzender]";} ?></p>
 					</div>
 
 					<div id="copyCon">
-					<span id="copy">© 2014 <a title="Website van Designosource" href="http://designosource.be/">designosource</a> - <a title="Website van IMD" href="http://weareimd.be/">Interactieve Multimedia Design</a></span>
+					<span id="copy">&copy; <a href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a href="http://designosource.be/">Designosource</a> - Studenten van <a href="http://weareimd.be/">Interactieve Multimedia Design</a></span>
 					</div>
 				</div>
 			</div>
