@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	
-	if(!empty($_GET)) 
+	if(!empty($_GET['cid']) && !empty($_GET['sid']) && !empty($_GET['ric'])) 
 	{
 		$cardID = $_GET['cid'];
 		$senderID = $_GET['sid'];
@@ -13,7 +13,14 @@
 		$senderInfo = $card->GetSenderSent($senderID);
 		$receiverInfo = $card->GetReceiverSent($receiverID);
 
-		var_dump($receiverInfo);
+		if(empty($cardInfo) || empty($senderInfo) || empty($receiverInfo))
+		{
+			header("location: index.php");
+		}
+	}
+	else
+	{
+		header("location: index.php");
 	}
 	
  ?><!DOCTYPE HTML>
@@ -29,13 +36,13 @@
 
 		<div id="container">
 			<div class="flipbox-container box100">
-			    <div id="cardCon" style="background-image: url('')">
+			    <div id="cardCon" style="background-image: url('img/<?php echo $cardInfo['card_url'];?>')">
 			    	<!-- Add poem here -->
 			    </div>
 		   	</div>
 
 			<div id="front" style="display:none;">
-				<div id="cardCon" style="background-image: url('')">
+				<div id="cardCon" style="background-image: url('img/<?php echo $cardInfo['card_url'];?>')">
 			    	<!-- Add poem here -->
 			    </div>
 			</div>
@@ -44,9 +51,9 @@
 				<div id="backCon">
 					<div id="backSec">
 					<!-- add personal text here -->
-						<h1>Beste <span>[Voornaam ontvanger]</span></h1>
-						<p>message</p>
-						<p id="senderSig">[Voornaam verzender]</p>
+						<h1>Beste <span><?php echo $receiverInfo['receiver_firstname'];?></span></h1>
+						<p><?php echo $senderInfo['sender_message']; ?></p>
+						<p id="senderSig"><?php echo $senderInfo['sender_firstname'];?></p>
 					</div>
 
 					<div id="copyCon">
@@ -59,7 +66,7 @@
 		    <div id="nav">
 		    	<ul id="vorige-volgende">
 					<li id="center"><h1>Veeg over de kaart om de <span>achterkant</span> te zien</h1></li>
-					<li id="right"><a id="appreciate" href="#">Bedank</a></li>
+					<li id="right" class="appreciate"><a href="#">Bedank <?php echo $senderInfo['sender_firstname'];?></a></li>
 				</ul>
 			</div>
 		</div>

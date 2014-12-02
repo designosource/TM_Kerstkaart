@@ -188,13 +188,9 @@
 
 			if($result)
 			{
-				$rows = array();
-				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
-				{
-				    $rows[] = $row;
-				}
-				return $rows;
-				
+				$results = mysqli_fetch_array($result, MYSQL_ASSOC);
+
+				return $results;
 			}
 		}
 
@@ -208,13 +204,9 @@
 
 			if($result)
 			{
-				$rows = array();
-				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
-				{
-				    $rows[] = $row;
-				}
-				return $rows;
-				
+				$results = mysqli_fetch_array($result, MYSQL_ASSOC);
+
+				return $results;
 			}
 		}
 
@@ -228,13 +220,9 @@
 
 			if($result)
 			{
-				$rows = array();
-				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
-				{
-				    $rows[] = $row;
-				}
-				return $rows;
-				
+				$results = mysqli_fetch_array($result, MYSQL_ASSOC);
+
+				return $results;
 			}
 		}
 

@@ -453,3 +453,14 @@ ul#vorige-volgende li#left a:after
 	text-decoration: none;
 	font-family: 'texgyreadventorregular';
 }
+
+#nav ul li#right, #nav ul li#left.appreciate
+{
+	width:auto;
+	padding:0 30px;
+}
+
+ul#vorige-volgende li.appreciate a:after
+{
+	content:none;
+}
