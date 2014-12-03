@@ -2,9 +2,9 @@
 	class Db
 	{
 		private $m_sHost = "localhost";
-		private $m_sUser = "root";
-		private $m_sPassword = "";
-		private $m_sDatabase = "tmecards";
+		private $m_sUser = "creative_kristof";
+		private $m_sPassword = "gluco";
+		private $m_sDatabase = "creative_ecards";
 
 			public function __construct()
 			{

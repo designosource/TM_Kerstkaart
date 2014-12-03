@@ -33,7 +33,7 @@
 			$card->receiverEmailadress = $personReceiverEmail;
 			$receiverID = $card->SaveReceivers();
 
-			$card->SendCard($cardID, $senderID, $receiverID);
+			$sendmail = $card->SendCard($cardID, $senderID, $receiverID);
  		}
  	}
  ?>

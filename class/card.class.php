@@ -1,5 +1,6 @@
 <?php 
 	include_once('db.class.php');
+	require_once('class.phpmailer.php');
 
 	Class Card
 	{
@@ -172,10 +173,73 @@
 
 		public function SendCard($cardID, $senderID, $receiverID)
 		{
-			echo "localhost/card.php?cid=".$cardID."&sid=".$senderID."&ric=".$receiverID;
+			/*$cardLink = "http://ecard.thomasmore.be/card.php?cid=".$cardID."&sid=".$senderID."&ric=".$receiverID;
+			echo $this->m_sreceiverEmailadress;
+			echo $cardLink;*/
+
 			//localhost/card.php?cid=2&sid=7&ric=36
 			//http://localhost/TM_Kerstkaarten/TM_Kerstkaart/card.php?cid=2&sid=7&ric=36
-			
+			//http://ecard.thomasmore.be/card.php?cid=2&sid=6&ric=40
+
+
+			/*$to = $this->m_sreceiverEmailadress;
+			$subject = "Je hebt een kerstkaart ontvangen van ".$this->m_ssenderFirstname." ".$this->m_ssenderLastName;
+			$header = "From: Thomas More <info@thomasmore.be>\r\n";
+			$header .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+			$header .= "MIME-Version: 1.0\r\n";
+			$header .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+			$message = '<html><body>';
+			$message .= '<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="background-repeat: no-repeat; background-size: cover; border-collapse: collapse; background-color: #ef403e; background-attachment: fixed; background-position: top center; width: 100%;">
+					            <tr>
+					                <td align="center" valign="top">
+					                    <table>
+					                    	<a href="'.$cardLink.'">Bekijk je kerstkaart</a>
+					                    </table>
+					                </td>
+					            </tr>
+					        </table>';
+			$message .= '</body></html>';
+					
+			$confirmMail = mail($to, $subject, $message, $header);*/
+
+
+
+
+			$mail = new PHPMailer();
+
+			//$mail->IsSMTP();                                      // set mailer to use SMTP
+			$mail->IsSendmail();
+
+			$mail->SMTPAuth = false;
+			$mail->Host = "10.151.11.101";
+
+			$mail->From = "r0364401@student.thomasmore.be";
+			$mail->FromName = "Kristof";
+			$mail->AddAddress("r0364401@student.thomasmore.be", "Kristof Van Espen");
+
+			$mail->WordWrap = 50;                                 // set word wrap to 50 characters
+			$mail->IsHTML(true);                                  // set email format to HTML
+
+			$mail->Subject = "Here is the subject";
+			$mail->Body    = "This is the HTML message body <b>in bold!</b>";
+			$mail->AltBody = "This is the body in plain text for non-HTML mail clients";
+
+			if($mail->Send())
+			{
+			    echo json_encode(array(
+			        "error" => false,
+			        "message"=> "You have successfully sent"
+			    ));
+			} 
+			else 
+			{
+			    echo json_encode(array(
+			        "error" => true,
+			        "message"=> $mail->ErrorInfo
+			    ));
+
+			};
 		}
 
 		public function GetCardSent($id)

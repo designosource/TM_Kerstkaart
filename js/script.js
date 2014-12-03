@@ -772,7 +772,8 @@ $(document).on("click", "#sendConfirmation li#send a", function(e)
 
 	saveData.done(function(data)
 	{
-		console.log(data);
+		var persedData = JSON.parse(data);
+		console.log(persedData);
 	});
 
 	var progressSending = "<div id='sendingProgress'>" +
