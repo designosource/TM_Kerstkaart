@@ -1,18 +1,23 @@
-html, body, svg { height: 100%; width: 100%; margin: 0; }
+
 
 
 .svg-snowglobe
 {
   z-index: 100;
-  position: fixed;
-  top: 25%;
-  left: -15%;
+  margin-top: 20%;
+  position: absolute;
 }
 
 .svg-snowglobe .snow { 
   fill: #ffffff; 
   fill-opacity: 0;
   
+}
+
+.globe
+{
+  position: absolute;
+  margin-top: 60%;
 }
 
 #globeClipPath > circle
