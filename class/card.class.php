@@ -216,7 +216,7 @@
 
 			$mail->From = "krisvanespen@hotmail.com";
 			$mail->FromName = "Kristof";
-			$mail->AddAddress("jille.floridor@thomasmore.be", "Jille Floridor");
+			$mail->AddAddress("lissasleeckx@telent.be", "Lissa");
 
 			$mail->WordWrap = 50;                                 // set word wrap to 50 characters
 			$mail->IsHTML(true);                                  // set email format to HTML
