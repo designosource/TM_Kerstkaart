@@ -34,6 +34,25 @@
 
 	<body>
 
+		<div id='overlay'></div>
+
+		<div id="appreciateCon">
+			<a id='closeOverlay' href='#'>Sluiten</a>
+
+			<div id="appreciateSec">
+				<h1>Bedank <span><?php echo $senderInfo['sender_firstname'] . " " . $senderInfo['sender_lastname'];?></span></h1>
+
+				<form action="#" method="POST">
+					<textarea placeholder="Uw persoonlijk bericht" name="persoonlijkbericht"></textarea>
+				</form>
+
+				<ul>
+					<li id='send'><a href='#'>Versturen</a></li>
+					<li id='cancel'><a href='#'>Annuleren</a></li>
+				</ul>
+			</div>
+		</div>
+
 		<div id="container">
 			<div class="flipbox-container box100">
 			    <div id="cardCon" style="background-image: url('img/<?php echo $cardInfo['card_url'];?>')">

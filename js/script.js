@@ -804,3 +804,11 @@ $(document).on("click", "#sendConfirmation li#send a", function(e)
 
 	e.preventDefault();
 });
+
+$("li.appreciate a").on("click", function(e)
+{
+	$("body").prepend(overlay);
+	$("#overlay").fadeIn(250);
+	
+	e.preventDefault();
+});
