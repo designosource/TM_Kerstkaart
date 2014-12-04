@@ -1,0 +1,3 @@
+
+path .globe = is het zwart en hebben we uiteindelijk niet nodig
+svg-snowglobe probeer ik te positioneren met behulp van margins of position relative/absolute/fixed, maar wat ik ook probeer het probleem blijft dus dat als dat tijdens het schalen de verhoudingen niet behoudt de sneeuw volledig verschuift.
