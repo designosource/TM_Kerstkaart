@@ -810,11 +810,32 @@ $("li.appreciate a").on("click", function(e)
 	$("body").prepend(overlay);
 	$("#overlay").fadeIn(250);
 
+	$("#appreciateCon").css({"display":"block"}).animate({"opacity":"1", "margin-top":"-166px"}, "swing");
+
+	e.preventDefault();
+});
+
+$(document).on("click", "#appreciateCon ul li#cancel a, #appreciateCon a#closeOverlay, #overlay", function(e)
+{
+	closeOverlay();
+
+	$("#appreciateCon").animate({"opacity":"0", "margin-top":"-136px"}, "swing", function()
+	{
+		$(this).css({"display":"none"});
+	});
+
+	$("#sentAppreciation").animate({"opacity":"0", "margin-top":"-96px"}, "swing", function()
+	{
+		$(this).remove();
+	});
+
 	e.preventDefault();
 });
 
 $("#appreciateCon li#send a").on("click", function(e)
 {
+	$("p.error").remove();
+
 	var inputText = $("form textarea#appreciateText").val();
 	if(inputText.length !== 0)
 	{
@@ -827,7 +848,7 @@ $("#appreciateCon li#send a").on("click", function(e)
 		var receiverlastname = $("form textarea#appreciateText").attr("data-receiverlastname");
 		var receiveremail = $("form textarea#appreciateText").attr("data-receiveremail");
 		
-		var sendData = $.ajax(
+		var sendMail = $.ajax(
 							{
 								type: "POST",
 								url: "ajax/sendAppreciation.php",
@@ -844,14 +865,24 @@ $("#appreciateCon li#send a").on("click", function(e)
 										}
 							});
 
-		sendData.done(function(data)
+		sendMail.done(function(data)
 		{
-			console.log(data);
+			var succesMessage = "<div id='sentAppreciation'>" +
+									"<a id='closeOverlay' href='#'>Sluiten</a>" +
+									"<h1>Verstuurd</h1>" +
+									"<p>Je bericht is met succes verstuurd.</p>" +
+								"</div>";
+
+			$("#appreciateCon").css({"display":"none", "opacity":"0", "margin-top":"-136px"});
+
+			$("#overlay").after(succesMessage);
+			$("form textarea#appreciateText").val("");
 		});
-
-
-		console.log("Sent by: " + senderFirstname + " " + senderLastname + " " + senderemail);
-		console.log("Received by: " + receiverfirstname + " " + receiverlastname + " " + receiveremail);
+	}
+	else
+	{
+		var	error = "<p class='error'>Vergeet geen bericht te schrijven</p>";
+		$("#appreciateSec h1").after(error);
 	}
 	
 	e.preventDefault();

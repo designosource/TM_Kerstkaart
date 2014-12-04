@@ -53,7 +53,7 @@
 
 		<div id="container">
 			<div class="flipbox-container box100">
-			    <div id="cardCon" style="background-image: url('<?php if(!empty($_SESSION['cardURL'])){echo $_SESSION['cardURL'];} ?>')">
+			    <div id="cardCon">
 			    	<!-- Add poem here -->
 			    	<?php 
 			    		include "/TM_ecard1/index.php";
@@ -62,7 +62,7 @@
 		   	</div>
 
 			<div id="front" style="display:none;">
-				<div id="cardCon" style="background-image: url('<?php if(!empty($_SESSION['cardURL'])){echo $_SESSION['cardURL'];} ?>')">
+				<div id="cardCon">
 			    	<!-- Add poem here -->
 					<?php 
 			    		include "/TM_ecard1/index.php";

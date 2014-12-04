@@ -216,7 +216,7 @@
 
 			$mail->From = "krisvanespen@hotmail.com";
 			$mail->FromName = "Kristof";
-			$mail->AddAddress("lissasleeckx@telent.be", "Lissa");
+			$mail->AddAddress("lissasleeckx@telenet.be", "Lissa");
 
 			$mail->WordWrap = 50;                                 // set word wrap to 50 characters
 			$mail->IsHTML(true);                                  // set email format to HTML
@@ -288,6 +288,21 @@
 
 				return $results;
 			}
+		}
+
+		public function SendAppreciation()
+		{
+			/*
+			$this->m_ssenderFirstname;
+			$this->m_ssenderLastName;
+			$this->m_ssenderEmailadress;
+
+			$this->m_sreceiverFirstname;
+			$this->m_sreceiverLastName;
+			$this->m_sreceiverEmailadress;
+
+			$this->m_sMessage;
+			*/
 		}
 
 	}
