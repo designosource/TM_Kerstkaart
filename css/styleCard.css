@@ -278,7 +278,7 @@ ul#vorige-volgende li#left a:after
     display:none;
 }
 
-#sendConfirmation a#closeOverlay, #appreciateCon a#closeOverlay
+#sendConfirmation a#closeOverlay, #appreciateCon a#closeOverlay, #sentAppreciation a#closeOverlay
 {
 	position:absolute;
 	top:0;
@@ -309,7 +309,7 @@ ul#vorige-volgende li#left a:after
 	width:270px;
 }
 
-#sendConfirmation #confirmationCon h1, #sendingProgress h1, #cardProgressCompleted h1 
+#sendConfirmation #confirmationCon h1, #sendingProgress h1, #cardProgressCompleted h1, #sentAppreciation h1 
 {
 	text-align: center;
 	color: #303030;
@@ -318,7 +318,7 @@ ul#vorige-volgende li#left a:after
 	margin:0;
 }
 
-#sendConfirmation #confirmationCon p, #cardProgressCompleted p
+#sendConfirmation #confirmationCon p, #cardProgressCompleted p, #sentAppreciation p
 {
 	margin-top:15px;
 	font-size: 14px;
@@ -364,6 +364,11 @@ ul#vorige-volgende li#left a:after
 	-ms-border-radius: 3px;
 }
 
+#appreciateCon #appreciateSec ul li#send a
+{
+	display:block;
+}
+
 #sendConfirmation #confirmationCon ul li a, #appreciateCon #appreciateSec ul li a
 {
 	line-height:28px;
@@ -381,7 +386,7 @@ ul#vorige-volgende li#left a:after
 	color: #656565;
 }
 
-#sendingProgress, #cardProgressCompleted
+#sendingProgress, #cardProgressCompleted, #sentAppreciation
 {
 	position:absolute;
 	z-index:12;
@@ -403,9 +408,14 @@ ul#vorige-volgende li#left a:after
     height:135px;
 }
 
- #sendingProgress h1, #cardProgressCompleted h1
+ #sendingProgress h1, #cardProgressCompleted h1, #sentAppreciation h1
  {
  	margin-top:45px;
+ }
+
+ #sentAppreciation h1
+ {
+ 	margin-top:30px;
  }
 
 #progressBarSendCon
@@ -431,15 +441,20 @@ ul#vorige-volgende li#left a:after
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
 }
-#cardProgressCompleted
+#cardProgressCompleted, #sentAppreciation
 {
 	height:auto;
 }
 
-#cardProgressCompleted p
+#cardProgressCompleted p, #sentAppreciation p
 {
 	text-align: center;
 	line-height: 0px
+}
+
+#sentAppreciation p
+{
+	margin-bottom:30px;
 }
 
 #cardProgressCompleted a
@@ -464,6 +479,11 @@ ul#vorige-volgende li#left a:after
 #nav ul li#right.appreciate
 {
 	width:auto;
+}
+
+#nav ul li#right.appreciate a
+{
+	width:auto;
 	padding:0 30px;
 }
 
@@ -474,17 +494,17 @@ ul#vorige-volgende li.appreciate a:after
 
 #appreciateCon
 {
-	display: block;
-	opacity: 1;
-    -webkit-opacity:1;
-    -moz-opacity: 1;
-    -ms-opacity: 1;
+	display: none;
+	opacity: 0;
+    -webkit-opacity:0;
+    -moz-opacity: 0;
+    -ms-opacity: 0;
     width:70%;
     height:auto;
     margin:0;
     left:15%;
     top:50%;
-    margin-top:-166px;
+    margin-top:-136px;
 }
 
 #appreciateSec
@@ -536,4 +556,11 @@ ul#vorige-volgende li.appreciate a:after
 	width:260px;
 	margin-left:auto;
 	margin-right:auto;
+}
+
+p.error
+{
+	font-family: Arial, Helvetica, sans-serif;
+	color:#EF403E;
+	font-size: 14px;
 }

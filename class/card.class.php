@@ -1,6 +1,5 @@
 <?php 
 	include_once('db.class.php');
-	require_once('class.phpmailer.php');
 
 	Class Card
 	{
@@ -203,43 +202,118 @@
 					
 			$confirmMail = mail($to, $subject, $message, $header);*/
 
-
-
-
+			require_once('class.phpmailer.php');
 			$mail = new PHPMailer();
-
-			//$mail->IsSMTP();                                      // set mailer to use SMTP
-			$mail->IsSendmail();
+			$mail->IsSMTP();
 
 			$mail->SMTPAuth = false;
 			$mail->Host = "10.151.11.101";
+			$mail->Port = 25;
 
-			$mail->From = "krisvanespen@hotmail.com";
-			$mail->FromName = "Kristof";
-			$mail->AddAddress("lissasleeckx@telenet.be", "Lissa");
+			$emailbody = '<html><body>
+						        <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse; background-color: #F3F3F3; font-family: font-family: Arial, Helvetica, sans-serif;">
+						            <tr>
+						                <td align="center" valign="top">
+						                    <table border="0" cellpadding="20" cellspacing="0" width="550" id="emailContainer" style="position:relative; padding-bottom:25px;">
+						                        <tr>
+						                            <td align="center" valign="top">
 
-			$mail->WordWrap = 50;                                 // set word wrap to 50 characters
-			$mail->IsHTML(true);                                  // set email format to HTML
+												  		<table class="container" id="info" style="width: 100%; background-color: #FAFAFA; border-radius: 5px; height: 75px;">
 
-			$mail->Subject = "Here is the subject";
-			$mail->Body    = "This is the HTML message body <b>in bold!</b>";
-			$mail->AltBody = "This is the body in plain text for non-HTML mail clients";
+												  			<tbody style="width:100%;">
+												  				<tr>
+												  					<td>
+												  							<table style="padding-top: 30px; padding-right: 30px; padding-bottom: 25px; padding-left: 30px; width:100%;">
+												  								<tbody>
+												  									<tr>
+												  										<td style="width:45%;">
+												  											<img alt="" style="width:125px; height:50px;" src="http://ecard.thomasmore.be/img/TM_logo_mail.png"></img>
+												  										</td>
+												  									</tr>
+												  								</tbody>
+												  							</table>
+												  					</td>
+												  				</tr>
+												  			</tbody>
 
-			if($mail->Send())
+												  			<tbody style="background-color:#fff; width:100%;">
+												  				<tr>
+												  					<td>
+												  							<table style="padding-right: 30px; padding-left: 30px; width:100%;">
+												  								<tbody>
+												  									<tr>
+												  										<td class="contentSec" style="text-align: left; padding-top: 15px; padding-bottom: 0px; width: 100%; position:relative;">
+												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><span style="font-weight:bold;">'. $this->m_ssenderFirstname
+.' '. $this->m_ssenderLastName .'</span> heeft je een kerstkaart gestuurd!</h1>
+												  										</td>
+												  									</tr>
+												  								</tbody>
+												  							</table>
+
+												  							<table style="padding-left: 150px; width:100%;">
+												  								<tbody>
+												  									<tr>
+												  										<td class="contentSec" style="padding-top: 15px; padding-bottom: 50px; width: 100%;">
+												  											<a style="letter-spacing: 0.5px; font-family: Arial, Helvetica, sans-serif; font-size: 18px; text-align: center; background-color:#F24F11; border-radius:3px; width:200px; height:42.5px; line-height:42.5px; display:block; text-decoration:none; color:#fff;" href="#">Bekijk je kaart hier</a>
+												  										</td>
+												  									</tr>
+												  								</tbody>
+												  							</table>
+
+												  							<table style="padding-right: 30px; padding-left: 30px; width:100%;">
+												  								<tbody>
+												  									<tr>
+												  										<td class="contentSec" style="text-align: left; padding-top: 15px; padding-bottom: 30px; width: 100%;">
+												  											<p style="font-family: Arial, Helvetica, sans-serif; color:#656565; font-size:14px; line-height:20px;">Wil je zelf kerstkaarten kunnen versturen naar je vrienden, familie, kennissen, studenten of docenten? Bezoek dan onze website op <a style="text-decoration:none; text-decoration:underline; color:#F24F11;"href="http://ecard.thomasmore.be/">ecards.thomasmore.be</a></p>
+												  										</td>
+												  									</tr>
+												  								</tbody>
+												  							</table>
+												  					</td>
+												  				</tr>
+												  			</tbody>
+
+												  			<tbody style="margin-top:50px; background-color:#FAFAFA; width:100%;">
+													  				<tr>
+													  					<td>
+													  							<table style="padding-right: 30px; padding-left: 30px; width:100%;">
+													  								<tbody>
+													  									<tr>
+													  										<td class="contentSec" style="text-align: left; padding-top: 5px; padding-bottom: 5px; width: 100%;">
+													  											<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Studenten van <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactieve Multimedia Design</a></span>
+													  										</td>
+													  									</tr>
+													  								</tbody>
+													  							</table>
+													  					</td>
+													  				</tr>
+													  		</tbody>
+
+												  		</table>
+						                            </td>
+						                        </tr>
+						                    </table>
+						                </td>
+						            </tr>
+						        </table>
+						</body></html>';
+
+
+
+			$mail->SetFrom("r0364401@student.thomasmore.be");
+			$mail->Subject = "Je hebt een kerstkaart ontvangen van ". $this->m_ssenderFirstname. " " .$this->m_ssenderLastName;
+			$mail->MsgHTML($emailbody);
+			$mail->AddAddress("krisvanespen@hotmail.com","Kristof Van Espen");
+
+			if($mail->Send()) 
 			{
-			    echo json_encode(array(
-			        "error" => false,
-			        "message"=> "You have successfully sent"
-			    ));
+				echo "Message sent! ";
+				echo $destination . " " . $mail->Subject;
 			} 
 			else 
 			{
-			    echo json_encode(array(
-			        "error" => true,
-			        "message"=> $mail->ErrorInfo
-			    ));
-
-			};
+			  	echo "Mailer Error: " . $mail->ErrorInfo;
+			}
 		}
 
 		public function GetCardSent($id)

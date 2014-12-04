@@ -34,8 +34,6 @@
 
 	<body>
 
-		<div id='overlay'></div>
-
 		<div id="appreciateCon">
 			<a id='closeOverlay' href='#'>Sluiten</a>
 
