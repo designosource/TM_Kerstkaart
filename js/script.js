@@ -809,6 +809,50 @@ $("li.appreciate a").on("click", function(e)
 {
 	$("body").prepend(overlay);
 	$("#overlay").fadeIn(250);
+
+	e.preventDefault();
+});
+
+$("#appreciateCon li#send a").on("click", function(e)
+{
+	var inputText = $("form textarea#appreciateText").val();
+	if(inputText.length !== 0)
+	{
+
+		var senderFirstname = $("form textarea#appreciateText").attr("data-senderfirstname");
+		var senderLastname = $("form textarea#appreciateText").attr("data-senderlastname");
+		var senderemail = $("form textarea#appreciateText").attr("data-senderemail");
+
+		var receiverfirstname = $("form textarea#appreciateText").attr("data-receiverfirstname");
+		var receiverlastname = $("form textarea#appreciateText").attr("data-receiverlastname");
+		var receiveremail = $("form textarea#appreciateText").attr("data-receiveremail");
+		
+		var sendData = $.ajax(
+							{
+								type: "POST",
+								url: "ajax/sendAppreciation.php",
+								data: {
+										senderFirstname: senderFirstname,
+										senderLastname: senderLastname,
+										senderemail: senderemail,
+
+										receiverfirstname: receiverfirstname,
+										receiverlastname: receiverlastname,
+										receiveremail: receiveremail,
+
+										inputText: inputText
+										}
+							});
+
+		sendData.done(function(data)
+		{
+			console.log(data);
+		});
+
+
+		console.log("Sent by: " + senderFirstname + " " + senderLastname + " " + senderemail);
+		console.log("Received by: " + receiverfirstname + " " + receiverlastname + " " + receiveremail);
+	}
 	
 	e.preventDefault();
 });

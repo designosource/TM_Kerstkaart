@@ -43,7 +43,7 @@
 				<h1>Bedank <span><?php echo $senderInfo['sender_firstname'] . " " . $senderInfo['sender_lastname'];?></span></h1>
 
 				<form action="#" method="POST">
-					<textarea placeholder="Uw persoonlijk bericht" name="persoonlijkbericht"></textarea>
+					<textarea id="appreciateText" data-senderfirstname="<?php echo $receiverInfo['receiver_firstname'];?>" data-senderlastname="<?php echo $receiverInfo['receiver_lastname'];?>" data-senderemail="<?php echo $receiverInfo['receiver_email']; ?>" data-receiverfirstname="<?php echo $senderInfo['sender_firstname'];?>" data-receiverlastname="<?php echo $senderInfo['sender_lastname'];?>" data-receiveremail="<?php echo $senderInfo['sender_email'];?>" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht"></textarea>
 				</form>
 
 				<ul>
