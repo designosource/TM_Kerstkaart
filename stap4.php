@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
+	/*if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
 	{
 		header("location: index.php");
 	}
@@ -23,7 +23,7 @@
 				//var_dump($_SESSION);
 			}
 		}
-	}
+	}*/
 
  ?><!DOCTYPE HTML>
 <html lang="en">
