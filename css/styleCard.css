@@ -169,7 +169,6 @@ p#senderSig
 {
 	position:absolute;
 	top:0px;
-	font-family: 'texgyreadventorregular';
 }
 
 #nav ul li#left
@@ -185,6 +184,7 @@ p#senderSig
 	height:50px;
 	background-color: #F24F11;
 	width:210px;
+	font-family: 'texgyreadventorregular';
 }
 
 #nav ul li a
@@ -229,6 +229,13 @@ ul#vorige-volgende li#left a:after
 	font-size: 20px;
 	color: #656565;
 	line-height: 50px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+#nav ul li h1 span
+{
+	font-weight: bold;
 }
 
 

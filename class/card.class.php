@@ -214,9 +214,9 @@
 			$mail->SMTPAuth = false;
 			$mail->Host = "10.151.11.101";
 
-			$mail->From = "r0364401@student.thomasmore.be";
+			$mail->From = "krisvanespen@hotmail.com";
 			$mail->FromName = "Kristof";
-			$mail->AddAddress("r0364401@student.thomasmore.be", "Kristof Van Espen");
+			$mail->AddAddress("jille.floridor@thomasmore.be", "Jille Floridor");
 
 			$mail->WordWrap = 50;                                 // set word wrap to 50 characters
 			$mail->IsHTML(true);                                  // set email format to HTML
