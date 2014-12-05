@@ -1,25 +1,25 @@
 <?php 
 	session_start();
-	if(isset($_SESSION['cardALT']) && isset($_SESSION['cardURL']) && isset($_SESSION['cardID']) && isset($_SESSION['persMess']) && isset($_SESSION['senderFirstname']) && isset($_SESSION['senderLastname']) && isset($_SESSION['senderEmail']) && isset($_SESSION['person']))
+	if(isset($_SESSION['cardALT']) && isset($_SESSION['cardURL']) && isset($_SESSION['cardID']) && isset($_SESSION['persMess']) && isset($_SESSION['person']))
  	{
  		include_once('../class/card.class.php');
 
  		$cardID = $_SESSION['cardID'];
 
- 		$senderFirstname = $_SESSION['senderFirstname'];
- 		$senderLastname = $_SESSION['senderLastname'];
- 		$senderEmail = $_SESSION['senderEmail'];
+ 		$senderFirstname = $_SERVER['REDIRECT_Shib_Person_givenName'];
+ 		$senderLastname = $_SERVER['REDIRECT_Shib_Person_surname'];
+ 		$senderEmail = $_SERVER['REDIRECT_Shib_Person_mail'];
+
  		$perMess = $_SESSION['persMess'];
 
  
  		$card = new Card();
- 		/*$personalMessageID = $card->SavePersonalMessage();*/
 
  		$card->senderFirstname = $senderFirstname;
 		$card->senderLastname = $senderLastname;
 		$card->senderEmailadress = $senderEmail;
  		$card->message = $perMess;
-		$senderID = $card->SaveSenders();
+ 		$senderID = $card->SaveSenders();
 
  		$receivers = $_SESSION['person'];
  		foreach($receivers as $receiver)
@@ -31,7 +31,7 @@
  			$card->receiverFirstname = $personReceiverFirstname;
 			$card->receiverLastname = $personReceiverLastname;
 			$card->receiverEmailadress = $personReceiverEmail;
-			$receiverID = $card->SaveReceivers();
+			$receiverID = $card->SaveReceivers($senderID);
 
 			$sendmail = $card->SendCard($cardID, $senderID, $receiverID);
  		}

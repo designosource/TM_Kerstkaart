@@ -111,35 +111,6 @@
 			}
 		}
 
-		public function SaveReceivers()
-		{
-			$db = new Db();
-			
-			$sql = "INSERT INTO receiver (receiver_firstname, receiver_lastname, receiver_email)
-				   values (
-				   			'". $db->conn->real_escape_string($this->m_sreceiverFirstname)."',
-				   			'". $db->conn->real_escape_string($this->m_sreceiverLastName)."',
-				   			'". $db->conn->real_escape_string($this->m_sreceiverEmailadress)."'
-				   		  )";
-
-			$result = $db->conn->query($sql);
-
-			if($result)
-			{
-				$sql2 = "SELECT LAST_INSERT_ID() FROM receiver order by receiver_id desc limit 1";
-				$result2 = $db->conn->query($sql2);
-
-				if($result2)
-				{
-					$results = mysqli_fetch_array($result2, MYSQL_ASSOC);
-
-					$lastEntryID = $results['LAST_INSERT_ID()'];
-
-					return $lastEntryID;
-				}
-			}
-		}
-
 		public function SaveSenders()
 		{
 			$db = new Db();
@@ -170,38 +141,40 @@
 			}
 		}
 
+		public function SaveReceivers($senderID)
+		{
+			$db = new Db();
+			
+			$sql = "INSERT INTO receiver (receiver_firstname, receiver_lastname, receiver_email, sender_id)
+				   values (
+				   			'". $db->conn->real_escape_string($this->m_sreceiverFirstname)."',
+				   			'". $db->conn->real_escape_string($this->m_sreceiverLastName)."',
+				   			'". $db->conn->real_escape_string($this->m_sreceiverEmailadress)."',
+				   			'". $db->conn->real_escape_string($senderID)."'
+				   		  )";
+
+			$result = $db->conn->query($sql);
+			
+			if($result)
+			{
+				$sql2 = "SELECT LAST_INSERT_ID() FROM receiver order by receiver_id desc limit 1";
+				$result2 = $db->conn->query($sql2);
+
+				if($result2)
+				{
+					$results = mysqli_fetch_array($result2, MYSQL_ASSOC);
+
+					$lastEntryID = $results['LAST_INSERT_ID()'];
+
+					return $lastEntryID;
+				}
+			}
+		}
+
+
+
 		public function SendCard($cardID, $senderID, $receiverID)
 		{
-			/*$cardLink = "http://ecard.thomasmore.be/card.php?cid=".$cardID."&sid=".$senderID."&ric=".$receiverID;
-			echo $this->m_sreceiverEmailadress;
-			echo $cardLink;*/
-
-			//localhost/card.php?cid=2&sid=7&ric=36
-			//http://localhost/TM_Kerstkaarten/TM_Kerstkaart/card.php?cid=2&sid=7&ric=36
-			//http://ecard.thomasmore.be/card.php?cid=2&sid=6&ric=40
-
-
-			/*$to = $this->m_sreceiverEmailadress;
-			$subject = "Je hebt een kerstkaart ontvangen van ".$this->m_ssenderFirstname." ".$this->m_ssenderLastName;
-			$header = "From: Thomas More <info@thomasmore.be>\r\n";
-			$header .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-			$header .= "MIME-Version: 1.0\r\n";
-			$header .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-			$message = '<html><body>';
-			$message .= '<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="background-repeat: no-repeat; background-size: cover; border-collapse: collapse; background-color: #ef403e; background-attachment: fixed; background-position: top center; width: 100%;">
-					            <tr>
-					                <td align="center" valign="top">
-					                    <table>
-					                    	<a href="'.$cardLink.'">Bekijk je kerstkaart</a>
-					                    </table>
-					                </td>
-					            </tr>
-					        </table>';
-			$message .= '</body></html>';
-					
-			$confirmMail = mail($to, $subject, $message, $header);*/
-
 			require_once('class.phpmailer.php');
 			$mail = new PHPMailer();
 			$mail->IsSMTP();
@@ -300,10 +273,11 @@
 
 
 
-			$mail->SetFrom("r0364401@student.thomasmore.be");
+			$mail->SetFrom($this->m_ssenderEmailadress);
 			$mail->Subject = "Je hebt een kerstkaart ontvangen van ". $this->m_ssenderFirstname. " " .$this->m_ssenderLastName;
 			$mail->MsgHTML($emailbody);
-			$mail->AddAddress("krisvanespen@hotmail.com","Kristof Van Espen");
+			$mail->AddAddress($this->m_sreceiverEmailadress, $this->m_sreceiverFirstname . " " . $this->m_sreceiverLastName);
+
 
 			if($mail->Send()) 
 			{
@@ -363,21 +337,5 @@
 				return $results;
 			}
 		}
-
-		public function SendAppreciation()
-		{
-			/*
-			$this->m_ssenderFirstname;
-			$this->m_ssenderLastName;
-			$this->m_ssenderEmailadress;
-
-			$this->m_sreceiverFirstname;
-			$this->m_sreceiverLastName;
-			$this->m_sreceiverEmailadress;
-
-			$this->m_sMessage;
-			*/
-		}
-
 	}
  ?>
