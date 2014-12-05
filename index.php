@@ -1,5 +1,5 @@
 <?php 
-session_start();
+	session_start();
 	
 	include_once('class/card.class.php');
 	$card = new Card();

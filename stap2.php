@@ -5,6 +5,7 @@
 	{
 		header("location: index.php");
 	}
+
  ?><!doctype html>
 <html lang="en">
 	<head>
@@ -20,14 +21,6 @@
 				<div id="content">
 
 					<form action="#" method="POST">
-
-						<div id="senderCon">
-							<h1 id="senderInfo">De verzender</h1>
-
-							<input id="sendFirstname" type="text" placeholder="Uw voornaam" value="<?php if(isset($_SESSION['senderFirstname'])){echo $_SESSION['senderFirstname'];}?>"></input>
-							<input id="sendLastname" type="text" placeholder="Uw achternaam" value="<?php if(isset($_SESSION['senderLastname'])){echo $_SESSION['senderLastname'];}?>"></input>
-							<input id="sendEmail" type="text" placeholder="Uw emailadres" value="<?php if(isset($_SESSION['senderEmail'])){echo $_SESSION['senderEmail'];}?>"></input>
-						</div>
 
 						<h1 id="perMessage">Persoonlijk bericht</h1>
 

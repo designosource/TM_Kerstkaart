@@ -1,13 +1,14 @@
 <?php
 	session_start();
 	//session_unset($_SESSION['person']);
+
 	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
 	{
 		header("location: index.php");
 	}
 	else
 	{
-		if(empty($_SESSION['persMess']) && isset($_SESSION['senderFirstname']) && isset($_SESSION['senderLastname']) && isset($_SESSION['senderEmail']))
+		if(empty($_SESSION['persMess']))
 		{
 			header("location: stap2.php");
 		}

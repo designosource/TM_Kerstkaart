@@ -92,47 +92,37 @@ $("a#gtStap3, a#gbStap1").on("click", function(e)
 	var	errorLength = "<p class='error'>Te veel karakters gebruikt</p>";
 	$("p.error").remove();
 
-	var senderFirstname = $("input#sendFirstname").val();
-	var senderLastname = $("input#sendLastname").val();
-	var senderEmail = $("input#sendEmail").val();
-
 	var personalMessage = $(".stap2-persoonlijkbericht").val();
 
-	if(validateSender(senderFirstname, senderLastname, senderEmail) === false)
+	if(textInput !== 0)
 	{
-		if(textInput !== 0)
+		if(textInput <= 500)
 		{
-			if(textInput <= 500)
-			{
-				var sendData = $.ajax(
-							{
-								type: "POST",
-								url: "ajax/getMessage.php",
-								data: {
-										personalMessage: personalMessage,
-										senderFirstname: senderFirstname,
-										senderLastname: senderLastname,
-										senderEmail: senderEmail
-										}
-							});
+			var sendData = $.ajax(
+						{
+							type: "POST",
+							url: "ajax/getMessage.php",
+							data: {
+									personalMessage: personalMessage
+									}
+						});
 
-				sendData.done(function(data)
-				{
-					if (typeof(dest) !== "undefined" && dest !== "")
-					{
-						window.location.href = dest;
-					}
-				});
-			}
-			else
+			sendData.done(function(data)
 			{
-				$("#content h1#perMessage").after(errorLength);
-			}
+				if (typeof(dest) !== "undefined" && dest !== "")
+				{
+					window.location.href = dest;
+				}
+			});
 		}
 		else
 		{
-			$("#content h1#perMessage").after(error);
+			$("#content h1#perMessage").after(errorLength);
 		}
+	}
+	else
+	{
+		$("#content h1#perMessage").after(error);
 	}
 
 	e.preventDefault();
