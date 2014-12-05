@@ -1,0 +1,176 @@
+@font-face {
+    font-family: 'texgyreadventorregular';
+    src: url('../fonts/texgyreadventor-regular-webfont.eot');
+    src: url('../fonts/texgyreadventor-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/texgyreadventor-regular-webfont.woff2') format('woff2'),
+         url('../fonts/texgyreadventor-regular-webfont.woff') format('woff'),
+         url('../fonts/texgyreadventor-regular-webfont.ttf') format('truetype'),
+         url('../fonts/texgyreadventor-regular-webfont.svg#texgyreadventorregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:focus
+{
+	outline: 0;
+}
+
+html, body 
+{
+	min-height:100%; 
+	padding:0; margin:0; 
+	background-color:#F3F3F3; 
+	overflow:hidden;
+	-webkit-touch-callout: none; 
+	-webkit-user-select: none; 
+	-moz-user-select: none; 
+	-ms-user-select: none;
+    -o-user-select: none;
+}
+
+#container {position:absolute; top:0; bottom:0; left:0; right:0;}
+
+.flipbox-container 
+{
+	position:absolute;
+	cursor:-webkit-grab;
+	cursor:-moz-grab;
+	cursor:-ms-grab;
+	cursor:-o-grab;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	width:90%;
+	left: 5%;
+	height:80%;
+	margin: -25px auto 0 auto;
+	top:10%;
+	z-index:10;
+}
+
+#cardCon, #backCon
+{
+	background-color: #FDFDFD;
+	height: 100%;
+	width:100%;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	overflow:hidden;
+}
+
+#cardCon
+{
+	background: no-repeat center center fixed;
+	background-position: 50% 50%; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#cardCon:active, .flipbox-container:active
+{
+	cursor:-webkit-grabbing;
+}
+
+#backCon
+{
+	overflow:auto;
+}
+
+#backSec
+{
+	padding:50px;
+}
+
+#backCon h1, #backCon p,  #backCon span
+{
+	margin:0;
+	padding:0;
+	color: #656565;
+	font-size: 22.5px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#backCon h1
+{
+	margin-bottom:40px;
+}
+
+#backCon p
+{
+	line-height:35px;
+}
+
+p#senderSig
+{
+ margin-top:50px;
+}
+
+#backCon #copyCon
+{
+	width:100%;
+	background-color:#FDFDFD;
+	bottom:0px;
+	position:absolute;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-bottom-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	-ms-border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	-ms-border-bottom-right-radius: 5px;
+}
+
+#backCon span#copy
+{
+	font-size:14px;
+	text-decoration: none;
+	color:#999999;
+	margin-left:50px;
+}
+
+#backCon span#copy a
+{
+	text-decoration: none;
+	color:#999999;
+}
+
+#backCon span#copy a:hover
+{
+	text-decoration: underline;
+}
+
+#nav 
+{
+	position:fixed;
+	bottom:0;
+	left:0;
+	height:50px;
+	width:100%;
+	background-color:#FAFAFA;
+}
+
+#nav h1
+{
+	margin:0;
+	padding:0;
+	height:50px;
+	color: #656565;
+	text-align:center;
+	line-height: 50px;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+#nav h1 span
+{
+	font-weight: bold;
+}

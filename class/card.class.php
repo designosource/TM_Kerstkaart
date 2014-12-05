@@ -273,7 +273,7 @@
 
 
 
-			$mail->SetFrom($this->m_ssenderEmailadress);
+			$mail->SetFrom($this->m_ssenderEmailadress, $this->m_ssenderFirstname . " " . $this->m_ssenderLastName);
 			$mail->Subject = "Je hebt een kerstkaart ontvangen van ". $this->m_ssenderFirstname. " " .$this->m_ssenderLastName;
 			$mail->MsgHTML($emailbody);
 			$mail->AddAddress($this->m_sreceiverEmailadress, $this->m_sreceiverFirstname . " " . $this->m_sreceiverLastName);
