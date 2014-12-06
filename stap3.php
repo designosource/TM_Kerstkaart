@@ -27,17 +27,26 @@
 				{
 					$csv = array_map('str_getcsv', file($_FILES["emails"]["tmp_name"]));
 
-					foreach(array_slice($csv, 1) as $person)
-					{						
-						$firstname = $person[0];
-						$lastname = $person[1];
-						$email = $person[2];
+					$amountRows =  count(array_slice($csv, 1));
 
-						$_SESSION['person'][] = array(
-												    "voornaam" => $firstname,
-												    "achternaam" => $lastname,
-												    "emailadres" => $email
-												);
+					if($amountRows <= 20)
+					{
+						foreach(array_slice($csv, 1) as $person)
+						{						
+							$firstname = $person[0];
+							$lastname = $person[1];
+							$email = $person[2];
+
+							$_SESSION['person'][] = array(
+													    "voornaam" => $firstname,
+													    "achternaam" => $lastname,
+													    "emailadres" => $email
+													);
+						}
+					}
+					else
+					{
+						$error = "<p class='error'>Het bulk importeren van emails is beperkt tot <span style='font-weight:bold;'>20</span></p>";
 					}
 				}
 				else
