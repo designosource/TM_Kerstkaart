@@ -756,7 +756,7 @@ ul#emailaanpassen
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
-	min-height:200px;
+	min-height:150px;
 }
 
 #stap3-table th{
@@ -779,6 +779,7 @@ ul#emailaanpassen
 	font-family: Arial, Helvetica, sans-serif;
 	text-align: left;
 	padding-left:10px;
+	margin-bottom:1px;
 }
 
 #stap3-table th
@@ -808,11 +809,18 @@ ul#emailaanpassen
 	background: #FDFDFD;
 }
 
+#stap3-table tr.chose
+{
+	background: #FAFAFA;
+}
+
 .checkItem input
 {
 	font-family: Arial, Helvetica, sans-serif;
 	appearance: none;
 	-webkit-appearance: none;
+	-mos-appearance: none;
+	-ms-appearance: none;
 	border: 1px solid #D9D9D9;
 	padding: 7.5px;
 	border-radius: 3px;

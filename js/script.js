@@ -223,6 +223,15 @@ $(document).on("click", "#selectAll", function()
 /*activate "delete" and "edit" buttons when something's checked*/
 $(document).on("click", ".checkItem input", function()
 {
+	if($(this).prop("checked"))
+	{
+		$(this).parent().parent().not("#legend").addClass("chose");
+	}
+	else
+	{
+		$(this).parent().parent().not("#legend").removeClass("chose");
+	}
+
 	if($('td.checkItem input:checked').length > 0)
 	{
 		if($('td.checkItem input:checked').length == 1)
