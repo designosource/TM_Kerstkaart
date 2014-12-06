@@ -204,10 +204,9 @@ p#senderSig
 	color: white;
 	border-radius: 4px;
 	font-size: 12px;
-	font-family: 
 	display: block;
 	margin-top: 10px;
-	width: 100px;
+	max-width: 120px;
 }
 
 #frozen a:hover
@@ -229,6 +228,7 @@ p#senderSig
 	{
 		font-size: 20px;
 		margin-top: 5px;
+		max-width: 160px;
 	}
 	
 

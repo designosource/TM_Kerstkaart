@@ -17,7 +17,7 @@
 			<h1>Hier is het ijskoud!</h1>
 			<h1>Ga maar snel naar een warmere plaats:</h1>
 				
-				<a href="http:\\ecard.thomasmore.be">De uitweg</a>
+				<a href="http:\\ecard.thomasmore.be">Warmere oorden</a>
 		</div>
 
 	</body>
