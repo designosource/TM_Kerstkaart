@@ -173,3 +173,63 @@ p#senderSig
 {
 	font-weight: bold;
 }
+
+/*404-*/
+
+#frozen
+{
+	padding-top: 10%;
+	padding-bottom: 10%;
+	width: 50%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: #303030;
+	font-size: 8px;
+}
+
+
+
+#frozen a:link,
+#frozen a:visited,
+#frozen a:hover,
+#frozen a:active
+{
+	padding: 8px 20px 8px 20px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FF4E00;
+	text-decoration: none;
+	color: white;
+	border-radius: 4px;
+	font-size: 12px;
+	font-family: 
+	display: block;
+	margin-top: 10px;
+	width: 100px;
+}
+
+#frozen a:hover
+{
+	background-color: #d40;
+}
+
+@media screen and (min-width: 700px)
+{
+
+	#frozen{
+		font-size: 15px;
+	}
+
+	#frozen a:link,
+	#frozen a:visited,
+	#frozen a:hover,
+	#frozen a:active
+	{
+		font-size: 20px;
+		margin-top: 5px;
+	}
+	
+
+}
