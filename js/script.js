@@ -15,7 +15,7 @@ $("input.login-input").on("keyup", function()
 });
 
 /*activate "add email" button when all fields have content*/
-$(document).on("keyup", "#indAdd input[type=text]", function()
+$(document).on("keyup change", "#indAdd input[type=text]", function()
 {
 	var voornaam = $("input#iAFirstname").val();
 	var achternaam = $("input#iALastname").val();
@@ -336,7 +336,7 @@ function closeBulkAdd()
 $(document).on("click", "input#iAAdd", function(e)
 {
 	if($(this).hasClass("active"))
-	{		
+	{
 		$("p.error").remove();
 
 		var voornaam = $("input#iAFirstname").val();
