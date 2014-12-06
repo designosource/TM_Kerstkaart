@@ -379,6 +379,7 @@ ul#vorige-volgende li#left a:after
 #sendConfirmation #confirmationCon ul li#send a, #appreciateCon #appreciateSec ul li#send a
 {
 	color: #fff;
+	display:block;
 }
 
 #sendConfirmation #confirmationCon ul li#cancel a, #appreciateCon #appreciateSec ul li#cancel a

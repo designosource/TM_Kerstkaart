@@ -1,12 +1,12 @@
 <?php 
 	session_start();
-	/*if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
+	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
 	{
 		header("location: index.php");
 	}
 	else
 	{
-		if(empty($_SESSION['persMess']) && isset($_SESSION['senderFirstname']) && isset($_SESSION['senderLastname']) && isset($_SESSION['senderEmail']))
+		if(empty($_SESSION['persMess']))
 		{
 			header("location: stap2.php");
 		}
@@ -19,11 +19,9 @@
 			else
 			{
 				$amountPersons = count($_SESSION['person']);
-
-				//var_dump($_SESSION);
 			}
 		}
-	}*/
+	}
 
  ?><!DOCTYPE HTML>
 <html lang="en">
@@ -76,7 +74,7 @@
 					<!-- add personal text here -->
 						<h1>Beste <span>[Voornaam ontvanger]</span></h1>
 						<p><?php if(!empty($_SESSION['persMess'])){ echo $_SESSION['persMess'];} ?></p>
-						<p id="senderSig"><?php if(!empty($_SESSION['senderFirstname'])){echo $_SESSION['senderFirstname'];}else{echo "[Voornaam verzender]";} ?></p>
+						<p id="senderSig"><?php echo $_SERVER['REDIRECT_Shib_Person_givenName']; ?></p>
 					</div>
 
 					<div id="copyCon">
