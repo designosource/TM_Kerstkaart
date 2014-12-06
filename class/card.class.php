@@ -178,10 +178,8 @@
 			//$cardLink = "http://ecard.thomasmore.be/card.php?cid=".$cardID."&sid=".$senderID."&ric=".$receiverID;
 			$paramUrl = "cid=".$cardID. "&sid=".$senderID."&rid=".$receiverID;
 			$url = "http://ecard.thomasmore.be/card.php?" . urlencode($paramUrl);
-
-			echo $url;
 	
-			/*require_once('class.phpmailer.php');
+			require_once('class.phpmailer.php');
 			$mail = new PHPMailer();
 			$mail->IsSMTP();
 
@@ -293,7 +291,7 @@
 			else 
 			{
 			  	echo "Mailer Error: " . $mail->ErrorInfo;
-			}*/
+			}
 		}
 
 		public function GetCardSent($id)
