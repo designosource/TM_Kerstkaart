@@ -19,8 +19,10 @@
 
 				<div id="content">
 					<div id="stap1-col1">
-						<h1 id="titleCard"> <?php if(isset($_SESSION['cardALT'])){ echo $_SESSION['cardALT']; } else {echo "Placeholder 1";}?></h1>
-						<div class="stap1-choosen"><img alt=" <?php if(isset($_SESSION['cardALT'])){echo $_SESSION['cardALT']; }else{echo 'Placeholder 1';}?> " data-id=" <?php if(isset($_SESSION['cardID'])){ echo $_SESSION['cardID'];}else{echo '1';} ?> " src=" <?php if(isset($_SESSION['cardURL'])){ echo $_SESSION['cardURL']; } else {echo "img/placeholderImg_1.png";}?> "></div>
+						<h1 id="titleCard"><?php if(isset($_SESSION['cardALT'])){ echo $_SESSION['cardALT']; } else {echo "Placeholder 1";}?></h1>
+						<div class="stap1-choosen">
+							<img alt="<?php if(isset($_SESSION['cardALT'])){echo $_SESSION['cardALT'];}else{echo 'Placeholder 1';}?>" data-id="<?php if(isset($_SESSION['cardID'])){echo $_SESSION['cardID'];}else{echo '1';}?>" src="<?php if(isset($_SESSION['cardURL'])){echo $_SESSION['cardURL'];}else{echo "img/placeholderImg_1.png";}?>">
+						</div>
 					</div>
 
 					<div id="stap1-col2">
@@ -30,7 +32,7 @@
 							<?php 
 								foreach($cards as $card)
 								{
-									echo '<li class="card"><img alt="'. $card['card_title'] .'" data-id="'.$card['card_id'].'" src="img/' . $card['card_url'] . '"></li>';
+									echo '<li class="card"><img alt="'.$card['card_title'].'" data-id="'.$card['card_id'].'" src="img/'.$card['card_url'].'"></li>';
 								}
 							 ?>
 						</ul>

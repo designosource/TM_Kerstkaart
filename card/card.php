@@ -1,27 +1,47 @@
 <?php 
 	session_start();
 	
-	/*if(!empty($_GET['cid']) && !empty($_GET['sid']) && !empty($_GET['ric'])) 
+	/*$url = urldecode(http_build_query($_GET));*/
+	if(!empty($_GET)) 
 	{
-		$cardID = $_GET['cid'];
+		/*$cardID = $_GET['cid'];
 		$senderID = $_GET['sid'];
-		$receiverID = $_GET['ric'];
+		$receiverID = $_GET['ric'];*/
+
+		$url = urldecode(http_build_query($_GET));
+
+		$urlExploded = explode('&', $url);
+		$cidParam = $urlExploded[0];
+		$sidParam = $urlExploded[1];
+		$ricParam = $urlExploded[2];
+
+		$cidParamExploded = explode('cid=', $cidParam);
+		$sidParamExploded = explode('sid=', $sidParam);
+		$ridParamExploded = explode('rid=', $ricParam);
+
+		$cidID =  $cidParamExploded[1];
+		$sidID =  $sidParamExploded[1];
+		$ridPad = $ridParamExploded[1];
+
+		$ridPadExploded = explode('=', $ridPad);
+		$ridID = $ridPadExploded[0];
+
 
 		include_once('class/card.class.php');
 		$card = new Card();
-		$cardInfo = $card->GetCardSent($cardID);
-		$senderInfo = $card->GetSenderSent($senderID);
-		$receiverInfo = $card->GetReceiverSent($receiverID);
+		$cardInfo = $card->GetCardSent($cidID);
+		$senderInfo = $card->GetSenderSent($sidID);
+		$receiverInfo = $card->GetReceiverSent($ridID);
 
 		if(empty($cardInfo) || empty($senderInfo) || empty($receiverInfo))
 		{
-			header("location: index.php");
+			header("location: 404.php");
 		}
 	}
 	else
 	{
-		header("location: index.php");
-	}*/
+		header("location: 404.php");
+	}
 	
  ?><!DOCTYPE HTML>
 <html lang="en">
@@ -36,13 +56,13 @@
 
 		<div id="container">
 			<div class="flipbox-container box100">
-			    <div id="cardCon" style="background-image: url('img/<?php /*echo $cardInfo['card_url'];*/?>')">
+			    <div id="cardCon" style="background-image: url('img/<?php echo $cardInfo['card_url'];?>')">
 			    	<!-- Add poem here -->
 			    </div>
 		   	</div>
 
 			<div id="front" style="display:none;">
-				<div id="cardCon" style="background-image: url('img/<?php /*echo $cardInfo['card_url'];*/?>')">
+				<div id="cardCon" style="background-image: url('img/<?php echo $cardInfo['card_url'];?>')">
 			    	<!-- Add poem here -->
 			    </div>
 			</div>
@@ -51,9 +71,9 @@
 				<div id="backCon">
 					<div id="backSec">
 					<!-- add personal text here -->
-						<h1>Beste <span><?php /*echo $receiverInfo['receiver_firstname'];*/?></span></h1>
-						<p><?php /*echo $senderInfo['sender_message'];*/ ?></p>
-						<p id="senderSig"><?php /*echo $senderInfo['sender_firstname'];*/?></p>
+						<h1>Beste <span><?php echo $receiverInfo['receiver_firstname'];?></span></h1>
+						<p><?php echo $senderInfo['sender_message']; ?></p>
+						<p id="senderSig"><?php echo $senderInfo['sender_firstname'];?></p>
 					</div>
 
 					<div id="copyCon">

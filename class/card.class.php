@@ -175,7 +175,13 @@
 
 		public function SendCard($cardID, $senderID, $receiverID)
 		{
-			require_once('class.phpmailer.php');
+			//$cardLink = "http://ecard.thomasmore.be/card.php?cid=".$cardID."&sid=".$senderID."&ric=".$receiverID;
+			$paramUrl = "cid=".$cardID. "&sid=".$senderID."&rid=".$receiverID;
+			$url = "http://ecard.thomasmore.be/card.php?" . urlencode($paramUrl);
+
+			echo $url;
+	
+			/*require_once('class.phpmailer.php');
 			$mail = new PHPMailer();
 			$mail->IsSMTP();
 
@@ -227,7 +233,7 @@
 												  								<tbody>
 												  									<tr>
 												  										<td class="contentSec" style="padding-top: 15px; padding-bottom: 50px; width: 100%;">
-												  											<a style="letter-spacing: 0.5px; font-family: Arial, Helvetica, sans-serif; font-size: 18px; text-align: center; background-color:#F24F11; border-radius:3px; width:200px; height:42.5px; line-height:42.5px; display:block; text-decoration:none; color:#fff;" href="#">Bekijk je kaart hier</a>
+												  											<a style="letter-spacing: 0.5px; font-family: Arial, Helvetica, sans-serif; font-size: 18px; text-align: center; background-color:#F24F11; border-radius:3px; width:200px; height:42.5px; line-height:42.5px; display:block; text-decoration:none; color:#fff;" href="'.$cardLink.'">Bekijk je kaart hier</a>
 												  										</td>
 												  									</tr>
 												  								</tbody>
@@ -287,7 +293,7 @@
 			else 
 			{
 			  	echo "Mailer Error: " . $mail->ErrorInfo;
-			}
+			}*/
 		}
 
 		public function GetCardSent($id)
