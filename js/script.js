@@ -54,6 +54,22 @@ $(window).load(function()
 		var textContent = $(".stap2-persoonlijkbericht").val();
 		countChars(textContent);
 	}
+
+	if($('body').hasClass("stap1"))
+	{
+		var selectedID = $(".stap1-choosen img").attr('data-id');
+
+		var cardListID = $("ul#otherCards li.card img").attr('data-id');
+
+		$('ul#otherCards li.card img').each(function()
+		{
+			var cardListID = $(this).attr('data-id');
+			if(cardListID == selectedID)
+			{
+				$(this).parent().addClass("chose");
+			}
+		});
+	}
 });
 
 /*count amount of characters in input field*/
