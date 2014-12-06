@@ -72,7 +72,7 @@
 					<div id="backSec">
 					<!-- add personal text here -->
 						<h1>Beste <span><?php echo $receiverInfo['receiver_firstname'];?></span></h1>
-						<p><?php echo $senderInfo['sender_message']; ?></p>
+						<p><?php echo nl2br($senderInfo['sender_message']); ?></p>
 						<p id="senderSig"><?php echo $senderInfo['sender_firstname'];?></p>
 					</div>
 

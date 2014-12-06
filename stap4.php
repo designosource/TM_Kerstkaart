@@ -73,7 +73,7 @@
 					<div id="backSec">
 					<!-- add personal text here -->
 						<h1>Beste <span>[Voornaam ontvanger]</span></h1>
-						<p><?php if(!empty($_SESSION['persMess'])){ echo $_SESSION['persMess'];} ?></p>
+						<p><?php if(!empty($_SESSION['persMess'])){ echo nl2br($_SESSION['persMess']);} ?></p>
 						<p id="senderSig"><?php echo $_SERVER['REDIRECT_Shib_Person_givenName']; ?></p>
 					</div>
 
