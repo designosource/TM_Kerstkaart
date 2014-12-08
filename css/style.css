@@ -785,6 +785,7 @@ ul#emailaanpassen
 #stap3-table th
 {
 	color: #303030;
+	border:none\9;
 }
 
 #stap3-table th.checkItem,
@@ -831,17 +832,22 @@ ul#emailaanpassen
 	position: relative;
 	cursor:pointer;
 	top:4px;
+	border:none\9;
+	top:1px\9;
 }
 
 th.checkItem input
 {
 	border: 1px solid #D9D9D9;
+	border:none\9;
 }
 
 .checkItem input:checked
 {
 	border: 1px solid #F24F11;
 	background-color: #F24F11;
+	border:none\9;
+	background-color:transparent\9;
 }
 
 .checkItem input:checked:after
