@@ -241,7 +241,7 @@
 												  								<tbody>
 												  									<tr>
 												  										<td class="contentSec" style="text-align: left; padding-top: 15px; padding-bottom: 30px; width: 100%;">
-												  											<p style="font-family: Arial, Helvetica, sans-serif; color:#656565; font-size:14px; line-height:20px;">Bent u werkgever, werknemer of student aan het Thomas More en wil je zelf kerstkaarten kunnen versturen naar je vrienden, familie, kennissen, studenten of docenten? Bezoek dan onze website op <a style="text-decoration:none; text-decoration:underline; color:#F24F11;"href="http://ecard.thomasmore.be/">ecards.thomasmore.be</a></p>
+												  											<p style="font-family: Arial, Helvetica, sans-serif; color:#656565; font-size:14px; line-height:20px;">Bent u werkgever, werknemer of student aan het Thomas More en wil je zelf kerstkaarten kunnen versturen naar je vrienden, familie, kennissen, studenten of docenten? Bezoek dan onze website op <a style="text-decoration:none; text-decoration:underline; color:#F24F11;"href="http://ecard.thomasmore.be/">ecard.thomasmore.be</a></p>
 												  										</td>
 												  									</tr>
 												  								</tbody>
