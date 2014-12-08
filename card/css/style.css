@@ -218,6 +218,7 @@ p#senderSig
 	position:absolute;
 	z-index: 11;
 	width:100%;
+	display:none\9;;
 }
 
 input#go
@@ -237,6 +238,7 @@ input#go
 	font-family: 'texgyreadventorregular';
 	padding:0 25px;
 	margin:0 auto;
+	display:none\9;;
 }
 
 @media screen and (min-width: 700px)

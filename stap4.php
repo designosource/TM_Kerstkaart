@@ -36,9 +36,9 @@
 
 		<div id="audioCon">
 			<audio id="backgoundMusic">
-		  		<source src="" type="audio/ogg">
+		  		<source src="music/kerstmuziekje.ogg" type="audio/ogg">
+ 				<source src="music/kerstmuziekje.mp3" type="audio/mpeg">
 		  		<source src="music/kerstmuziekje.wav" type="audio/wav">
-				Your browser does not support the audio element.
 			</audio>
 
 			<input type="button" id="go" value="Muziek pauzeren">
