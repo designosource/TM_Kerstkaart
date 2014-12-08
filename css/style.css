@@ -329,7 +329,8 @@ header{
 	display: block;
 }
 
-#logo a{
+#logo a
+{
 	width:95px;
 	height:37.023px;
 	display:block;
@@ -337,6 +338,8 @@ header{
 	margin-top: 18.9885px;
 	background-image: url("../img/TM_logo.png");
 	background-image: url('../img/TM_logo.svg'), none;
+	background-image: url("../img/TM_logo_ie.png")\9;
+	background-image: url('../img/TM_logo_ie.svg'), none\9;
 }
 
 header nav{
