@@ -688,12 +688,13 @@ a#downloadcsv:hover
 	background-color: #F24F11;
 	text-align: center;
 	float:left;
-	margin-left: 30px;
+	margin-left: 0px;
 }
 
 #stap3-buttons li.firstItem
 {
 	margin-left:0px;
+	margin-left: 30px;
 }
 
 ul#emailaanpassen
