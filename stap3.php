@@ -90,8 +90,8 @@
 
 					<div id="stap3-buttons">
 						<ul id="emailtoevoegen">
-							<li class="addEmail firstItem"><a id="bulkEmail" class="button-email" href="#">CSV bestand importeren</a></li>
 							<li class="addEmail"><a id="indEmail" class="button-email" href="#">E-mailadres toevoegen</a></li>
+							<li class="addEmail firstItem"><a id="bulkEmail" class="button-email" href="#">CSV bestand importeren</a></li>
 						</ul>
 					
 

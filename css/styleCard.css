@@ -32,7 +32,6 @@ html, body
 
 .flipbox-container 
 {
-	position:absolute;
 	cursor:-webkit-grab;
 	cursor:-moz-grab;
 	cursor:-ms-grab;
@@ -41,19 +40,22 @@ html, body
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
-	width:90%;
-	left: 5%;
-	height:80%;
-	margin: -25px auto 0 auto;
-	top:10%;
-	z-index:10;
+	max-width:956px;
+	max-height:530px;
+	margin-top: 2%;
+	margin-bottom: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	/*z-index:10;*/
 }
 
 #cardCon, #backCon
 {
 	background-color: #FDFDFD;
-	height: 100%;
-	width:100%;
+	width: 100%;
+	
+	margin-left: auto;
+	margin-right: auto;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -112,10 +114,10 @@ p#senderSig
 
 #backCon #copyCon
 {
-	width:100%;
+	/*width:100%;*/
 	background-color:#FDFDFD;
-	bottom:0px;
-	position:absolute;
+	/*bottom:0px;*/
+	/*position:absolute;*/
 	padding-top:10px;
 	padding-bottom:10px;
 	border-bottom-left-radius: 5px;
@@ -564,4 +566,11 @@ p.error
 	font-family: Arial, Helvetica, sans-serif;
 	color:#EF403E;
 	font-size: 14px;
+}
+
+/*---------------ECARD CSS----------------*/
+
+.ecard
+{
+	width: 100%;
 }
