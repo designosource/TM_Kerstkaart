@@ -496,7 +496,7 @@ ul#otherCards li.card
 
 ul#otherCards li.card.chose
 {
-	border: 3.5px solid #F24F11;
+	border: 3px solid #F24F11;
 	width:109px;
 	height:55.333px;
 	overflow:hidden;

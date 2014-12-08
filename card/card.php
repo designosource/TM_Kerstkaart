@@ -26,7 +26,6 @@
 		$ridPadExploded = explode('=', $ridPad);
 		$ridID = $ridPadExploded[0];
 
-
 		include_once('class/card.class.php');
 		$card = new Card();
 		$cardInfo = $card->GetCardSent($cidID);
