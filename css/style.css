@@ -118,6 +118,7 @@ p.error
 	width:235px;
 	color: #656565;
 	line-height:20px;
+	line-height:40px\9;
 }
 
 form .unummer{
@@ -920,6 +921,17 @@ th.checkItem input
 	padding: 0 20px;
 	width:210px;
 	margin-bottom:25px;
+}
+
+#indAdd label
+{
+	display:none;
+	display:block\9;
+	*display:block;
+	_display:block;
+	margin-bottom:3.5px\9;
+	*margin-bottom:3.5px;
+	_margin-bottom:3.5px;
 }
 
 #bulkAdd input[type=file]

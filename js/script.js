@@ -261,9 +261,15 @@ $("a#indEmail").on("click", function(e)
 							"<form action='#' method='POST'>" +
 								"<a id='closeOverlay' href='#'>Sluiten</a>" +
 
+								"<label for='iAFirstname'>Voornaam</label>" +
 								"<input id='iAFirstname' type='text' placeholder='Voornaam'>" +
+
+								"<label for='iALastname'>Achternaam</label>" +
 								"<input id='iALastname' type='text' placeholder='Achternaam'>" +
+
+								"<label for='iAEmail'>E-mailadres</label>" +
 								"<input id='iAEmail' type='text' placeholder='E-mailadres'>" +
+
 								"<input id='iAAdd' type='submit' value='Toevoegen'>" +
 							"</form>" +
 						"</div>";
