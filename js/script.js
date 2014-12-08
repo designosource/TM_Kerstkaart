@@ -46,6 +46,7 @@ $("ul#otherCards li").on("click", function()
 	$("h1#titleCard").text(title);
 });
 
+
 /*get value of input field only in stap2.php file*/
 $(window).load(function()
 {
@@ -939,7 +940,7 @@ function playBackgroundMusic()
     }
 }
 
-function toggleBackgroundMusic() 
+function toggleBackgroundMusic()
 {
     if (beepTwo[0].paused == false) 
     {
@@ -954,4 +955,7 @@ function toggleBackgroundMusic()
 var beepTwo = $("#backgoundMusic");
 
 /*Comment to disable autoplay*/
-playBackgroundMusic();
+if($('body').hasClass('stap4'))
+{
+	playBackgroundMusic();
+}
