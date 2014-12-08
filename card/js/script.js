@@ -64,3 +64,54 @@ function swiped(event)
 		});
 	}
 }
+
+$('#go').on('click',function(evt)
+{
+	if($(this).hasClass("is-paused")) 
+	{
+		playBackgroundMusic();
+		$("#go").val("Muziek pauzeren");
+	}
+	else 
+	{
+		pauseBackgroundMusic();
+		$("#go").val("Muziek afspelen");
+	}
+});
+
+function pauseBackgroundMusic() 
+{
+    if (beepTwo[0].paused == false) 
+    {
+        beepTwo[0].pause();
+        beepTwo.animate({volume: 0});
+        $('#go').addClass("is-paused");
+    }
+}
+
+function playBackgroundMusic() 
+{
+    if (beepTwo[0].paused == true) 
+    {
+        beepTwo[0].play();  
+        beepTwo.animate({volume: 1});
+        $('#go').removeClass("is-paused");
+    }
+}
+
+function toggleBackgroundMusic() 
+{
+    if (beepTwo[0].paused == false) 
+    {
+        pauseBackgroundMusic();
+	} 
+	else 
+	{
+        playBackgroundMusic();
+	}
+}
+
+var beepTwo = $("#backgoundMusic");
+
+/*Comment to disable autoplay*/
+playBackgroundMusic();

@@ -54,6 +54,16 @@
 
 	<body>
 
+		<div id="audioCon">
+			<audio id="backgoundMusic">
+		  		<source src="" type="audio/ogg">
+		  		<source src="music/kerstmuziekje.wav" type="audio/wav">
+				Your browser does not support the audio element.
+			</audio>
+
+			<input type="button" id="go" value="Muziek pauzeren">
+		</div>
+
 		<div id="container">
 			<div class="flipbox-container box100">
 			    <div id="cardCon" style="background-image: url('img/<?php echo $cardInfo['card_url'];?>')">

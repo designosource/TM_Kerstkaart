@@ -34,6 +34,16 @@
 
 	<body class="stap4">
 
+		<div id="audioCon">
+			<audio id="backgoundMusic">
+		  		<source src="" type="audio/ogg">
+		  		<source src="music/kerstmuziekje.wav" type="audio/wav">
+				Your browser does not support the audio element.
+			</audio>
+
+			<input type="button" id="go" value="Muziek pauzeren">
+		</div>
+
 
 		<div id='sendConfirmation'>
 			<a id='closeOverlay' href='#'>Sluiten</a>
