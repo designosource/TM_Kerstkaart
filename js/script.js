@@ -820,7 +820,7 @@ function swiped(event)
 			onFinish: function ()
 			{
 				$(".flipbox-container").addClass("swiped");
-				$("#nav li#center span").text("voorkant");
+				$("#nav li#center span").text("kerstkaart");
 			}
 		});
 	}
