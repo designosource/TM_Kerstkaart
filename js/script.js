@@ -193,20 +193,78 @@ $("a#gtStap4, a#gbStap2").on("click", function(e)
 	var	error = "<p class='error'>Vergeet geen ontvanger(s) toe te voegen!</p>";
 	$("p.error").remove();
 
-	if(amountRows !== 0)
+	$("td.email").css({"color":"#656565"});
+
+	var isError;
+	var errorArray = [];
+
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+	$("tr td.checkItem input").map(function()
 	{
-		if (typeof(dest) !== "undefined" && dest !== "")
+		var emailAdded = $(this).parent().siblings("td.email").text();
+		var emailID = $(this).parent();
+		var validEmail = (re.test(emailAdded));
+
+		validateErrorTable(validEmail, emailID, emailAdded);
+	});
+
+	var containsErrors = $.inArray('false', validateTabel()) > -1;
+
+	if(containsErrors == false)
+	{
+		if(amountRows !== 0)
 		{
-			window.location.href = dest;
+			if (typeof(dest) !== "undefined" && dest !== "")
+			{
+				window.location.href = dest;
+			}
 		}
-	}
-	else
-	{
-		$("#stap3-buttons").after(error);
+		else
+		{
+			$("#stap3-buttons").after(error);
+		}
 	}
 
 	e.preventDefault();
 });
+
+function validateErrorTable(email, element, name)
+{
+	if(email == false)
+	{
+		var elementEmail = element.siblings("td.email");
+		$(elementEmail).css({"color":"#EF403E"});
+
+		var	error = "<p class='error'>"+name+" is geen geldig e-mailadres</p>";
+		$("#stap3-buttons").after(error);
+	}
+}
+
+function validateTabel()
+{
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	var errors = [];
+
+	$("tr.emailAdded").each(function() 
+	{
+		var emailToValidate = $("td.email", this).text();
+		var resultValid = re.test(emailToValidate);
+		var error;
+
+		if(resultValid == false)
+		{
+			error = "false";
+		}
+		else
+		{
+			error = "true";
+		}
+		errors.push(error);
+	});
+
+	return errors;
+}
 
 /*check every box when "selectAll" is checked*/
 $(document).on("click", "#selectAll", function()

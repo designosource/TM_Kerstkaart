@@ -129,7 +129,7 @@
 									$lastname = $person['achternaam'];
 									$email = $person['emailadres'];
 
-									echo "<tr>" .
+									echo "<tr class='emailAdded'>" .
 										  	"<td class='checkItem'><input type='checkbox' value='check'></td>" .
 										    "<td class='firstname'>" . $firstname . "</td>" .
 										    "<td class='lastname'>" . $lastname . "</td>" .
