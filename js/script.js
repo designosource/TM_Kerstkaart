@@ -728,17 +728,16 @@ $("a#gtStap2").on("click", function(e)
 	var t = $(this);
 	var dest = t.attr('href');
 
-	console.log(chosenCardURL);
-console.log(chosenCardALT);
-console.log(chosenCardID);
-console.log(chosenCardType);
+	var splitCardURL = chosenCardURL.split(".");
+	var splitTwiceCardURL = splitCardURL[0].split("/");
+	var trueCardURL = splitTwiceCardURL[1];
 
 	var sendData = $.ajax(
 					{
 						type: "POST",
 						url: "ajax/getCard.php",
 						data: {
-								chosenCardURL: chosenCardURL,
+								chosenCardURL: trueCardURL,
 								chosenCardALT: chosenCardALT,
 								chosenCardID: chosenCardID,
 								chosenCardType: chosenCardType

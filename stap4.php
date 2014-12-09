@@ -64,6 +64,25 @@
 			    <div id="cardCon">
 			    	<!-- Add poem here -->
 			    	<?php 
+			    		if(isset($_SESSION['cardURL']) && isset($_SESSION['cardType']))
+						{
+							if($_SESSION['cardType'] == "animated")
+							{
+								echo "<video width='100%' loop autoplay poster='img/poster_kaart_1.png' src='".$_SESSION['cardURL']."' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."'>
+										<source src='".$_SESSION['cardURL']."' type='video/mp4'>
+									</video>";
+							}
+							else
+							{
+								echo "<img alt='".$_SESSION['cardALT']."' data-id=".$_SESSION['cardID']." data-type=".$_SESSION['cardType']." src='".$_SESSION['cardURL']."'/>";
+							}
+						}
+						else
+						{
+							echo "<video width='100%' loop autoplay poster='img/poster_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Placeholder 1' data-type='animated'>
+									<source src='img/full_kaart_1.mp4' type='video/mp4'>
+								</video>";
+						}
 			    	 ?>
 			    </div>
 		   	</div>
@@ -72,6 +91,25 @@
 				<div id="cardCon">
 			    	<!-- Add poem here -->
 					<?php 
+						if(isset($_SESSION['cardURL']) && isset($_SESSION['cardType']))
+						{
+							if($_SESSION['cardType'] == "animated")
+							{
+								echo "<video width='100%' loop autoplay poster='img/poster_kaart_1.png' src='".$_SESSION['cardURL']."' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."'>
+										<source src='".$_SESSION['cardURL']."' type='video/mp4'>
+									</video>";
+							}
+							else
+							{
+								echo "<img alt='".$_SESSION['cardALT']."' data-id=".$_SESSION['cardID']." data-type=".$_SESSION['cardType']." src='".$_SESSION['cardURL']."'/>";
+							}
+						}
+						else
+						{
+							echo "<video width='100%' loop autoplay poster='img/poster_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Placeholder 1' data-type='animated'>
+									<source src='img/full_kaart_1.mp4' type='video/mp4'>
+								</video>";
+						}
 					 ?>
 			    </div>
 			</div>
