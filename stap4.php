@@ -57,7 +57,19 @@
 			<a id='closeOverlay' href='#'>Sluiten</a>
 			<div id='confirmationCon'>
 				<h1>Weet je zeker dat je klaar bent?</h1>
-				<p>Je staat op het punt om deze kaart naar <span><?php if(!empty($amountPersons)){echo $amountPersons;} ?></span> personen te versturen.</p>
+				<p>Je staat op het punt om deze kaart naar 
+					<span>
+							<?php if(!empty($amountPersons))
+								  {
+								  	if($amountPersons > 1)
+								  	{
+								  		echo $amountPersons . "</span> personen";
+								  	}
+								  	else
+								  	{
+								  		echo $amountPersons . "</span> persoon";
+								  	}
+								  } ?> te versturen.</p>
 
 				<ul>
 					<li id='send'><a href='#'>Versturen</a></li>
