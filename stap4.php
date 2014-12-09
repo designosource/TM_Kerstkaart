@@ -27,6 +27,14 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0;">
+		<link href="img/favicon.ico" rel="icon" type="image/x-icon" />
+
+		<meta name="description" content="Stuur een online kerstkaart naar je vrienden, familie, (mede)docenten en (mede)studenten als je werkgever, werknemer of student aan het Thomas More bent."/>
+		<meta name="keywords" content="Thomas more, Mechelen, Geel, Antwerpen, kerstkaart, kerstmis, ">
+		<meta name="author" content="Thomas More">
+
 		<link href="css/normalize.css" rel="stylesheet" type="text/css" />
 		<link href="css/styleCard.css" rel="stylesheet" type="text/css" />
 		<title>Thomas More | Kerstkaart</title>
@@ -76,7 +84,7 @@
 							}
 							else
 							{
-								echo "<img alt='".$_SESSION['cardALT']."' data-id=".$_SESSION['cardID']." data-type=".$_SESSION['cardType']." src='img/".$_SESSION['cardURL'].".png'/>";
+								echo "<div id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".png)'></div>";
 							}
 						}
 						else
@@ -107,7 +115,7 @@
 							}
 							else
 							{
-								echo "<img alt='".$_SESSION['cardALT']."' data-id=".$_SESSION['cardID']." data-type=".$_SESSION['cardType']." src='img/".$_SESSION['cardURL'].".png'/>";
+								echo "<div id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".png)'></div>";
 							}
 						}
 						else

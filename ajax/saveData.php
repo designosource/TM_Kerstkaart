@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	if(isset($_SESSION['cardALT']) && $_SESSION['cardType']) && isset($_SESSION['cardURL']) && isset($_SESSION['cardID']) && isset($_SESSION['persMess']) && isset($_SESSION['person']))
+	if(isset($_SESSION['cardALT']) && isset($_SESSION['cardType']) && isset($_SESSION['cardURL']) && isset($_SESSION['cardID']) && isset($_SESSION['persMess']) && isset($_SESSION['person']))
  	{
  		include_once('../class/card.class.php');
 
