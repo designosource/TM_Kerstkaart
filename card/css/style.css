@@ -232,13 +232,11 @@ input#go
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
-	height:50px;
-	line-height:47.5px;
 	display:block;
 	font-family: 'texgyreadventorregular';
-	padding:0 25px;
+	padding: 2px 15px 5px 15px;
 	margin:0 auto;
-	display:none\9;;
+	display:none\9;
 }
 
 @media screen and (min-width: 700px)

@@ -42,8 +42,7 @@ html, body
 	-ms-border-radius: 5px;
 	max-width:956px;
 	max-height:530px;
-	margin-top: 2%;
-	margin-bottom: 5%;
+	margin-top: 3%;
 	margin-left: auto;
 	margin-right: auto;
 	/*z-index:10;*/
@@ -580,6 +579,7 @@ p.error
 	display:none\9;
 }
 
+
 input#go
 {
 	background-color:#F24F11;
@@ -587,15 +587,15 @@ input#go
 	border:none;
 	color:#fff;
 	text-align: center;
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	height:50px;
-	line-height:47.5px;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
 	display:block;
 	font-family: 'texgyreadventorregular';
-	padding:0 25px;
+	padding: 2px 15px 5px 15px;
 	margin:0 auto;
 	display:none\9;
 }
