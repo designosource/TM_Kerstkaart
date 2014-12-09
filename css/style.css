@@ -673,6 +673,7 @@ a#downloadcsv
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: #656565;
+	left:260px;
 }
 
 a#downloadcsv:hover
