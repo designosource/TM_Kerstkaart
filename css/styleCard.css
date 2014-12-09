@@ -77,6 +77,14 @@ html, body
 	cursor:-webkit-grabbing;
 }
 
+#cardCon video
+{
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+}
+
 #backCon
 {
 	overflow:auto;

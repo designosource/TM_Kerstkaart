@@ -70,6 +70,14 @@ html, body
 	background-size: cover;
 }
 
+#cardCon video
+{
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+}
+
 #cardCon:active, .flipbox-container:active
 {
 	cursor:-webkit-grabbing;
@@ -79,6 +87,8 @@ html, body
 {
 	overflow:auto;
 }
+
+
 
 #backSec
 {
