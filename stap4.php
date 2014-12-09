@@ -64,8 +64,7 @@
 			    <div id="cardCon">
 			    	<!-- Add poem here -->
 			    	<?php 
-			    		include "/TM_ecard1/index.php";
-			    	?>
+			    	 ?>
 			    </div>
 		   	</div>
 
@@ -73,8 +72,7 @@
 				<div id="cardCon">
 			    	<!-- Add poem here -->
 					<?php 
-			    		include "/TM_ecard1/index.php";
-			    	?>
+					 ?>
 			    </div>
 			</div>
 

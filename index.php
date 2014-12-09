@@ -5,6 +5,9 @@
 	$card = new Card();
 	$cards = $card->GetCards();
 
+	//var_dump($cards);
+	//unset($_SESSION);
+	var_dump($_SESSION);
  ?><!doctype html>
 <html lang="en">
 	<head>
@@ -21,7 +24,29 @@
 					<div id="stap1-col1">
 						<h1 id="titleCard"><?php if(isset($_SESSION['cardALT'])){ echo $_SESSION['cardALT']; } else {echo "Placeholder 1";}?></h1>
 						<div class="stap1-choosen">
-							<img alt="<?php if(isset($_SESSION['cardALT'])){echo $_SESSION['cardALT'];}else{echo 'Placeholder 1';}?>" data-id="<?php if(isset($_SESSION['cardID'])){echo $_SESSION['cardID'];}else{echo '1';}?>" src="<?php if(isset($_SESSION['cardURL'])){echo $_SESSION['cardURL'];}else{echo "img/placeholderImg_1.png";}?>">
+
+							<?php  
+								if(isset($_SESSION['cardURL']) && isset($_SESSION['cardType']))
+								{
+									if($_SESSION['cardType'] == "animated")
+									{
+										echo "<video width='100%' loop autoplay poster='img/poster_kaart_1.png' src='".$_SESSION['cardURL']."' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."'>
+												<source src='".$_SESSION['cardURL']."' type='video/mp4'>
+											</video>";
+									}
+									else
+									{
+										echo "<img alt='".$_SESSION['cardALT']."' data-id=".$_SESSION['cardID']." data-type=".$_SESSION['cardType']." src='".$_SESSION['cardURL']."'/>";
+									}
+								}
+								else
+								{
+									echo "<video width='100%' loop autoplay poster='img/poster_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Placeholder 1' data-type='animated'>
+											<source src='img/full_kaart_1.mp4' type='video/mp4'>
+										</video>";
+								}
+							?>
+
 						</div>
 					</div>
 
@@ -32,7 +57,7 @@
 							<?php 
 								foreach($cards as $card)
 								{
-									echo '<li class="card"><img alt="'.$card['card_title'].'" data-id="'.$card['card_id'].'" src="img/'.$card['card_url'].'"></li>';
+									echo '<li class="card"><img alt="'.$card['card_title'].'" data-id="'.$card['card_id'].'" data-url="'.$card['card_url'].'" data-type="'.$card['card_type'].'" src="img/thumbail_'.$card['card_url'].'.png"></li>';
 								}
 							 ?>
 						</ul>

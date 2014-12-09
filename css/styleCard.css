@@ -587,12 +587,12 @@ input#go
 	border:none;
 	color:#fff;
 	text-align: center;
-	-webkit-border-bottom-right-radius: 3px;
-	-webkit-border-bottom-left-radius: 3px;
-	-moz-border-radius-bottomright: 3px;
-	-moz-border-radius-bottomleft: 3px;
 	border-bottom-right-radius: 3px;
 	border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-bottom-radius-bottomright: 3px;
+	-moz-border-bottom-radius-bottomleft: 3px;
 	display:block;
 	font-family: 'texgyreadventorregular';
 	padding: 2px 15px 5px 15px;

@@ -39,11 +39,25 @@ $("ul#otherCards li").on("click", function()
 	var image = $("img", this).attr('src');
 	var title = $("img", this).attr('alt');
 	var id = $("img", this).attr('data-id');
+	var type = $("img", this).attr('data-type');
+	var url = $("img", this).attr('data-url');
 
-	$(".stap1-choosen img").attr("src", image);
-	$(".stap1-choosen img").attr("alt", title);
-	$(".stap1-choosen img").attr("data-id", id);
-	$("h1#titleCard").text(title);
+
+	if(type == "static")
+	{
+		$(".stap1-choosen").empty();
+		var content = "<img alt=" + title + " data-id=" + id + " data-type="+ type +" src='img/full_"+url+".png'/>";
+	}
+	else
+	{
+		$(".stap1-choosen").empty();
+		var content = "<video width='100%' loop autoplay poster='img/poster_"+url+".png' src='img/full_"+url+".mp4' data-id='"+id+"' alt='"+title+"' data-type='"+type+"'>" +
+						  	"<source src='img/full_"+url+".mp4' type='video/mp4'>" +
+						"</video>";
+	}
+
+
+	$(".stap1-choosen").append(content);
 });
 
 
@@ -706,12 +720,18 @@ $("ul#emailaanpassen li a#editEmail").on("click", function(e)
 
 $("a#gtStap2").on("click", function(e)
 {
-	var chosenCardURL = $(".stap1-choosen img").attr('src');
-	var chosenCardALT = $(".stap1-choosen img").attr('alt');
-	var chosenCardID = $(".stap1-choosen img").attr('data-id');
+	var chosenCardURL = $(".stap1-choosen img, .stap1-choosen video").attr('src');
+	var chosenCardALT = $(".stap1-choosen img, .stap1-choosen video").attr('alt');
+	var chosenCardID = $(".stap1-choosen img, .stap1-choosen video").attr('data-id');
+	var chosenCardType = $(".stap1-choosen img, .stap1-choosen video").attr('data-type');
 
 	var t = $(this);
 	var dest = t.attr('href');
+
+	console.log(chosenCardURL);
+console.log(chosenCardALT);
+console.log(chosenCardID);
+console.log(chosenCardType);
 
 	var sendData = $.ajax(
 					{
@@ -720,7 +740,8 @@ $("a#gtStap2").on("click", function(e)
 						data: {
 								chosenCardURL: chosenCardURL,
 								chosenCardALT: chosenCardALT,
-								chosenCardID: chosenCardID
+								chosenCardID: chosenCardID,
+								chosenCardType: chosenCardType
 								}
 					});
 
