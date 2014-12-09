@@ -149,7 +149,7 @@
 		    <div id="nav">
 		    	<ul id="vorige-volgende">
 					<li id="left"><a class="button-vorigevolgende" href="stap3.php">Kaart wijzigen</a></li>
-					<li id="center"><h1>Veeg over de kaart om de <span>achterkant</span> te zien</h1></li>
+					<li id="center"><h1>Veeg over de kaart om de <span>boodschap</span> te zien</h1></li>
 					<li id="right"><a class="button-vorigevolgende" id="sendCard" href="#">Kaart versturen</a></li>
 				</ul>
 			</div>

@@ -41,7 +41,7 @@ function swiped(event)
 			onFinish: function ()
 			{
 				$(".flipbox-container").removeClass("swiped");
-				$("#nav h1 span").text("achterkant");
+				$("#nav h1 span").text("boodschap");
 			}
 		});
 	}

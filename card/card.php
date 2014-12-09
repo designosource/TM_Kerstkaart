@@ -137,7 +137,7 @@
 
 
 		    <div id="nav">
-				<h1>Veeg over de kaart om de <span>achterkant</span> te zien</h1>
+				<h1>Veeg over de kaart om de <span>boodschap</span> te zien</h1>
 			</div>
 		</div>
 

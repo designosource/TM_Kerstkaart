@@ -802,7 +802,7 @@ function swiped(event)
 			onFinish: function ()
 			{
 				$(".flipbox-container").removeClass("swiped");
-				$("#nav li#center span").text("achterkant");
+				$("#nav li#center span").text("booschap");
 			}
 		});
 	}
