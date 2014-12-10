@@ -806,7 +806,7 @@ function swiped(event)
 			onFinish: function ()
 			{
 				$(".flipbox-container").removeClass("swiped");
-				$("#nav li#center span").text("kerstboodschap");
+				$("#nav li#center span").text("persoonlijke boodschap");
 			}
 		});
 	}
