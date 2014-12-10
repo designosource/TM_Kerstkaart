@@ -257,7 +257,7 @@
 													  								<tbody>
 													  									<tr>
 													  										<td class="contentSec" style="text-align: left; padding-top: 5px; padding-bottom: 5px; width: 100%;">
-													  											<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Studenten van <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactieve Multimedia Design</a></span>
+													  											<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Studenten van <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>
 													  										</td>
 													  									</tr>
 													  								</tbody>
