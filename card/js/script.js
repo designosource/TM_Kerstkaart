@@ -114,4 +114,11 @@ function toggleBackgroundMusic()
 var beepTwo = $("#backgoundMusic");
 
 /*Comment to disable autoplay*/
-playBackgroundMusic();
+if($('body').hasClass('music'))
+{
+	playBackgroundMusic();
+}
+else
+{
+	$("#audioCon").remove();
+}

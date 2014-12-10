@@ -78,7 +78,13 @@
 		<title>Thomas More | Kerstkaart</title>
 	</head>
 
-	<body>
+	<body class="<?php if($cardInfo['card_type'])
+					 { 
+					 	if($cardInfo['card_type'] == "animated")
+						{
+							echo "music";
+						}
+					 } ?>">
 
 		<div id="audioCon">
 			<audio id="backgoundMusic">
