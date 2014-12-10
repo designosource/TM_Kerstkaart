@@ -934,13 +934,7 @@ th.checkItem input
 
 #indAdd label
 {
-	display:block;
-	display:block\9;
-	*display:block;
-	_display:block;
-	margin-bottom:3.5px\9;
-	*margin-bottom:3.5px;
-	_margin-bottom:3.5px;
+	margin-bottom:3.5px;
 }
 
 #bulkAdd input[type=file]
