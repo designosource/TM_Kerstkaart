@@ -52,6 +52,9 @@ $("ul#otherCards li").on("click", function()
 		$(".stap1-choosen").empty();
 		var content = "<video width='100%' loop autoplay poster='img/full_"+url+".png' src='img/full_"+url+".mp4' data-id='"+id+"' alt='"+title+"' data-type='"+type+"'>" +
 						  	"<source src='img/full_"+url+".mp4' type='video/mp4'>" +
+						  	"<source src='img/full_"+url+".webm' type='video/webm'>" +
+						  	"<source src='img/full_"+url+".ogv' type='video/ogg'>" +
+						  	"<img src='img/full_"+url+".png'>" +
 						"</video>";
 	}
 
