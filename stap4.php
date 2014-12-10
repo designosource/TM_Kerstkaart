@@ -96,7 +96,7 @@
 							}
 							else
 							{
-								echo "<div id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".png)'></div>";
+								echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>";
 							}
 						}
 						else
@@ -127,7 +127,7 @@
 							}
 							else
 							{
-								echo "<div id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".png)'></div>";
+								echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>";
 							}
 						}
 						else

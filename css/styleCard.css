@@ -73,12 +73,11 @@ html, body
 
 #cardConSec
 {
-	background: no-repeat center center fixed;
-	background-position: 50% 50%; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	background-repeat: no-repeat; 
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	background-size: 100%;
 	cursor:-webkit-grab;
 	cursor:-moz-grab;
 	cursor:-ms-grab;
@@ -87,9 +86,7 @@ html, body
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
-	max-width:956px;
-	max-height:530px;
-	margin-top: 45px;
+	height:530px;
 	margin-left: auto;
 	margin-right: auto;
 

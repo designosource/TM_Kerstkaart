@@ -88,7 +88,26 @@ html, body
 	overflow:auto;
 }
 
+#cardConSec
+{
+	background-repeat: no-repeat; 
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	background-size: 100%;
+	cursor:-webkit-grab;
+	cursor:-moz-grab;
+	cursor:-ms-grab;
+	cursor:-o-grab;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	height:530px;
+	margin-left: auto;
+	margin-right: auto;
 
+}
 
 #backSec
 {
