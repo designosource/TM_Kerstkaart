@@ -158,7 +158,7 @@
 
 
 		    <div id="nav">
-				<h1>Veeg over de kaart om de <span>kerstboodschap</span> te zien</h1>
+				<h1>Veeg over de kaart om je <span>persoonlijke boodschap</span> te bekijken</h1>
 			</div>
 		</div>
 
