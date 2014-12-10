@@ -111,6 +111,7 @@
 									<source src='img/full_".$cardInfo['card_url'].".mp4' type='video/mp4'>
 									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
 									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
+									<img src='img/full_".$cardInfo['card_url'].".png'>
 								</video>";
 						}
 						else
