@@ -34,6 +34,7 @@
 												<source src='img/".$_SESSION['cardURL'].".mp4' type='video/mp4'>
 												<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
 												<source src='img/".$_SESSION['cardURL'].".ogv' type='video/ogg'>
+												<img src='img/".$_SESSION['cardURL']."'>
 											</video>";
 									}
 									else
@@ -47,6 +48,7 @@
 											<source src='img/full_kaart_1.mp4' type='video/mp4'>
 											<source src='img/full_kaart_1.webm' type='video/webm'>
 											<source src='img/full_kaart_1.ogv' type='video/ogg'>
+											<img src='img/full_kaart_1.png'>
 										</video>";
 								}
 							?>
