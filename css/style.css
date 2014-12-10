@@ -934,7 +934,7 @@ th.checkItem input
 
 #indAdd label
 {
-	display:none;
+	display:block;
 	display:block\9;
 	*display:block;
 	_display:block;
