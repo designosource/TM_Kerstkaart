@@ -22,7 +22,7 @@
 
 				<div id="content">
 					<div id="stap1-col1">
-						<h1 id="titleCard"><?php if(isset($_SESSION['cardALT'])){ echo $_SESSION['cardALT']; } else {echo "Placeholder 1";}?></h1>
+						<h1 id="titleCard"><?php if(isset($_SESSION['cardALT'])){ echo $_SESSION['cardALT']; } else {echo "Geanimeerde kerstkaart";}?></h1>
 						<div class="stap1-choosen">
 
 							<?php  
@@ -43,7 +43,7 @@
 								}
 								else
 								{
-									echo "<video width='100%' loop autoplay poster='img/full_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Placeholder 1' data-type='animated'>
+									echo "<video width='100%' loop autoplay poster='img/full_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'>
 											<source src='img/full_kaart_1.mp4' type='video/mp4'>
 											<source src='img/full_kaart_1.webm' type='video/webm'>
 											<source src='img/full_kaart_1.ogv' type='video/ogg'>

@@ -51,7 +51,7 @@
 				}
 				else
 				{
-					$error = "<p class='error'>Verkeerde type file</p>";
+					$error = "<p class='error'>Verkeerde type file. Als dit een Excel bestand is, moet je het opslaan als een CSV bestand.</p>";
 				}
 			}
 			else
