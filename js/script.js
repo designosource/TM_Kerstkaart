@@ -1046,5 +1046,12 @@ var beepTwo = $("#backgoundMusic");
 /*Comment to disable autoplay*/
 if($('body').hasClass('stap4'))
 {
-	playBackgroundMusic();
+	if($('body').hasClass('music'))
+	{
+		playBackgroundMusic();	
+	}
+	else
+	{
+		$("#audioCon").remove();
+	}
 }

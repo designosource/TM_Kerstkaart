@@ -40,7 +40,13 @@
 		<title>Thomas More | Kerstkaart</title>
 	</head>
 
-	<body class="stap4">
+	<body class="stap4 <?php if(isset($_SESSION['cardType']))
+							 { 
+							 	if($_SESSION['cardType'] == "animated")
+								{
+									echo "music";
+								}
+							 } ?>">
 
 		<div id="audioCon">
 			<audio id="backgoundMusic">
