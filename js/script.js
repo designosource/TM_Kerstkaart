@@ -42,8 +42,6 @@ $("ul#otherCards li").on("click", function()
 	var type = $("img", this).attr('data-type');
 	var url = $("img", this).attr('data-url');
 
-	console.log(title);
-
 	if(type == "static")
 	{
 		$(".stap1-choosen").empty();
@@ -52,7 +50,7 @@ $("ul#otherCards li").on("click", function()
 	else
 	{
 		$(".stap1-choosen").empty();
-		var content = "<video width='100%' loop autoplay poster='img/poster_"+url+".png' src='img/full_"+url+".mp4' data-id='"+id+"' alt='"+title+"' data-type='"+type+"'>" +
+		var content = "<video width='100%' loop autoplay poster='img/full_"+url+".png' src='img/full_"+url+".mp4' data-id='"+id+"' alt='"+title+"' data-type='"+type+"'>" +
 						  	"<source src='img/full_"+url+".mp4' type='video/mp4'>" +
 						"</video>";
 	}
@@ -734,8 +732,6 @@ $("a#gtStap2").on("click", function(e)
 	var splitCardURL = chosenCardURL.split(".");
 	var splitTwiceCardURL = splitCardURL[0].split("/");
 	var trueCardURL = splitTwiceCardURL[1];
-
-	console.log(chosenCardALT);
 
 	var sendData = $.ajax(
 					{
