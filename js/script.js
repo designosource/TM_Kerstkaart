@@ -42,6 +42,7 @@ $("ul#otherCards li").on("click", function()
 	var type = $("img", this).attr('data-type');
 	var url = $("img", this).attr('data-url');
 
+	console.log(title);
 
 	if(type == "static")
 	{
@@ -58,6 +59,8 @@ $("ul#otherCards li").on("click", function()
 
 
 	$(".stap1-choosen").append(content);
+	$("h1#titleCard").text(title);
+
 });
 
 
@@ -721,7 +724,7 @@ $("ul#emailaanpassen li a#editEmail").on("click", function(e)
 $("a#gtStap2").on("click", function(e)
 {
 	var chosenCardURL = $(".stap1-choosen img, .stap1-choosen video").attr('src');
-	var chosenCardALT = $(".stap1-choosen img, .stap1-choosen video").attr('alt');
+	var chosenCardALT = $("h1#titleCard").text();
 	var chosenCardID = $(".stap1-choosen img, .stap1-choosen video").attr('data-id');
 	var chosenCardType = $(".stap1-choosen img, .stap1-choosen video").attr('data-type');
 
@@ -731,6 +734,8 @@ $("a#gtStap2").on("click", function(e)
 	var splitCardURL = chosenCardURL.split(".");
 	var splitTwiceCardURL = splitCardURL[0].split("/");
 	var trueCardURL = splitTwiceCardURL[1];
+
+	console.log(chosenCardALT);
 
 	var sendData = $.ajax(
 					{
