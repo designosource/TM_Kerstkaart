@@ -27,7 +27,10 @@
 							<textarea class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()"><?php if(isset($_SESSION['persMess'])){ echo $_SESSION['persMess'];}else{ echo "Alles wat je kunt wensen.
 En een klein beetje meer.
 Zalig kerstfeest en
-een gelukkig Nieuwjaar!";} ?></textarea>
+een gelukkig Nieuwjaar!
+
+Groeten
+" . $_SERVER['REDIRECT_Shib_Person_givenName'];} ?></textarea>
 					</form>
 					
 					<p class="stap2-characters"><span>500</span> karakters over</p>

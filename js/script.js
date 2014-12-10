@@ -202,7 +202,7 @@ function validateSender(voornaam, achternaam, emailadres)
 	return errors;
 }
 
-$("a#gtStap4, a#gbStap2").on("click", function(e)
+$("a#gtStap4").on("click", function(e)
 {
 	var amountRows = $('table#stap3-table tr:not(#legend, #emptyList)').length;
 
