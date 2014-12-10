@@ -75,6 +75,10 @@
 		<link href="css/normalize.css" rel="stylesheet" type="text/css" />
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 
+		<!--[if lt IE 9]>
+			<script src="js/html5chiv.js"></script>
+		<![endif]-->
+
 		<title>Thomas More | Kerstkaart</title>
 	</head>
 
