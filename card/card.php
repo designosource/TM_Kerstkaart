@@ -111,7 +111,7 @@
 						}
 						else
 						{
-							echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/".$cardInfo['card_url'].".png)'></figure>";
+							echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/full_".$cardInfo['card_url'].".png)'></figure>";
 						}
 			    	 ?>
 			    </div>
@@ -131,7 +131,7 @@
 						}
 						else
 						{
-							echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/".$cardInfo['card_url'].".png)'></figure>";
+							echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/full_".$cardInfo['card_url'].".png)'></figure>";
 						}
 					?>
 			    </div>
