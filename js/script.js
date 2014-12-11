@@ -508,17 +508,16 @@ $("a#bulkEmail").on("click", function(e)
 
 							"<div id='guideCon'>" +
 								"<ol>" +
-									"<li><p><a id='downloadcsv' href='kerstkaart_emails.xls' target='_blank'>Template downloaden</a></p></li>" +
+									"<li><p><a id='downloadcsv' href='kerstkaart_emails.xls' target='_blank'>Excel-template downloaden</a></p></li>" +
 									"<li><p>Vul per bestemmeling één rij in.</p></li>" +
-									"<li><p>Voornaam, naam en e-mailadres moeten vermeld worden in dezelfde kolom.</p></li>" +
-									"<li><p> Upload jouw ingevulde lijst.</p></li>" +
+									"<li><p>Importeer jouw ingevulde lijst via onderstaande knop.</p></li>" +
 								"</ol>" +
 							"</div>" +
 
 							"<a id='closeOverlay' href='#'>Sluiten</a>" +
 
 							"<div id='fileCon'>" +
-								"Importeer Excel bestand" +
+								"Importeer Excel-bestand" +
 								"<input class='fileInput hidden' type='file' name='emails'/>" +
 							"</div>" +
 

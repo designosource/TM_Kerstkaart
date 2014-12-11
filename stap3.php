@@ -123,7 +123,7 @@
 					<div id="stap3-buttons">
 						<ul id="emailtoevoegen">
 							<li class="addEmail firstItem"><a id="indEmail" class="button-email" href="#">E-mailadres toevoegen</a></li>
-							<li class="addEmail"><a id="bulkEmail" class="button-email" href="#">Excel bestand importeren</a></li>
+							<li class="addEmail"><a id="bulkEmail" class="button-email" href="#">Excel-bestand importeren</a></li>
 						</ul>
 					
 
