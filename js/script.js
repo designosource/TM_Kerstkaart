@@ -806,7 +806,8 @@ function swiped(event)
 			onFinish: function ()
 			{
 				$(".flipbox-container").removeClass("swiped");
-				$("#nav li#center span").text("persoonlijke boodschap");
+				$("#nav li#center span#messageHinter").text("persoonlijke boodschap");
+				$("#nav li#center span#sideHinter").text("kaart");
 			}
 		});
 	}
@@ -824,7 +825,8 @@ function swiped(event)
 			onFinish: function ()
 			{
 				$(".flipbox-container").addClass("swiped");
-				$("#nav li#center span").text("kerstkaart");
+				$("#nav li#center span#messageHinter").text("kerstkaart");
+				$("#nav li#center span#sideHinter").text("tekst");
 			}
 		});
 	}

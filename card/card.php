@@ -158,7 +158,7 @@
 
 
 		    <div id="nav">
-				<h1>Veeg over de kaart om je <span>persoonlijke boodschap</span> te bekijken.</h1>
+				<h1>Veeg over de <span id="sideHinter">kaart</span> om je <span id="messageHinter">persoonlijke boodschap</span> te bekijken.</h1>
 			</div>
 		</div>
 
