@@ -97,7 +97,7 @@
 		  		<source src="music/kerstmuziekje.wav" type="audio/wav">
 			</audio>
 
-			<input type="button" id="go" value="Muziek pauzeren">
+			<input type="button" id="go" value="Muziek dempen">
 		</div>
 
 		<div id="container">

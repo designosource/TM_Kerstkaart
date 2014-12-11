@@ -70,7 +70,7 @@ $('#go').on('click',function(evt)
 	if($(this).hasClass("is-paused")) 
 	{
 		playBackgroundMusic();
-		$("#go").val("Muziek pauzeren");
+		$("#go").val("Muziek dempen");
 	}
 	else 
 	{
