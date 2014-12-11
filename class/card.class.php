@@ -219,9 +219,27 @@
 												  							<table style="padding-right: 30px; padding-left: 30px; width:100%;">
 												  								<tbody>
 												  									<tr>
-												  										<td class="contentSec" style="text-align: left; padding-top: 15px; padding-bottom: 0px; width: 100%; position:relative;">
-												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><span style="font-weight:bold;">'. $this->m_ssenderFirstname
-.' '. $this->m_ssenderLastName .'</span> heeft je een kerstkaart gestuurd!</h1>
+												  										<td class="contentSec" style="text-align: left; padding-top: 50px; padding-bottom: 10px; width: 100%; position:relative;">
+												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Beste <span style="font-weight:bold;">'. $this->m_sreceiverFirstname.'</span>
+												  											</h1>
+												  											
+												  										</td>
+												  									</tr>
+												  								</tbody>
+												  							</table>
+
+												  							<table style="padding-right: 30px; padding-left: 30px; width:100%;">
+												  								<tbody>
+												  									<tr>
+												  										<td class="contentSec" style="text-align: left; padding-top: 50px; padding-bottom: 0px; width: 100%; position:relative;">
+												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">
+												  												Je kreeg een kerstkaart van <span style="font-weight:bold;">'. $this->m_ssenderFirstname .' '. $this->m_ssenderLastName .'</span>
+												  											</h1>
+												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">
+												  													Klik 
+												  													<a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal; color:#f24f11;" href="'.$url.'">
+												  													hier</a> om de kaart te lezen!
+												  											</h1>
 												  										</td>
 												  									</tr>
 												  								</tbody>
@@ -236,16 +254,6 @@
 												  									</tr>
 												  								</tbody>
 												  							</table>
-
-												  							<table style="padding-right: 30px; padding-left: 30px; width:100%;">
-												  								<tbody>
-												  									<tr>
-												  										<td class="contentSec" style="text-align: left; padding-top: 15px; padding-bottom: 30px; width: 100%;">
-												  											<p style="font-family: Arial, Helvetica, sans-serif; color:#656565; font-size:14px; line-height:20px;">Bent u werkgever, werknemer of student aan het Thomas More en wil je zelf kerstkaarten kunnen versturen naar je vrienden, familie, kennissen, studenten of docenten? Bezoek dan onze website op <a style="text-decoration:none; text-decoration:underline; color:#F24F11;"href="http://ecard.thomasmore.be/">ecard.thomasmore.be</a></p>
-												  										</td>
-												  									</tr>
-												  								</tbody>
-												  							</table>
 												  					</td>
 												  				</tr>
 												  			</tbody>
@@ -253,11 +261,11 @@
 												  			<tbody style="margin-top:50px; background-color:#FAFAFA; width:100%;">
 													  				<tr>
 													  					<td>
-													  							<table style="padding-right: 30px; padding-left: 30px; width:100%;">
+													  							<table style="padding-right: 25px; padding-left: 25px; width:100%;">
 													  								<tbody>
 													  									<tr>
 													  										<td class="contentSec" style="text-align: left; padding-top: 5px; padding-bottom: 5px; width: 100%;">
-													  											<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Studenten van <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>
+													  											<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Studenten van de opleiding<a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>
 													  										</td>
 													  									</tr>
 													  								</tbody>
@@ -278,7 +286,7 @@
 
 
 			$mail->SetFrom($this->m_ssenderEmailadress, $this->m_ssenderFirstname . " " . $this->m_ssenderLastName);
-			$mail->Subject = "Je hebt een kerstkaart ontvangen van ". $this->m_ssenderFirstname. " " .$this->m_ssenderLastName;
+			$mail->Subject = "Expect more ... wishes!";
 			$mail->MsgHTML($emailbody);
 			$mail->AddAddress($this->m_sreceiverEmailadress, $this->m_sreceiverFirstname . " " . $this->m_sreceiverLastName);
 
