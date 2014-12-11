@@ -629,7 +629,7 @@ ul#vorige-volgende li#left a:after
 /*STEP 2*/
 .stap2-persoonlijkbericht{
 	width: 718px;
-	height: 150px;
+	height: 180px;
 	border: 1px solid #D9D9D9;
 	resize: vertical;
 	padding:10px;
