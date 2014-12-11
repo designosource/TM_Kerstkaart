@@ -408,7 +408,7 @@ function closeBulkAdd()
 {
 	if(!$("#overlay").hasClass("inactive"))
 	{
-		$("#bulkAdd").animate({"opacity":"0", "margin-top":"-67.5px"}, "swing", function()
+		$("#bulkAdd").animate({"opacity":"0", "margin-top":"-153.5px"}, "swing", function()
 		{
 			$(this).remove();
 		});
@@ -505,6 +505,16 @@ $("a#bulkEmail").on("click", function(e)
 {
 	var bulkAdd = "<div id='bulkAdd'>" +
 						"<form action='#' id='fileToUpload' method='POST' enctype='multipart/form-data'>" +
+
+							"<div id='guideCon'>" +
+								"<ol>" +
+									"<li><p><a id='downloadcsv' href='kerstkaart_emails.xls' target='_blank'>Template downloaden</a></p></li>" +
+									"<li><p>Vul per bestemmeling één rij in.</p></li>" +
+									"<li><p>Voornaam, naam en e-mailadres moeten vermeld worden in dezelfde kolom.</p></li>" +
+									"<li><p> Upload jouw ingevulde lijst.</p></li>" +
+								"</ol>" +
+							"</div>" +
+
 							"<a id='closeOverlay' href='#'>Sluiten</a>" +
 
 							"<div id='fileCon'>" +
@@ -522,7 +532,7 @@ $("a#bulkEmail").on("click", function(e)
 	$("#overlay").fadeIn(250);
 
 	$("#overlay").after(bulkAdd);
-	$("#bulkAdd").animate({"opacity":"1", "margin-top":"-92.5px"}, "swing");
+	$("#bulkAdd").animate({"opacity":"1", "margin-top":"-183px"}, "swing");
 
 	e.preventDefault();
 });

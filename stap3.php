@@ -120,8 +120,6 @@
 
 				<div id="content">
 
-					 <a id="downloadcsv" href="kerstkaart_emails.xls" target="_blank">Template downloaden</a>
-
 					<div id="stap3-buttons">
 						<ul id="emailtoevoegen">
 							<li class="addEmail firstItem"><a id="indEmail" class="button-email" href="#">E-mailadres toevoegen</a></li>

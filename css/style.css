@@ -667,13 +667,9 @@ p.stap2-characters span{
 
 a#downloadcsv
 {
-	position:absolute;
-	top:150px;
 	text-decoration: none;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	color: #656565;
-	left:260px;
+	text-decoration: underline;
+	color:#656565;
 }
 
 a#downloadcsv:hover
@@ -980,7 +976,8 @@ th.checkItem input
     -webkit-opacity: 0;
     -moz-opacity: 0;
     -ms-opacity: 0;
-    margin-top:-67.5px;
+    width:310px;
+    margin-top:-158px;
     margin-left:-155px;
 }
 
@@ -1097,4 +1094,11 @@ a#deleteFile
 	width:10px;
 	height:10px;
 	text-indent: -9999px
+}
+
+#guideCon ol
+{
+	color:#656565;
+	padding-left:25px;
+	margin-bottom:25px;
 }
