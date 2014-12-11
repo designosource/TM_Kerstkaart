@@ -191,7 +191,7 @@
 						        <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse; background-color: #F3F3F3; font-family: font-family: Arial, Helvetica, sans-serif;">
 						            <tr>
 						                <td align="center" valign="top">
-						                    <table border="0" cellpadding="20" cellspacing="0" width="550" id="emailContainer" style="position:relative; padding-bottom:25px;">
+						                    <table border="0" cellpadding="20" cellspacing="0" width="553" id="emailContainer" style="position:relative; padding-bottom:25px;">
 						                        <tr>
 						                            <td align="center" valign="top">
 
