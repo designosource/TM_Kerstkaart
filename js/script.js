@@ -508,7 +508,7 @@ $("a#bulkEmail").on("click", function(e)
 							"<a id='closeOverlay' href='#'>Sluiten</a>" +
 
 							"<div id='fileCon'>" +
-								"Importeer CSV bestand" +
+								"Importeer Excel bestand" +
 								"<input class='fileInput hidden' type='file' name='emails'/>" +
 							"</div>" +
 

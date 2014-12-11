@@ -22,36 +22,69 @@
 			if(strlen($_FILES['emails']['name']) > 0)
 			{
 				$fileType = $_FILES["emails"]['type'];
+				require('class/php-excel-reader/excel_reader2.php');
+   				require('class/SpreadsheetReader.php');
 
-				if('text/csv' == $fileType ||  'application/vnd.ms-excel' == $fileType)
+				if('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' == $fileType ||  'application/vnd.ms-excel' == $fileType)
 				{
-					$csv = array_map('str_getcsv', file($_FILES["emails"]["tmp_name"]));
+					$fileName = $filename = pathinfo($_FILES['emails']['name'], PATHINFO_FILENAME);
 
-					$amountRows =  count(array_slice($csv, 1));
+					$info = pathinfo($_FILES['emails']['name']);
+					$ext = $info['extension'];
+					$fileFullName = $fileName.".".$ext; 
 
-					if($amountRows <= 20)
+					$target = 'excelFiles/'.$fileFullName;
+					if(move_uploaded_file( $_FILES['emails']['tmp_name'], $target))
 					{
-						foreach(array_slice($csv, 1) as $person)
-						{						
-							$firstname = $person[0];
-							$lastname = $person[1];
-							$email = $person[2];
+						$Reader = new SpreadsheetReader($target);
 
-							$_SESSION['person'][] = array(
-													    "voornaam" => $firstname,
-													    "achternaam" => $lastname,
-													    "emailadres" => $email
-													);
+						$i=0;
+
+					    foreach ($Reader as $row)
+					    {
+					    	if(!empty($row[0]) && !empty($row[2]) && !empty($row[2]))
+					    	{
+					    		$i++;
+					    	}
+					    }
+
+					    if($i <= 20)
+						{
+							foreach ($Reader as $row)
+						    {
+						    	if(!empty($row[0]) && !empty($row[2]) && !empty($row[2]))
+						    	{
+						    		
+							    	if($row[0] !== "Voornaam" && $row[1] !== "Achternaam" && $row[2] !== "Emailadres")
+						    		{
+						    			$firstname = $row[0];
+										$lastname = $row[1];
+										$email = $row[2];
+
+										$_SESSION['person'][] = array(
+																    "voornaam" => $firstname,
+																    "achternaam" => $lastname,
+																    "emailadres" => $email
+																);
+						    		}
+						    	}
+						    }
 						}
+						else
+						{
+							$error = "<p class='error'>Het bulk importeren van emails is beperkt tot <span style='font-weight:bold;'>20</span></p>";
+						}
+
+					    unlink('excelFiles/'.$fileFullName);
 					}
 					else
 					{
-						$error = "<p class='error'>Het bulk importeren van emails is beperkt tot <span style='font-weight:bold;'>20</span></p>";
+						$error = "<p class='error'>Er is iets misgelopen, gelieve nog eens te proberen.</p>";
 					}
 				}
 				else
 				{
-					$error = "<p class='error'>Verkeerde type file. Als dit een Excel bestand is, moet je het opslaan als een CSV bestand.</p>";
+					$error = "<p class='error'>Verkeerde type file. Alleen .xls en .xlsx zijn momenteel ondersteund.</p>";
 				}
 			}
 			else
@@ -86,12 +119,12 @@
 
 				<div id="content">
 
-					 <a id="downloadcsv" href="kerstkaart_emails.csv" target="_blank">Template downloaden</a>
+					 <a id="downloadcsv" href="kerstkaart_emails.xls" target="_blank">Template downloaden</a>
 
 					<div id="stap3-buttons">
 						<ul id="emailtoevoegen">
 							<li class="addEmail firstItem"><a id="indEmail" class="button-email" href="#">E-mailadres toevoegen</a></li>
-							<li class="addEmail"><a id="bulkEmail" class="button-email" href="#">CSV bestand importeren</a></li>
+							<li class="addEmail"><a id="bulkEmail" class="button-email" href="#">Excel bestand importeren</a></li>
 						</ul>
 					
 
