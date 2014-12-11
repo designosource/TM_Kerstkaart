@@ -220,26 +220,18 @@
 												  								<tbody>
 												  									<tr>
 												  										<td class="contentSec" style="text-align: left; padding-top: 50px; padding-bottom: 10px; width: 100%; position:relative;">
-												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Beste <span style="font-weight:bold;">'. $this->m_sreceiverFirstname.'</span>
-												  											</h1>
-												  											
+												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Beste <span style="font-weight:normal;">'. $this->m_sreceiverFirstname.'</span></h1>
 												  										</td>
 												  									</tr>
 												  								</tbody>
 												  							</table>
 
-												  							<table style="padding-right: 30px; padding-left: 30px; width:100%;">
+												  							<table style="padding-right: 30px; padding-left: 30px; width:100%; padding-bottom:30px;">
 												  								<tbody>
 												  									<tr>
-												  										<td class="contentSec" style="text-align: left; padding-top: 30px; padding-bottom: 0px; width: 100%; position:relative;">
-												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">
-												  												Je kreeg een kerstkaart van <span style="font-weight:bold;">'. $this->m_ssenderFirstname .' '. $this->m_ssenderLastName .'</span>
-												  											</h1>
-												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">
-												  													Klik 
-												  													<a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal; color:#f24f11;" href="'.$url.'">
-												  													hier</a> om de kaart te lezen!
-												  											</h1>
+												  										<td class="contentSec" style="text-align: left; padding-top: 0px; padding-bottom: 0px; width: 100%; position:relative;">
+												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Je kreeg een kerstkaart van <span style="font-weight:normal;">'. $this->m_ssenderFirstname .' '. $this->m_ssenderLastName .'.</span></h1>
+												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Klik <a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal; color:#f24f11;" href="'.$url.'">hier</a> om de kaart te lezen!</h1>
 												  										</td>
 												  									</tr>
 												  								</tbody>
@@ -255,7 +247,7 @@
 													  								<tbody>
 													  									<tr>
 													  										<td class="contentSec" style="text-align: left; padding-top: 5px; padding-bottom: 5px; width: 100%;">
-													  											<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Studenten van de opleiding<a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>
+													  											<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Studenten van de opleiding <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>
 													  										</td>
 													  									</tr>
 													  								</tbody>
