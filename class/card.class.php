@@ -231,7 +231,7 @@
 												  							<table style="padding-right: 30px; padding-left: 30px; width:100%;">
 												  								<tbody>
 												  									<tr>
-												  										<td class="contentSec" style="text-align: left; padding-top: 50px; padding-bottom: 0px; width: 100%; position:relative;">
+												  										<td class="contentSec" style="text-align: left; padding-top: 30px; padding-bottom: 0px; width: 100%; position:relative;">
 												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">
 												  												Je kreeg een kerstkaart van <span style="font-weight:bold;">'. $this->m_ssenderFirstname .' '. $this->m_ssenderLastName .'</span>
 												  											</h1>
@@ -240,16 +240,6 @@
 												  													<a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal; color:#f24f11;" href="'.$url.'">
 												  													hier</a> om de kaart te lezen!
 												  											</h1>
-												  										</td>
-												  									</tr>
-												  								</tbody>
-												  							</table>
-
-												  							<table style="padding-left: 150px; width:100%;">
-												  								<tbody>
-												  									<tr>
-												  										<td class="contentSec" style="padding-top: 15px; padding-bottom: 50px; width: 100%;">
-												  											<a style="letter-spacing: 0.5px; font-family: Arial, Helvetica, sans-serif; font-size: 18px; text-align: center; background-color:#F24F11; border-radius:3px; width:200px; height:42.5px; line-height:42.5px; display:block; text-decoration:none; color:#fff;" href="'.$url.'">Bekijk je kaart hier</a>
 												  										</td>
 												  									</tr>
 												  								</tbody>
