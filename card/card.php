@@ -113,12 +113,12 @@
 									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
 									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
 									<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
-									<figure style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>
+									<figure style='background-image: url(img/ie_full_".$cardInfo['card_url'].".png)'></figure>
 								</video>";
 						}
 						else
 						{
-							echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/full_".$cardInfo['card_url'].".png)'></figure>";
+							echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/ie_full_".$cardInfo['card_url'].".png)'></figure>";
 						}
 			    	 ?>
 			    </div>
@@ -136,12 +136,12 @@
 									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
 									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
 									<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
-									<figure style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>
+									<figure style='background-image: url(img/ie_full_".$cardInfo['card_url'].".png)'></figure>
 								</video>";
 						}
 						else
 						{
-							echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/full_".$cardInfo['card_url'].".png)'></figure>";
+							echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/ie_full_".$cardInfo['card_url'].".png)'></figure>";
 						}
 					?>
 			    </div>
