@@ -107,7 +107,7 @@
 			    	<?php 
 			    		if($cardInfo['card_type'] == "animated")
 						{
-							echo "<video width='100%' loop autoplay poster='img/full_".$cardInfo['card_url'].".png' src='img/full_".$cardInfo['card_url'].".mp4' data-id='".$cardInfo['card_id']."' alt='".$cardInfo['card_title']."' data-type='".$cardInfo['card_type']."'>
+							echo "<video width='100%' loop autoplay controls='true' poster='img/full_".$cardInfo['card_url'].".png' src='img/full_".$cardInfo['card_url'].".mp4' data-id='".$cardInfo['card_id']."' alt='".$cardInfo['card_title']."' data-type='".$cardInfo['card_type']."'>
 									<source src='img/full_".$cardInfo['card_url'].".mp4' type='video/mp4'>
 									<source src='img/full_".$cardInfo['card_url']."a.mp4' type='video/mp4'>
 									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
@@ -132,7 +132,7 @@
 			    	<?php 
 			    		if($cardInfo['card_type'] == "animated")
 						{
-							echo "<video width='100%' loop autoplay poster='img/full_".$cardInfo['card_url'].".png' src='img/full_".$cardInfo['card_url'].".mp4' data-id='".$cardInfo['card_id']."' alt='".$cardInfo['card_title']."' data-type='".$cardInfo['card_type']."'>
+							echo "<video width='100%' controls='true' loop autoplay poster='img/full_".$cardInfo['card_url'].".png' src='img/full_".$cardInfo['card_url'].".mp4' data-id='".$cardInfo['card_id']."' alt='".$cardInfo['card_title']."' data-type='".$cardInfo['card_type']."'>
 									<source src='img/full_".$cardInfo['card_url'].".mp4' type='video/mp4'>
 									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
 									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
