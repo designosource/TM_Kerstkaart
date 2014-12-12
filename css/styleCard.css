@@ -71,7 +71,7 @@ html, body
 	background-size: cover;
 }
 
-#cardConSec
+#cardConSec, video figure
 {
 	background-repeat: no-repeat; 
 	-webkit-background-size: 100%;

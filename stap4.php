@@ -96,7 +96,7 @@
 							{
 								echo "<video onclick='this.play();' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."'>
 										<source src='img/".$_SESSION['cardURL'].".mp4' type='video/mp4'>
-										<source src='img/".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
+										<source src='img/".$_SESSION['cardURL'].".amp4' type='video/mp4'>
 										<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
 										<source src='img/".$_SESSION['cardURL'].".ogv' type='video/ogg'>
 										<source src='img/".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
@@ -169,7 +169,7 @@
 					</div>
 
 					<div id="copyCon">
-					<span id="copy">&copy; <a href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a href="http://designosource.be/">Designosource</a> - Studenten van het afstudeertraject <a href="http://weareimd.be/">Interactive Multimedia Design</a></span>
+					<span id="copy">&copy; <a href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a href="http://designosource.be/">Designosource</a> - Studenten van <a href="http://weareimd.be/">Interactive Multimedia Design</a></span>
 					</div>
 				</div>
 			</div>

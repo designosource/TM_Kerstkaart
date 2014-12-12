@@ -89,7 +89,7 @@ html, body
 	overflow:auto;
 }
 
-#cardConSec
+#cardConSec, video figure
 {
 	background-repeat: no-repeat; 
 	-webkit-background-size: 100%;
