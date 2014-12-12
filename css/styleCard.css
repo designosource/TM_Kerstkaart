@@ -99,6 +99,8 @@ html, body
 
 #cardCon video
 {
+	width: 100%    !important;
+  	height: auto   !important;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;

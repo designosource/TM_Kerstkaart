@@ -94,7 +94,7 @@
 						{
 							if($_SESSION['cardType'] == "animated")
 							{
-								echo "<video width='100%' onclick='this.play();' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."'>
+								echo "<video onclick='this.play();' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."'>
 										<source src='img/".$_SESSION['cardURL'].".mp4' type='video/mp4'>
 										<source src='img/".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
 										<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
@@ -110,7 +110,7 @@
 						}
 						else
 						{
-							echo "<video width='100%' onclick='this.play();' controls='true' loop autoplay poster='img/poster_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Placeholder 1' data-type='animated'>
+							echo "<video onclick='this.play();' controls='true' loop autoplay poster='img/poster_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Placeholder 1' data-type='animated'>
 									<source src='img/".$_SESSION['cardURL'].".mp4' type='video/mp4'>
 									<source src='img/".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
 									<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
@@ -131,7 +131,7 @@
 						{
 							if($_SESSION['cardType'] == "animated")
 							{
-								echo "<video width='100%' onclick='this.play();' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."'>
+								echo "<video onclick='this.play();' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."'>
 										<source src='img/".$_SESSION['cardURL'].".mp4' type='video/mp4'>
 									<source src='img/".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
 									<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
@@ -147,7 +147,7 @@
 						}
 						else
 						{
-							echo "<video width='100%' onclick='this.play();' loop autoplay poster='img/poster_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Placeholder 1' data-type='animated'>
+							echo "<video onclick='this.play();' loop autoplay poster='img/poster_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Placeholder 1' data-type='animated'>
 									<source src='img/".$_SESSION['cardURL'].".mp4' type='video/mp4'>
 									<source src='img/".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
 									<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
