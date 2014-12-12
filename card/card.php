@@ -113,7 +113,7 @@
 									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
 									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
 									<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
-									<figure src='img/full_".$cardInfo['card_url'].".png'></figure>
+									<figure style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>
 								</video>";
 						}
 						else
@@ -136,7 +136,7 @@
 									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
 									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
 									<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
-									<figure src='img/full_".$cardInfo['card_url'].".png'></figure>
+									<figure style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>
 								</video>";
 						}
 						else
