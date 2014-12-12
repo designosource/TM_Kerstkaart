@@ -98,7 +98,7 @@
 										<source src='img/".$_SESSION['cardURL'].".mp4' type='video/mp4'>
 										<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
 										<source src='img/".$_SESSION['cardURL'].".ogv' type='video/ogg'>
-										<source src='img/".$_SESSION['cardURL'].".m4v' type='video/m4v'>
+										<source src='img/".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
 										<img src='img/full_".$_SESSION['cardURL'].".png'>
 									</video>";
 							}
