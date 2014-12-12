@@ -101,8 +101,6 @@
 										<source src='img/".$_SESSION['cardURL'].".ogv' type='video/ogg'>
 										<source src='img/".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
 										<img src='img/".$_SESSION['cardURL'].".png'>
-
-										Your browser does not support the video tag.
 									</video>";
 							}
 							else
@@ -113,9 +111,12 @@
 						else
 						{
 							echo "<video width='100%' controls='true' loop autoplay poster='img/poster_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Placeholder 1' data-type='animated'>
-									<source src='img/full_kaart_1.mp4' type='video/mp4'>
-									<source src='img/full_kaart_1.webm' type='video/webm'>
-									<source src='img/full_kaart_1.ogv' type='video/ogg'>
+									<source src='img/full_".$cardInfo['card_url'].".mp4' type='video/mp4'>
+									<source src='img/full_".$cardInfo['card_url']."a.mp4' type='video/mp4'>
+									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
+									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
+									<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
+									<img src='img/full_".$cardInfo['card_url'].".png'>
 								</video>";
 						}
 			    	 ?>
