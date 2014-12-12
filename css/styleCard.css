@@ -217,7 +217,7 @@ p#senderSig
 	font-family: 'texgyreadventorregular';
 }
 
-#nav ul li a
+#nav ul li a.button-vorigevolgende
 {
 	display:block;
 	text-decoration: none;
@@ -229,7 +229,7 @@ p#senderSig
 	position:relative;
 }
 
-ul#vorige-volgende li a:after
+ul#vorige-volgende li a.button-vorigevolgende:after
 {
 	content:"";
 	position: absolute;
@@ -238,18 +238,24 @@ ul#vorige-volgende li a:after
 	width:8px;
 }
 
-ul#vorige-volgende li#right a:after
+ul#vorige-volgende li#right a.button-vorigevolgende:after
 {
 	right: 25px;
 	background-image: url("../img/arrowRight.png");
 	background-image: url('../img/arrowRight.svg'), none;
 }
 
-ul#vorige-volgende li#left a:after
+ul#vorige-volgende li#left a.button-vorigevolgende:after
 {
 	left: 25px;
 	background-image: url("../img/arrowLeft.png");
 	background-image: url('../img/arrowLeft.svg'), none;
+}
+
+ul#vorige-volgende li#center a#clickHinter
+{
+	color: #656565;
+	font-weight: bold;
 }
 
 #nav ul li h1

@@ -775,6 +775,11 @@ $("a#gtStap2").on("click", function(e)
 var swipeOptions = {dragLockToAxis: true, dragBlockHorizontal: true};
 $(".flipbox-container").hammer(swipeOptions).bind("swipe", swiped);
 
+$(document).on("click", "#vorige-volgende li#center a" function()
+{
+	alert("clicked");
+});
+
 function swiped(event)
 {
 	var direction = event.gesture.direction;

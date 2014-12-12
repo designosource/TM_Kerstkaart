@@ -205,7 +205,8 @@ p#senderSig
 	font-weight: normal;
 }
 
-#nav h1 span
+#nav h1 span,
+h1 a#clickHinter
 {
 	font-weight: bold;
 	color: #F24F11;

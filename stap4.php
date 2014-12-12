@@ -178,7 +178,7 @@
 		    <div id="nav">
 		    	<ul id="vorige-volgende">
 					<li id="left"><a class="button-vorigevolgende" href="stap3.php">Kaart wijzigen</a></li>
-					<li id="center"><h1>Veeg over de <span id="sideHinter">kaart</span> om je <span id="messageHinter">persoonlijke boodschap</span> te bekijken.</h1></li>
+					<li id="center"><h1><a id="clickHinter" href="#">Klik hier</a> of veeg over de <span id="sideHinter">kaart</span> om je <span id="messageHinter">persoonlijke boodschap</span> te bekijken.</h1></li>
 					<li id="right"><a class="button-vorigevolgende" id="sendCard" href="#">Kaart versturen</a></li>
 				</ul>
 			</div>
