@@ -775,9 +775,48 @@ $("a#gtStap2").on("click", function(e)
 var swipeOptions = {dragLockToAxis: true, dragBlockHorizontal: true};
 $(".flipbox-container").hammer(swipeOptions).bind("swipe", swiped);
 
-$(document).on("click", "#vorige-volgende li#center a" function()
+$(document).on("click", "#vorige-volgende li#center a#clickHinter", function(e)
 {
-	alert("clicked");
+	var controller = $(".flipbox-container");
+
+	if(controller.hasClass("swiped"))
+	{
+		$(".flipbox-container").flippy(
+		{
+			color_target: "#F3F3F3",
+			duration: "550",
+			light: "10",
+			depth: "0.1",
+			verso: $("#front").html(),
+
+			onFinish: function ()
+			{
+				$(".flipbox-container").removeClass("swiped");
+				$("#nav li#center span#messageHinter").text("persoonlijke boodschap");
+				$("#nav li#center span#sideHinter").text("kaart");
+			}
+		});
+	}
+	else
+	{
+		$(".flipbox-container").flippy(
+		{
+			color_target: "#F3F3F3",
+			duration: "550",
+			light: "10",
+			depth: "0.1",
+			verso: $("#back").html(),
+
+			onFinish: function ()
+			{
+				$(".flipbox-container").addClass("swiped");
+				$("#nav li#center span#messageHinter").text("kerstkaart");
+				$("#nav li#center span#sideHinter").text("tekst");
+			}
+		});
+	}
+
+	e.preventDefault();
 });
 
 function swiped(event)
