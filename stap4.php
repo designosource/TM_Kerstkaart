@@ -35,6 +35,10 @@
 		<meta name="keywords" content="Thomas more, Mechelen, Geel, Antwerpen, kerstkaart, kerstmis, ">
 		<meta name="author" content="Thomas More">
 
+		<!--[if lt IE 9]>
+			<script src="js/html5chiv.js"></script>
+		<![endif]-->
+
 		<link href="css/normalize.css" rel="stylesheet" type="text/css" />
 		<link href="css/styleCard.css" rel="stylesheet" type="text/css" />
 		<title>Thomas More | Kerstkaart</title>
