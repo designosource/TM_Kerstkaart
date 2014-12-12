@@ -76,7 +76,7 @@
 					</div>
 
 					<div id="copyCon">
-					<span id="copy">&copy; <a href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door de opleiding<a href="http://designosource.be/">Designosource</a> - Studenten van <a href="http://weareimd.be/">Interactive Multimedia Design</a></span>
+					<span id="copy">&copy; <a href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a href="http://designosource.be/">Designosource</a> - Studenten van het afstudeertraject <a href="http://weareimd.be/">Interactive Multimedia Design</a></span>
 					</div>
 				</div>
 			</div>
