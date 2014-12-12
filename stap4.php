@@ -109,7 +109,7 @@
 							}
 							else
 							{
-								echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>";
+								echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/ie_".$_SESSION['cardURL'].".png)'></figure>";
 							}
 						}
 						else

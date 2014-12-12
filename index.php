@@ -36,7 +36,7 @@
 												<source src='img/full_".$_SESSION['cardURL'].".webm' type='video/webm'>
 												<source src='img/full_".$_SESSION['cardURL'].".ogv' type='video/ogg'>
 												<source src='img/full_".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
-												<figure src='img/full_".$_SESSION['cardURL'].".png'></figure>
+												<img src='img/".$_SESSION['cardURL'].".png'></img>
 														</video>";
 									}
 									else
@@ -52,7 +52,7 @@
 											<source src='img/full_kaart_1.webm' type='video/webm'>
 											<source src='img/full_kaart_1.ogv' type='video/ogg'>
 											<source src='img/full_kaart_1.m4v' type='video/x-m4v'>
-											<figure src='img/full_kaart_1.png'></figure>
+											<img src='img/full_kaart_1.png'></img>
 											</video>";
 								}
 							?>
