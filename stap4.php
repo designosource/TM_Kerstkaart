@@ -95,12 +95,12 @@
 							if($_SESSION['cardType'] == "animated")
 							{
 								echo "<video width='100%' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."'>
-										<source src='img/full_".$cardInfo['card_url'].".mp4' type='video/mp4'>
-									<source src='img/full_".$cardInfo['card_url']."a.mp4' type='video/mp4'>
-									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
-									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
-									<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
-									<figure src='img/full_".$cardInfo['card_url'].".png'></figure>
+										<source src='img/".$_SESSION['cardURL'].".mp4' type='video/mp4'>
+									<source src='img/".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
+									<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
+									<source src='img/".$_SESSION['cardURL'].".ogv' type='video/ogg'>
+									<source src='img/".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
+									<figure src='img/".$_SESSION['cardURL'].".png'></figure>
 									</video>";
 							}
 							else
@@ -111,12 +111,12 @@
 						else
 						{
 							echo "<video width='100%' controls='true' loop autoplay poster='img/poster_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Placeholder 1' data-type='animated'>
-									<source src='img/full_".$cardInfo['card_url'].".mp4' type='video/mp4'>
-									<source src='img/full_".$cardInfo['card_url']."a.mp4' type='video/mp4'>
-									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
-									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
-									<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
-									<figure src='img/full_".$cardInfo['card_url'].".png'></figure>
+									<source src='img/".$_SESSION['cardURL'].".mp4' type='video/mp4'>
+									<source src='img/".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
+									<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
+									<source src='img/".$_SESSION['cardURL'].".ogv' type='video/ogg'>
+									<source src='img/".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
+									<figure src='img/".$_SESSION['cardURL'].".png'></figure>
 								</video>";
 						}
 			    	 ?>
@@ -132,12 +132,12 @@
 							if($_SESSION['cardType'] == "animated")
 							{
 								echo "<video width='100%' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."'>
-										<source src='img/full_".$cardInfo['card_url'].".mp4' type='video/mp4'>
-									<source src='img/full_".$cardInfo['card_url']."a.mp4' type='video/mp4'>
-									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
-									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
-									<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
-									<figure src='img/full_".$cardInfo['card_url'].".png'></figure>
+										<source src='img/".$_SESSION['cardUrl'].".mp4' type='video/mp4'>
+									<source src='img/".$_SESSION['cardUrl']."a.mp4' type='video/mp4'>
+									<source src='img/".$_SESSION['cardUrl'].".webm' type='video/webm'>
+									<source src='img/".$_SESSION['cardUrl'].".ogv' type='video/ogg'>
+									<source src='img/".$_SESSION['cardUrl'].".m4v' type='video/x-m4v'>
+									<figure src='img/".$_SESSION['cardUrl'].".png'></figure>
 									</video>";
 							}
 							else
@@ -148,12 +148,12 @@
 						else
 						{
 							echo "<video width='100%' loop autoplay poster='img/poster_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Placeholder 1' data-type='animated'>
-									<source src='img/full_".$cardInfo['card_url'].".mp4' type='video/mp4'>
-									<source src='img/full_".$cardInfo['card_url']."a.mp4' type='video/mp4'>
-									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
-									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
-									<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
-									<figure src='img/full_".$cardInfo['card_url'].".png'></figure>
+									<source src='img/".$_SESSION['cardUrl'].".mp4' type='video/mp4'>
+									<source src='img/".$_SESSION['cardUrl']."a.mp4' type='video/mp4'>
+									<source src='img/".$_SESSION['cardUrl'].".webm' type='video/webm'>
+									<source src='img/".$_SESSION['cardUrl'].".ogv' type='video/ogg'>
+									<source src='img/".$_SESSION['cardUrl'].".m4v' type='video/x-m4v'>
+									<figure src='img/".$_SESSION['cardUrl'].".png'></figure>
 								</video>";
 						}
 					 ?>
