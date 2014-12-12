@@ -104,7 +104,7 @@
 										<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
 										<source src='img/".$_SESSION['cardURL'].".ogv' type='video/ogg'>
 										<source src='img/".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
-										<figure style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>
+										<figure style='background-image: url(img/ie_".$_SESSION['cardURL'].".png)'></figure>
 										</video>";
 							}
 							else
@@ -120,7 +120,7 @@
 									<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
 									<source src='img/".$_SESSION['cardURL'].".ogv' type='video/ogg'>
 									<source src='img/".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
-									<figure style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>
+									<figure style='background-image: url(img/ie_".$_SESSION['cardURL'].".png)'></figure>
 								</video>";
 						}
 			    	 ?>
@@ -141,7 +141,7 @@
 									<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
 									<source src='img/".$_SESSION['cardURL'].".ogv' type='video/ogg'>
 									<source src='img/".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
-									<figure style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>
+									<figure style='background-image: url(img/ie_".$_SESSION['cardURL'].".png)'></figure>
 									</video>";
 							}
 							else
@@ -157,7 +157,7 @@
 									<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
 									<source src='img/".$_SESSION['cardURL'].".ogv' type='video/ogg'>
 									<source src='img/".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
-									<figure style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>
+									<figure style='background-image: url(img/ie_".$_SESSION['cardURL'].".png)'></figure>
 								</video>";
 						}
 					 ?>
