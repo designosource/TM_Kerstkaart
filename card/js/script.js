@@ -1,3 +1,47 @@
+$(document).on("click", "a#clickHinter", function(e)
+{
+	var controller = $(".flipbox-container");
+
+	if(controller.hasClass("swiped"))
+	{
+		$(".flipbox-container").flippy(
+		{
+			color_target: "#F3F3F3",
+			duration: "550",
+			light: "10",
+			depth: "0.1",
+			verso: $("#front").html(),
+
+			onFinish: function ()
+			{
+				$(".flipbox-container").removeClass("swiped");
+				$("#nav h1 span#messageHinter").text("persoonlijke boodschap");
+				$("#nav h1 span#sideHinter").text("kaart");
+			}
+		});
+	}
+	else
+	{
+		$(".flipbox-container").flippy(
+		{
+			color_target: "#F3F3F3",
+			duration: "550",
+			light: "10",
+			depth: "0.1",
+			verso: $("#back").html(),
+
+			onFinish: function ()
+			{
+				$(".flipbox-container").addClass("swiped");
+				$("#nav h1 span#messageHinter").text("kerstkaart");
+				$("#nav h1 span#sideHinter").text("tekst");
+			}
+		});
+	}
+
+	e.preventDefault();
+});
+
 var swipeOptions = {dragLockToAxis: true, dragBlockHorizontal: true};
 $(".flipbox-container").hammer(swipeOptions).bind("swipe", swiped);
 
