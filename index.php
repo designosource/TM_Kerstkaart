@@ -31,10 +31,12 @@
 									if($_SESSION['cardType'] == "animated")
 									{
 										echo "<video width='100%' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."'>
-												<source src='img/".$_SESSION['cardURL'].".mp4' type='video/mp4'>
-												<source src='img/".$_SESSION['cardURL'].".webm' type='video/webm'>
-												<source src='img/".$_SESSION['cardURL'].".ogv' type='video/ogg'>
-												<img src='img/".$_SESSION['cardURL']."'>
+												<source src='img/full_".$cardInfo['card_url'].".mp4' type='video/mp4'>
+									<source src='img/full_".$cardInfo['card_url']."a.mp4' type='video/mp4'>
+									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
+									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
+									<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
+									<figure src='img/full_".$cardInfo['card_url'].".png'></figure>
 											</video>";
 									}
 									else
@@ -45,10 +47,12 @@
 								else
 								{
 									echo "<video width='100%' controls='true' loop autoplay poster='img/full_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'>
-											<source src='img/full_kaart_1.mp4' type='video/mp4'>
-											<source src='img/full_kaart_1.webm' type='video/webm'>
-											<source src='img/full_kaart_1.ogv' type='video/ogg'>
-											<img src='img/full_kaart_1.png'>
+											<source src='img/full_".$cardInfo['card_url'].".mp4' type='video/mp4'>
+									<source src='img/full_".$cardInfo['card_url']."a.mp4' type='video/mp4'>
+									<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
+									<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
+									<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
+									<figure src='img/full_".$cardInfo['card_url'].".png'></figure>
 										</video>";
 								}
 							?>
