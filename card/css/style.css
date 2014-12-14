@@ -41,7 +41,7 @@ html, body
 	-ms-border-radius: 5px;
 	max-width:956px;
 	max-height:530px;
-	margin-top: 35px;
+	margin-top: 5px;
 	margin-bottom: 25px;
 	margin-left: auto;
 	margin-right: auto;
@@ -104,7 +104,7 @@ html, body
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
-	height:530px;
+	height:300px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -125,7 +125,7 @@ video figure
 	margin:0;
 	padding:0;
 	color: #656565;
-	font-size: 22.5px;
+	font-size: 15px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: normal;
 }
@@ -137,7 +137,7 @@ video figure
 
 #backCon p
 {
-	line-height:35px;
+	line-height:22px;
 }
 
 p#senderSig
@@ -147,7 +147,7 @@ p#senderSig
 
 #backCon #copyCon
 {
-	width:100%;
+	
 	background-color:#FDFDFD;
 	bottom:0px;
 	position:absolute;
@@ -163,12 +163,18 @@ p#senderSig
 	-ms-border-bottom-right-radius: 5px;
 }
 
+#copyCon
+{
+	padding: 0 50px;
+}
+
 #backCon span#copy
 {
-	font-size:14px;
+	font-size:11px;
 	text-decoration: none;
 	color:#999999;
-	margin-left:50px;
+	text-align: center;
+	
 }
 
 #backCon span#copy a
@@ -263,6 +269,7 @@ h1 a#clickHinter
 	position:absolute;
 	z-index: 11;
 	width:100%;
+	display: none;
 	display:none\9;;
 }
 
@@ -286,6 +293,43 @@ input#go
 
 @media screen and (min-width: 700px)
 {
+
+	.flipbox-container 
+	{
+		margin-top: 35px;
+
+	}
+
+	#audioCon
+	{
+		display: inline-block;
+	}
+	
+	#cardConSec, video figure
+	{
+		height: 530px;
+	}
+
+	#backCon h1, #backCon p,  #backCon span
+	{
+		font-size: 22.5px;
+	}
+
+	#backCon p
+	{
+		line-height:35px;
+	}
+
+	#backCon span#copy
+	{
+		font-size: 14px;
+		
+	}
+
+	#copyCon
+	{
+		padding: 0 50px;
+	}
 
 	#frozen{
 		font-size: 15px;
