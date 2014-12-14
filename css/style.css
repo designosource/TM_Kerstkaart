@@ -643,6 +643,13 @@ ul#vorige-volgende li#left a:after
 	-ms-border-radius: 3px;
 }
 
+.perMessage-info{
+	font-size: 14px;
+	line-height: 24px;
+	color: #999;
+	margin-top: -8px;
+}
+
 .stap2-persoonlijkbericht:focus
 {
 	border: 1px solid #F24F11;

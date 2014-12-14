@@ -22,7 +22,8 @@
 
 					<form action="#" method="POST">
 
-						<h1 id="perMessage">Persoonlijk bericht (deze tekst kun je zelf wijzigen)</h1>
+						<h1 id="perMessage">Persoonlijk bericht</h1>
+						<p class="perMessage-info">Onderstaande tekst kun je zelf wijzigen. Let wel: de aanspreking wordt verderop automatisch toegevoegd, die hoef je niet mee op te nemen in dit tekstvak.</p>
 
 							<textarea class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()"><?php if(isset($_SESSION['persMess'])){ echo $_SESSION['persMess'];}else{ echo "Alles wat je kunt wensen.
 En een klein beetje meer.

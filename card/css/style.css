@@ -42,7 +42,6 @@ html, body
 	max-width:956px;
 	max-height:530px;
 	margin-top: 5px;
-	margin-bottom: 25px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -86,6 +85,7 @@ html, body
 
 #backCon
 {
+	margin-bottom: 25px;
 	overflow:auto;
 }
 
@@ -297,7 +297,7 @@ input#go
 	.flipbox-container 
 	{
 		margin-top: 35px;
-
+		margin-bottom: 25px;
 	}
 	
 	#cardConSec, video figure
@@ -308,6 +308,10 @@ input#go
 	#backCon h1, #backCon p,  #backCon span
 	{
 		font-size: 22.5px;
+	}
+
+	#backCon{
+		margin-top: 50px;
 	}
 
 	#backCon p
@@ -339,6 +343,7 @@ input#go
 		margin-top: 5px;
 		max-width: 160px;
 	}
+
 	
 
 }
