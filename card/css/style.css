@@ -299,11 +299,6 @@ input#go
 		margin-top: 35px;
 
 	}
-
-	#audioCon
-	{
-		display: inline-block;
-	}
 	
 	#cardConSec, video figure
 	{
@@ -346,4 +341,12 @@ input#go
 	}
 	
 
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	#audioCon
+	{
+		display: inline-block;
+	}
 }
