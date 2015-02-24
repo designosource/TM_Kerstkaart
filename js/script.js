@@ -919,18 +919,18 @@ $(document).on("click", "#sendConfirmation li#send a", function(e)
 {
 	$("#overlay").addClass("inactive");
 
-	var saveData = $.ajax(
+	//-----Prevents sending the data to database, uncomment to allow
+	/*var saveData = $.ajax(
 					{
 						type: "POST",
 						url: "ajax/saveData.php"
-					});
+					});*/
 
-	saveData.done(function(data)
+	/*saveData.done(function(data)
 	{
-		/*var persedData = JSON.parse(data);
-		console.log(persedData);*/
 		console.log(data);
-	});
+	});*/
+	
 
 	var progressSending = "<div id='sendingProgress'>" +
 							"<h1>Aan het versturen...</h1>" +

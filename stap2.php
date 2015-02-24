@@ -31,7 +31,7 @@ Zalig kerstfeest en
 een gelukkig Nieuwjaar!
 
 Groeten
-" . $_SERVER['REDIRECT_Shib_Person_givenName'];} ?></textarea>
+" . "Naam ontvanger";} ?></textarea>
 					</form>
 					
 					<p class="stap2-characters"><span>500</span> karakters over</p>

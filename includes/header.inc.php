@@ -1,5 +1,5 @@
 <header>
-	<a id="afmelden" href="logout.php">Afmelden</a>
+	<a id="afmelden" href="#">Afmelden</a>
 	<div id="logo">
 		<a href="http://www.thomasmore.be/" id="login-logo">Thomas More Hogeschool</a>
 	</div>
