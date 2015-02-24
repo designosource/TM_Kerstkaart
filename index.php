@@ -1,9 +1,9 @@
 <?php 
 	session_start();
 	
-	include_once('class/card.class.php');
+	/*include_once('class/card.class.php');
 	$card = new Card();
-	$cards = $card->GetCards();
+	$cards = $card->GetCards();*/
 
 	//var_dump($cards);
 	//unset($_SESSION);
@@ -64,11 +64,13 @@
 						<h1>Andere ontwerpen</h1>
 						
 						<ul id="otherCards">
+							<li class="card"><img alt="Geanimeerde kerstkaart" data-id="1" data-url="kaart_1" data-type="animated" src="img/thumbnail_kaart_1.png"></li>
+							<li class="card"><img alt="Kerstkaart met gedicht" data-id="3" data-url="kaart_3" data-type="static" src="img/thumbnail_kaart_3.png"></li>
 							<?php 
-								foreach($cards as $card)
+								/*foreach($cards as $card)
 								{
 									echo '<li class="card"><img alt="'.$card['card_title'].'" data-id="'.$card['card_id'].'" data-url="'.$card['card_url'].'" data-type="'.$card['card_type'].'" src="img/thumbnail_'.$card['card_url'].'.png"></li>';
-								}
+								}*/
 							 ?>
 						</ul>
 					</div>
