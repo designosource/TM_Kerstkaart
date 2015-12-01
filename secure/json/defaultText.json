@@ -1,0 +1,16 @@
+{
+  "taal": [{
+    "nederlands": [{
+      "aanspreek": "Beste",
+      "tekst": "Alles wat je kunt wensen.\nEn een klein beetje meer gaan.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten"
+    }],
+    "frans": [{
+      "aanspreek": "Chez",
+      "tekst": "Frans wat je kunt wensen.\nEn een klein beetje meer iets.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten"
+    }],
+    "engels": [{
+      "aanspreek": "Dear",
+      "tekst": "Engels wat je kunt wensen.\nEn een klein beetje meer default.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten"
+    }]
+  }]
+}

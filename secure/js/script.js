@@ -92,9 +92,9 @@ $(window).load(function()
 });
 
 /*count amount of characters in input field*/
-$(".stap2-persoonlijkbericht").on("keyup", function()
+$(".stap2-persoonlijkbericht, #aanspreek, #lang-nl, #lang-en, #lang-fr").on("keyup click", function()
 {
-	var textContent = $(this).val();
+	var textContent = $(".stap2-persoonlijkbericht").val() + $("#aanspreek").val();
 	countChars(textContent);
 });
 
@@ -127,6 +127,7 @@ $("a#gtStap3, a#gbStap1").on("click", function(e)
 	var	errorLength = "<p class='error'>Te veel karakters gebruikt</p>";
 	$("p.error").remove();
 
+	var aanspreekMessage = $("#aanspreek").val();
 	var personalMessage = $(".stap2-persoonlijkbericht").val();
 
 	if(textInput !== 0)
@@ -138,6 +139,7 @@ $("a#gtStap3, a#gbStap1").on("click", function(e)
 							type: "POST",
 							url: "ajax/getMessage.php",
 							data: {
+									aanspreekMessage: aanspreekMessage,
 									personalMessage: personalMessage
 									}
 						});
@@ -1110,6 +1112,24 @@ if($('body').hasClass('stap4'))
 
 $(document).ready(function(){
 	$("#lang-fr").click(function(){
-
+		$.getJSON( "json/defaultText.json" , function( result ){
+			$("#aanspreek").val(result.taal[0].frans[0].aanspreek);
+			$(".stap2-persoonlijkbericht").val(result.taal[0].frans[0].tekst);
+			$("#taal_input_hidden").val("fr");
+		});
+	});
+	$("#lang-en").click(function(){
+		$.getJSON( "json/defaultText.json" , function( result ){
+			$("#aanspreek").val(result.taal[0].engels[0].aanspreek);
+			$("#taal_input_hidden").val("en");
+			$(".stap2-persoonlijkbericht").val(result.taal[0].engels[0].tekst);
+		});
+	});
+	$("#lang-nl").click(function(){
+		$.getJSON( "json/defaultText.json" , function( result ){
+			$("#aanspreek").val(result.taal[0].nederlands[0].aanspreek);
+			$("#taal_input_hidden").val("nl");
+			$(".stap2-persoonlijkbericht").val(result.taal[0].nederlands[0].tekst);
+		});
 	});
 });

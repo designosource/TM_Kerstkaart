@@ -21,7 +21,26 @@
 .taal_select_container a:hover,
 .taal_select_container a:active{
 	text-decoration: none;
-	color: ;
+	color: white;
+	font-size: 0.8rem;
+	display: block;
+	line-height: 30px;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	float: right;
+	border-radius: 30px;
+	margin-left: 12px;
+	margin-bottom: 10px;
+	background-color: #F24F11;
+}
+
+#aanspreek{
+	margin-right: 20px;
+}
+
+.taal_select_container a:hover{
+	background-color: #009CAB;
 }
 
 .clearfix:after {

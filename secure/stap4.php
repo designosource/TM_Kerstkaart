@@ -140,7 +140,7 @@
 				<div id="backCon">
 					<div id="backSec">
 					<!-- add personal text here -->
-						<h1>Beste <span>[hier zal automatisch de naam van je bestemmeling verschijnen]</span></h1>
+						<h1><?php if(!empty($_SESSION['aansMess'])){ echo nl2br($_SESSION['aansMess']);} ?> <span>[hier zal automatisch de naam van je bestemmeling verschijnen]</span></h1>
 						<p><?php if(!empty($_SESSION['persMess'])){ echo nl2br($_SESSION['persMess']);} ?></p>
 					</div>
 

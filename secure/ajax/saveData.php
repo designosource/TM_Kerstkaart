@@ -27,6 +27,7 @@
 		}
 
  		$perMess = $_SESSION['persMess'];
+		$aansMess = $_SESSION['aansMess'];
 
  
  		$card = new Card();
@@ -34,7 +35,7 @@
  		$card->senderFirstname = $senderFirstname;
 		$card->senderLastname = $senderLastname;
 		$card->senderEmailadress = $senderEmail;
- 		$card->message = $perMess;
+ 		$card->message = $aansMess.$perMess;
  		$senderID = $card->SaveSenders();
 
  		$receivers = $_SESSION['person'];
