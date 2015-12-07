@@ -15,6 +15,31 @@
 	outline: 0;
 }
 
+.demp_muziek:link,
+.demp_muziek:visited,
+.demp_muziek:hover,
+.demp_muziek:active
+{
+	width: 20px;
+	height: 20px;
+	color:#fff;
+	text-align: center;
+	display: block;
+	margin:5px auto;
+}
+
+.demp_muziek img{
+	border-radius: 40px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	background-color:#F24F11;
+	width: 20px;
+	height: 20px;
+	padding: 10px;
+
+}
+
 html, body 
 {
 	min-height:100%; 

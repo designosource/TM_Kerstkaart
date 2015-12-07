@@ -23,15 +23,15 @@
 					<form action="#" method="POST">
 
 
-						<h1 id="perMessage">Persoonlijk bericht</h1>
+						<h1 id="perMessage"><b>Persoonlijk bericht</b></h1>
 						<p class="perMessage-info">Onderstaande tekst kun je zelf wijzigen. Let wel: de aanspreking wordt verderop automatisch toegevoegd, die hoef je niet mee op te nemen in dit tekstvak.</p>
 						<div class="taal_select_container">
-							<a id="lang-nl" href="#nl">NL</a>
+							<a id="lang-nl" href="#nl">EN</a>
 							<a id="lang-fr" href="#fr">FR</a>
-							<a id="lang-en" href="#en">EN</a>
+							<a id="lang-en" href="#en">NL</a>
 
 						</div>
-						<label for="begroeting"><input type="text" id="begroeting" name="begroeting" value="<?php if(isset($_SESSION['begroetingMess'])){ echo $_SESSION['begroetingMess'];}else{ echo "Beste";}?>">[Hier komt automatisch de naam van de ontvanger]</label>
+						<label for="begroeting"><input type="text" id="begroeting" name="begroeting" value="<?php if(isset($_SESSION['begroetMess'])){ echo $_SESSION['begroetMess'];}else{ echo "Beste";}?>">[Hier komt automatisch de naam van de ontvanger]</label>
 						<input type="hidden" id="taal_input_hidden" value="nl" name="taal">
 							<textarea class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()"><?php if(isset($_SESSION['persMess'])){ echo $_SESSION['persMess'];}else{ echo "Alles wat je kunt wensen.
 En een klein beetje meer.
@@ -39,7 +39,7 @@ Zalig kerstfeest en
 een gelukkig Nieuwjaar!
 
 Groeten
-" . $_SERVER['REDIRECT_Shib_Person_givenName'];} ?></textarea>
+" .$_SERVER['REDIRECT_Shib_Person_givenName'];} ?></textarea>
 					</form>
 					
 					<p class="stap2-characters"><span>500</span> karakters over</p>

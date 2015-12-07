@@ -2,15 +2,15 @@
   "taal": [{
     "nederlands": [{
       "aanspreek": "Beste",
-      "tekst": "Alles wat je kunt wensen.\nEn een klein beetje meer gaan.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten"
+      "tekst": "Alles wat je kunt wensen.\nEn een klein beetje meer gaan.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n"
     }],
     "frans": [{
       "aanspreek": "Bonjour",
-      "tekst": "Frans wat je kunt wensen.\nEn een klein beetje meer iets.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten"
+      "tekst": "Frans wat je kunt wensen.\nEn een klein beetje meer iets.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n"
     }],
     "engels": [{
       "aanspreek": "Dear",
-      "tekst": "Engels wat je kunt wensen.\nEn een klein beetje meer default.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten"
+      "tekst": "Engels wat je kunt wensen.\nEn een klein beetje meer default.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n"
     }]
   }]
 }

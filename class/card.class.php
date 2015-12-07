@@ -12,6 +12,7 @@
 		private $m_sreceiverEmailadress;
 
 		private $m_sMessage;
+		private $m_sTaal;
 
 		private $m_sCard;
 		
@@ -46,6 +47,14 @@
 				case "message":
 				$this->m_sMessage = $p_vValue;
 				break;
+
+				case "begroeting":
+					$this->m_sBegroeting = $p_vValue;
+					break;
+
+				case "taal":
+					$this->m_sTaal = $p_vValue;
+					break;
 
 				case "card":
 				$this->m_sCard = $p_vValue;
@@ -84,6 +93,14 @@
 				case "message":
 				return $this->m_sMessage;
 				break;
+
+				case "begroeting":
+					return $this->m_sBegroeting;
+					break;
+
+				case "taal":
+					return $this->m_sTaal;
+					break;
 
 				case "card":
 				return $this->m_sCard;

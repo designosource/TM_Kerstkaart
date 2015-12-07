@@ -38,6 +38,7 @@
 		$card->senderEmailadress = $senderEmail;
 		//$card->begroetingMess = $begroetingMess;
  		$card->message = $perMess;
+		$card->senderLanguage = $taal;
  		$senderID = $card->SaveSenders();
 
  		$receivers = $_SESSION['person'];

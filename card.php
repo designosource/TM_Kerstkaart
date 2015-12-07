@@ -27,6 +27,17 @@
 		$senderInfo = $card->GetSenderSent($sidID);
 		$receiverInfo = $card->GetReceiverSent($ridID);
 
+		if($senderInfo["sender_language"] == "en"){
+			$mail_copy = '<span id="copy">&copy; <a target="_blank" href="http://www.thomasmore.be/">Thomas More</a> | Developed by <a target="_blank" href="http://designosource.be/">Designosource</a> - Students in <a target="_blank" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
+			$mail_footer = '<h1><a id="clickHinter" href="#">Click here</a> or swipe the <span id="sideHinter">card</span> to read <span id="messageHinter">your personal message.</span></h1>';
+		} else if ($senderInfo["sender_language"] == "fr"){
+			$mail_copy = '<span id="copy">&copy; <a target="_blank" href="http://www.thomasmore.be/">Thomas More</a> | Réalisé par <a target="_blank" href="http://designosource.be/">Designosource</a> - Etudiants en <a target="_blank" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
+			$mail_footer = '<h1><a id="clickHinter" href="#">Cliquez ici</a> ou balayez <span id="sideHinter">la carte</span> afin de découvrir <span id="messageHinter">votre message personnalisé.</span></h1>';
+		} else {
+			$mail_copy = '<span id="copy">&copy; <a target="_blank" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a target="_blank" href="http://designosource.be/">Designosource</a> - Studenten van <a target="_blank" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
+			$mail_footer = '<h1><a id="clickHinter" href="#">Klik hier</a> of veeg over de <span id="sideHinter">kaart</span> om je <span id="messageHinter">persoonlijke boodschap</span> te bekijken.</h1>';
+		}
+
 		if(empty($cardInfo) || empty($senderInfo) || empty($receiverInfo))
 		{
 			header("location: 404.php");
@@ -90,7 +101,7 @@
 		  		<source src="music/kerstmuziekje.wav" type="audio/wav">
 			</audio>
 
-			<input type="button" id="go" value="Muziek dempen">
+			<a href="#go" id="go" class="demp_muziek"><img src="img/on.png" alt=""></a>
 		</div>
 
 		<div id="container">
@@ -130,19 +141,23 @@
 				<div id="backCon">
 					<div id="backSec">
 					<!-- add personal text here -->
+					
 						<h1>Beste <span><?php echo $receiverInfo['receiver_firstname'];?></span></h1>
 						<p><?php echo nl2br($senderInfo['sender_message']); ?></p>
+
 					</div>
 
 					<div id="copyCon">
-						<span id="copy">&copy; <a href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a href="http://designosource.be/">Designosource</a> - Studenten van <a href="http://weareimd.be/">Interactive Multimedia Design</a></span>
+						<?php echo $mail_copy ?>
+						<!--<span id="copy">&copy; <a target="_blank" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a target="_blank" href="http://designosource.be/">Designosource</a> - Studenten van <a target="_blank" href="http://weareimd.be/">Interactive Multimedia Design</a></span>-->
 					</div>
 				</div>
 			</div>
 
 
 		    <div id="nav">
-				<h1><a id="clickHinter" href="#">Klik hier</a> of veeg over de <span id="sideHinter">kaart</span> om je <span id="messageHinter">persoonlijke boodschap</span> te bekijken.</h1>
+				<?php echo $mail_footer ?>
+				<!--<h1><a id="clickHinter" href="#">Klik hier</a> of veeg over de <span id="sideHinter">kaart</span> om je <span id="messageHinter">persoonlijke boodschap</span> te bekijken.</h1>-->
 			</div>
 
 		<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>

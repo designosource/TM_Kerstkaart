@@ -22,7 +22,7 @@
 
 				<div id="content">
 					<div id="stap1-col1">
-						<h1 id="titleCard"><?php if(isset($_SESSION['cardALT'])){ echo $_SESSION['cardALT']; } else {echo "Geanimeerde kerstkaart";}?></h1>
+						<h1 id="titleCard"><?php if(isset($_SESSION['cardALT'])){ echo $_SESSION['cardALT']; } else {echo "Meertalige geanimeerde kerstkaart (NL - FR - ENG)";}?></h1>
 						<div class="stap1-choosen">
 
 							<?php  
@@ -61,7 +61,7 @@
 					</div>
 
 					<div id="stap1-col2">
-						<h1>Andere ontwerpen</h1>
+						<h1>Kies een ontwerp.</h1>
 						
 						<ul id="otherCards">
 							<?php 
