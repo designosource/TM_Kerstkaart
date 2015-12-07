@@ -108,15 +108,15 @@ function swiped(event)
 
 $('#go').on('click',function(evt)
 {
-	if($(this).hasClass("is-paused")) 
+	if($(this).hasClass("is-paused"))
 	{
 		playBackgroundMusic();
-		$("#go").val("Muziek dempen");
+		$("#go").html("<img src='img/on.png' alt=''>");
 	}
-	else 
+	else
 	{
 		pauseBackgroundMusic();
-		$("#go").val("Muziek afspelen");
+		$("#go").html("<img src='img/off.png' alt=''>");
 	}
 });
 
