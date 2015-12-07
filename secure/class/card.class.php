@@ -201,9 +201,36 @@
 			$mail = new PHPMailer();
 			$mail->IsSMTP();
 
+			/*$mail->SMTPAuth = false;
+			$mail->Host = "10.151.11.101";
+			$mail->Port = 25;*/
+
 			$mail->SMTPAuth = false;
 			$mail->Host = "10.151.11.101";
 			$mail->Port = 25;
+
+			$taal_begroeting = "";
+			$taal_tekst = '';
+			$mail_footer = '';
+
+
+
+			if($_SESSION["taal"] == "fr"){
+				$taal_begroeting = "Bonjour";
+				$taal_tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Vous avez reçu une carte de vœux virtuelle de <span style="font-weight:normal;">'. $this->m_ssenderFirstname .' '. $this->m_ssenderLastName .'.</span></h1>
+							  <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Veuillez cliquer <a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal; color:#f24f11;" href="\'.$url.\'">ici</a> pour découvrir la carte.</h1>';
+				$mail_footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Réalisé par <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Etudiants en <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
+			} else if ($_SESSION["taal"] == "en"){
+				$taal_begroeting = "Dear";
+				$taal_tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><span style="font-weight:normal;">'. $this->m_ssenderFirstname .' '. $this->m_ssenderLastName .'</span> has sent you a card  with Season\'s Greetings.</h1>
+							  <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Click <a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal; color:#f24f11;" href="\'.$url.\'">here</a> to read the card!</h1>';
+				$mail_footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Developed by <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Students in <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
+			}else{
+				$taal_begroeting = "Beste";
+				$taal_tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Je kreeg een kerstkaart van <span style="font-weight:normal;">'. $this->m_ssenderFirstname .' '. $this->m_ssenderLastName .'.</span></h1>
+							  <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Klik <a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal; color:#f24f11;" href="\'.$url.\'">hier</a> om de kaart te lezen!</h1>';
+				$mail_footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Developed by <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Students in <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
+			}
 
 			$emailbody = '<html><body>
 						        <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse; background-color: #F3F3F3; font-family: font-family: Arial, Helvetica, sans-serif;">
@@ -238,14 +265,8 @@
 												  								<tbody>
 												  									<tr>
 												  										<td class="contentSec" style="text-align: left; padding-top: 50px; padding-bottom: 10px; width: 100%; position:relative;">
-												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">
-												  											'.if($_SESSION["taal"] == "fr"){
-												  												echo 'Bonjour';
-												  											} else if ($_SESSION["taal"] == "en"){
-																								echo 'Dear'.;
-																							}else{
-																								echo 'Beste'.;
-																							}'<span style="font-weight:normal;">'. $this->m_sreceiverFirstname.'</span></h1>
+												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">'.$taal_begroeting.'
+												  											<span style="font-weight:normal;">'. $this->m_sreceiverFirstname.'</span></h1>
 												  										</td>
 												  									</tr>
 												  								</tbody>
@@ -255,8 +276,9 @@
 												  								<tbody>
 												  									<tr>
 												  										<td class="contentSec" style="text-align: left; padding-top: 0px; padding-bottom: 0px; width: 100%; position:relative;">
-												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Je kreeg een kerstkaart van <span style="font-weight:normal;">'. $this->m_ssenderFirstname .' '. $this->m_ssenderLastName .'.</span></h1>
-												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Klik <a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal; color:#f24f11;" href="'.$url.'">hier</a> om de kaart te lezen!</h1>
+												  											'.$taal_tekst.'
+												  											<!--<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Je kreeg een kerstkaart van <span style="font-weight:normal;">. $this->m_ssenderFirstname .. $this->m_ssenderLastName .</span></h1>
+												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Klik <a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal; color:#f24f11;" href="./*$url*/.">hier</a> om de kaart te lezen!</h1>-->
 												  										</td>
 												  									</tr>
 												  								</tbody>
@@ -272,7 +294,8 @@
 													  								<tbody>
 													  									<tr>
 													  										<td class="contentSec" style="text-align: left; padding-top: 5px; padding-bottom: 5px; width: 100%;">
-													  											<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Studenten van <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>
+													  											'.$mail_footer.'
+													  											<!--<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Studenten van <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>-->
 													  										</td>
 													  									</tr>
 													  								</tbody>
