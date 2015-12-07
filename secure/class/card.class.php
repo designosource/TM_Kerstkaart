@@ -12,6 +12,8 @@
 		private $m_sreceiverEmailadress;
 
 		private $m_sMessage;
+		private $m_sBegroeting;
+		private $m_sTaal;
 
 		private $m_sCard;
 		
@@ -46,6 +48,14 @@
 				case "message":
 				$this->m_sMessage = $p_vValue;
 				break;
+
+				case "begroeting":
+					$this->m_sBegroeting = $p_vValue;
+					break;
+
+				case "taal":
+					$this->m_sTaal = $p_vValue;
+					break;
 
 				case "card":
 				$this->m_sCard = $p_vValue;
@@ -84,6 +94,14 @@
 				case "message":
 				return $this->m_sMessage;
 				break;
+
+				case "begroeting":
+					return $this->m_sBegroeting;
+					break;
+
+				case "taal":
+					return $this->m_sTaal;
+					break;
 
 				case "card":
 				return $this->m_sCard;
@@ -220,7 +238,14 @@
 												  								<tbody>
 												  									<tr>
 												  										<td class="contentSec" style="text-align: left; padding-top: 50px; padding-bottom: 10px; width: 100%; position:relative;">
-												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Beste <span style="font-weight:normal;">'. $this->m_sreceiverFirstname.'</span></h1>
+												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">
+												  											'.if($_SESSION["taal"] == "fr"){
+												  												echo 'Bonjour';
+												  											} else if ($_SESSION["taal"] == "en"){
+																								echo 'Dear'.;
+																							}else{
+																								echo 'Beste'.;
+																							}'<span style="font-weight:normal;">'. $this->m_sreceiverFirstname.'</span></h1>
 												  										</td>
 												  									</tr>
 												  								</tbody>

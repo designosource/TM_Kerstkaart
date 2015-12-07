@@ -31,7 +31,7 @@
 							<a id="lang-en" href="#en">EN</a>
 
 						</div>
-						<label for="aanspreek"><input type="text" id="aanspreek" name="aanspreek" value="<?php if(isset($_SESSION['aansMess'])){ echo $_SESSION['aansMess'];}else{ echo "Beste";}?>">[Hier komt automatisch de naam van de ontvanger]</label>
+						<label for="begroeting"><input type="text" id="begroeting" name="begroeting" value="<?php if(isset($_SESSION['begroetingMess'])){ echo $_SESSION['begroetingMess'];}else{ echo "Beste";}?>">[Hier komt automatisch de naam van de ontvanger]</label>
 						<input type="hidden" id="taal_input_hidden" value="nl" name="taal">
 							<textarea class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()"><?php if(isset($_SESSION['persMess'])){ echo $_SESSION['persMess'];}else{ echo "Alles wat je kunt wensen.
 En een klein beetje meer.

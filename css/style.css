@@ -271,23 +271,6 @@ h1 a#clickHinter
 	display:none\9;;
 }
 
-input#go
-{
-	background-color:#F24F11;
-	box-shadow: none;
-	border:none;
-	color:#fff;
-	text-align: center;
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	display:block;
-	font-family: 'texgyreadventorregular';
-	padding: 2px 15px 5px 15px;
-	margin:0 auto;
-	display:none\9;
-}
 
 @media screen and (min-width: 700px)
 {

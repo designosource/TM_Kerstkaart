@@ -3,11 +3,16 @@
 
 	if(isset($_POST['personalMessage']))
 	{
-		$aanspreekMessage = $_POST['aanspreekMessage'];
+		$begroetingMessage = $_POST['begroetingMessage'];
 		$personalMessage = $_POST['personalMessage'];
+		$taal = $_POST['taal'];
+
 		$_SESSION['persMess'] = $personalMessage;
-		$_SESSION['aansMess'] = $aanspreekMessage;
+		$_SESSION['begroetMess'] = $begroetingMessage;
+		$_SESSION['taal'] = $taal;
+
 		echo $_SESSION['persMess'];
-		echo $_SESSION['aansMess'];
+		echo $_SESSION['begroetingMess'];
+		echo $_SESSION['taal'];
 	}
  ?>

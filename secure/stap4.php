@@ -59,7 +59,8 @@
 		  		<source src="music/kerstmuziekje.wav" type="audio/wav">
 			</audio>
 
-			<input type="button" id="go" value="Muziek dempen">
+			<!--<input type="button" id="go" value="">-->
+			<a href="#go" id="go" class="demp_muziek"><img src="img/on.png" alt=""></a>
 		</div>
 
 
@@ -140,9 +141,10 @@
 				<div id="backCon">
 					<div id="backSec">
 					<!-- add personal text here -->
-						<h1><?php if(!empty($_SESSION['aansMess'])){ echo nl2br($_SESSION['aansMess']);} ?> <span>[hier zal automatisch de naam van je bestemmeling verschijnen]</span></h1>
+						<h1><?php if(!empty($_SESSION['begroetMess'])){ echo nl2br($_SESSION['begroetMess']);} ?> <span>[hier zal automatisch de naam van je bestemmeling verschijnen]</span></h1>
 						<p><?php if(!empty($_SESSION['persMess'])){ echo nl2br($_SESSION['persMess']);} ?></p>
-					</div>
+						<?php if(!empty($_SESSION['taal'])){ echo nl2br($_SESSION['taal']);} else {var_dump($_SESSION);}?>
+						</div>
 
 					<div id="copyCon">
 					<span id="copy">&copy; <a href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a href="http://designosource.be/">Designosource</a> - Studenten van <a href="http://weareimd.be/">Interactive Multimedia Design</a></span>
