@@ -61,7 +61,7 @@
 					</div>
 
 					<div id="stap1-col2">
-						<h1>Kies een ontwerp.</h1>
+						<h1><b>Kies een ontwerp.</b></h1>
 						
 						<ul id="otherCards">
 							<?php 
