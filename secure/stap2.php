@@ -38,20 +38,20 @@
 
 
 						<h1 id="perMessage"><b>Persoonlijk bericht</b></h1>
-						<p class="perMessage-info">Onderstaande tekst kun je zelf wijzigen. Let wel: de naam van de ontvanger wordt verderop automatisch toegevoegd, die hoef je niet mee op te nemen in dit tekstvak.</p>
+						<p class="perMessage-info">Onderstaande tekst kun je wijzigen.</p>
 						<div class="taal_select_container">
 							<a id="lang-en" href="?lang=en">EN</a>
 							<a id="lang-fr" href="?lang=fr">FR</a>
 							<a id="lang-nl" href="?lang=nl">NL</a>
 
 						</div>
-						<label for="begroeting"><input type="text" id="begroeting" name="begroeting" value="<?php
+						<label for="begroeting" id="label_begroeting"><input type="text" id="begroeting" name="begroeting" value="<?php
 							if(isset($_SESSION['begroetMess'])) {
 								echo $begroeting;
 							}
 							else{
 								echo "Beste";
-							}?>">[Hier komt automatisch de naam van de ontvanger]</label>
+							}?>"> [De voornaam van de ontvanger wordt automatisch ingevuld.]</label>
 						<input type="hidden" id="taal_input_hidden" value="<?php
 						echo $taal
 						?>" name="taal">
