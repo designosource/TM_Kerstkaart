@@ -5,36 +5,28 @@
 	{
 		header("location: index.php");
 	}
-		if(isset($_SESSION["taal"])){
-			if($_GET["lang"] === "en"){
-				$begroeting = "Dear";
-				$tekst =  "Engels wat je kunt wensen.\nEn een klein beetje meer gaan.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
-				$taal = "en";
-				$_SESSION["begroetMess"] = "Dear";
-				$_SESSION["persMess"] = "Engels wat je kunt wensen.\nEn een klein beetje meer gaan.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
-				$_SESSION["taal"] = "en";
-			} else if($_GET["lang"] === "fr"){
-				$begroeting = "Bonjour";
-				$tekst =  "Frans wat je kunt wensen.\nEn een klein beetje meer iets.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
-				$taal = "fr";
-				$_SESSION["begroetMess"] = "Bonjour";
-				$_SESSION["persMess"] = "Frans wat je kunt wensen.\nEn een klein beetje meer iets.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
-				$_SESSION["taal"] = "fr";
-			} else {
-				$begroeting = "Beste";
-				$tekst =  "Alles wat je kunt wensen.\nEn een klein beetje meer gaan.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
-				$taal = "nl";
-				$_SESSION["begroetMess"] = "Beste";
-				$_SESSION["persMess"] = "Alles wat je kunt wensen.\nEn een klein beetje meer gaan.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
-				$_SESSION["taal"] = "nl";
-			}
-		} else {
-			$begroeting = "Beste";
-			$tekst =  "Alles wat je kunt wensen.\nEn een klein beetje meer gaan.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
-			$taal = "nl";
-			$_SESSION["taal"] = "nl";
-			$_GET["lang"] = "nl";
-		}
+		
+	if($_GET["lang"] === "en"){
+		$_SESSION["taal"] = "en";
+	} else if($_GET["lang"] === "fr") {
+		$_SESSION["taal"] = "fr";
+	} else {
+		$_SESSION["taal"] = "nl";
+	}
+	
+	if($_SESSION['taal'] == "en") {
+		$begroeting = "Dear";
+		$tekst =  "Engels wat je kunt wensen.\nEn een klein beetje meer gaan.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
+		$taal = "en";
+	} else if($_SESSION['taal'] == "fr") {
+		$begroeting = "Bonjour";
+		$tekst =  "Frans wat je kunt wensen.\nEn een klein beetje meer iets.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
+		$taal = "fr";
+	} else {
+		$begroeting = "Beste";
+		$tekst =  "Alles wat je kunt wensen.\nEn een klein beetje meer gaan.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
+		$taal = "nl";
+	}
 
 
  ?><!doctype html>
@@ -71,13 +63,14 @@
 							?>" href="?lang=nl">NL</a>
 
 						</div>
-						<label for="begroeting" id="label_begroeting"><input type="text" id="begroeting" name="begroeting" value="<?php
-							if(isset($_SESSION["begroetMess"])) {
-								echo $_SESSION["begroetMess"];
-							}
-							else{
-								echo $begroeting;
-							}?>"> <span>[De voornaam van de ontvanger wordt automatisch ingevuld.]</span></label>
+						<label for="begroeting" id="label_begroeting"><input type="text" id="begroeting" name="begroeting" value="
+							<?php
+								if(isset($_SESSION["begroetMess"])) {
+									echo $_SESSION["begroetMess"];
+								}
+								else{
+									echo $begroeting;
+								}?>"> <span>[De voornaam van de ontvanger wordt automatisch ingevuld.]</span></label>
 						<input type="hidden" id="taal_input_hidden" value="<?php
 						if(isset($_SESSION["taal"])) {
 							echo $_SESSION["taal"];
@@ -85,18 +78,20 @@
 						else{
 							echo $taal;
 						} ?>" name="taal">
-							<textarea  class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()"><?php
-								if(isset($_SESSION['persMess'])){
-									echo $_SESSION["persMess"];
-								}
-								else{
-									echo $tekst/*"Alles wat je kunt wensen.
-En een klein beetje meer.
-Zalig kerstfeest en
-een gelukkig Nieuwjaar!
+							<textarea  class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()">
+								<?php
+									if(isset($_SESSION['persMess'])) {
 
-Groeten
-" .$_SERVER['REDIRECT_Shib_Person_givenName']*/;} ?></textarea>
+										echo $_SESSION["persMess"]; // als er al een tekst geschreven is --> toon die tekst
+
+									}
+									else{
+
+										echo $tekst; // toon default adhv SESSION TAAL
+
+									} 
+								?>
+							</textarea>
 					</form>
 					
 					<p class="stap2-characters"><span>500</span> karakters over</p>
