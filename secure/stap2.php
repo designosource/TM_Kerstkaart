@@ -10,7 +10,7 @@
 		$_SESSION["taal"] = "en";
 	} else if($_GET["lang"] === "fr") {
 		$_SESSION["taal"] = "fr";
-	} else {
+	} else if($_GET["lang"] === "nl") {
 		$_SESSION["taal"] = "nl";
 	}
 	
@@ -28,6 +28,11 @@
 		$taal = "nl";
 	}
 
+		if(isset($_GET["lang"])){
+			$_SESSION["begroetMess"] = $begroeting;
+			$_SESSION["persMess"] = $tekst;
+		}
+
 	if(isset($_SESSION["begroetMess"])) {
 		$begroetingValue = $_SESSION["begroetMess"];
 	}
@@ -43,10 +48,12 @@
 	}
 
 	if(isset($_SESSION['persMess'])) {
-		$persVal = $_SESSION["persMess"]; // als er al een tekst geschreven is --> toon die tekst
+		$persVal = trim($_SESSION["persMess"]); // als er al een tekst geschreven is --> toon die tekst
 	}
 	else{
+
 		$persVal = $tekst; // toon default adhv SESSION TAAL
+		echo $persVal;
 	}
 
 
@@ -87,10 +94,7 @@
 						</div>
 						<label for="begroeting" id="label_begroeting"><input type="text" id="begroeting" name="begroeting" value="<?php echo $begroetingValue; ?>"> <span>[De voornaam van de ontvanger wordt automatisch ingevuld.]</span></label>
 						<input type="hidden" id="taal_input_hidden" value="<?php echo $taalValue; ?>" name="taal">
-							<textarea  class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()">
-								<?php
-									echo $persValue;
-								?>
+							<textarea  class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()"><?php echo $persVal ;?>
 							</textarea>
 					</form>
 					
