@@ -143,7 +143,6 @@
 					<!-- add personal text here -->
 						<h1><?php if(!empty($_SESSION['begroetMess'])){ echo nl2br($_SESSION['begroetMess']);} ?> <span>[hier zal automatisch de naam van je bestemmeling verschijnen]</span></h1>
 						<p><?php if(!empty($_SESSION['persMess'])){ echo nl2br($_SESSION['persMess']);} ?></p>
-						<?php if(!empty($_SESSION['taal'])){ echo nl2br($_SESSION['taal']);} else {var_dump($_SESSION);}?>
 						</div>
 
 					<div id="copyCon">

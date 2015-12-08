@@ -142,7 +142,7 @@
 					<div id="backSec">
 					<!-- add personal text here -->
 					
-						<h1>Beste <span><?php echo $receiverInfo['receiver_firstname'];?></span></h1>
+						<h1><?php echo nl2br($senderInfo['sender_begroeting']); ?> <span><?php echo $receiverInfo['receiver_firstname'];?></span></h1>
 						<p><?php echo nl2br($senderInfo['sender_message']); ?></p>
 
 					</div>

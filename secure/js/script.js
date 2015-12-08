@@ -140,8 +140,8 @@ $("a#gtStap3, a#gbStap1").on("click", function(e)
 							type: "POST",
 							url: "ajax/getMessage.php",
 							data: {
-									begroetingMessage: begroetingMessage,
 									personalMessage: personalMessage,
+									begroetingMessage: begroetingMessage,
 									taal: taal
 									}
 						});
@@ -1112,6 +1112,7 @@ if($('body').hasClass('stap4'))
 
 /*Toegevoegde taal verandering voor de tekst in de kerstkaart*/
 
+/*
 $(document).ready(function(){
 	$("#lang-fr").click(function(){
 		$.getJSON( "json/defaultText.json" , function( result ){
@@ -1135,3 +1136,4 @@ $(document).ready(function(){
 		});
 	});
 });
+*/

@@ -129,13 +129,14 @@ Class Card
     {
         $db = new Db();
 
-        $sql = "INSERT INTO sender (sender_firstname, sender_lastname, sender_email, sender_message, sender_language)
+        $sql = "INSERT INTO sender (sender_firstname, sender_lastname, sender_email, sender_message, sender_begroeting, sender_language)
 				   values (
 				   			'" . $db->conn->real_escape_string($this->m_ssenderFirstname) . "',
 				   			'" . $db->conn->real_escape_string($this->m_ssenderLastName) . "',
 				   			'" . $db->conn->real_escape_string($this->m_ssenderEmailadress) . "',
 				   			'" . $db->conn->real_escape_string($this->m_sMessage) . "',
-				   			'" . $db->conn->real_escape_string($_SESSION['taal']) . "'
+				   			'" . $db->conn->real_escape_string($this->m_sBegroeting) . "',
+				   			'" . $db->conn->real_escape_string($this->m_sTaal) . "'
 				   		  )";
 
         $result = $db->conn->query($sql);

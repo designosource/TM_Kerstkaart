@@ -30,7 +30,7 @@
 								{
 									if($_SESSION['cardType'] == "animated")
 									{
-										echo "<video width='100%' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."'>
+										echo "<video width='100%' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."' title='".$_SESSION['cardALT']."'>
 												<source src='img/full_".$_SESSION['cardURL'].".mp4' type='video/mp4'>
 												<source src='img/full_".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
 												<source src='img/full_".$_SESSION['cardURL'].".webm' type='video/webm'>

@@ -27,7 +27,7 @@
 		}
 
  		$perMess = $_SESSION['persMess'];
-		$begroetingMess = $_SESSION['begroetingMess'];
+		$begroetingMess = $_SESSION['begroetMess'];
 		$taal = $_SESSION["taal"];
 
  
@@ -36,9 +36,9 @@
  		$card->senderFirstname = $senderFirstname;
 		$card->senderLastname = $senderLastname;
 		$card->senderEmailadress = $senderEmail;
-		//$card->begroetingMess = $begroetingMess;
  		$card->message = $perMess;
-		$card->senderLanguage = $taal;
+		$card->begroeting = $begroetingMess;
+		$card->taal = $taal;
  		$senderID = $card->SaveSenders();
 
  		$receivers = $_SESSION['person'];
