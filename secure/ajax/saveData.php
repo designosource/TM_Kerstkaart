@@ -37,7 +37,7 @@
 		$card->senderLastname = $senderLastname;
 		$card->senderEmailadress = $senderEmail;
  		$card->message = $perMess;
-		$card->begroeting = $begroetingMess;
+		$card->begroeting = htmlentities($begroetingMess);
 		$card->taal = $taal;
  		$senderID = $card->SaveSenders();
 

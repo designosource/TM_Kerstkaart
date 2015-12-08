@@ -51,9 +51,7 @@
 		$persVal = trim($_SESSION["persMess"]); // als er al een tekst geschreven is --> toon die tekst
 	}
 	else{
-
 		$persVal = $tekst; // toon default adhv SESSION TAAL
-		echo $persVal;
 	}
 
 

@@ -947,7 +947,7 @@ $(document).on("click", "#sendConfirmation li#send a", function(e)
 	var progressComplete = "<div id='cardProgressCompleted'>" +
 								"<h1>Verstuurd</h1>" +
 								"<p>Alle kaarten zijn met succes verstuurd.</p>" +
-								"<a href='index.php'>Nog een kaart versturen</a>" +
+								"<a href='reset.php'>Nog een kaart versturen</a>" +
 							"</div>";
 
 	$("#sendConfirmation").css({"display":"none", "opacity":"0", "margin-top":"-110.5px"});
