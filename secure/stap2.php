@@ -28,6 +28,27 @@
 		$taal = "nl";
 	}
 
+	if(isset($_SESSION["begroetMess"])) {
+		$begroetingValue = $_SESSION["begroetMess"];
+	}
+	else{
+		$begroetingValue = $begroeting;
+	}
+
+	if(isset($_SESSION["taal"])) {
+		$taalValue = $_SESSION["taal"];
+	}
+	else{
+		$taalValue = $taal;
+	}
+
+	if(isset($_SESSION['persMess'])) {
+		$persVal = $_SESSION["persMess"]; // als er al een tekst geschreven is --> toon die tekst
+	}
+	else{
+		$persVal = $tekst; // toon default adhv SESSION TAAL
+	}
+
 
  ?><!doctype html>
 <html lang="en">
@@ -48,6 +69,7 @@
 
 						<h1 id="perMessage"><b>Persoonlijk bericht</b></h1>
 						<p class="perMessage-info">Onderstaande tekst kun je wijzigen.</p>
+						
 						<div class="taal_select_container">
 							<a id="lang-en" class="<?php if($taal == "en"){
 								echo 'active';
@@ -63,33 +85,11 @@
 							?>" href="?lang=nl">NL</a>
 
 						</div>
-						<label for="begroeting" id="label_begroeting"><input type="text" id="begroeting" name="begroeting" value="
-							<?php
-								if(isset($_SESSION["begroetMess"])) {
-									echo $_SESSION["begroetMess"];
-								}
-								else{
-									echo $begroeting;
-								}?>"> <span>[De voornaam van de ontvanger wordt automatisch ingevuld.]</span></label>
-						<input type="hidden" id="taal_input_hidden" value="<?php
-						if(isset($_SESSION["taal"])) {
-							echo $_SESSION["taal"];
-						}
-						else{
-							echo $taal;
-						} ?>" name="taal">
+						<label for="begroeting" id="label_begroeting"><input type="text" id="begroeting" name="begroeting" value="<?php echo $begroetingValue; ?>"> <span>[De voornaam van de ontvanger wordt automatisch ingevuld.]</span></label>
+						<input type="hidden" id="taal_input_hidden" value="<?php echo $taalValue; ?>" name="taal">
 							<textarea  class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()">
 								<?php
-									if(isset($_SESSION['persMess'])) {
-
-										echo $_SESSION["persMess"]; // als er al een tekst geschreven is --> toon die tekst
-
-									}
-									else{
-
-										echo $tekst; // toon default adhv SESSION TAAL
-
-									} 
+									echo $persValue;
 								?>
 							</textarea>
 					</form>
