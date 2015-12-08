@@ -1112,28 +1112,22 @@ if($('body').hasClass('stap4'))
 
 /*Toegevoegde taal verandering voor de tekst in de kerstkaart*/
 
-/*
-$(document).ready(function(){
+
+/*$(document).ready(function(){
 	$("#lang-fr").click(function(){
-		$.getJSON( "json/defaultText.json" , function( result ){
-			$("#begroeting").val(result.taal[0].frans[0].aanspreek);
-			$(".stap2-persoonlijkbericht").val(result.taal[0].frans[0].tekst);
-			$("#taal_input_hidden").val("fr");
-		});
+		$(this).addClass("active");
+		$("#lang-nl").removeClass("active");
+		$("#lang-en").removeClass("active");
 	});
 	$("#lang-en").click(function(){
-		$.getJSON( "json/defaultText.json" , function( result ){
-			$("#begroeting").val(result.taal[0].engels[0].aanspreek);
-			$("#taal_input_hidden").val("en");
-			$(".stap2-persoonlijkbericht").val(result.taal[0].engels[0].tekst);
-		});
+		$(this).addClass("active");
+		$("#lang-fr").removeClass("active");
+		$("#lang-nl").removeClass("active");
 	});
 	$("#lang-nl").click(function(){
-		$.getJSON( "json/defaultText.json" , function( result ){
-			$("#begroeting").val(result.taal[0].nederlands[0].aanspreek);
-			$("#taal_input_hidden").val("nl");
-			$(".stap2-persoonlijkbericht").val(result.taal[0].nederlands[0].tekst);
-		});
+		$(this).addClass("active");
+		$("#lang-fr").removeClass("active");
+		$("#lang-en").removeClass("active");
 	});
-});
-*/
+
+});*/
