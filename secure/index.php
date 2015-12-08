@@ -61,13 +61,13 @@
 					</div>
 
 					<div id="stap1-col2">
-						<h1>Kies een ontwerp.</h1>
+						<h1><b>Kies een ontwerp.</b></h1>
 						
 						<ul id="otherCards">
 							<?php 
 								foreach($cards as $card)
 								{
-									echo '<li class="card"><img alt="'.$card['card_title'].'" data-id="'.$card['card_id'].'" data-url="'.$card['card_url'].'" data-type="'.$card['card_type'].'" src="img/thumbnail_'.$card['card_url'].'.png"></li>';
+									echo '<li class="card"><img title="'.$card['card_title'].'" alt="'.$card['card_title'].'" data-id="'.$card['card_id'].'" data-url="'.$card['card_url'].'" data-type="'.$card['card_type'].'" src="img/thumbnail_'.$card['card_url'].'.png"></li>';
 								}
 							 ?>
 						</ul>
