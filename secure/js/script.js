@@ -1110,24 +1110,3 @@ if($('body').hasClass('stap4'))
 	}
 }
 
-/*Toegevoegde taal verandering voor de tekst in de kerstkaart*/
-
-
-/*$(document).ready(function(){
-	$("#lang-fr").click(function(){
-		$(this).addClass("active");
-		$("#lang-nl").removeClass("active");
-		$("#lang-en").removeClass("active");
-	});
-	$("#lang-en").click(function(){
-		$(this).addClass("active");
-		$("#lang-fr").removeClass("active");
-		$("#lang-nl").removeClass("active");
-	});
-	$("#lang-nl").click(function(){
-		$(this).addClass("active");
-		$("#lang-fr").removeClass("active");
-		$("#lang-en").removeClass("active");
-	});
-
-});*/

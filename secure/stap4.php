@@ -99,16 +99,23 @@
 						{
 							if($_SESSION['cardType'] == "animated")
 							{
-								echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".gif)'></figure>";
+								echo "<video width='100%' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."' title='".$_SESSION['cardALT']."'>
+												<source src='img/full_".$_SESSION['cardURL'].".mp4' type='video/mp4'>
+												<source src='img/full_".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
+												<source src='img/full_".$_SESSION['cardURL'].".webm' type='video/webm'>
+												<source src='img/full_".$_SESSION['cardURL'].".ogv' type='video/ogg'>
+												<source src='img/full_".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
+												<img src='img/full_".$_SESSION['cardURL'].".png'></img>
+														</video>";
 							}
 							else
 							{
-								echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/ie_".$_SESSION['cardURL'].".png)'></figure>";
+								echo "<img title='".$_SESSION['cardALT']."' alt='".$_SESSION['cardALT']."' data-id=".$_SESSION['cardID']." data-type=".$_SESSION['cardType']." src='img/".$_SESSION['cardURL'].".png'/>";
 							}
 						}
 						else
 						{
-							echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".gif)'></figure>";
+							echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>";
 						}
 			    	 ?>
 			    </div>
@@ -122,16 +129,23 @@
 						{
 							if($_SESSION['cardType'] == "animated")
 							{
-								echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".gif)'></figure>";
+								echo "<video width='100%' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."' title='".$_SESSION['cardALT']."'>
+												<source src='img/full_".$_SESSION['cardURL'].".mp4' type='video/mp4'>
+												<source src='img/full_".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
+												<source src='img/full_".$_SESSION['cardURL'].".webm' type='video/webm'>
+												<source src='img/full_".$_SESSION['cardURL'].".ogv' type='video/ogg'>
+												<source src='img/full_".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
+												<img src='img/full_".$_SESSION['cardURL'].".png'></img>
+														</video>";
 							}
 							else
 							{
-								echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>";
+								echo "<img title='".$_SESSION['cardALT']."' alt='".$_SESSION['cardALT']."' data-id=".$_SESSION['cardID']." data-type=".$_SESSION['cardType']." src='img/full_".$_SESSION['cardURL'].".png'/>";
 							}
 						}
 						else
 						{
-							echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".gif)'></figure>";
+							echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/full_".$_SESSION['cardURL'].".png)'></figure>";
 						}
 					 ?>
 			    </div>

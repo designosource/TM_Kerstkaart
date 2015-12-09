@@ -111,7 +111,15 @@
 			    	<?php 
 			    		if($cardInfo['card_type'] == "animated")
 						{
-							echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/full_".$cardInfo['card_url'].".gif)'></figure>";
+							echo "<video width='100%' controls='true' loop autoplay poster='img/full_".$cardInfo['card_url'].".png' src='img/full_".$cardInfo['card_url'].".mp4' data-id='".$cardInfo['card_title']."' data-type='".$cardInfo['card_type']."'>
+												<source src='img/full_".$cardInfo['card_url'].".mp4' type='video/mp4'>
+												<source src='img/full_".$cardInfo['card_url']."a.mp4' type='video/mp4'>
+												<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
+												<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
+												<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
+												<img src='img/full_".$cardInfo['card_url'].".png'></img>
+														</video>";
+							//echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/full_".$cardInfo['card_url'].".gif)'></figure>";
 						}
 						else
 						{
@@ -124,15 +132,23 @@
 			<div id="front" style="display:none;">
 				<div id="cardCon">
 			    	<!-- Add poem here -->
-			    	<?php 
-			    		if($cardInfo['card_type'] == "animated")
-						{
-							echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/full_".$cardInfo['card_url'].".gif)'></figure>";
-						}
-						else
-						{
-							echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/ie_full_".$cardInfo['card_url'].".png)'></figure>";
-						}
+					<?php
+					if($cardInfo['card_type'] == "animated")
+					{
+						echo "<video width='100%' controls='true' loop autoplay poster='img/full_".$cardInfo['card_url'].".png' src='img/full_".$cardInfo['card_url'].".mp4' data-id='".$cardInfo['card_title']."' data-type='".$cardInfo['card_type']."'>
+												<source src='img/full_".$cardInfo['card_url'].".mp4' type='video/mp4'>
+												<source src='img/full_".$cardInfo['card_url']."a.mp4' type='video/mp4'>
+												<source src='img/full_".$cardInfo['card_url'].".webm' type='video/webm'>
+												<source src='img/full_".$cardInfo['card_url'].".ogv' type='video/ogg'>
+												<source src='img/full_".$cardInfo['card_url'].".m4v' type='video/x-m4v'>
+												<img src='img/full_".$cardInfo['card_url'].".png'></img>
+														</video>";
+						//echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/full_".$cardInfo['card_url'].".gif)'></figure>";
+					}
+					else
+					{
+						echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/ie_full_".$cardInfo['card_url'].".png)'></figure>";
+					}
 					?>
 			    </div>
 			</div>
