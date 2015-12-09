@@ -292,8 +292,8 @@ h1 a#clickHinter
 	position:absolute;
 	z-index: 11;
 	width:100%;
-	display: none;
-	display:none\9;;
+	display: inline-block;
+	display:inline-block\9;;
 }
 
 

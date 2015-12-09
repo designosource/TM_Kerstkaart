@@ -14,9 +14,23 @@ $(document).on("click", "a#clickHinter", function(e)
 
 			onFinish: function ()
 			{
+				var text1;
+				var text2;
+				var lang = $("#lang").val();
+				if(lang == "fr"){
+					text1 = "la carte de vœux";
+					text2 = "votre message personnalisé";
+				} else if(lang == "en"){
+					text1 = "card";
+					text2 = "personal message";
+				}else{
+					text1 = "kerstkaart";
+					text2 = "persoonlijke boodschap";
+				}
+
 				$(".flipbox-container").removeClass("swiped");
-				$("#nav h1 span#messageHinter").text("persoonlijke boodschap");
-				$("#nav h1 span#sideHinter").text("kaart");
+				$("#nav h1 span#messageHinter").text(text2);
+				$("#nav h1 span#sideHinter").text(text1);
 			}
 		});
 	}
@@ -30,11 +44,27 @@ $(document).on("click", "a#clickHinter", function(e)
 			depth: "0.1",
 			verso: $("#back").html(),
 
+
+
 			onFinish: function ()
 			{
+				var text1;
+				var text2;
+				var lang = $("#lang").val();
+				if(lang == "fr"){
+					text1 = "la carte de vœux";
+					text2 = "votre message personnalisé";
+				} else if(lang == "en"){
+					text1 = "card";
+					text2 = "personal message";
+				}else{
+					text1 = "kerstkaart";
+					text2 = "persoonlijke boodschap";
+				}
+
 				$(".flipbox-container").addClass("swiped");
-				$("#nav h1 span#messageHinter").text("kerstkaart");
-				$("#nav h1 span#sideHinter").text("tekst");
+				$("#nav h1 span#messageHinter").text(text1);
+				$("#nav h1 span#sideHinter").text(text2);
 			}
 		});
 	}
@@ -78,9 +108,22 @@ function swiped(event)
 
 				onFinish: function ()
 				{
+					var text1;
+					var text2;
+					var lang = $("#lang").val();
+					if(lang == "fr"){
+						text1 = "la carte de vœux";
+						text2 = "votre message personnalisé";
+					} else if(lang == "en"){
+						text1 = "card";
+						text2 = "personal message";
+					}else{
+						text1 = "kerstkaart";
+						text2 = "persoonlijke boodschap";
+					}
 					$(".flipbox-container").removeClass("swiped");
-					$("#nav h1 span#messageHinter").text("persoonlijke boodschap");
-					$("#nav h1 span#sideHinter").text("kaart");
+					$("#nav h1 span#messageHinter").text(text2);
+					$("#nav h1 span#sideHinter").text(text1);
 				}
 			});
 		}
@@ -97,9 +140,22 @@ function swiped(event)
 
 				onFinish: function ()
 				{
+					var text1;
+					var text2;
+					var lang = $("#lang").val();
+					if(lang == "fr"){
+						text1 = "la carte de vœux";
+						text2 = "votre message personnalisé";
+					} else if(lang == "en"){
+						text1 = "card";
+						text2 = "personal message";
+					}else{
+						text1 = "kerstkaart";
+						text2 = "persoonlijke boodschap";
+					}
 					$(".flipbox-container").addClass("swiped");
-					$("#nav h1 span#messageHinter").text("kerstkaart");
-					$("#nav h1 span#sideHinter").text("tekst");
+					$("#nav h1 span#messageHinter").text(text1);
+					$("#nav h1 span#sideHinter").text(text2);
 				}
 			});
 		}

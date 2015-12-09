@@ -140,12 +140,12 @@
 							}
 							else
 							{
-								echo "<img title='".$_SESSION['cardALT']."' alt='".$_SESSION['cardALT']."' data-id=".$_SESSION['cardID']." data-type=".$_SESSION['cardType']." src='img/full_".$_SESSION['cardURL'].".png'/>";
+								echo "<img title='".$_SESSION['cardALT']."' alt='".$_SESSION['cardALT']."' data-id=".$_SESSION['cardID']." data-type=".$_SESSION['cardType']." src='img/".$_SESSION['cardURL'].".png'/>";
 							}
 						}
 						else
 						{
-							echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/full_".$_SESSION['cardURL'].".png)'></figure>";
+							echo "<figure id='cardConSec' alt='".$_SESSION['cardALT']."' style='background-image: url(img/".$_SESSION['cardURL'].".png)'></figure>";
 						}
 					 ?>
 			    </div>

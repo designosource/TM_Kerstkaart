@@ -160,7 +160,7 @@
 					
 						<h1><?php echo nl2br($senderInfo['sender_begroeting']); ?> <span><?php echo $receiverInfo['receiver_firstname'];?></span></h1>
 						<p><?php echo nl2br($senderInfo['sender_message']); ?></p>
-
+						<input type="hidden" name="lang" id="lang" value="<?php echo $senderInfo["sender_language"]; ?>">
 					</div>
 
 					<div id="copyCon">

@@ -16,15 +16,15 @@
 	
 	if($_SESSION['taal'] == "en") {
 		$begroeting = "Dear";
-		$tekst =  "Engels wat je kunt wensen.\nEn een klein beetje meer gaan.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
+		$tekst =  "[Vul hier de tekst voor de e-card in.]\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
 		$taal = "en";
 	} else if($_SESSION['taal'] == "fr") {
 		$begroeting = "Bonjour";
-		$tekst =  "Frans wat je kunt wensen.\nEn een klein beetje meer iets.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
+		$tekst =  "[Vul hier de tekst voor de e-card in.]\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
 		$taal = "fr";
 	} else {
 		$begroeting = "Beste";
-		$tekst =  "Alles wat je kunt wensen.\nEn een klein beetje meer gaan.\nZalig kerstfeest en\neen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
+		$tekst =  "Meer\nStilte op aarde.\nEn vrede overal.\nZalig kerstfeest en\nEen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
 		$taal = "nl";
 	}
 
