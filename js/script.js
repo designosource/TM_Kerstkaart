@@ -219,3 +219,10 @@ else
 {
 	$("#audioCon").remove();
 }
+var w = window.innerWidth
+		|| document.documentElement.clientWidth
+		|| document.body.clientWidth;
+console.log(w);
+if(w >= 1024){
+	$('.videoCon').removeAttr('controls');
+}

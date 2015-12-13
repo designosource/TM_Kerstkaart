@@ -30,14 +30,20 @@
 								{
 									if($_SESSION['cardType'] == "animated")
 									{
-										echo "<video width='100%' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."' title='".$_SESSION['cardALT']."'>
+										if (isset($_SERVER['HTTP_USER_AGENT']) && (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false)){
+
+											echo "<div class='videoWrapper'><iframe src='https://www.youtube.com/embed/BADISQ1tZX8?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1&amp;playlist=BADISQ1tZX8' frameborder='0' allowfullscreen></iframe>
+											</div><img style='visibility: hidden;width: 0;height: 0;' src='img/full_kaart_1.png' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'></img>";
+										}else{
+											echo "<video width='100%' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."' title='".$_SESSION['cardALT']."'>
 												<source src='img/full_".$_SESSION['cardURL'].".mp4' type='video/mp4'>
 												<source src='img/full_".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
 												<source src='img/full_".$_SESSION['cardURL'].".webm' type='video/webm'>
 												<source src='img/full_".$_SESSION['cardURL'].".ogv' type='video/ogg'>
 												<source src='img/full_".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
-												<img src='img/".$_SESSION['cardURL'].".png'></img>
-														</video>";
+												<img src='img/full_".$_SESSION['cardURL'].".png'></img>
+												</video>";
+										}
 									}
 									else
 									{
@@ -46,14 +52,19 @@
 								}
 								else
 								{
-									echo "<video width='100%' controls='true' loop autoplay poster='img/full_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'>
-											<source src='img/full_kaart_1.mp4' type='video/mp4'>
-											<source src='img/full_kaart_1a.mp4' type='video/mp4'>
-											<source src='img/full_kaart_1.webm' type='video/webm'>
-											<source src='img/full_kaart_1.ogv' type='video/ogg'>
-											<source src='img/full_kaart_1.m4v' type='video/x-m4v'>
-											<img src='img/full_kaart_1.png'></img>
-											</video>";
+									if(preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)){
+										echo "<div class='videoWrapper'><iframe src='https://www.youtube.com/embed/BADISQ1tZX8?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1&amp;playlist=BADISQ1tZX8' frameborder='0' allowfullscreen></iframe>
+											</div><img style='visibility: hidden;width: 0;height: 0;' src='img/full_kaart_1.png' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'></img>";
+									}else {
+										echo "<video width='100%' loop controls autoplay poster='img/full_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'>
+													<source src='img/full_kaart_1.mp4' type='video/mp4'>
+													<source src='img/full_kaart_1a.mp4' type='video/mp4'>
+													<source src='img/full_kaart_1.webm' type='video/webm'>
+													<source src='img/full_kaart_1.ogv' type='video/ogg'>
+													<source src='img/full_kaart_1.m4v' type='video/x-m4v'>
+													<img src='img/full_kaart_1.png'></img>
+													</video>";
+									}
 								}
 							?>
 

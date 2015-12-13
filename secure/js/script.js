@@ -50,12 +50,18 @@ $("ul#otherCards li").on("click", function()
 	else
 	{
 		$(".stap1-choosen").empty();
-		var content = "<video width='100%' loop autoplay poster='img/full_"+url+".png' src='img/full_"+url+".mp4' data-id='"+id+"' alt='"+title+"' data-type='"+type+"'>" +
-						  	"<source src='img/full_"+url+".mp4' type='video/mp4'>" +
-						  	"<source src='img/full_"+url+".webm' type='video/webm'>" +
-						  	"<source src='img/full_"+url+".ogv' type='video/ogg'>" +
-						  	"<img src='img/full_"+url+".png'>" +
-						"</video>";
+		var isIE11 = /*@cc_on!@*/false || !!document.documentMode;
+		if(isIE11){
+			var content = "<div class='videoWrapper'><iframe src='https://www.youtube.com/embed/BADISQ1tZX8?rel=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1&amp;playlist=BADISQ1tZX8' frameborder='0' allowfullscreen></iframe></div><img style='visibility: hidden;width: 0;height: 0;' src='img/full_kaart_1.png' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'/>";
+		} else {
+			var content = "<video width='100%' controls loop autoplay poster='img/full_"+url+".png' src='img/full_"+url+".mp4' data-id='"+id+"' alt='"+title+"' data-type='"+type+"'>" +
+					"<source src='img/full_"+url+".mp4' type='video/mp4'>" +
+					"<source src='img/full_"+url+".webm' type='video/webm'>" +
+					"<source src='img/full_"+url+".ogv' type='video/ogg'>" +
+					"<img src='img/full_"+url+".png'>" +
+					"</video>";
+		}
+
 	}
 
 
@@ -1109,4 +1115,3 @@ if($('body').hasClass('stap4'))
 		$("#audioCon").remove();
 	}
 }
-

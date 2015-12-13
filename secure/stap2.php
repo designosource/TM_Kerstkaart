@@ -24,7 +24,7 @@
 		$taal = "fr";
 	} else {
 		$begroeting = "Beste";
-		$tekst =  "Meer\nStilte op aarde.\nEn vrede overal.\nZalig kerstfeest en\nEen gelukkig Nieuwjaar!\n \nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
+		$tekst =  "Meer\nStilte op aarde.\nEn vrede overal.\nZalig kerstfeest en\nEen gelukkig Nieuwjaar!\n\nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
 		$taal = "nl";
 	}
 
@@ -92,8 +92,7 @@
 						</div>
 						<label for="begroeting" id="label_begroeting"><input type="text" id="begroeting" name="begroeting" value="<?php echo $begroetingValue; ?>"> <span>[De voornaam van de ontvanger wordt automatisch ingevuld.]</span></label>
 						<input type="hidden" id="taal_input_hidden" value="<?php echo $taalValue; ?>" name="taal">
-							<textarea  class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()"><?php echo $persVal ;?>
-							</textarea>
+							<textarea  class="stap2-persoonlijkbericht" placeholder="Uw persoonlijk bericht" name="persoonlijkbericht" onclick="this.select()"><?php echo $persVal ;?></textarea>
 					</form>
 					
 					<p class="stap2-characters"><span>500</span> karakters over</p>
