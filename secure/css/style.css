@@ -1009,7 +1009,7 @@ th.checkItem input
 #indAdd input,
 #bulkAdd input
 {
-	padding: 0 20px;
+	//padding: 20px 20px 20px 20px;
 	width:210px;
 	margin-bottom:25px;
 }
@@ -1105,13 +1105,18 @@ th.checkItem input
     height: 30px;
     position:absolute;
     top: 0;
+	padding: 10px;
+	padding-left: 200px;
     right: 0;
     font-size:16px;
     margin:0;
     height: 100%;
 	width: 100%;
-	padding: 0;
 	cursor: pointer;
+}
+
+.btn{
+	color: white;
 }
 
 .hidden
@@ -1120,6 +1125,7 @@ th.checkItem input
     -webkit-opacity: 0;
     -moz-opacity: 0;
     -ms-opacity: 0;
+	width: 100%;
     filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
     cursor: pointer;
 }

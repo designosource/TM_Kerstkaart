@@ -513,6 +513,16 @@ function validateIndividual(voornaam, achternaam, emailadres)
 /*display bulk email adding screen*/
 $("a#bulkEmail").on("click", function(e)
 {
+
+	var isIE11 = /*@cc_on!@*/false || !!document.documentMode;
+	if(isIE11){
+		var internetE = "<div id='fileCon'><input type='file' style='width:250px; height: 40px; display:inline-block; margin-top:-8px;' value='testvalue' name='emails'/></div>";
+	} else {
+		var internetE = "<div id='fileCon'>" +
+				"Importeer Excel-bestand" +
+				"<input class='fileInput hidden' type='file' style='width:250px; height: 40px; display:inline-block;' value='testvalue' name='emails'/>" +
+				"</div>";
+	}
 	var bulkAdd = "<div id='bulkAdd'>" +
 						"<form action='#' id='fileToUpload' method='POST' enctype='multipart/form-data'>" +
 
@@ -526,10 +536,7 @@ $("a#bulkEmail").on("click", function(e)
 
 							"<a id='closeOverlay' href='#'>Sluiten</a>" +
 
-							"<div id='fileCon'>" +
-								"Importeer Excel-bestand" +
-								"<input class='fileInput hidden' type='file' name='emails'/>" +
-							"</div>" +
+							internetE +
 
 							"<input id='bAAdd' type='submit' value='Toevoegen'>" +
 
