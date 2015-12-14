@@ -61,7 +61,7 @@
 
 		<meta property="og:type"   content="website" /> 
 	  	<meta property="og:url" content="http://ecard.thomasmore.be<?php echo $_SERVER['REQUEST_URI']; ?>" />
-	 	<meta property="og:title" content="Thomas More - Kerstkaart" />
+	 	<meta property="og:title" content="Thomas More | Expect more ... wishes!" />
 	  	<meta property="og:image" content="http://ecard.thomasmore.be/img/tm_kerstkaart_facebook.png"/>
 	  	<meta property="og:description" content="Bekijk hier je gepersonaliseerde kerstkaart die werd gemaakt via de Thomas More kerstkaart tool."/>
 
@@ -70,7 +70,7 @@
 		<meta name="twitter:site:id" content="957208351" />
 		<meta name="twitter:creator" content="@ThomasMoreBE" />
 		<meta name="twitter:creator:id" content="957208351" />
-		<meta name="twitter:title" content="Thomas More - Kerstkaart" />
+		<meta name="twitter:title" content="Thomas More | Expect more ... wishes!" />
 		<meta name="twitter:description" content="Bekijk hier je gepersonaliseerde kerstkaart die werd gemaakt via de Thomas More kerstkaart tool."/>
 		<meta name="twitter:image" content="http://ecard.thomasmore.be/img/tm_kerstkaart_twitter.png" />
 		<meta name="twitter:url" content="http://ecard.thomasmore.be" />
@@ -83,7 +83,7 @@
 			<script src="js/html5chiv.js"></script>
 		<![endif]-->
 
-		<title>Thomas More | Kerstkaart</title>
+		<title>Thomas More | Expect more ... wishes!</title>
 	</head>
 
 	<body class="<?php if($cardInfo['card_type'])
