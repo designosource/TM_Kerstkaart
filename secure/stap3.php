@@ -49,7 +49,8 @@
 					    	}
 					    }
 
-					    if($i <= 20)
+					    //Het aantal Mails die een spreadsheet mag bevatten
+					    if($i <= 500)
 						{
 							foreach ($Reader as $row)
 						    {
@@ -73,7 +74,7 @@
 						}
 						else
 						{
-							$error = "<p class='error'>Het bulk importeren van emails is beperkt tot <span style='font-weight:bold;'>20</span></p>";
+							$error = "<p class='error'>Het bulk importeren van emails is beperkt tot <span style='font-weight:bold;'>500</span></p>";
 						}
 
 					    unlink('excelFiles/'.$fileFullName);
@@ -91,6 +92,7 @@
 			else
 			{
 				//fallback when no file has been uploaded but clicked "upload"
+				$error = "<p class='error'>Gelieve een bestand up te loaden.</p>";
 			}
 		}
 	}

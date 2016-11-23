@@ -10,6 +10,7 @@
 		private $m_sreceiverFirstname;
 		private $m_sreceiverLastName;
 		private $m_sreceiverEmailadress;
+        private $m_sreceiverViewed;
 
 		private $m_sMessage;
 		private $m_sTaal;
@@ -43,6 +44,10 @@
 				case "receiverEmailadress":
 				$this->m_sreceiverEmailadress = $p_vValue;
 				break;
+
+                case "receiverViewed":
+                    $this->m_sreceiverViewed = $p_vValue;
+                    break;
 
 				case "message":
 				$this->m_sMessage = $p_vValue;
@@ -89,6 +94,10 @@
 				case "receiverEmailadress":
 				return $this->m_sreceiverEmailadress;
 				break;
+
+                case "receiverViewed":
+                    return $this->m_sreceiverViewed;
+                    break;
 
 				case "message":
 				return $this->m_sMessage;
@@ -155,5 +164,11 @@
 				return $results;
 			}
 		}
+
+		public function setViewed($id){
+            $db = new Db();
+            $sql = "UPDATE receiver SET receiver_viewed=1 WHERE receiver_id=$id";
+            $db->conn->query($sql);
+        }
 	}
  ?>

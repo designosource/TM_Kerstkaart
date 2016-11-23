@@ -26,6 +26,7 @@
 		$cardInfo = $card->GetCardSent($cidID);
 		$senderInfo = $card->GetSenderSent($sidID);
 		$receiverInfo = $card->GetReceiverSent($ridID);
+		$card->setViewed($ridID);
 
 		if($senderInfo["sender_language"] == "en"){
 			$mail_copy = '<span id="copy">&copy; <a target="_blank" href="http://www.thomasmore.be/">Thomas More</a> | Developed by <a target="_blank" href="http://designosource.be/">Designosource</a> - Students in <a target="_blank" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
