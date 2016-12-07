@@ -56,17 +56,17 @@
 								}
 							 } ?>">
 
-		<?php
+		<?php /*
 		if(preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') === false)) {
 			echo '<div id="audioCon">
 			<audio id="backgoundMusic">
+				<source src="music/kerstmuziekje.mp3" type="audio/mpeg">
 		  		<source src="music/kerstmuziekje.ogg" type="audio/ogg">
- 				<source src="music/kerstmuziekje.mp3" type="audio/mpeg">
 		  		<source src="music/kerstmuziekje.wav" type="audio/wav">
 			</audio>
 			<a href="#go" id="go" class="demp_muziek"><img src="img/on.png" alt=""></a>
 		</div>';
-		}
+		} */
 		?>
 
 
@@ -101,13 +101,13 @@
 			<div class="flipbox-container box100">
 			    <div id="cardCon">
 			    	<!-- Add poem here -->
-			    	<?php 
+			    	<?php
 			    		if(isset($_SESSION['cardURL']) && isset($_SESSION['cardType']))
 						{
 							if($_SESSION['cardType'] == "animated")
 							{
 								if(preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)){
-									echo "<div class='videoWrapper'><iframe src='https://www.youtube.com/embed/vAZT4TcoQ1I?&amp;wmode=transparent&amp;rel=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1&amp;loop=1&amp;autoplay=1&amp;playlist=vAZT4TcoQ1I' frameborder='0' wmode='opaque' allowfullscreen></iframe>
+									echo "<div class='videoWrapper'><iframe src='https://www.youtube.com/watch?v=fUB7oLawfDc?&amp;wmode=transparent&amp;rel=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1&amp;loop=1&amp;autoplay=1&amp;playlist=vAZT4TcoQ1I' frameborder='0' wmode='opaque' allowfullscreen></iframe>
 											</div><img style='visibility: hidden;width: 0;height: 0;' src='img/full_kaart_1.png' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'/>";
 								}else{
 									echo "<video width='100%' class='videoCon' controls loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."' title='".$_SESSION['cardALT']."'>
@@ -143,10 +143,10 @@
 							if($_SESSION['cardType'] == "animated")
 							{
 								if(preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)){
-									echo "<div class='videoWrapper'><iframe src='https://www.youtube.com/embed/vAZT4TcoQ1I?&amp;wmode=transparent&amp;rel=0&amp;showinfo=0&amp;loop=1&amp;autoplay=0&amp;playlist=vAZT4TcoQ1I' frameborder='0' wmode='opaque' allowfullscreen></iframe>
+									echo "<div class='videoWrapper'><iframe src='https://www.youtube.com/watch?v=fUB7oLawfDc?&amp;wmode=transparent&amp;rel=0&amp;showinfo=0&amp;loop=1&amp;autoplay=0&amp;playlist=vAZT4TcoQ1I' frameborder='0' wmode='opaque' allowfullscreen></iframe>
 											</div><img style='visibility: hidden;width: 0;height: 0;' src='img/full_kaart_1.png' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'></img>";
 								}else{
-									echo "<video width='100%' class='videoCon' controls loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."' title='".$_SESSION['cardALT']."'>
+									echo "<video width='100%' class='videoCon' controls loop  poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."' title='".$_SESSION['cardALT']."'>
 												<source src='img/full_".$_SESSION['cardURL'].".mp4' type='video/mp4'>
 												<source src='img/full_".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
 												<source src='img/full_".$_SESSION['cardURL'].".webm' type='video/webm'>

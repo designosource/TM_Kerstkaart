@@ -32,7 +32,7 @@
 									{
 										if (isset($_SERVER['HTTP_USER_AGENT']) && (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false)){
 
-											echo "<div class='videoWrapper'><iframe src='https://www.youtube.com/embed/BADISQ1tZX8?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1&amp;playlist=BADISQ1tZX8' frameborder='0' allowfullscreen></iframe>
+											echo "<div class='videoWrapper'><iframe src='https://www.youtube.com/watch?v=fUB7oLawfDc?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1' frameborder='0' allowfullscreen></iframe>
 											</div><img style='visibility: hidden;width: 0;height: 0;' src='img/full_kaart_1.png' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'></img>";
 										}else{
 											echo "<video width='100%' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."' title='".$_SESSION['cardALT']."'>
@@ -53,7 +53,7 @@
 								else
 								{
 									if(preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)){
-										echo "<div class='videoWrapper'><iframe src='https://www.youtube.com/embed/BADISQ1tZX8?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1&amp;playlist=BADISQ1tZX8' frameborder='0' allowfullscreen></iframe>
+										echo "<div class='videoWrapper'><iframe src='https://www.youtube.com/watch?v=fUB7oLawfDc?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1' frameborder='0' allowfullscreen></iframe>
 											</div><img style='visibility: hidden;width: 0;height: 0;' src='img/full_kaart_1.png' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'></img>";
 									}else {
 										echo "<video width='100%' loop controls autoplay poster='img/full_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'>

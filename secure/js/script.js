@@ -1,4 +1,5 @@
 /*activate "login" button when both fields have content*/
+
 $("input.login-input").on("keyup", function()
 {
 	var loginNumber = $("input.unummer").val();
