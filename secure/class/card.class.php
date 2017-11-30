@@ -237,7 +237,7 @@ Class Card
 												  								<tbody>
 												  									<tr>
 												  										<td style="width:45%;">
-												  											<img alt="" style="width:125px; height:50px;" src="http://ecard.thomasmore.be/img/TM_logo_mail.png"></img>
+												  											<img alt="" style="width:125px; height:50px;" src="http://ecard.thomasmore.be/img/TM_logo_mail.png"/img>
 												  										</td>
 												  									</tr>
 												  								</tbody>
@@ -310,7 +310,7 @@ Class Card
 
         if ($mail->Send()) {
             echo "Message sent! ";
-            echo $destination . " " . $mail->Subject;
+            //echo $destination . " " . $mail->Subject;
         } else {
             echo "Mailer Error: " . $mail->ErrorInfo;
         }

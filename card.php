@@ -5,6 +5,7 @@
 	{
 		$url = urldecode(http_build_query($_GET));
 
+
 		$urlExploded = explode('&', $url);
 		$cidParam = $urlExploded[0];
 		$sidParam = $urlExploded[1];
@@ -26,6 +27,12 @@
 		$cardInfo = $card->GetCardSent($cidID);
 		$senderInfo = $card->GetSenderSent($sidID);
 		$receiverInfo = $card->GetReceiverSent($ridID);
+
+        if(empty($cardInfo) || empty($senderInfo) || empty($receiverInfo))
+        {
+            header("location: 404.php");
+        }
+
 		$card->setViewed($ridID);
 
 		if($senderInfo["sender_language"] == "en"){
@@ -37,11 +44,6 @@
 		} else {
 			$mail_copy = '<span id="copy">&copy; <a target="_blank" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a target="_blank" href="http://designosource.be/">Designosource</a> - Studenten van <a target="_blank" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
 			$mail_footer = '<h1><a id="clickHinter" href="#">Klik hier</a> of veeg over de <span id="sideHinter">kaart</span> om je <span id="messageHinter">persoonlijke boodschap</span> te bekijken.</h1>';
-		}
-
-		if(empty($cardInfo) || empty($senderInfo) || empty($receiverInfo))
-		{
-			header("location: 404.php");
 		}
 	}
 	else
@@ -140,7 +142,7 @@
 							}
 							//echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/full_".$cardInfo['card_url'].".gif)'></figure>";
 						}
-						else
+						else // not animated
 						{
 							echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/full_".$cardInfo['card_url'].".png); margin:0 auto; display: block'></figure>";
 						}

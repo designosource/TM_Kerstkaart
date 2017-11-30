@@ -72,7 +72,7 @@
 					</div>
 
 					<div id="stap1-col2">
-						<h1><b>Kies een ontwerp.</b></h1>
+						<h1><b><?php if(isset($_SESSION['taal'])){ echo $step1; }else{echo "Voeg tekst toe";} ?>.</b></h1>
 						
 						<ul id="otherCards">
 							<?php 
@@ -87,7 +87,7 @@
 
 
 					<ul id="vorige-volgende" class="clearfix">
-						<li id="right"><a id="gtStap2" class="button-vorigevolgende" href="stap2.php">Volgende stap</a></li>
+						<li id="right"><a id="gtStap2" class="button-vorigevolgende" href="stap2.php"><?php if(isset($_SESSION['taal'])){ echo $nextstep; }else{echo "Volgende stap";} ?></a></li>
 					</ul>
 				</div>
 

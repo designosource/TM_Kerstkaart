@@ -1,0 +1,99 @@
+body {
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f3;
+}
+
+.container {
+    width: 350px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+header {
+    height: 75px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    background-color: #f04c25;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#logoTM {
+    text-indent: -9999px;
+    background-image: url('../img/TM_logo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 95px;
+    height: 38px;
+}
+
+.elementFlex {
+    margin: 20px;
+    box-sizing: border-box;
+    color: black;
+}
+
+.elementFlex div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+form.elementFlex div {
+    margin-bottom: 20px;
+}
+
+.elementLabel, form div input {
+    flex-basis: calc(50% - 5px);
+}
+
+/*form div input {
+    flex-basis: calc(60% - 5px);
+}*/
+
+form div input[type="text"],
+form div input[type="password"] {
+    border: 0;
+    border-bottom: 1px solid black;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.login,
+.logout {
+    flex-basis: 100%;
+    border: 0;
+    background-color: #f04c25;
+    border: 2px solid #f04c25;
+    color: white;
+    font-size: inherit;
+    padding: 5px 0;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.login:hover,
+.logout:hover {
+    background-color: transparent;
+    color: #f04c25;
+    transition: 0.3s;
+}
+
+.loginFailed {
+    display: block;
+    border: 2px solid red;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.4);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}

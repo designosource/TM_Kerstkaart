@@ -46,41 +46,31 @@ $responseRatio = ($countViewedReceivers[0] / $countReceivers[0]) * 100;
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <style>
-        body {
-            font-family:'Lato', sans-serif;
-        }
-
-        .typeNumbers {
-            background-color:#f04c25;
-            color:white;
-            padding:16px;
-            display: inline-block;
-            width:150px;
-        }
-
-        .counting {
-            line-height:48px;
-            display:inline-block;
-        }
-    </style>
+    <link rel="stylesheet" href="css/login-gegevens.css">
 </head>
 <body>
-<div class="oneElement">
-    <div class="typeNumbers">Aantal ontvangers:</div>
-    <div class="counting"><?php echo $countReceivers[0]; ?></div>
-</div>
-
-<div class="oneElement">
-    <div class="typeNumbers">Aantal geopend:</div>
-    <div class="counting"><?php echo $countViewedReceivers[0]; ?></div>
-</div>
-
-<div class="oneElement">
-    <div class="typeNumbers">Responsratio</div>
-    <div class="counting"><?php echo round($responseRatio, 3) . ' %'; ?></div>
-</div>
-
-<a href="logout.php">Logout</a>
+    <div class="container">
+        <header>
+            <a target="_blank" href="www.thomasmore.be" id="logoTM">Logo Thomas More</a>
+        </header>
+        
+        <div class="elementFlex">
+            <div>
+                <div class="elementLabel"><p>Aantal ontvangers:</p></div>
+                <div class="elementLabel"><p><?php echo $countReceivers[0]; ?></p></div>
+            </div>
+            <div>
+                <div class="elementLabel"><p>Aantal geopend:</p></div>
+                <div class="elementLabel"><p><?php echo $countViewedReceivers[0]; ?></p></div>
+            </div>
+            <div>
+                <div class="elementLabel"><p>Responsratio:</p></div>
+                <div class="elementLabel"><p><?php echo round($responseRatio, 3) . ' %'; ?></p></div>
+            </div>
+            <div>
+                <a class="logout" href="logout.php">Logout</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
