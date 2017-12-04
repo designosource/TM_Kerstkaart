@@ -19,9 +19,8 @@
 <body>
 
     <div class="container">
-        <header>
-            <a target="_blank" href="www.thomasmore.be" id="logoTM">Logo Thomas More</a>
-        </header>
+        <?php include('includes/header.inc.php'); ?>
+
         <form class="elementFlex" action="gegevens.php" method="post">
             <div>
                 <label class="elementLabel" for="username">Username:</label>

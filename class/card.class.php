@@ -119,56 +119,47 @@
 
 		public function GetCardSent($id)
 		{
-			$db = new Db();
+            $conn = Db::getInstance();
 
-			$sql = "SELECT * FROM card WHERE card_id=$id";
+            $statement = $conn->prepare("SELECT * FROM card WHERE card_id=:id");
+            $statement->bindParam(':id', $id);
+            $statement->execute();
+            $res = $statement->fetchAll();
 
-			$result = $db->conn->query($sql);
-
-			if($result)
-			{
-				$results = mysqli_fetch_array($result, MYSQL_ASSOC);
-
-				return $results;
-			}
+            return $res;
 		}
 
 		public function GetSenderSent($id)
 		{
-			$db = new Db();
+            $conn = Db::getInstance();
 
-			$sql = "SELECT * FROM sender WHERE sender_id=$id";
+            $statement = $conn->prepare("SELECT * FROM sender WHERE sender_id=:id");
+            $statement->bindParam(':id', $id);
+            $statement->execute();
+            $res = $statement->fetchAll();
 
-			$result = $db->conn->query($sql);
-
-			if($result)
-			{
-				$results = mysqli_fetch_array($result, MYSQL_ASSOC);
-
-				return $results;
-			}
+            return $res;
 		}
 
 		public function GetReceiverSent($id)
 		{
-			$db = new Db();
+            $conn = Db::getInstance();
 
-			$sql = "SELECT * FROM receiver WHERE receiver_id=$id";
+            $statement = $conn->prepare("SELECT * FROM receiver WHERE receiver_id=:id");
+            $statement->bindParam(':id', $id);
+            $statement->execute();
+            $res = $statement->fetchAll();
 
-			$result = $db->conn->query($sql);
-
-			if($result)
-			{
-				$results = mysqli_fetch_array($result, MYSQL_ASSOC);
-
-				return $results;
-			}
+            return $res;
 		}
 
-		public function setViewed($id){
-            $db = new Db();
-            $sql = "UPDATE receiver SET receiver_viewed=1 WHERE receiver_id=$id";
-            $db->conn->query($sql);
+		public function setViewed($id)
+        {
+            $conn = Db::getInstance();
+
+            $statement = $conn->prepare("UPDATE receiver SET receiver_viewed=1 WHERE receiver_id=:id");
+            $statement->bindParam(':id', $id);
+            return $statement->execute();
         }
 	}
  ?>

@@ -75,25 +75,25 @@
 						}
 						else
 						{
-							$error = "<p class='error'>Het bulk importeren van emails is beperkt tot <span style='font-weight:bold;'>500</span></p>";
+							$error = "<p class='error'>". isset($step3["amountmails"])?$step3["amountmails"]:"Het bulk importeren van emails is beperkt tot" . " <span style='font-weight:bold;'>500.</span></p>";
 						}
 
 					    unlink('excelFiles/'.$fileFullName);
 					}
 					else
 					{
-						$error = "<p class='error'>Er is iets misgelopen, gelieve nog eens te proberen.</p>";
+						$error = "<p class='error'>". isset($step3["error"])?$step3["error"]:"Er is iets misgelopen, gelieve nog eens te proberen" . ".</p>";
 					}
 				}
 				else
 				{
-					$error = "<p class='error'>Verkeerde type file. Alleen .xls en .xlsx zijn momenteel ondersteund.</p>";
+					$error = "<p class='error'>". isset($step3["wrongtype"])?$step3["wrongtype"]:"Verkeerde type file. Alleen .xls en .xlsx zijn momenteel ondersteund" . ".</p>";
 				}
 			}
 			else
 			{
 				//fallback when no file has been uploaded but clicked "upload"
-				$error = "<p class='error'>Gelieve een bestand up te loaden.</p>";
+				$error = "<p class='error'>". isset($step3["nofileselected"])?$step3["nofileselected"]:"Gelieve een bestand up te loaden" . ".</p>";
 			}
 		}
 	}
@@ -122,6 +122,9 @@
 				<?php include("includes/header.inc.php") ?>
 
 				<div id="content">
+
+                    <p id="language" style="display: none;"><?php echo $_SESSION['taal']; ?></p> <!-- readable for JS -->
+
 
 					<div id="stap3-buttons">
 						<ul id="emailtoevoegen">

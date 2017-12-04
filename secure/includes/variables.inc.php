@@ -28,7 +28,7 @@ elseif($_SESSION['taal'] == "fr") // Frans
     $step2 = array("title" => "Message personelle", "subtitle" => "Vous pouvez changer le texte ci-dessous", "greeting" => "Bonjour", "receiverinformation" => "Le prénom de le destinataire est remplit automatiquement", "message" => "[Entre le texte pour l'e-card ici.]\n", "placeholder" => "Votre message personnelle", "characters" => "caractères restant");
     $step3 = array("amountmails" => "L'importation des courriels est limité à", "error" => "Il y a quelque chose a mal tourné, s’il vous plaît avoir une autre chance", "wrongtype" => "Type de fichier incorrect. Seuls les fichiers .xls et .xlsx sont supporté au moment", "nofileselected" => "Télécharge un fichier s’il vous plaît",
         "addemail" => "Ajoute des adresses de courriels", "importexcel" => "Importe fichier excel", "modify" => "Modifié", "delete" => "Supprimé", "firstname" => "Prénom", "lastname" => "Nom de famille", "email" => "Adresse de courriel", "noreceivers" => "Aucun récepteurs selecté");
-    $step4 = array("previousstep" => "Modifié design", "nextstep" => "Envoie carte", "clickhere" => "Cliquez ici", "message" => "ou essuyer sur <b>la carte</b> pour afficher votre <b>message personnel</b>");
+    $step4 = array("previousstep" => "Modifié design", "nextstep" => "Envoie carte", "clickhere" => "Cliquez ici", "message" => "ou balayez <b>la carte</b> afin de découvrir votre <b>message personnalisé</b>");
 
     $nav1 = "Choisis une carte";
     $nav2 = "Ajoute du texte";
@@ -36,7 +36,7 @@ elseif($_SESSION['taal'] == "fr") // Frans
     $nav4 = "Aperçu";
     $previousstep = "Etape précédent";
     $nextstep = "Etape suivant";
-    $footer = array("developed" => "Développé par", "student" => "Etudiants de");
+    $footer = array("developed" => "Développé par", "student" => "Etudiants en");
 }
 elseif($_SESSION['taal'] == "en") // Engels
 {

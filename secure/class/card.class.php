@@ -109,25 +109,18 @@ Class Card
 
     public function GetCards()
     {
-        $db = new Db();
+        $conn = Db::getInstance();
 
-        $sql = "SELECT * FROM card";
+        $statement = $conn->prepare("SELECT * FROM card");
+        $statement->execute();
+        $res = $statement->fetchAll();
 
-        $result = $db->conn->query($sql);
-
-        if ($result) {
-            $rows = array();
-            while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
-                $rows[] = $row;
-            }
-            return $rows;
-
-        }
+        return $res;
     }
 
     public function SaveSenders()
     {
-        $db = new Db();
+        /*$db = new Db();
 
         $sql = "INSERT INTO sender (sender_firstname, sender_lastname, sender_email, sender_message, sender_begroeting, sender_language)
 				   values (
@@ -152,12 +145,35 @@ Class Card
 
                 return $lastEntryID;
             }
+        }*/
+
+
+        $conn = Db::getInstance();
+
+        $statement = $conn->prepare("INSERT INTO sender (sender_firstname, sender_lastname, sender_email, sender_message, sender_begroeting, sender_language) values( ':senderFirstname', ':senderLastname', ':senderEmailadress', ':message', ':begroeting', ':taal' ))");
+        $statement->bindParam(':senderFirstname', $this->m_ssenderFirstname);
+        $statement->bindParam(':senderLastname', $this->m_ssenderLastName);
+        $statement->bindParam(':senderEmailadress', $this->m_ssenderEmailadress);
+        $statement->bindParam(':message', $this->m_sMessage);
+        $statement->bindParam(':begroeting', $this->m_sBegroeting);
+        $statement->bindParam(':taal', $this->m_sTaal);
+        $res = $statement->execute();
+
+        if($res){
+
+            $statement2 = $conn->prepare("SELECT LAST_INSERT_ID() FROM sender order by sender_id desc limit 1");
+            $res2 = $statement2->execute();
+            $lastEntryID = $res2['LAST_INSERT_ID()'];
+
+            return $lastEntryID;
+
         }
+
     }
 
     public function SaveReceivers($senderID)
     {
-        $db = new Db();
+        /*$db = new Db();
 
         $sql = "INSERT INTO receiver (receiver_firstname, receiver_lastname, receiver_email, sender_id)
 				   values (
@@ -180,7 +196,27 @@ Class Card
 
                 return $lastEntryID;
             }
+        }*/
+
+        $conn = Db::getInstance();
+
+        $statement = $conn->prepare("INSERT INTO receiver (receiver_firstname, receiver_lastname, receiver_email, receiver_message, sender_id) values( ':receiverFirstname', ':receiverLastname', ':receiverEmailadress', ':receiver_id')");
+        $statement->bindParam(':receiverFirstname', $this->m_sreceiverFirstname);
+        $statement->bindParam(':receiverLastname', $this->m_sreceiverLastName);
+        $statement->bindParam(':receiverEmailadress', $this->m_sreceiverEmailadress);
+        $statement->bindParam(':receiver_id', $senderID);
+        $res = $statement->execute();
+
+        if($res){
+
+            $statement2 = $conn->prepare("SELECT LAST_INSERT_ID() FROM receiver order by receiver_id desc limit 1");
+            $res2 = $statement2->execute();
+            $lastEntryID = $res2['LAST_INSERT_ID()'];
+
+            return $lastEntryID;
+
         }
+
     }
 
 
@@ -190,6 +226,8 @@ Class Card
         $paramUrl = "cid=" . $cardID . "&sid=" . $senderID . "&rid=" . $receiverID;
         $url = "http://ecard.thomasmore.be/card.php?" . urlencode($paramUrl);
 
+        $language = $_SESSION['taal'];
+
         require_once('class.phpmailer.php');
         $mail = new PHPMailer();
         $mail->IsSMTP();
@@ -198,26 +236,24 @@ Class Card
         $mail->Host = "10.151.11.101";
         $mail->Port = 25;
 
-        $taal_begroeting = "";
-        $taal_tekst = '';
-        $mail_footer = '';
-
-
-        if ($_SESSION["taal"] == "fr") {
-            $taal_begroeting = "Bonjour";
-            $taal_tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Vous avez re&ccedil;u une carte de v&oelig;ux virtuelle de <span style="font-weight:normal;">' . $this->m_ssenderFirstname . ' ' . $this->m_ssenderLastName . '.</span></h1>
-							  <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: white; font-weight: normal; padding:16px; display:inline-block; text-decoration:none; margin-top:8px; background-color:#f24f11;" href="' . $url . '">Veuillez cliquer ici pour d&egrave;couvrir la carte.</a> </h1>';
-            $mail_footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | R&egrave;alis&egrave; par <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Etudiants en <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
-        } else if ($_SESSION["taal"] == "en") {
-            $taal_begroeting = "Dear";
-            $taal_tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><span style="font-weight:normal;">' . $this->m_ssenderFirstname . ' ' . $this->m_ssenderLastName . '</span> has sent you a card  with Season\'s Greetings.</h1>
+        if ($language == "fr") { // Frans
+            $begroeting = "Bonjour";
+            $tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Vous avez re&ccedil;u une carte de v&oelig;ux virtuelle de <span style="font-weight:normal;">' . $this->m_ssenderFirstname . ' ' . $this->m_ssenderLastName . '.</span></h1>
+							  <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: white; font-weight: normal; padding:16px; display:inline-block; text-decoration:none; margin-top:8px; background-color:#f24f11;" href="' . $url . '">Veuillez cliquer ici pour découvrir la carte.</a> </h1>';
+            $footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | R&egrave;alis&egrave; par <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Etudiants en <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
+            $logo = "http://ecard.thomasmore.be/img/TM_logo_international_mail.png";
+        } else if ($language == "en") { // Engels
+            $begroeting = "Dear";
+            $tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><span style="font-weight:normal;">' . $this->m_ssenderFirstname . ' ' . $this->m_ssenderLastName . '</span> has sent you a card  with Season\'s Greetings.</h1>
 							  <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: white; font-weight: normal; padding:16px; display:inline-block; text-decoration:none; margin-top:8px; background-color:#f24f11;" href="' . $url . '">Click here to read the card!</a></h1>';
-            $mail_footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Developed by <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Students in <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
-        } else {
-            $taal_begroeting = "Beste";
-            $taal_tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Je kreeg een kerstkaart van <span style="font-weight:normal;">' . $this->m_ssenderFirstname . ' ' . $this->m_ssenderLastName . '.</span></h1>
+            $footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Developed by <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Students in <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
+            $logo = "http://ecard.thomasmore.be/img/TM_logo_international_mail.png";
+        } else { // Nederlands
+            $begroeting = "Beste";
+            $tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Je kreeg een kerstkaart van <span style="font-weight:normal;">' . $this->m_ssenderFirstname . ' ' . $this->m_ssenderLastName . '.</span></h1>
 							  <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><a style="font-family: Arial, Helvetica, sans-serif; padding:16px; display:inline-block; text-decoration:none; margin-top:8px; font-size: 16px; color: white; font-weight: normal; background-color:#f24f11;" href="' . $url . '">Klik hier om de kaart te lezen!</a></h1>';
-            $mail_footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Developed by <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Students in <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
+            $footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Studenten <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
+            $logo = "http://ecard.thomasmore.be/img/TM_logo_mail.png";
         }
 
         $emailbody = '<html><body>
@@ -237,7 +273,7 @@ Class Card
 												  								<tbody>
 												  									<tr>
 												  										<td style="width:45%;">
-												  											<img alt="" style="width:125px; height:50px;" src="http://ecard.thomasmore.be/img/TM_logo_mail.png"/img>
+												  											<img alt="" style="width:125px; height:50px;" src="'. $logo .'"/>
 												  										</td>
 												  									</tr>
 												  								</tbody>
@@ -253,7 +289,7 @@ Class Card
 												  								<tbody>
 												  									<tr>
 												  										<td class="contentSec" style="text-align: left; padding-top: 50px; padding-bottom: 10px; width: 100%; position:relative;">
-												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">' . $taal_begroeting . '
+												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">' . $begroeting . '
 												  											<span style="font-weight:normal;">' . $this->m_sreceiverFirstname . '</span></h1>
 												  										</td>
 												  									</tr>
@@ -263,11 +299,7 @@ Class Card
 												  							<table style="padding-right: 30px; padding-left: 30px; width:100%; padding-bottom:30px;">
 												  								<tbody>
 												  									<tr>
-												  										<td class="contentSec" style="text-align: left; padding-top: 0px; padding-bottom: 0px; width: 100%; position:relative;">
-												  											' . $taal_tekst . '
-												  											<!--<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Je kreeg een kerstkaart van <span style="font-weight:normal;">. $this->m_ssenderFirstname .. $this->m_ssenderLastName .</span></h1>
-												  											<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Klik <a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal; color:#f24f11;" href="./*$url*/.">hier</a> om de kaart te lezen!</h1>-->
-												  										</td>
+												  										<td class="contentSec" style="text-align: left; padding-top: 0px; padding-bottom: 0px; width: 100%; position:relative;">' . $tekst . '</td>
 												  									</tr>
 												  								</tbody>
 												  							</table>
@@ -281,10 +313,7 @@ Class Card
 													  							<table style="padding-right: 25px; padding-left: 25px; width:100%;">
 													  								<tbody>
 													  									<tr>
-													  										<td class="contentSec" style="text-align: left; padding-top: 5px; padding-bottom: 5px; width: 100%;">
-													  											' . $mail_footer . '
-													  											<!--<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Studenten van <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>-->
-													  										</td>
+													  										<td class="contentSec" style="text-align: left; padding-top: 5px; padding-bottom: 5px; width: 100%;">' . $footer . '</td>
 													  									</tr>
 													  								</tbody>
 													  							</table>
@@ -318,47 +347,38 @@ Class Card
 
     public function GetCardSent($id)
     {
-        $db = new Db();
+        $conn = Db::getInstance();
 
-        $sql = "SELECT * FROM card WHERE card_id=$id";
+        $statement = $conn->prepare("SELECT * FROM card WHERE card_id=:id");
+        $statement->bindParam(':id', $id);
+        $statement->execute();
+        $res = $statement->fetchAll();
 
-        $result = $db->conn->query($sql);
-
-        if ($result) {
-            $results = mysqli_fetch_array($result, MYSQL_ASSOC);
-
-            return $results;
-        }
+        return $res;
     }
 
     public function GetSenderSent($id)
     {
-        $db = new Db();
+        $conn = Db::getInstance();
 
-        $sql = "SELECT * FROM sender WHERE sender_id=$id";
+        $statement = $conn->prepare("SELECT * FROM sender WHERE sender_id=:id");
+        $statement->bindParam(':id', $id);
+        $statement->execute();
+        $res = $statement->fetchAll();
 
-        $result = $db->conn->query($sql);
-
-        if ($result) {
-            $results = mysqli_fetch_array($result, MYSQL_ASSOC);
-
-            return $results;
-        }
+        return $res;
     }
 
     public function GetReceiverSent($id)
     {
-        $db = new Db();
+        $conn = Db::getInstance();
 
-        $sql = "SELECT * FROM receiver WHERE receiver_id=$id";
+        $statement = $conn->prepare("SELECT * FROM receiver WHERE receiver_id=:id");
+        $statement->bindParam(':id', $id);
+        $statement->execute();
+        $res = $statement->fetchAll();
 
-        $result = $db->conn->query($sql);
-
-        if ($result) {
-            $results = mysqli_fetch_array($result, MYSQL_ASSOC);
-
-            return $results;
-        }
+        return $res;
     }
 }
 

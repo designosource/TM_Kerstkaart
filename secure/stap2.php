@@ -1,6 +1,5 @@
 <?php 
 	session_start();
-
 	//session_destroy();
     //var_dump($_SESSION);
 
@@ -88,7 +87,7 @@
 						</div>
 						<label for="begroeting" id="label_begroeting"><input type="text" id="begroeting" name="begroeting" value="<?php if(isset($step2["greeting"])){ echo $step2["greeting"];}else{ echo "Beste"; } ?>"> <span>[<?php if(isset($step2["receiverinformation"])){ echo $step2["receiverinformation"]; }else{ echo "De voornaam van de ontvanger wordt automatisch ingevuld"; } ?>.]</span></label>
 						<input type="hidden" id="taal_input_hidden" value="<?php if(isset($_SESSION["taal"])){ echo $_SESSION["taal"];}else{ echo "nl";}; ?>" name="taal">
-							<textarea  class="stap2-persoonlijkbericht" placeholder="<?php if(isset($step2["placeholder"])){ echo $step2["placeholder"]; }else{ echo "Uw persoonlijk bericht"; } ?>" name="persoonlijkbericht" onclick="this.select()"><?php if(isset($_SESSION["persMess"])){ echo $_SESSION["persMess"];}elseif(isset($step2["message"])){ echo $step2["message"] . $_SERVER['REDIRECT_Shib_Person_givenName'];}else{ echo "Vul hier uw bericht in"; }?></textarea>
+							<textarea  class="stap2-persoonlijkbericht" placeholder="<?php if(isset($step2["placeholder"])){ echo $step2["placeholder"]; }else{ echo "Uw persoonlijk bericht"; } ?>" name="persoonlijkbericht" onclick="this.select()"><?php if(isset($_SESSION["persMess"])){ echo $_SESSION["persMess"];}elseif(isset($step2["message"])){ echo $step2["message"] . $_SERVER['REDIRECT_Shib_Person_givenName'];}else{ echo "[Vul hier uw bericht in]\n"; }?></textarea>
 					</form>
 					
 					<p class="stap2-characters"><span>500</span> <?php if(isset($step2["characters"])){ echo $step2["characters"]; }else{ echo "karakters over"; } ?></p>

@@ -1,12 +1,12 @@
 <?php 
 	session_start();
+	//session_destroy();
     include('includes/variables.inc.php');
 	
 	include_once('class/card.class.php');
 	$card = new Card();
 	$cards = $card->GetCards();
 
-	//var_dump($cards);
 	//unset($_SESSION);
 	//var_dump($_SESSION);
  ?><!doctype html>

@@ -46,13 +46,12 @@ $responseRatio = ($countViewedReceivers[0] / $countReceivers[0]) * 100;
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/login-gegevens.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <a target="_blank" href="www.thomasmore.be" id="logoTM">Logo Thomas More</a>
-        </header>
+        <?php include('includes/header.inc.php'); ?>
         
         <div class="elementFlex">
             <div>

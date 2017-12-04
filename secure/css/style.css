@@ -738,7 +738,7 @@ ul#vorige-volgende li#left a:after
 	margin-top: -8px;
 }
 
-.stap2-persoonlijkbericht:focus
+.stap2-persoonlijkbericht:focus, #begroeting:focus
 {
 	border: 1px solid #F24F11;
 }

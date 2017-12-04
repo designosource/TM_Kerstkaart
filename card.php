@@ -7,9 +7,9 @@
 
 
 		$urlExploded = explode('&', $url);
-		$cidParam = $urlExploded[0];
-		$sidParam = $urlExploded[1];
-		$ricParam = $urlExploded[2];
+		$cidParam = $urlExploded[0]; // card ID
+		$sidParam = $urlExploded[1]; // sender ID
+		$ricParam = $urlExploded[2]; // receiver ID
 
 		$cidParamExploded = explode('cid=', $cidParam);
 		$sidParamExploded = explode('sid=', $sidParam);
@@ -33,9 +33,11 @@
             header("location: 404.php");
         }
 
+        $language = $senderInfo['sender_language'];
+
 		$card->setViewed($ridID);
 
-		if($senderInfo["sender_language"] == "en"){
+		if($language == "en"){
 			$mail_copy = '<span id="copy">&copy; <a target="_blank" href="http://www.thomasmore.be/">Thomas More</a> | Developed by <a target="_blank" href="http://designosource.be/">Designosource</a> - Students in <a target="_blank" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
 			$mail_footer = '<h1><a id="clickHinter" href="#">Click here</a> or swipe the <span id="sideHinter">card</span> to read <span id="messageHinter">your personal message.</span></h1>';
 		} else if ($senderInfo["sender_language"] == "fr"){
@@ -77,7 +79,7 @@
 		<meta name="twitter:description" content="Bekijk hier je gepersonaliseerde kerstkaart die werd gemaakt via de Thomas More kerstkaart tool."/>
 		<meta name="twitter:image" content="http://ecard.thomasmore.be/img/full_kaart_1.png" />
 		<meta name="twitter:url" content="http://ecard.thomasmore.be" />
-		<meta name="twitter:domain" content="ttp://ecard.thomasmore.be">
+		<meta name="twitter:domain" content="http://ecard.thomasmore.be">
 
 		<link href="css/normalize.css" rel="stylesheet" type="text/css" />
 		<link href="css/style.css" rel="stylesheet">
@@ -138,7 +140,7 @@
 												<source src='img/full_" . $cardInfo['card_url'] . ".ogv' type='video/ogg'>
 												<source src='img/full_" . $cardInfo['card_url'] . ".m4v' type='video/x-m4v'>
 												<img src='img/full_" . $cardInfo['card_url'] . ".png'></img>
-														</video>";
+									    </video>";
 							}
 							//echo "<figure id='cardConSec' alt='".$cardInfo['card_title']."' style='background-image: url(img/full_".$cardInfo['card_url'].".gif)'></figure>";
 						}
