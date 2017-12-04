@@ -74,26 +74,26 @@
 
 
 		<div id='sendConfirmation'>
-			<a id='closeOverlay' href='#'>Sluiten</a>
+			<a id='closeOverlay' href='#'><?php if(isset($step4["close"])){ echo $step4["close"]; }else{echo "Sluiten";} ?></a>
 			<div id='confirmationCon'>
-				<h1>Weet je zeker dat je klaar bent?</h1>
-				<p>Je staat op het punt om deze kaart naar 
+				<h1><?php if(isset($step4["confirmationh1"])){ echo $step4["confirmationh1"]; }else{echo "Weet je zeker dat je klaar bent?";} ?></h1>
+				<p><?php if(isset($step4["confirmationp1"])){ echo $step4["confirmationp1"]; }else{echo "Je staat op het punt om deze kaart naar ";} ?>
 					<span>
 							<?php if(!empty($amountPersons))
 								  {
 								  	if($amountPersons > 1)
 								  	{
-								  		echo $amountPersons . "</span> personen";
+								  		echo $amountPersons . "</span> " . ((isset($step4["persons"]))?$step4["persons"]:"personen");
 								  	}
 								  	else
 								  	{
-								  		echo $amountPersons . "</span> persoon";
+								  		echo $amountPersons . "</span> " . ((isset($step4["person"]))?$step4["person"]:"persoon");
 								  	}
-								  } ?> te versturen.</p>
+								  } ((isset($step4["confirmationp2"]))?$step4["confirmationp2"]:"te versturen.") ?></p>
 
 				<ul>
-					<li id='send'><a href='#'>Versturen</a></li>
-					<li id='cancel'><a href='#'>Annuleren</a></li>
+					<li id='send'><a href='#'><?php if(isset($step4["send"])){ echo $step4["send"]; }else{echo "Versturen";} ?></a></li>
+					<li id='cancel'><a href='#'><?php if(isset($step4["cancel"])){ echo $step4["cancel"]; }else{echo "Annuleren";} ?></a></li>
 				</ul>
 			</div>
 		</div>
@@ -175,7 +175,7 @@
 				<div id="backCon">
 					<div id="backSec">
 					<!-- add personal text here -->
-						<h1><?php if(!empty($_SESSION['begroetMess'])){ echo nl2br($_SESSION['begroetMess']);} ?> <span>[hier zal automatisch de naam van je bestemmeling verschijnen]</span></h1>
+						<h1><?php if(!empty($_SESSION['begroetMess'])){ echo nl2br($_SESSION['begroetMess']);} ?> <span><?php if(isset($step4['namereceiver'])){ echo $step4['namereceiver']; }else{ echo '[hier zal automatisch de naam van je bestemmeling verschijnen]';}?></span></h1>
 						<p><?php if(!empty($_SESSION['persMess'])){ echo nl2br($_SESSION['persMess']);} ?></p>
 						</div>
 

@@ -694,3 +694,14 @@ input#go
 {
 	width: 100%;
 }
+
+#confirmationCon ul
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#confirmationCon ul #cancel {
+	text-align: center;
+}
