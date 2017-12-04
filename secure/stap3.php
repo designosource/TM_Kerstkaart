@@ -174,7 +174,7 @@
 							{
 								echo "<tr id='emptyList'>" .
 								  		"<td class='checkItem'></td>" .
-								  		"<td>" . (isset($step3['importexcel'])?$step3['importexcel']:'Nog geen ontvangers') ."</td>" .
+								  		"<td>" . (isset($step3['noreceivers'])?$step3['noreceivers']:'Nog geen ontvangers') ."</td>" .
 								  		"<td></td>" .
 								  		"<td></td>" .
 								  	"</tr>";

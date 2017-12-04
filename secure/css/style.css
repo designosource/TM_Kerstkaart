@@ -422,17 +422,24 @@ header nav ul{
 	padding:0;
 	margin:0;
 	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
 }
 
 body header nav ul li{
 	list-style-type: none;
-	width: 199px;
+	flex-basis: calc(25% - 1px);
 	height: 59px;
 	float: left;
 	background-color: #fff;
 	color: #dddbdb;
 	overflow:hidden;
 	border-left: 1px solid #FAFAFA;
+}
+
+body header nav ul li a{
+	text-decoration: none;
 }
 
 header nav ul:first-child
@@ -750,6 +757,10 @@ p.stap2-characters span{
 
 /*STEP 3*/
 #stap3-buttons{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
 	overflow:hidden;
 }
 
@@ -795,7 +806,7 @@ a#downloadcsv:hover
 
 ul#emailaanpassen
 {
-	margin-left:71px;
+	//margin-left:71px;
 }
 
 #stap3-buttons li.addEmail
