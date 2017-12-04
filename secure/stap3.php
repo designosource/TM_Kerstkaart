@@ -1,5 +1,6 @@
 <?php
 	session_start();
+    include('includes/variables.inc.php');
 	//session_unset($_SESSION['person']);
 
 	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
@@ -124,13 +125,13 @@
 
 					<div id="stap3-buttons">
 						<ul id="emailtoevoegen">
-							<li class="addEmail firstItem"><a id="indEmail" class="button-email" href="#">E-mailadres toevoegen</a></li>
-							<li class="addEmail"><a id="bulkEmail" class="button-email" href="#">Excel-bestand importeren</a></li>
+							<li class="addEmail firstItem"><a id="indEmail" class="button-email" href="#"><?php if(isset($step3["addemail"])){ echo $step3["addemail"]; }else{ echo "E-mailadres toevoegen"; } ?></a></li>
+							<li class="addEmail"><a id="bulkEmail" class="button-email" href="#"><?php if(isset($step3["importexcel"])){ echo $step3["importexcel"]; }else{ echo "Excel-bestand importeren"; } ?></a></li>
 						</ul>
 
 						<ul id="emailaanpassen">
-							<li class="firstItem" id="editList"><a id="editEmail" class="button-email" href="#">Wijzig</a></li>
-							<li id="deleteList"><a id="deleteEmail" class="button-email" href="#">Verwijder</a></li>
+							<li class="firstItem" id="editList"><a id="editEmail" class="button-email" href="#"><?php if(isset($step3["modify"])){ echo $step3["modify"]; }else{ echo "Wijzig"; } ?></a></li>
+							<li id="deleteList"><a id="deleteEmail" class="button-email" href="#"><?php if(isset($step3["delete"])){ echo $step3["delete"]; }else{ echo "Verwijder"; } ?></a></li>
 						</ul>
 					</div>
 
@@ -145,9 +146,9 @@
 						<tbody>
 							<tr id="legend">
 								<th class="checkItem"><input id="selectAll" type="checkbox" value="check-all"></th>
-								<th class="stap3-th col1">Voornaam</th>
-								<th class="stap3-th col2">Achternaam</th> 
-								<th class="stap3-th col3">E-mailadres</th>
+								<th class="stap3-th col1"><?php if(isset($step3["firstname"])){ echo $step3["firstname"]; }else{ echo "Voornaam"; } ?></th>
+								<th class="stap3-th col2"><?php if(isset($step3["lastname"])){ echo $step3["lastname"]; }else{ echo "Achternaam"; } ?></th>
+								<th class="stap3-th col3"><?php if(isset($step3["email"])){ echo $step3["email"]; }else{ echo "E-mailadres"; } ?></th>
 							</tr>
 
 						<?php 
@@ -173,7 +174,7 @@
 							{
 								echo "<tr id='emptyList'>" .
 								  		"<td class='checkItem'></td>" .
-								  		"<td>Nog geen ontvangers</td>" .
+								  		"<td>" . (isset($step3['importexcel'])?$step3['importexcel']:'Nog geen ontvangers') ."</td>" .
 								  		"<td></td>" .
 								  		"<td></td>" .
 								  	"</tr>";
@@ -185,10 +186,7 @@
 
 
 
-					<ul id="vorige-volgende" class="clearfix">
-						<li id="left"><a id="gbStap2" class="button-vorigevolgende" href="stap2.php">Vorige stap</a></li>
-						<li id="right"><a id="gtStap4" class="button-vorigevolgende" href="stap4.php">Volgende stap</a></li>
-					</ul>
+                    <?php include("includes/previousnext.inc.php"); ?>
 				</div>
 
 			</div>

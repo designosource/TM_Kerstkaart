@@ -625,20 +625,21 @@ ul#otherCards li.card img
 
 ul#vorige-volgende
 {
-	float:left;
-	width:100%;
-	margin:0;
+	//float: left;
+	clear: both;
 	padding:0;
 	margin-top:40px;
 	margin-bottom:40px;
 	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
 }
 
 ul#vorige-volgende li
 {
 	float:left;
 	height:30px;
-	width:165px;
+	//width:165px;
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -649,7 +650,7 @@ ul#vorige-volgende li
 body.stap2 ul#vorige-volgende li#right,
 body.stap3 ul#vorige-volgende li#right
 {
-	margin-left:410px;
+	//margin-left:410px;
 	float:left;
 }
 
@@ -669,6 +670,7 @@ ul#vorige-volgende li a
 	font-size: 16px;
 	text-align: center;
 	position:relative;
+	padding: 0 25px;
 }
 
 ul#vorige-volgende li a:after

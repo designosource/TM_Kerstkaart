@@ -2,7 +2,7 @@
 	session_start();
 
 	//session_destroy();
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
 
 	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
 	{
@@ -16,6 +16,8 @@
 	} else if($_GET["lang"] === "nl") {
 		$_SESSION["taal"] = "nl";
 	}
+
+    include('includes/variables.inc.php'); // Word hier pas geinclude doordat je anders de taal nog niet hebt opgehaald
 
     // If empty --> nl
 	

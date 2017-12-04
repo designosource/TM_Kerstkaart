@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+    include('includes/variables.inc.php');
 	
 	include_once('class/card.class.php');
 	$card = new Card();
@@ -86,15 +87,13 @@
 
 
 
-					<ul id="vorige-volgende" class="clearfix">
+					<ul id="vorige-volgende" class="clearfix" style="float:right;">
 						<li id="right"><a id="gtStap2" class="button-vorigevolgende" href="stap2.php"><?php if(isset($_SESSION['taal'])){ echo $nextstep; }else{echo "Volgende stap";} ?></a></li>
 					</ul>
 				</div>
 
 			</div>
-
-			<?php include("includes/footer.inc.php"); ?>
-			
+            <?php include("includes/footer.inc.php"); ?>
 		</div>
 	
 		<?php include("includes/scripts.inc.php"); ?>

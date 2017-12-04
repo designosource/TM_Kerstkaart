@@ -1,5 +1,7 @@
 <?php 
 	session_start();
+    include('includes/variables.inc.php');
+
 	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
 	{
 		header("location: index.php");
@@ -178,7 +180,7 @@
 						</div>
 
 					<div id="copyCon">
-					<span id="copy">&copy; <a href="http://www.thomasmore.be/">Thomas More</a> | Ontwikkeld door <a href="http://designosource.be/">Designosource</a> - Studenten van <a href="http://weareimd.be/">Interactive Multimedia Design</a></span>
+					    <span id="copy">&copy; <a href="http://www.thomasmore.be/">Thomas More</a> | <?php if(isset($footer["developed"])){ echo $footer["developed"]; }else{echo "Ontwikkeld door";} ?> <a href="http://designosource.be/">Designosource</a> - <?php if(isset($footer["student"])){ echo $footer["student"]; }else{echo "Studenten van";} ?> <a href="http://weareimd.be/">Interactive Multimedia Design</a></span>
 					</div>
 				</div>
 			</div>
@@ -186,9 +188,9 @@
 
 		    <div id="nav">
 		    	<ul id="vorige-volgende">
-					<li id="left"><a class="button-vorigevolgende" href="index.php">Kaart wijzigen</a></li>
-					<li id="center"><h1><a id="clickHinter" href="#">Klik hier</a> of veeg over de <span id="sideHinter">kaart</span> om je <span id="messageHinter">persoonlijke boodschap</span> te bekijken.</h1></li>
-					<li id="right"><a class="button-vorigevolgende" id="sendCard" href="#">Kaart versturen</a></li>
+					<li id="left"><a class="button-vorigevolgende" href="index.php"><?php if(isset($step4["previousstep"])){ echo $step4["previousstep"]; }else{echo "Kaart wijzigen";} ?></a></li>
+					<li id="center"><h1><a id="clickHinter" href="#"><?php if(isset($step4["clickhere"])){ echo $step4["clickhere"]; }else{echo "Klik hier";} ?></a> <?php if(isset($step4["message"])){ echo $step4["message"]; }else{echo "of veeg over de <b>kaart</b> om je <b>persoonlijke boodschap</b> te bekijken";} ?></h1></li>
+					<li id="right"><a class="button-vorigevolgende" id="sendCard" href="#"><?php if(isset($step4["nextstep"])){ echo $step4["nextstep"]; }else{echo "Kaart versturen";} ?></a></li>
 				</ul>
 			</div>
 		</div>
