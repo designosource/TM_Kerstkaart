@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	session_destroy();
+	//session_destroy();
     include('includes/variables.inc.php');
 	
 	include_once('class/card.class.php');
