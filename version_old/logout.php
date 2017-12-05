@@ -1,3 +1,5 @@
-<?php 
-	header("location: ".$_SERVER["REDIRECT_Shib_logoutURL"]);
- ?>
+<?php
+session_start();
+unset($_SESSION['authTrue']);
+header("Location: login.php");
+?>
