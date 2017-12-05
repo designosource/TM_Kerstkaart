@@ -22,8 +22,8 @@
 		$ridPadExploded = explode('=', $ridPad);
 		$ridID = $ridPadExploded[0];
 
-		include_once('class/card.class.php');
-		$card = new Card();
+		include_once('class/cardemail.class.php');
+		$card = new CardEmail();
 		$cardInfo = $card->GetCardSent($cidID);
 		$senderInfo = $card->GetSenderSent($sidID);
 		$receiverInfo = $card->GetReceiverSent($ridID);
@@ -40,7 +40,7 @@
 		if($language == "en"){
 			$mail_copy = '<span id="copy">&copy; <a target="_blank" href="http://www.thomasmore.be/">Thomas More</a> | Developed by <a target="_blank" href="http://designosource.be/">Designosource</a> - Students in <a target="_blank" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
 			$mail_footer = '<h1><a id="clickHinter" href="#">Click here</a> or swipe the <span id="sideHinter">card</span> to read <span id="messageHinter">your personal message.</span></h1>';
-		} else if ($senderInfo["sender_language"] == "fr"){
+		} else if ($language == "fr"){
 			$mail_copy = '<span id="copy">&copy; <a target="_blank" href="http://www.thomasmore.be/">Thomas More</a> | Réalisé par <a target="_blank" href="http://designosource.be/">Designosource</a> - Etudiants en <a target="_blank" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
 			$mail_footer = '<h1><a id="clickHinter" href="#">Cliquez ici</a> ou balayez <span id="sideHinter">la carte</span> afin de découvrir <span id="messageHinter">votre message personnalisé.</span></h1>';
 		} else {

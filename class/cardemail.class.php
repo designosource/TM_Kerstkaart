@@ -1,7 +1,7 @@
 <?php 
-	include_once('db.class.php');
+	include_once('dbemail.class.php');
 
-	Class Card
+	Class CardEmail
 	{
 		private $m_ssenderFirstname;
 		private $m_ssenderLastName;
@@ -119,7 +119,7 @@
 
 		public function GetCardSent($id)
 		{
-            $conn = Db::getInstance();
+            $conn = DbEmail::getInstance();
 
             $statement = $conn->prepare("SELECT * FROM card WHERE card_id=:id");
             $statement->bindParam(':id', $id);
@@ -131,7 +131,7 @@
 
 		public function GetSenderSent($id)
 		{
-            $conn = Db::getInstance();
+            $conn = DbEmail::getInstance();
 
             $statement = $conn->prepare("SELECT * FROM sender WHERE sender_id=:id");
             $statement->bindParam(':id', $id);
@@ -143,7 +143,7 @@
 
 		public function GetReceiverSent($id)
 		{
-            $conn = Db::getInstance();
+            $conn = DbEmail::getInstance();
 
             $statement = $conn->prepare("SELECT * FROM receiver WHERE receiver_id=:id");
             $statement->bindParam(':id', $id);
@@ -155,7 +155,7 @@
 
 		public function setViewed($id)
         {
-            $conn = Db::getInstance();
+            $conn = DbEmail::getInstance();
 
             $statement = $conn->prepare("UPDATE receiver SET receiver_viewed=1 WHERE receiver_id=:id");
             $statement->bindParam(':id', $id);

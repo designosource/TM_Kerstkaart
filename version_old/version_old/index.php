@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	
-	/*include_once('class/card.class.php');
+	/*include_once('class/cardemail.class.php');
 	$card = new Card();
 	$cards = $card->GetCards();*/
 

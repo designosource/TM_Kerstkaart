@@ -253,13 +253,13 @@ Class Card
             $tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Vous avez re&ccedil;u une carte de v&oelig;ux virtuelle de <span style="font-weight:normal;">' . $this->m_ssenderFirstname . ' ' . $this->m_ssenderLastName . '.</span></h1>
 							  <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: white; font-weight: normal; padding:16px; display:inline-block; text-decoration:none; margin-top:8px; background-color:#f24f11;" href="' . $url . '">Veuillez cliquer ici pour découvrir la carte.</a> </h1>';
             $footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | R&egrave;alis&egrave; par <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Etudiants en <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
-            $logo = "http://ecard.thomasmore.be/img/TM_logo_international_mail.png";
+            $logo = "http://ecard.thomasmore.be/img/TM_logo_mail_international.png";
         } else if ($language == "en") { // Engels
             $begroeting = "Dear";
             $tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><span style="font-weight:normal;">' . $this->m_ssenderFirstname . ' ' . $this->m_ssenderLastName . '</span> has sent you a card  with Season\'s Greetings.</h1>
 							  <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: white; font-weight: normal; padding:16px; display:inline-block; text-decoration:none; margin-top:8px; background-color:#f24f11;" href="' . $url . '">Click here to read the card!</a></h1>';
             $footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://www.thomasmore.be/">Thomas More</a> | Developed by <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://designosource.be/">Designosource</a> - Students in <a style="color:#999999; text-decoration:none; text-decoration:underline;" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
-            $logo = "http://ecard.thomasmore.be/img/TM_logo_international_mail.png";
+            $logo = "http://ecard.thomasmore.be/img/TM_logo_mail_international.png";
         } else { // Nederlands
             $begroeting = "Beste";
             $tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Je kreeg een kerstkaart van <span style="font-weight:normal;">' . $this->m_ssenderFirstname . ' ' . $this->m_ssenderLastName . '.</span></h1>
@@ -285,7 +285,7 @@ Class Card
 												  								<tbody>
 												  									<tr>
 												  										<td style="width:45%;">
-												  											<img alt="" style="width:125px; height:50px;" src="'. $logo .'"/>
+												  											<img alt="" style="width:auto; height:50px;" src="'. $logo .'"/>
 												  										</td>
 												  									</tr>
 												  								</tbody>

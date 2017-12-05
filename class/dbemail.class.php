@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-abstract class Db
+abstract class DbEmail
 {
     private static $conn = null;
 
@@ -48,4 +48,4 @@ abstract class Db
         }
     }
 }
- ?>
+?>

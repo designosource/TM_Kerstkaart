@@ -16,7 +16,7 @@ if(!isset($_SESSION['authTrue'])){
 
 }
 
-include_once('class/db.class.php');
+include_once('class/dbemail.class.php');
 
 $db = new Db();
 $sql = "SELECT count(*) FROM receiver";

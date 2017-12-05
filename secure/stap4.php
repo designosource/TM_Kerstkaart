@@ -94,7 +94,7 @@
 								  	{
 								  		echo $amountPersons . "</span> " . ((isset($step4["person"]))?$step4["person"]:"persoon");
 								  	}
-								  } ((isset($step4["confirmationp2"]))?$step4["confirmationp2"]:"te versturen.") ?></p>
+								  } echo ((isset($step4["confirmationp2"]))?$step4["confirmationp2"]:" te versturen.") ?></p>
 
 				<ul>
 					<li id='send'><a href='#'><?php if(isset($step4["send"])){ echo $step4["send"]; }else{echo "Versturen";} ?></a></li>
