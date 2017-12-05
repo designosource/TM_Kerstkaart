@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	//session_destroy();
+	session_destroy();
     include('includes/variables.inc.php');
 	
 	include_once('class/card.class.php');
@@ -8,7 +8,7 @@
 	$cards = $card->GetCards();
 
 	//unset($_SESSION);
-	//var_dump($_SESSION);
+	var_dump($_SESSION);
  ?><!doctype html>
 <html lang="en">
 	<head>
@@ -33,38 +33,38 @@
 									{
 										if (isset($_SERVER['HTTP_USER_AGENT']) && (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false)){
 
-											echo "<div class='videoWrapper'><iframe src='https://www.youtube.com/watch?v=fUB7oLawfDc?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1' frameborder='0' allowfullscreen></iframe>
-											</div><img style='visibility: hidden;width: 0;height: 0;' src='img/full_kaart_1.png' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'></img>";
+											echo "<div class='videoWrapper'><iframe src='" . $cards[0]['card_youtube'] . "?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1' frameborder='0' allowfullscreen></iframe>
+											</div><img style='visibility: hidden;width: 0;height: 0;' src='img/full_" . $_SESSION['cardURL'] . ".png' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'></img>";
 										}else{
-											echo "<video width='100%' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='".$_SESSION['cardALT']."' data-type='".$_SESSION['cardType']."' title='".$_SESSION['cardALT']."'>
-												<source src='img/full_".$_SESSION['cardURL'].".mp4' type='video/mp4'>
-												<source src='img/full_".$_SESSION['cardURL']."a.mp4' type='video/mp4'>
-												<source src='img/full_".$_SESSION['cardURL'].".webm' type='video/webm'>
-												<source src='img/full_".$_SESSION['cardURL'].".ogv' type='video/ogg'>
-												<source src='img/full_".$_SESSION['cardURL'].".m4v' type='video/x-m4v'>
-												<img src='img/full_".$_SESSION['cardURL'].".png'></img>
+											echo "<video width='100%' controls='true' loop autoplay poster='img/".$_SESSION['cardURL'].".png' src='img/".$_SESSION['cardURL'].".mp4' data-id='".$_SESSION['cardID']."' alt='" . $_SESSION['cardALT'] . "' data-type='" . $_SESSION['cardType'] . "' title='" . $_SESSION['cardALT'] . "'>
+												<source src='img/full_" . $_SESSION['cardURL'] . ".mp4' type='video/mp4'>
+												<source src='img/full_" . $_SESSION['cardURL'] . "a.mp4' type='video/mp4'>
+												<source src='img/full_" . $_SESSION['cardURL'] . ".webm' type='video/webm'>
+												<source src='img/full_" . $_SESSION['cardURL'] . ".ogv' type='video/ogg'>
+												<source src='img/full_" . $_SESSION['cardURL'] . ".m4v' type='video/x-m4v'>
+												<img src='img/full_" . $_SESSION['cardURL'] . ".png'></img>
 												</video>";
 										}
 									}
 									else
 									{
-										echo "<img title='".$_SESSION['cardALT']."' alt='".$_SESSION['cardALT']."' data-id=".$_SESSION['cardID']." data-type=".$_SESSION['cardType']." src='img/".$_SESSION['cardURL'].".png'/>";
+										echo "<img title='" . $_SESSION['cardALT'] . "' alt='" . $_SESSION['cardALT'] . "' data-id=" . $_SESSION['cardID'] . " data-type=" . $_SESSION['cardType'] . " src='img/" . $_SESSION['cardURL'] . ".png'/>";
 									}
 								}
 								else
 								{
 									if(preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)){
-										echo "<div class='videoWrapper'><iframe src='https://www.youtube.com/watch?v=fUB7oLawfDc?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1' frameborder='0' allowfullscreen></iframe>
-											</div><img style='visibility: hidden;width: 0;height: 0;' src='img/full_kaart_1.png' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'></img>";
+										echo "<div class='videoWrapper'><iframe src='" . $cards[0]['card_youtube'] . "?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1' frameborder='0' allowfullscreen></iframe>
+											</div><img style='visibility: hidden;width: 0;height: 0;' src='img/full_kaart_1.png' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated' /img>";
 									}else {
-										echo "<video width='100%' loop controls autoplay poster='img/full_kaart_1.png' src='img/full_kaart_1.mp4' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'>
-													<source src='img/full_kaart_1.mp4' type='video/mp4'>
-													<source src='img/full_kaart_1a.mp4' type='video/mp4'>
-													<source src='img/full_kaart_1.webm' type='video/webm'>
-													<source src='img/full_kaart_1.ogv' type='video/ogg'>
-													<source src='img/full_kaart_1.m4v' type='video/x-m4v'>
-													<img src='img/full_kaart_1.png'></img>
-													</video>";
+										echo "<video width='100%' loop controls autoplay poster='img/full_" . $cards[0]['card_url'] . ".png' src='img/full_kaart_1.mp4' data-id='1' alt='Geanimeerde kerstkaart' data-type='animated'>
+													<source src='img/full_" . $cards[0]['card_url'] . ".mp4' type='video/mp4'>
+													<source src='img/full_" . $cards[0]['card_url'] . "a.mp4' type='video/mp4'>
+													<source src='img/full_" . $cards[0]['card_url'] . ".webm' type='video/webm'>
+													<source src='img/full_" . $cards[0]['card_url'] . ".ogv' type='video/ogg'>
+													<source src='img/full_" . $cards[0]['card_url'] . ".m4v' type='video/x-m4v'>
+													<img src='img/full_" . $cards[0]['card_url'] . ".png' alt='" . $cards[0]['card_title'] . "' /img>
+											  </video>";
 									}
 								}
 							?>
@@ -79,7 +79,7 @@
 							<?php 
 								foreach($cards as $card)
 								{
-									echo '<li class="card"><img title="'.$card['card_title'].'" alt="'.$card['card_title'].'" data-id="'.$card['card_id'].'" data-url="'.$card['card_url'].'" data-type="'.$card['card_type'].'" src="img/thumbnail_'.$card['card_url'].'.png"></li>';
+									echo '<li class="card"><img title="' . $card['card_title'] . '" alt="' . $card['card_title'] . '" data-id="' . $card['card_id'] . '" data-url="' . $card['card_url'] . '" data-type="' . $card['card_type'] . '" src="img/thumbnail_' . $card['card_url'] . '.png"></li>';
 								}
 							 ?>
 						</ul>

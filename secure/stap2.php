@@ -1,7 +1,5 @@
 <?php 
 	session_start();
-	//session_destroy();
-    //var_dump($_SESSION);
 
 	if(empty($_SESSION['cardALT']) && empty($_SESSION['cardURL']) && empty($_SESSION['cardID']))
 	{
