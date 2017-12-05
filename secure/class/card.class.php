@@ -118,6 +118,18 @@ Class Card
         return $res;
     }
 
+    public function GetMatchingYoutubeCard()
+    {
+        $conn = Db::getInstance();
+
+        $statement = $conn->prepare("SELECT card_youtube FROM card WHERE card_id=:cardid");
+        $statement->bindParam(':cardid', $_SESSION['cardID']);
+        $statement->execute();
+        $res = $statement->fetchAll();
+
+        return $res;
+    }
+
     public function SaveSenders()
     {
         /*$db = new Db();
