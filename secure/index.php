@@ -1,16 +1,12 @@
 <?php 
 	session_start();
-	//session_destroy();
+	session_destroy();
     include('includes/variables.inc.php');
 	
 	include_once('class/card.class.php');
 	$card = new Card();
 	$cards = $card->GetCards();
 
-
-
-	//unset($_SESSION);
-	var_dump($_SESSION);
  ?><!doctype html>
 <html lang="en">
 	<head>
@@ -25,7 +21,7 @@
 
 				<div id="content">
 					<div id="stap1-col1">
-						<h1 id="titleCard"><?php if(isset($_SESSION['cardALT'])){ echo $_SESSION['cardALT']; } else {echo "Meertalige geanimeerde kerstkaart (NL - FR - ENG)";}?></h1>
+						<h1 id="titleCard"><?php if(isset($_SESSION['cardALT'])){ echo $_SESSION['cardALT']; } else {echo "Merry Christmas!";}?></h1>
 						<div class="stap1-choosen">
 
 							<?php  

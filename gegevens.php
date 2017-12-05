@@ -3,7 +3,7 @@ session_start();
 
 if(!isset($_SESSION['authTrue'])){
     if(!empty($_POST['username']) && !empty($_POST['password'])) {
-        if($_POST['username'] == "tmecards" && $_POST['password'] == 'tm2016card'){
+        if($_POST['username'] == "tmecards" && $_POST['password'] == 'tm2017card'){
             $_SESSION['authTrue'] = true;
         } else {
             $_SESSION['loginFailed'] = true;
@@ -17,6 +17,7 @@ if(!isset($_SESSION['authTrue'])){
 }
 
 include_once('class/db.class.php');
+
 $db = new Db();
 $sql = "SELECT count(*) FROM receiver";
 $result = $db->conn->query($sql);
@@ -34,7 +35,7 @@ if($result)
     $countViewedReceivers = $result->fetch_row();
 }
 
-$responseRatio = ($countViewedReceivers[0] / $countReceivers[0]) * 100;
+$responseRatio = round(($countViewedReceivers[0] / $countReceivers[0]) * 100, 3);
 ?>
 
 <!doctype html>
@@ -64,12 +65,15 @@ $responseRatio = ($countViewedReceivers[0] / $countReceivers[0]) * 100;
             </div>
             <div>
                 <div class="elementLabel"><p>Responsratio:</p></div>
-                <div class="elementLabel"><p><?php echo round($responseRatio, 3) . ' %'; ?></p></div>
+                <div class="elementLabel"><p><?php echo $responseRatio . ' %'; ?></p></div>
             </div>
             <div>
                 <a class="logout" href="logout.php">Logout</a>
             </div>
         </div>
     </div>
+
+    <?php if(isset($error)){echo "error!!!!!!!!";}else{"nikske";} ?>
+
 </body>
 </html>
