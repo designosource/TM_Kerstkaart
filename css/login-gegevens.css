@@ -97,3 +97,66 @@ form div input[type="password"] {
     padding: 10px;
     text-align: center;
 }
+
+.gegevens-buttons
+{
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    margin: 20px auto;
+}
+
+.gegevens-buttons a
+{
+    padding: 5px 0px;
+    text-align: center;
+    flex-basis: 50%;
+    border: 2px solid #f04c25;
+    box-sizing: border-box;
+    color: #f04c25;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.gegevens-buttons a:first-child
+{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.gegevens-buttons a:last-child
+{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.gegevens-buttons a.active
+{
+    color: white;
+    background-color: #f04c25;
+}
+
+.percentage-bar-container
+{
+    width: 100%;
+    height: 1.5em;
+    background-color: #b7b7b7e3;
+    position: relative;
+    margin: 15px 0px;
+}
+
+.percentage-bar-inner
+{
+    display:block;
+    background-color: #f04c25;
+}
+
+.percentage-bar-text
+{
+    margin: 2px 0;
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    left: calc(50% - 25px);
+    color: white;
+}

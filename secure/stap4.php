@@ -24,7 +24,9 @@
 			}
 		}
 	}
-	//echo $_SESSION['cardURL'];
+
+	//var_dump($_SESSION['carddata']); //
+	//var_dump($_SESSION['url']); // sendCard()
 
 	include_once('class/card.class.php');
     $card = new Card();
@@ -94,7 +96,7 @@
 								  	{
 								  		echo $amountPersons . "</span> " . ((isset($step4["person"]))?$step4["person"]:"persoon");
 								  	}
-								  } echo ((isset($step4["confirmationp2"]))?$step4["confirmationp2"]:" te versturen.") ?></p>
+								  } echo ((isset($step4["confirmationp2"]))?" " . $step4["confirmationp2"]:" te versturen.") ?></p>
 
 				<ul>
 					<li id='send'><a href='#'><?php if(isset($step4["send"])){ echo $step4["send"]; }else{echo "Versturen";} ?></a></li>

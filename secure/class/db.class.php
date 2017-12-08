@@ -20,7 +20,7 @@ abstract class Db
 
                 $m_sHost = "localhost";
                 $m_sUser = "root";
-                $m_sPassword = "";
+                $m_sPassword = "root";
                 $m_sDatabase = "tmecards";
 
                 /* local
@@ -39,7 +39,7 @@ abstract class Db
 
 
                 //self::$conn = new PDO("mysql:host=" . $m_sHost . "; dbname=" . $m_sDatabase, $m_sUser, $m_sPassword);
-                self::$conn = new PDO("mysql:host=localhost; dbname=tmecards", "tmecards", "bFQ7fnQzCz8VdK2K");
+                self::$conn = new PDO("mysql:host=localhost; dbname=tmecards", "root", "root");
                 return self::$conn;
             }
         } catch (PDOException $e) {

@@ -133,7 +133,7 @@
 		{
             $conn = DbEmail::getInstance();
 
-            $statement = $conn->prepare("SELECT * FROM sender WHERE sender_id=:id");
+            $statement = $conn->prepare("SELECT * FROM sender WHERE sender_id =:id");
             $statement->bindParam(':id', $id);
             $statement->execute();
             $res = $statement->fetchAll();

@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(isset($_SESSION['authTrue'])){
-        header("Location: gegevens.php");
+        header("Location: respond.php");
     }
 ?>
 <!doctype html>
@@ -21,7 +21,7 @@
     <div class="container">
         <?php include('includes/header.inc.php'); ?>
 
-        <form class="elementFlex" action="gegevens.php" method="post">
+        <form class="elementFlex" action="respond.php" method="post">
             <div>
                 <label class="elementLabel" for="username">Username:</label>
                 <input type="text" id="username" name="username">

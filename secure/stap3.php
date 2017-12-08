@@ -103,11 +103,6 @@
 		//empty file or file not done uploading
 	}
 
-	/*if(isset($_SESSION['person']))
-	{
-		var_dump($_SESSION['person']);
-	}*/
-
  ?><!doctype html>
 <html lang="en">
 	<head>

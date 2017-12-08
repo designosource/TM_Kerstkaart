@@ -16,36 +16,6 @@
 
     include('includes/variables.inc.php'); // Word hier pas geinclude doordat je anders de taal nog niet hebt opgehaald
 
-    // If empty --> nl
-	
-	/*if($_SESSION['taal'] == "en") {
-		$begroeting = "Dear";
-		$tekst =  "[Vul hier de tekst voor de e-card in.]\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
-		$taal = "en";
-	} else if($_SESSION['taal'] == "fr") {
-		$begroeting = "Bonjour";
-		$tekst =  "[Vul hier de tekst voor de e-card in.]\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
-		$taal = "fr";
-	} else {
-		$begroeting = "Beste";
-		$tekst =  "Meer\nStilte op aarde.\nEn vrede overal.\nZalig kerstfeest en\nEen gelukkig Nieuwjaar!\n\nGroeten\n".$_SERVER['REDIRECT_Shib_Person_givenName'];
-		$taal = "nl";
-	}
-
-    if(isset($_GET["lang"])){
-        $_SESSION["begroetMess"] = $begroeting;
-        $_SESSION["persMess"] = $tekst;
-    }*/
-
-
-
-	/*if(isset($_SESSION["taal"])) {
-		$taalValue = $_SESSION["taal"];
-	}
-	else{
-		$taalValue = $taal;
-	}*/
-
 	if(isset($_SESSION['persMess'])) {
 		$persVal = trim($_SESSION["persMess"]); // als er al een tekst geschreven is --> toon die tekst
 	}
