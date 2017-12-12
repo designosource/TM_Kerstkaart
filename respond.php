@@ -45,6 +45,35 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/login-gegevens.css">
 
+    <style>
+
+        .percentage-bar-inner
+        {
+            animation-name: fillbar;
+            animation-duration: 1s;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+            -webkit-animation-name: fillbar;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-delay: 0.5s;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-name: fillbar;
+            -moz-animation-duration: 1s;
+            -moz-animation-delay: 0.5s;
+            -moz-animation-fill-mode: forwards;
+            -o-animation-name: fillbar;
+            -o-animation-duration: 1s;
+            -o-animation-delay: 0.5s;
+            -o-animation-fill-mode: forwards;
+        }
+
+        @keyframes fillbar
+        {
+            from {width: 0;}
+            to {width: <?php echo $responseRatio; ?>%;}
+        }
+    </style>
+
 </head>
 <body>
     <div class="container">
@@ -66,7 +95,7 @@
                 <div class="elementLabel">
                     <div class="percentage-bar-container">
 
-                        <div class="percentage-bar-inner"style="width: <?php echo $responseRatio; ?>%;"></div>
+                        <div class="percentage-bar-inner"></div>
                         <p class="percentage-bar-text"><?php if(isset($responseRatio)){echo $responseRatio . '%';} ?></p>
 
                     </div>
