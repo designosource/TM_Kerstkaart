@@ -207,18 +207,21 @@ Class Card
         $mail->Port = 25;
 
         if ($language == "fr") { // Frans
+            $opmaakLogo = "height: 50px; width: 126px;";
             $begroeting = "Bonjour";
             $tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Vous avez re&ccedil;u une carte de v&oelig;ux virtuelle de <span style="font-weight:normal;">' . $_SERVER['REDIRECT_Shib_Person_givenName'] . ' ' . $_SERVER['REDIRECT_Shib_Person_surname'] . '.</span></h1>
 							  <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: white; font-weight: normal; padding:16px; display:inline-block; text-decoration:none; margin-top:8px; background-color:#f24f11;" target="_blank" href="' . $url . '">Veuillez cliquer ici pour découvrir la carte.</a> </h1>';
             $footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" target="_blank" href="http://www.thomasmore.be/">Thomas More</a> | R&egrave;alis&egrave; par <a style="color:#999999; text-decoration:none; text-decoration:underline;" target="_blank" href="http://designosource.be/">Designosource</a> - Etudiants en <a style="color:#999999; text-decoration:none; text-decoration:underline;" target="_blank" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
             $logo = "http://ecard.thomasmore.be/img/TM_logo_mail_international.png";
         } else if ($language == "en") { // Engels
+            $opmaakLogo = "height: 50px; width: 224px;";
             $begroeting = "Dear";
             $tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><span style="font-weight:normal;">' . $_SESSION["savesender"]["firstname"] . ' ' . $_SERVER['REDIRECT_Shib_Person_surname'] . '</span> has sent you a card  with Season\'s Greetings.</h1>
 							  <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><a style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: white; font-weight: normal; padding:16px; display:inline-block; text-decoration:none; margin-top:8px; background-color:#f24f11;" target="_blank" href="' . $url . '">Click here to read the card!</a></h1>';
             $footer = '<span style="color: #999; font-size: 10px;">&copy; <a style="color:#999999; text-decoration:none; text-decoration:underline;" target="_blank" href="http://www.thomasmore.be/">Thomas More</a> | Developed by <a style="color:#999999; text-decoration:none; text-decoration:underline;" target="_blank" href="http://designosource.be/">Designosource</a> - Students in <a style="color:#999999; text-decoration:none; text-decoration:underline;" target="_blank" href="http://weareimd.be/">Interactive Multimedia Design</a></span>';
             $logo = "http://ecard.thomasmore.be/img/TM_logo_mail_international.png";
         } else { // Nederlands
+            $opmaakLogo = "height: 50px; width: 224px;";
             $begroeting = "Beste";
             $tekst = '<h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;">Je kreeg een kerstkaart van <span style="font-weight:normal;">' . $_SERVER['REDIRECT_Shib_Person_givenName'] . ' ' . $_SERVER['REDIRECT_Shib_Person_surname'] . '.</span></h1>
 							  <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #383b3a; font-weight: normal;"><a style="font-family: Arial, Helvetica, sans-serif; padding:16px; display:inline-block; text-decoration:none; margin-top:8px; font-size: 16px; color: white; font-weight: normal; background-color:#f24f11;" target="_blank" href="' . $url . '">Klik hier om de kaart te lezen!</a></h1>';
@@ -243,7 +246,7 @@ Class Card
 												  								<tbody>
 												  									<tr>
 												  										<td style="width:45%;">
-												  											<img alt="" style="height:50px; max-width: 224px;" src="'. $logo .'"/>
+												  											<img alt="" style="'. $opmaakLogo . '" src="'. $logo .'"/>
 												  										</td>
 												  									</tr>
 												  								</tbody>
