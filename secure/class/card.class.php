@@ -107,11 +107,22 @@ Class Card
         }
     }
 
-    public function GetCards()
+    public function GetCardsAnimated()
     {
         $conn = Db::getInstance();
 
-        $statement = $conn->prepare("SELECT * FROM card");
+        $statement = $conn->prepare("SELECT * FROM card WHERE card_type='animated'");
+        $statement->execute();
+        $res = $statement->fetchAll();
+
+        return $res;
+    }
+
+    public function GetCardsStatic()
+    {
+        $conn = Db::getInstance();
+
+        $statement = $conn->prepare("SELECT * FROM card WHERE card_type='static'");
         $statement->execute();
         $res = $statement->fetchAll();
 
@@ -232,7 +243,7 @@ Class Card
 												  								<tbody>
 												  									<tr>
 												  										<td style="width:45%;">
-												  											<img alt="" style="width:auto; height:50px;" src="'. $logo .'"/>
+												  											<img alt="" style="height:50px; max-width: 224px;" src="'. $logo .'"/>
 												  										</td>
 												  									</tr>
 												  								</tbody>

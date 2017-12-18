@@ -5,7 +5,7 @@ if( $_SESSION['taal'] == "nl" ) // Nederlands
 {
     $logout = "Afmelden";
 
-    $step1 = "Kies een ontwerp";
+    $step1 = array("choose" => "Kies een e-card", "animated" => "Geanimeerde versie", 'static' => 'Statische versie');
     $step2 = array("title" => "Persoonlijk bericht", "subtitle" => "Onderstaande tekst kun je wijzigen", "greeting" => "Beste", "message" => "Meer\nStilte op aarde.\nEn vrede overal.\nZalig kerstfeest en\nEen gelukkig Nieuwjaar!\n\nGroeten\n", "placeholder" => "Uw persoonlijk bericht", "characters" => "karakters over");
     $step3 = array("amountmails" => "Het bulk importeren van emails is beperkt tot", "error" => "Er is iets misgelopen, gelieve nog eens te proberen", "wrongtype" => "Verkeerde type file. Alleen .xls en .xlsx zijn momenteel ondersteund", "nofileselected" => "Gelieve een bestand up te loaden",
         "addemail" => "Emailadres toevoegen", "importexcel" => "Excel-bestand importeren", "modify" => "Wijzig", "delete" => "Verwijder", "firstname" => "Voornaam", "lastname" => "Achternaam", "email" => "E-mailadres", "noreceivers" => "Nog geen ontvangers");
@@ -24,7 +24,7 @@ elseif($_SESSION['taal'] == "fr") // Frans
 {
     $logout = "Déconnecte";
 
-    $step1 = "Choisis un design";
+    $step1 = array("choose" => "Choisis une carte", "animated" => "Version animée", 'static' => 'Version statique');
     $step2 = array("title" => "Message personelle", "subtitle" => "Vous pouvez changer le texte ci-dessous", "greeting" => "Bonjour", "receiverinformation" => "Le prénom de le destinataire est remplit automatiquement", "message" => "[Entre le texte pour l'e-card ici.]\n", "placeholder" => "Votre message personnelle", "characters" => "caractères restant");
     $step3 = array("amountmails" => "L'importation des courriels est limité à", "error" => "Il y a quelque chose a mal tourné, s’il vous plaît avoir une autre chance", "wrongtype" => "Type de fichier incorrect. Seuls les fichiers .xls et .xlsx sont supporté au moment", "nofileselected" => "Télécharge un fichier s’il vous plaît",
         "addemail" => "Ajoute des adresses de courriels", "importexcel" => "Importe fichier excel", "modify" => "Modifié", "delete" => "Supprimé", "firstname" => "Prénom", "lastname" => "Nom de famille", "email" => "Adresse de courriel", "noreceivers" => "Aucun récepteurs selecté");
@@ -41,7 +41,7 @@ elseif($_SESSION['taal'] == "fr") // Frans
 elseif($_SESSION['taal'] == "en") // Engels
 {
     $logout = "Sign out";
-    $step1 = "Choose a design";
+    $step1 = array("choose" => "Choose a card", "animated" => "Animated version", 'static' => 'Static version');
     $step2 = array("title" => "Personal message", "subtitle" => "You can change the text below", "greeting" => "Dear", "receiverinformation" => "The program automatically fills in the name of the recipient", "message" => "[Fill in the text for the e-card.]\n", "placeholder" => "Your personal message", "characters" => "characters left");
     $step3 = array("amountmails" => "The bulk import of emails is limited to", "error" => "Something went wrong. Please try again", "wrongtype" => "Wrong file type. Only .xls and .xlsx are currently supported", "nofileselected" => "Please upload a file",
         "addemail" => "Add e-mail address", "importexcel" => "Import excel file", "modify" => "Modify", "delete" => "Delete", "firstname" => "First name", "lastname" => "Last name", "email" => "E-mailaddress", "noreceivers" => "No receivers yet");
