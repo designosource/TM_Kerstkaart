@@ -8,6 +8,12 @@
 	$cardsanimated = $card->GetCardsAnimated();
     $cardsstatic = $card->GetCardsStatic();
 
+    if (preg_match('/MSIE\s(?P<v>\d+)/i', @$_SERVER['HTTP_USER_AGENT'], $B) && $B['v'] <= 11) {
+    header('Location: http://ecard.thomasmore.be/404.php');
+} else {
+    // All other browsers
+}
+
  ?><!doctype html>
 <html lang="en">
 	<head>

@@ -1,0 +1,162 @@
+body {
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f3;
+}
+
+.container {
+    width: 350px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+header {
+    height: 75px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    background-color: #f04c25;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#logoTM {
+    text-indent: -9999px;
+    background-image: url('../img/TM_logo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 95px;
+    height: 38px;
+}
+
+.elementFlex {
+    margin: 20px;
+    box-sizing: border-box;
+    color: black;
+}
+
+.elementFlex div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+form.elementFlex div {
+    margin-bottom: 20px;
+}
+
+.elementLabel, form div input {
+    flex-basis: calc(50% - 5px);
+}
+
+/*form div input {
+    flex-basis: calc(60% - 5px);
+}*/
+
+form div input[type="text"],
+form div input[type="password"] {
+    border: 0;
+    border-bottom: 1px solid black;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.login,
+.logout {
+    flex-basis: 100%;
+    border: 0;
+    background-color: #f04c25;
+    border: 2px solid #f04c25;
+    color: white;
+    font-size: inherit;
+    padding: 5px 0;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.login:hover,
+.logout:hover {
+    background-color: transparent;
+    color: #f04c25;
+    transition: 0.3s;
+}
+
+.loginFailed {
+    display: block;
+    border: 2px solid red;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.4);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.gegevens-buttons
+{
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    margin: 20px auto;
+}
+
+.gegevens-buttons a
+{
+    padding: 5px 0px;
+    text-align: center;
+    flex-basis: 50%;
+    border: 2px solid #f04c25;
+    box-sizing: border-box;
+    color: #f04c25;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.gegevens-buttons a:first-child
+{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.gegevens-buttons a:last-child
+{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.gegevens-buttons a.active
+{
+    color: white;
+    background-color: #f04c25;
+}
+
+.percentage-bar-container
+{
+    width: 100%;
+    height: 1.5em;
+    background-color: #b7b7b7e3;
+    position: relative;
+    margin: 15px 0px;
+}
+
+.percentage-bar-inner
+{
+    display:block;
+    background-color: #f04c25;
+}
+
+.percentage-bar-text
+{
+    margin: 2px 0;
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    left: calc(50% - 25px);
+    color: white;
+}

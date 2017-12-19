@@ -25,7 +25,7 @@
 		}
 	}
 
-	//var_dump($_SESSION['carddata']); //
+	var_dump($_SESSION['savesender']['changeemail']); //
 	//var_dump($_SESSION['url']); // sendCard()
 
 	include_once('class/card.class.php');

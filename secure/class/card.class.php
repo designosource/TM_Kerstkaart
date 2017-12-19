@@ -300,7 +300,13 @@ Class Card
 						</body></html>';
 
 
-        $mail->SetFrom($_SESSION["savesender"]["email"], $_SESSION["savesender"]["firstname"] . " " . $_SESSION["savesender"]["lastname"]);
+        if( isset($_SESSION['savesender']['changeemail']) ){
+            $senderemail = $_SESSION['savesender']['changeemail'];
+        } else {
+            $senderemail = $_SESSION['savesender']['email'];
+        }
+
+        $mail->SetFrom($senderemail, $_SESSION["savesender"]["firstname"] . " " . $_SESSION["savesender"]["lastname"]);
         $mail->Subject = "Expect more ... wishes!";
         $mail->MsgHTML($emailbody);
         $mail->AddAddress($_SESSION["savereceiver"]["email"], $_SESSION["savereceiver"]["firstname"] . " " . $_SESSION["savereceiver"]["lastname"]);
