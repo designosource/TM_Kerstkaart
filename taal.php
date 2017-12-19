@@ -19,22 +19,22 @@ if(!isset($_SESSION['authTrue'])){
 include_once('class/dbemail.class.php');
 $conn = DbEmail::getInstance();
 
-// Check the amount of senders with a specific language after 8/12/2017 18.00h or 1512756000
-$statement = $conn->prepare("SELECT count(*) as amount FROM sender WHERE sender_language = 'nl' AND sender_timestamp > 1512756000");
+// Check the amount of senders with a specific language after Tuesday, 19 December 2017 09:00:00 or 1513674000
+$statement = $conn->prepare("SELECT count(*) as amount FROM sender WHERE sender_language = 'nl' AND sender_timestamp > 1513674000");
 $statement->execute();
 $res = $statement->fetchAll();
 
 $nederlands = $res;
 
 
-$statement2 = $conn->prepare("SELECT count(*) as amount FROM sender WHERE sender_language = 'fr' AND sender_timestamp > 1512756000");
+$statement2 = $conn->prepare("SELECT count(*) as amount FROM sender WHERE sender_language = 'fr' AND sender_timestamp > 1513674000");
 $statement2->execute();
 $res2 = $statement2->fetchAll();
 
 $frans = $res2;
 
 
-$statement3 = $conn->prepare("SELECT count(*) as amount FROM sender WHERE sender_language = 'en' AND sender_timestamp > 1512756000");
+$statement3 = $conn->prepare("SELECT count(*) as amount FROM sender WHERE sender_language = 'en' AND sender_timestamp > 1513674000");
 $statement3->execute();
 $res3 = $statement3->fetchAll();
 
